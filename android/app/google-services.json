@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "419264219657",
+    "project_id": "aaaa-l7rtpe",
+    "storage_bucket": "aaaa-l7rtpe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419264219657:android:40461f550edbbad0bb06d8",
+        "android_client_info": {
+          "package_name": "com.mycompany.mitraqa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9us37kyXsskCdQOVZPUGMDBLD6oZP85w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
