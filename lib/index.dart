@@ -26,3 +26,4 @@ export '/theflow/auth_2_edit_profile/auth2_edit_profile_widget.dart'
     show Auth2EditProfileWidget;
 export '/forget_pass/forget_pass_widget.dart' show ForgetPassWidget;
 export '/intrest_page/intrest_page_widget.dart' show IntrestPageWidget;
+export '/homepage/homepage_widget.dart' show HomepageWidget;

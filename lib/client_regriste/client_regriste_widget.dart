@@ -102,6 +102,18 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
           ),
         ],
       ),
+      'buttonOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          MoveEffect(
+            curve: Curves.linear,
+            delay: 0.0.ms,
+            duration: 2000.0.ms,
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
       'columnOnPageLoadAnimation2': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -346,7 +358,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                     Align(
                                                                       alignment:
                                                                           const AlignmentDirectional(
-                                                                              1.0,
+                                                                              -1.0,
                                                                               0.0),
                                                                       child:
                                                                           Text(
@@ -367,7 +379,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                     Align(
                                                                       alignment:
                                                                           const AlignmentDirectional(
-                                                                              1.0,
+                                                                              -1.0,
                                                                               0.0),
                                                                       child:
                                                                           Padding(
@@ -1041,7 +1053,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                             borderRadius:
                                                                                 BorderRadius.circular(40.0),
                                                                           ),
-                                                                        ),
+                                                                        ).animateOnPageLoad(animationsMap['buttonOnPageLoadAnimation']!),
                                                                       ),
                                                                     ),
                                                                   ],
@@ -1095,7 +1107,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                 Align(
                                                                   alignment:
                                                                       const AlignmentDirectional(
-                                                                          1.0,
+                                                                          -1.0,
                                                                           0.0),
                                                                   child: Text(
                                                                     'اهلا  بك مجددًا!',
@@ -1122,7 +1134,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                 Align(
                                                                   alignment:
                                                                       const AlignmentDirectional(
-                                                                          1.0,
+                                                                          -1.0,
                                                                           0.0),
                                                                   child:
                                                                       Padding(
@@ -1660,7 +1672,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                     },
                     child: Icon(
                       Icons.arrow_back,
-                      color: FlutterFlowTheme.of(context).primaryText,
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
                       size: 30.0,
                     ),
                   ),
