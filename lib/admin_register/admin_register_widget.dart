@@ -4,9 +4,14 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'admin_register_model.dart';
 
 export 'admin_register_model.dart';
@@ -30,6 +35,11 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => AdminRegisterModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      context.pushNamed('welcompage');
+    });
 
     _model.emailTextController ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
@@ -195,8 +205,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                           ),
                                         ),
                                       Align(
-                                        alignment: const AlignmentDirectional(
-                                            1.0, 0.0),
+                                        alignment:
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Text(
                                           'اهلا  بك مجددًا!',
                                           textAlign: TextAlign.start,
@@ -212,8 +222,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                         ),
                                       ),
                                       Align(
-                                        alignment: const AlignmentDirectional(
-                                            1.0, 0.0),
+                                        alignment:
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding: const EdgeInsetsDirectional
                                               .fromSTEB(0.0, 4.0, 0.0, 24.0),
@@ -520,8 +530,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                           padding: const EdgeInsetsDirectional
                                               .fromSTEB(0.0, 0.0, 0.0, 16.0),
                                           child: FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
+                                            onPressed: () async {
+                                              context.pushNamed('ForgetPass');
                                             },
                                             text: 'نسيت كلمة المرور؟',
                                             options: FFButtonOptions(
@@ -570,6 +580,27 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                               animationsMap['containerOnPageLoadAnimation']!),
                         ],
                       ),
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: const AlignmentDirectional(-1.0, -1.0),
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                    child: FlutterFlowIconButton(
+                      borderColor: Colors.transparent,
+                      borderRadius: 30.0,
+                      borderWidth: 1.0,
+                      buttonSize: 50.0,
+                      icon: Icon(
+                        Icons.arrow_back,
+                        color: FlutterFlowTheme.of(context).primaryBackground,
+                        size: 30.0,
+                      ),
+                      onPressed: () async {
+                        context.pushNamed('welcompage');
+                      },
                     ),
                   ),
                 ),

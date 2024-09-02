@@ -179,6 +179,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'IntrestPage',
           path: '/intrestPage',
           builder: (context, params) => const IntrestPageWidget(),
+        ),
+        FFRoute(
+          name: 'homepage',
+          path: '/homepage',
+          builder: (context, params) => const HomepageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

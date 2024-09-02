@@ -316,7 +316,7 @@ class _ServiceProviderRegisterWidgetState
                                                           Align(
                                                             alignment:
                                                                 const AlignmentDirectional(
-                                                                    1.0, 0.0),
+                                                                    -1.0, 0.0),
                                                             child: Text(
                                                               'أنشئ حسابك',
                                                               textAlign:
@@ -343,7 +343,7 @@ class _ServiceProviderRegisterWidgetState
                                                           Align(
                                                             alignment:
                                                                 const AlignmentDirectional(
-                                                                    1.0, 0.0),
+                                                                    -1.0, 0.0),
                                                             child: Padding(
                                                               padding:
                                                                   const EdgeInsetsDirectional
@@ -720,6 +720,9 @@ class _ServiceProviderRegisterWidgetState
                                                               maxLengthEnforcement:
                                                                   MaxLengthEnforcement
                                                                       .enforced,
+                                                              keyboardType:
+                                                                  TextInputType
+                                                                      .emailAddress,
                                                               validator: _model
                                                                   .textController1Validator
                                                                   .asValidator(
@@ -890,6 +893,9 @@ class _ServiceProviderRegisterWidgetState
                                                                       required isFocused,
                                                                       maxLength}) =>
                                                                   null,
+                                                              keyboardType:
+                                                                  TextInputType
+                                                                      .phone,
                                                               validator: _model
                                                                   .textController2Validator
                                                                   .asValidator(
@@ -990,7 +996,7 @@ class _ServiceProviderRegisterWidgetState
                                                               autofocus: false,
                                                               textCapitalization:
                                                                   TextCapitalization
-                                                                      .none,
+                                                                      .characters,
                                                               obscureText: !_model
                                                                   .passwordVisibility1,
                                                               decoration:
@@ -1811,7 +1817,7 @@ class _ServiceProviderRegisterWidgetState
                                                       Align(
                                                         alignment:
                                                             const AlignmentDirectional(
-                                                                1.0, 0.0),
+                                                                -1.0, 0.0),
                                                         child: Text(
                                                           'اهلا  بك مجددًا!',
                                                           textAlign:
@@ -1836,7 +1842,7 @@ class _ServiceProviderRegisterWidgetState
                                                       Align(
                                                         alignment:
                                                             const AlignmentDirectional(
-                                                                1.0, 0.0),
+                                                                -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
                                                               const EdgeInsetsDirectional
@@ -2304,9 +2310,10 @@ class _ServiceProviderRegisterWidgetState
                                                                       0.0,
                                                                       16.0),
                                                           child: FFButtonWidget(
-                                                            onPressed: () {
-                                                              print(
-                                                                  'Button pressed ...');
+                                                            onPressed:
+                                                                () async {
+                                                              context.pushNamed(
+                                                                  'ForgetPass');
                                                             },
                                                             text:
                                                                 'نسيت كلمة المرور؟',
@@ -2393,37 +2400,13 @@ class _ServiceProviderRegisterWidgetState
                         },
                         child: Icon(
                           Icons.arrow_back,
-                          color: FlutterFlowTheme.of(context).primaryText,
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
                           size: 30.0,
                         ),
                       ),
                     ),
                   ],
-                ),
-                FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
-                  },
-                  text: 'Button',
-                  options: FFButtonOptions(
-                    height: 40.0,
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                    iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Readex Pro',
-                          color: Colors.white,
-                          letterSpacing: 0.0,
-                        ),
-                    elevation: 3.0,
-                    borderSide: const BorderSide(
-                      color: Colors.transparent,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
                 ),
               ],
             ),
