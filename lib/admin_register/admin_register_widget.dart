@@ -1,12 +1,14 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+
 import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'admin_register_model.dart';
+
 export 'admin_register_model.dart';
 
 class AdminRegisterWidget extends StatefulWidget {
@@ -112,8 +114,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                 Align(
                   alignment: const AlignmentDirectional(0.0, -1.0),
                   child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(32.0, 0.0, 32.0, 2.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        32.0, 0.0, 32.0, 2.0),
                     child: Container(
                       width: double.infinity,
                       height: 250.0,
@@ -137,8 +139,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                 Align(
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 190.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        0.0, 190.0, 0.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -193,8 +195,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                           ),
                                         ),
                                       Align(
-                                        alignment:
-                                            const AlignmentDirectional(1.0, 0.0),
+                                        alignment: const AlignmentDirectional(
+                                            1.0, 0.0),
                                         child: Text(
                                           'اهلا  بك مجددًا!',
                                           textAlign: TextAlign.start,
@@ -210,12 +212,11 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                         ),
                                       ),
                                       Align(
-                                        alignment:
-                                            const AlignmentDirectional(1.0, 0.0),
+                                        alignment: const AlignmentDirectional(
+                                            1.0, 0.0),
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 4.0, 0.0, 24.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(0.0, 4.0, 0.0, 24.0),
                                           child: Text(
                                             'ادخل معلوماتك واستمتع بخدماتنا',
                                             textAlign: TextAlign.start,
@@ -224,7 +225,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                                 .override(
                                                   fontFamily:
                                                       'Plus Jakarta Sans',
-                                                  color: const Color(0xFF57636C),
+                                                  color:
+                                                      const Color(0xFF57636C),
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
@@ -233,19 +235,14 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                         ),
                                       ),
                                       Align(
-                                        alignment:
-                                            const AlignmentDirectional(1.0, 0.0),
+                                        alignment: const AlignmentDirectional(
+                                            1.0, 0.0),
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 2.0, 16.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(16.0, 2.0, 16.0, 0.0),
                                           child: TextFormField(
                                             controller:
                                                 _model.emailTextController,
-                                            focusNode:
-                                                _model.textFieldFocusNode1,
-                                            autofocus: false,
-                                            obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: 'الايميل',
                                               labelStyle: FlutterFlowTheme.of(
@@ -259,7 +256,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                                     letterSpacing: 0.0,
                                                     lineHeight: 1.0,
                                                   ),
-                                              alignLabelWithHint: false,
+                                              alignLabelWithHint:
+                                                  true, // Aligns the label with the input text
                                               enabledBorder:
                                                   UnderlineInputBorder(
                                                 borderSide: BorderSide(
@@ -276,38 +274,13 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                                 ),
                                               ),
                                               focusedBorder:
-                                                  const UnderlineInputBorder(
-                                                borderSide: BorderSide(
+                                                  UnderlineInputBorder(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFF4B39EF),
                                                   width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.only(
-                                                  topLeft: Radius.circular(4.0),
-                                                  topRight:
-                                                      Radius.circular(4.0),
-                                                ),
-                                              ),
-                                              errorBorder: const UnderlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: Color(0xFFFF5963),
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.only(
-                                                  topLeft: Radius.circular(4.0),
-                                                  topRight:
-                                                      Radius.circular(4.0),
-                                                ),
-                                              ),
-                                              focusedErrorBorder:
-                                                  const UnderlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: Color(0xFFFF5963),
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.only(
+                                                    const BorderRadius.only(
                                                   topLeft: Radius.circular(4.0),
                                                   topRight:
                                                       Radius.circular(4.0),
@@ -317,21 +290,24 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                               fillColor: Colors.white,
                                               contentPadding:
                                                   const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 16.0, 16.0, 8.0),
+                                                      .fromSTEB(0.0, 16.0, 16.0,
+                                                      8.0), // Adjust right padding
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
                                                   fontFamily:
                                                       'Plus Jakarta Sans',
-                                                  color: const Color(0xFF101213),
+                                                  color:
+                                                      const Color(0xFF101213),
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
                                                   lineHeight: 1.0,
                                                 ),
-                                            textAlign: TextAlign.end,
+                                            textAlign: TextAlign
+                                                .end, // Ensures input text is right-aligned
+
                                             maxLength: 30,
                                             maxLengthEnforcement:
                                                 MaxLengthEnforcement.enforced,
@@ -342,12 +318,11 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                         ),
                                       ),
                                       Align(
-                                        alignment:
-                                            const AlignmentDirectional(1.0, 0.0),
+                                        alignment: const AlignmentDirectional(
+                                            1.0, 0.0),
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 12.0, 16.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(16.0, 12.0, 16.0, 0.0),
                                           child: TextFormField(
                                             controller:
                                                 _model.passwordTextController,
@@ -366,7 +341,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: const Color(0xFF57636C),
+                                                    color:
+                                                        const Color(0xFF57636C),
                                                     fontSize: 16.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
@@ -392,20 +368,19 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                                   color: Color(0xFF4B39EF),
                                                   width: 2.0,
                                                 ),
-                                                borderRadius:
-                                                    BorderRadius.only(
+                                                borderRadius: BorderRadius.only(
                                                   topLeft: Radius.circular(4.0),
                                                   topRight:
                                                       Radius.circular(4.0),
                                                 ),
                                               ),
-                                              errorBorder: const UnderlineInputBorder(
+                                              errorBorder:
+                                                  const UnderlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0xFFFF5963),
                                                   width: 2.0,
                                                 ),
-                                                borderRadius:
-                                                    BorderRadius.only(
+                                                borderRadius: BorderRadius.only(
                                                   topLeft: Radius.circular(4.0),
                                                   topRight:
                                                       Radius.circular(4.0),
@@ -417,8 +392,7 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                                   color: Color(0xFFFF5963),
                                                   width: 2.0,
                                                 ),
-                                                borderRadius:
-                                                    BorderRadius.only(
+                                                borderRadius: BorderRadius.only(
                                                   topLeft: Radius.circular(4.0),
                                                   topRight:
                                                       Radius.circular(4.0),
@@ -429,7 +403,7 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                               contentPadding:
                                                   const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          0.0, 16.0, 16.0, 8.0),
+                                                      0.0, 16.0, 16.0, 8.0),
                                               suffixIcon: InkWell(
                                                 onTap: () => setState(
                                                   () => _model
@@ -445,7 +419,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                                           .visibility_outlined
                                                       : Icons
                                                           .visibility_off_outlined,
-                                                  color: const Color(0xFF101213),
+                                                  color:
+                                                      const Color(0xFF101213),
                                                   size: 24.0,
                                                 ),
                                               ),
@@ -455,7 +430,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                                 .override(
                                                   fontFamily:
                                                       'Plus Jakarta Sans',
-                                                  color: const Color(0xFF101213),
+                                                  color:
+                                                      const Color(0xFF101213),
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
@@ -476,12 +452,11 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                         ),
                                       ),
                                       Align(
-                                        alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                        alignment: const AlignmentDirectional(
+                                            0.0, 0.0),
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 30.0, 0.0, 16.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(0.0, 30.0, 0.0, 16.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
                                               GoRouter.of(context)
@@ -506,10 +481,14 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                             options: FFButtonOptions(
                                               width: 230.0,
                                               height: 52.0,
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                      0.0, 0.0, 0.0, 0.0),
+                                              iconPadding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                      0.0, 0.0, 0.0, 0.0),
                                               color: const Color(0xFFF47F2F),
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
@@ -535,12 +514,11 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                         ),
                                       ),
                                       Align(
-                                        alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                        alignment: const AlignmentDirectional(
+                                            0.0, 0.0),
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 16.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(0.0, 0.0, 0.0, 16.0),
                                           child: FFButtonWidget(
                                             onPressed: () {
                                               print('Button pressed ...');
@@ -548,11 +526,14 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                             text: 'نسيت كلمة المرور؟',
                                             options: FFButtonOptions(
                                               height: 44.0,
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
                                                       32.0, 0.0, 32.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconPadding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                      0.0, 0.0, 0.0, 0.0),
                                               color: Colors.white,
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
@@ -560,7 +541,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: const Color(0xFF101213),
+                                                    color:
+                                                        const Color(0xFF101213),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.bold,
@@ -572,7 +554,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                               ),
                                               borderRadius:
                                                   BorderRadius.circular(40.0),
-                                              hoverColor: const Color(0xFFF1F4F8),
+                                              hoverColor:
+                                                  const Color(0xFFF1F4F8),
                                             ),
                                           ),
                                         ),
