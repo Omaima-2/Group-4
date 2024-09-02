@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -190,7 +191,7 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
                                         ),
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Text(
                                           'نسيت كلمة المرور',
                                           textAlign: TextAlign.start,
@@ -207,7 +208,7 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
@@ -388,6 +389,23 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
                         ],
                       ),
                     ),
+                  ),
+                ),
+                Align(
+                  alignment: const AlignmentDirectional(-1.0, -1.0),
+                  child: FlutterFlowIconButton(
+                    borderColor: Colors.transparent,
+                    borderRadius: 30.0,
+                    borderWidth: 1.0,
+                    buttonSize: 60.0,
+                    icon: Icon(
+                      Icons.arrow_back_rounded,
+                      color: FlutterFlowTheme.of(context).primaryBackground,
+                      size: 30.0,
+                    ),
+                    onPressed: () async {
+                      context.safePop();
+                    },
                   ),
                 ),
               ],

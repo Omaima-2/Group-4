@@ -549,8 +549,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
                                           child: FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
+                                            onPressed: () async {
+                                              context.pushNamed('ForgetPass');
                                             },
                                             text: 'نسيت كلمة المرور؟',
                                             options: FFButtonOptions(
@@ -598,7 +598,7 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(-1.13, -1.03),
+                  alignment: const AlignmentDirectional(-1.0, -1.0),
                   child: Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
@@ -608,7 +608,7 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                       borderWidth: 1.0,
                       buttonSize: 50.0,
                       icon: Icon(
-                        Icons.arrow_back_rounded,
+                        Icons.arrow_back,
                         color: FlutterFlowTheme.of(context).primaryBackground,
                         size: 30.0,
                       ),

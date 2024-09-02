@@ -2310,9 +2310,10 @@ class _ServiceProviderRegisterWidgetState
                                                                       0.0,
                                                                       16.0),
                                                           child: FFButtonWidget(
-                                                            onPressed: () {
-                                                              print(
-                                                                  'Button pressed ...');
+                                                            onPressed:
+                                                                () async {
+                                                              context.pushNamed(
+                                                                  'ForgetPass');
                                                             },
                                                             text:
                                                                 'نسيت كلمة المرور؟',

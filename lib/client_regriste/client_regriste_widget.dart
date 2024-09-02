@@ -1585,9 +1585,9 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                     child:
                                                                         FFButtonWidget(
                                                                       onPressed:
-                                                                          () {
-                                                                        print(
-                                                                            'Button pressed ...');
+                                                                          () async {
+                                                                        context.pushNamed(
+                                                                            'ForgetPass');
                                                                       },
                                                                       text:
                                                                           'نسيت كلمة المرور؟',
