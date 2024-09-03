@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
       });
     jwtTokenStream.listen((_) {});
     Future.delayed(
-      const Duration(milliseconds: 30000),
+      const Duration(milliseconds: 600),
       () => _appStateNotifier.stopShowingSplashImage(),
     );
   }

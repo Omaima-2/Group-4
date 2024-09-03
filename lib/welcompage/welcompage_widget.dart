@@ -354,7 +354,7 @@ class _WelcompageWidgetState extends State<WelcompageWidget>
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  context.pushNamed('AdminRegister');
+                  context.safePop();
                 },
                 child: Text(
                   'هل أنت مشرف التطبيق ',

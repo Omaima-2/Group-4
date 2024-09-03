@@ -35,29 +35,25 @@ class ServiceProviderRegisterModel
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl1 = '';
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for Checkbox widget.
-  bool? checkboxValue1;
-  // State field(s) for Checkbox widget.
-  bool? checkboxValue2;
-  // State field(s) for Checkbox widget.
-  bool? checkboxValue3;
+  // State field(s) for plumber widget.
+  bool? plumberValue;
+  // State field(s) for electrician widget.
+  bool? electricianValue;
+  // State field(s) for AC widget.
+  bool? acValue;
   bool isDataUploading2 = false;
   FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode5;
+  TextEditingController? textController3;
+  String? Function(BuildContext, String?)? textController3Validator;
+  // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode6;
   TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode7;
-  TextEditingController? textController5;
   late bool passwordVisibility2;
-  String? Function(BuildContext, String?)? textController5Validator;
+  String? Function(BuildContext, String?)? textController4Validator;
 
   @override
   void initState(BuildContext context) {
@@ -85,8 +81,5 @@ class ServiceProviderRegisterModel
 
     textFieldFocusNode6?.dispose();
     textController4?.dispose();
-
-    textFieldFocusNode7?.dispose();
-    textController5?.dispose();
   }
 }

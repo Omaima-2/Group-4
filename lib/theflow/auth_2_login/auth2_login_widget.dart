@@ -368,8 +368,8 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                     return;
                                   }
 
-                                  context.goNamedAuth(
-                                      'auth_2_Login', context.mounted);
+                                  context.goNamedAuth('ServiceProviderRegister',
+                                      context.mounted);
                                 },
                                 text: 'Sign In',
                                 options: FFButtonOptions(
@@ -425,8 +425,8 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                     return;
                                   }
 
-                                  context.goNamedAuth(
-                                      'auth_2_Login', context.mounted);
+                                  context.goNamedAuth('ServiceProviderRegister',
+                                      context.mounted);
                                 },
                                 text: 'Continue with Google',
                                 icon: const FaIcon(
@@ -477,7 +477,8 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                         }
 
                                         context.goNamedAuth(
-                                            'auth_2_Login', context.mounted);
+                                            'ServiceProviderRegister',
+                                            context.mounted);
                                       },
                                       text: 'Continue with Apple',
                                       icon: const FaIcon(

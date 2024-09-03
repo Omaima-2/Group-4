@@ -55,9 +55,6 @@ class _ServiceProviderRegisterWidgetState
     _model.textController4 ??= TextEditingController();
     _model.textFieldFocusNode6 ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController();
-    _model.textFieldFocusNode7 ??= FocusNode();
-
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -720,9 +717,6 @@ class _ServiceProviderRegisterWidgetState
                                                               maxLengthEnforcement:
                                                                   MaxLengthEnforcement
                                                                       .enforced,
-                                                              keyboardType:
-                                                                  TextInputType
-                                                                      .emailAddress,
                                                               validator: _model
                                                                   .textController1Validator
                                                                   .asValidator(
@@ -1169,142 +1163,79 @@ class _ServiceProviderRegisterWidgetState
                                                                 MainAxisSize
                                                                     .max,
                                                             children: [
-                                                              Padding(
-                                                                padding:
-                                                                    const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            8.0,
-                                                                            0.0,
-                                                                            8.0,
+                                                              if (_model
+                                                                      .plumberValue ??
+                                                                  true)
+                                                                Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          12.0,
+                                                                          20.0,
+                                                                          0.0),
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    children: [
+                                                                      Align(
+                                                                        alignment: const AlignmentDirectional(
+                                                                            -1.0,
                                                                             0.0),
-                                                                child:
-                                                                    TextFormField(
-                                                                  controller: _model
-                                                                      .textController3,
-                                                                  focusNode: _model
-                                                                      .textFieldFocusNode5,
-                                                                  autofocus:
-                                                                      true,
-                                                                  obscureText:
-                                                                      false,
-                                                                  decoration:
-                                                                      InputDecoration(
-                                                                    labelText:
-                                                                        'تحدث عن نفسك',
-                                                                    labelStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Readex Pro',
-                                                                          letterSpacing:
-                                                                              0.0,
+                                                                        child:
+                                                                            Text(
+                                                                          'مهنتك:',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Readex Pro',
+                                                                                color: Colors.black,
+                                                                                fontSize: 16.0,
+                                                                                letterSpacing: 0.0,
+                                                                              ),
                                                                         ),
-                                                                    hintStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Readex Pro',
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          lineHeight:
-                                                                              2.0,
-                                                                        ),
-                                                                    enabledBorder:
-                                                                        UnderlineInputBorder(
-                                                                      borderSide:
-                                                                          BorderSide(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .alternate,
-                                                                        width:
-                                                                            2.0,
                                                                       ),
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              0.0),
-                                                                    ),
-                                                                    focusedBorder:
-                                                                        UnderlineInputBorder(
-                                                                      borderSide:
-                                                                          BorderSide(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                        width:
-                                                                            2.0,
-                                                                      ),
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              0.0),
-                                                                    ),
-                                                                    errorBorder:
-                                                                        UnderlineInputBorder(
-                                                                      borderSide:
-                                                                          BorderSide(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .error,
-                                                                        width:
-                                                                            2.0,
-                                                                      ),
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              0.0),
-                                                                    ),
-                                                                    focusedErrorBorder:
-                                                                        UnderlineInputBorder(
-                                                                      borderSide:
-                                                                          BorderSide(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .error,
-                                                                        width:
-                                                                            2.0,
-                                                                      ),
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              0.0),
-                                                                    ),
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Readex Pro',
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                  maxLines: 2,
-                                                                  maxLength: 50,
-                                                                  maxLengthEnforcement:
-                                                                      MaxLengthEnforcement
-                                                                          .enforced,
-                                                                  validator: _model
-                                                                      .textController3Validator
-                                                                      .asValidator(
-                                                                          context),
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0,
+                                                                      Align(
+                                                                        alignment: const AlignmentDirectional(
+                                                                            1.0,
                                                                             0.0),
-                                                                child: Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Align(
-                                                                      alignment:
-                                                                          const AlignmentDirectional(
-                                                                              -1.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Text(
-                                                                        'مهنتك:',
+                                                                        child:
+                                                                            Theme(
+                                                                          data:
+                                                                              ThemeData(
+                                                                            checkboxTheme:
+                                                                                CheckboxThemeData(
+                                                                              visualDensity: VisualDensity.compact,
+                                                                              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                                                              shape: RoundedRectangleBorder(
+                                                                                borderRadius: BorderRadius.circular(4.0),
+                                                                              ),
+                                                                            ),
+                                                                            unselectedWidgetColor:
+                                                                                FlutterFlowTheme.of(context).secondaryText,
+                                                                          ),
+                                                                          child:
+                                                                              Checkbox(
+                                                                            value: _model.plumberValue ??=
+                                                                                false,
+                                                                            onChanged:
+                                                                                (newValue) async {
+                                                                              setState(() => _model.plumberValue = newValue!);
+                                                                            },
+                                                                            side:
+                                                                                BorderSide(
+                                                                              width: 2,
+                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                            ),
+                                                                            activeColor:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            checkColor:
+                                                                                FlutterFlowTheme.of(context).info,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                      Text(
+                                                                        'سباك',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
@@ -1314,14 +1245,7 @@ class _ServiceProviderRegisterWidgetState
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
-                                                                    ),
-                                                                    Align(
-                                                                      alignment:
-                                                                          const AlignmentDirectional(
-                                                                              1.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Theme(
+                                                                      Theme(
                                                                         data:
                                                                             ThemeData(
                                                                           checkboxTheme:
@@ -1340,12 +1264,12 @@ class _ServiceProviderRegisterWidgetState
                                                                         ),
                                                                         child:
                                                                             Checkbox(
-                                                                          value: _model.checkboxValue1 ??=
+                                                                          value: _model.electricianValue ??=
                                                                               false,
                                                                           onChanged:
                                                                               (newValue) async {
                                                                             setState(() =>
-                                                                                _model.checkboxValue1 = newValue!);
+                                                                                _model.electricianValue = newValue!);
                                                                           },
                                                                           side:
                                                                               BorderSide(
@@ -1360,140 +1284,76 @@ class _ServiceProviderRegisterWidgetState
                                                                               FlutterFlowTheme.of(context).info,
                                                                         ),
                                                                       ),
-                                                                    ),
-                                                                    Text(
-                                                                      'سباك',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Readex Pro',
-                                                                            color:
-                                                                                Colors.black,
-                                                                            fontSize:
-                                                                                16.0,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                          ),
-                                                                    ),
-                                                                    Theme(
-                                                                      data:
-                                                                          ThemeData(
-                                                                        checkboxTheme:
-                                                                            CheckboxThemeData(
-                                                                          visualDensity:
-                                                                              VisualDensity.compact,
-                                                                          materialTapTargetSize:
-                                                                              MaterialTapTargetSize.shrinkWrap,
-                                                                          shape:
-                                                                              RoundedRectangleBorder(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(4.0),
-                                                                          ),
-                                                                        ),
-                                                                        unselectedWidgetColor:
-                                                                            FlutterFlowTheme.of(context).secondaryText,
-                                                                      ),
-                                                                      child:
-                                                                          Checkbox(
-                                                                        value: _model.checkboxValue2 ??=
-                                                                            false,
-                                                                        onChanged:
-                                                                            (newValue) async {
-                                                                          setState(() =>
-                                                                              _model.checkboxValue2 = newValue!);
-                                                                        },
-                                                                        side:
-                                                                            BorderSide(
-                                                                          width:
-                                                                              2,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).secondaryText,
-                                                                        ),
-                                                                        activeColor:
-                                                                            FlutterFlowTheme.of(context).primary,
-                                                                        checkColor:
-                                                                            FlutterFlowTheme.of(context).info,
-                                                                      ),
-                                                                    ),
-                                                                    Text(
-                                                                      'كهربائي',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Readex Pro',
-                                                                            color:
-                                                                                Colors.black,
-                                                                            fontSize:
-                                                                                16.0,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                          ),
-                                                                    ),
-                                                                    Theme(
-                                                                      data:
-                                                                          ThemeData(
-                                                                        checkboxTheme:
-                                                                            CheckboxThemeData(
-                                                                          visualDensity:
-                                                                              VisualDensity.compact,
-                                                                          materialTapTargetSize:
-                                                                              MaterialTapTargetSize.shrinkWrap,
-                                                                          shape:
-                                                                              RoundedRectangleBorder(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(4.0),
-                                                                          ),
-                                                                        ),
-                                                                        unselectedWidgetColor:
-                                                                            FlutterFlowTheme.of(context).secondaryText,
-                                                                      ),
-                                                                      child:
-                                                                          Checkbox(
-                                                                        value: _model.checkboxValue3 ??=
-                                                                            false,
-                                                                        onChanged:
-                                                                            (newValue) async {
-                                                                          setState(() =>
-                                                                              _model.checkboxValue3 = newValue!);
-                                                                        },
-                                                                        side:
-                                                                            BorderSide(
-                                                                          width:
-                                                                              2,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).secondaryText,
-                                                                        ),
-                                                                        activeColor:
-                                                                            FlutterFlowTheme.of(context).primary,
-                                                                        checkColor:
-                                                                            FlutterFlowTheme.of(context).info,
-                                                                      ),
-                                                                    ),
-                                                                    Align(
-                                                                      alignment:
-                                                                          const AlignmentDirectional(
-                                                                              1.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Text(
-                                                                        'فني تكييف',
+                                                                      Text(
+                                                                        'كهربائي',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
                                                                               fontFamily: 'Readex Pro',
-                                                                              color: const Color(0xFF060606),
+                                                                              color: Colors.black,
                                                                               fontSize: 16.0,
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
-                                                                    ),
-                                                                  ],
+                                                                      Theme(
+                                                                        data:
+                                                                            ThemeData(
+                                                                          checkboxTheme:
+                                                                              CheckboxThemeData(
+                                                                            visualDensity:
+                                                                                VisualDensity.compact,
+                                                                            materialTapTargetSize:
+                                                                                MaterialTapTargetSize.shrinkWrap,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(4.0),
+                                                                            ),
+                                                                          ),
+                                                                          unselectedWidgetColor:
+                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                        ),
+                                                                        child:
+                                                                            Checkbox(
+                                                                          value: _model.acValue ??=
+                                                                              false,
+                                                                          onChanged:
+                                                                              (newValue) async {
+                                                                            setState(() =>
+                                                                                _model.acValue = newValue!);
+                                                                          },
+                                                                          side:
+                                                                              BorderSide(
+                                                                            width:
+                                                                                2,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryText,
+                                                                          ),
+                                                                          activeColor:
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                          checkColor:
+                                                                              FlutterFlowTheme.of(context).info,
+                                                                        ),
+                                                                      ),
+                                                                      Align(
+                                                                        alignment: const AlignmentDirectional(
+                                                                            1.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          'فني تكييف',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Readex Pro',
+                                                                                color: const Color(0xFF060606),
+                                                                                fontSize: 16.0,
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
                                                                 ),
-                                                              ),
                                                             ],
                                                           ),
                                                           Row(
@@ -1723,7 +1583,7 @@ class _ServiceProviderRegisterWidgetState
                                                                   }
 
                                                                   context.goNamedAuth(
-                                                                      'auth_2_Login',
+                                                                      'ServiceProviderRegister',
                                                                       context
                                                                           .mounted);
                                                                 },
@@ -1801,19 +1661,6 @@ class _ServiceProviderRegisterWidgetState
                                                         CrossAxisAlignment
                                                             .start,
                                                     children: [
-                                                      if (responsiveVisibility(
-                                                        context: context,
-                                                        phone: false,
-                                                        tablet: false,
-                                                      ))
-                                                        Container(
-                                                          width: 230.0,
-                                                          height: 40.0,
-                                                          decoration:
-                                                              const BoxDecoration(
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
                                                       Align(
                                                         alignment:
                                                             const AlignmentDirectional(
@@ -1839,6 +1686,19 @@ class _ServiceProviderRegisterWidgetState
                                                               ),
                                                         ),
                                                       ),
+                                                      if (responsiveVisibility(
+                                                        context: context,
+                                                        phone: false,
+                                                        tablet: false,
+                                                      ))
+                                                        Container(
+                                                          width: 230.0,
+                                                          height: 40.0,
+                                                          decoration:
+                                                              const BoxDecoration(
+                                                            color: Colors.white,
+                                                          ),
+                                                        ),
                                                       Align(
                                                         alignment:
                                                             const AlignmentDirectional(
@@ -1884,9 +1744,9 @@ class _ServiceProviderRegisterWidgetState
                                                                     0.0),
                                                         child: TextFormField(
                                                           controller: _model
-                                                              .textController4,
+                                                              .textController3,
                                                           focusNode: _model
-                                                              .textFieldFocusNode6,
+                                                              .textFieldFocusNode5,
                                                           autofocus: false,
                                                           obscureText: false,
                                                           decoration:
@@ -2019,7 +1879,7 @@ class _ServiceProviderRegisterWidgetState
                                                               MaxLengthEnforcement
                                                                   .enforced,
                                                           validator: _model
-                                                              .textController4Validator
+                                                              .textController3Validator
                                                               .asValidator(
                                                                   context),
                                                         ),
@@ -2034,9 +1894,9 @@ class _ServiceProviderRegisterWidgetState
                                                                     0.0),
                                                         child: TextFormField(
                                                           controller: _model
-                                                              .textController5,
+                                                              .textController4,
                                                           focusNode: _model
-                                                              .textFieldFocusNode7,
+                                                              .textFieldFocusNode6,
                                                           autofocus: false,
                                                           textCapitalization:
                                                               TextCapitalization
@@ -2200,7 +2060,7 @@ class _ServiceProviderRegisterWidgetState
                                                                   maxLength}) =>
                                                               null,
                                                           validator: _model
-                                                              .textController5Validator
+                                                              .textController4Validator
                                                               .asValidator(
                                                                   context),
                                                         ),
@@ -2241,7 +2101,7 @@ class _ServiceProviderRegisterWidgetState
                                                               }
 
                                                               context.goNamedAuth(
-                                                                  'auth_2_Login',
+                                                                  'ServiceProviderRegister',
                                                                   context
                                                                       .mounted);
                                                             },

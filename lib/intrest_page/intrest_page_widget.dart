@@ -42,7 +42,7 @@ class _IntrestPageWidgetState extends State<IntrestPageWidget> {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(30.0),
           child: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).tertiary,
+            backgroundColor: const Color(0xFFFF8428),
             automaticallyImplyLeading: true,
             leading: const Align(
               alignment: AlignmentDirectional(0.0, -1.0),
@@ -65,7 +65,7 @@ class _IntrestPageWidgetState extends State<IntrestPageWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(1.0, -1.0),
+                  alignment: const AlignmentDirectional(-1.0, 0.0),
                   child: Text(
                     'ما نوع المشكلة التي تعاني منها؟',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -91,14 +91,11 @@ class _IntrestPageWidgetState extends State<IntrestPageWidget> {
                           '',
                         ).image,
                       ),
-                      gradient: LinearGradient(
-                        colors: [
-                          const Color(0xFFFB835C),
-                          FlutterFlowTheme.of(context).secondary
-                        ],
-                        stops: const [0.0, 1.0],
-                        begin: const AlignmentDirectional(0.0, -1.0),
-                        end: const AlignmentDirectional(0, 1.0),
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFFFF8428), Colors.white],
+                        stops: [0.0, 1.0],
+                        begin: AlignmentDirectional(0.0, -1.0),
+                        end: AlignmentDirectional(0, 1.0),
                       ),
                       borderRadius: BorderRadius.circular(16.0),
                     ),
@@ -138,14 +135,11 @@ class _IntrestPageWidgetState extends State<IntrestPageWidget> {
                     width: double.infinity,
                     height: 120.0,
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          FlutterFlowTheme.of(context).tertiary,
-                          FlutterFlowTheme.of(context).secondary
-                        ],
-                        stops: const [0.0, 1.0],
-                        begin: const AlignmentDirectional(0.0, -1.0),
-                        end: const AlignmentDirectional(0, 1.0),
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFFFF8428), Colors.white],
+                        stops: [0.0, 1.0],
+                        begin: AlignmentDirectional(0.0, -1.0),
+                        end: AlignmentDirectional(0, 1.0),
                       ),
                       borderRadius: BorderRadius.circular(16.0),
                     ),
@@ -185,14 +179,11 @@ class _IntrestPageWidgetState extends State<IntrestPageWidget> {
                     width: double.infinity,
                     height: 120.0,
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          const Color(0xFFEE8B60),
-                          FlutterFlowTheme.of(context).secondary
-                        ],
-                        stops: const [0.0, 1.0],
-                        begin: const AlignmentDirectional(0.0, -1.0),
-                        end: const AlignmentDirectional(0, 1.0),
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFFEE8B60), Color(0xFFFEFFFF)],
+                        stops: [0.0, 1.0],
+                        begin: AlignmentDirectional(0.0, -1.0),
+                        end: AlignmentDirectional(0, 1.0),
                       ),
                       borderRadius: BorderRadius.circular(16.0),
                     ),
