@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -5,10 +9,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'service_provider_register_model.dart';
+
 export 'service_provider_register_model.dart';
 
 class ServiceProviderRegisterWidget extends StatefulWidget {
@@ -230,7 +232,8 @@ class _ServiceProviderRegisterWidgetState
                                           unselectedLabelColor:
                                               const Color(0xFF57636C),
                                           labelPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional
+                                                  .fromSTEB(
                                                   32.0, 0.0, 32.0, 0.0),
                                           labelStyle:
                                               FlutterFlowTheme.of(context)
@@ -254,7 +257,8 @@ class _ServiceProviderRegisterWidgetState
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
-                                          indicatorColor: const Color(0xFF4B39EF),
+                                          indicatorColor:
+                                              const Color(0xFF4B39EF),
                                           indicatorWeight: 3.0,
                                           tabs: const [
                                             Tab(
@@ -286,7 +290,7 @@ class _ServiceProviderRegisterWidgetState
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 6.0,
-                                                                10.0, 10.0),
+                                                            10.0, 10.0),
                                                     child:
                                                         SingleChildScrollView(
                                                       child: Column(
@@ -348,10 +352,10 @@ class _ServiceProviderRegisterWidgetState
                                                               padding:
                                                                   const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          2.0,
-                                                                          0.0,
-                                                                          2.0),
+                                                                      0.0,
+                                                                      2.0,
+                                                                      0.0,
+                                                                      2.0),
                                                               child: Text(
                                                                 'أنشى حسابك واستمتع بخدماتنا',
                                                                 textAlign:
@@ -384,10 +388,10 @@ class _ServiceProviderRegisterWidgetState
                                                               padding:
                                                                   const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          16.0,
-                                                                          0.0,
-                                                                          16.0,
-                                                                          0.0),
+                                                                      16.0,
+                                                                      0.0,
+                                                                      16.0,
+                                                                      0.0),
                                                               child:
                                                                   TextFormField(
                                                                 controller: _model
@@ -532,7 +536,8 @@ class _ServiceProviderRegisterWidgetState
                                                                       Colors
                                                                           .white,
                                                                   contentPadding:
-                                                                      const EdgeInsetsDirectional.fromSTEB(
+                                                                      const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           0.0,
                                                                           16.0,
                                                                           16.0,
@@ -576,10 +581,10 @@ class _ServiceProviderRegisterWidgetState
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        16.0,
-                                                                        2.0,
-                                                                        16.0,
-                                                                        0.0),
+                                                                    16.0,
+                                                                    2.0,
+                                                                    16.0,
+                                                                    0.0),
                                                             child:
                                                                 TextFormField(
                                                               controller: _model
@@ -693,10 +698,10 @@ class _ServiceProviderRegisterWidgetState
                                                                 contentPadding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            16.0,
-                                                                            16.0,
-                                                                            8.0),
+                                                                        0.0,
+                                                                        16.0,
+                                                                        16.0,
+                                                                        8.0),
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -733,10 +738,10 @@ class _ServiceProviderRegisterWidgetState
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        16.0,
-                                                                        2.0,
-                                                                        16.0,
-                                                                        0.0),
+                                                                    16.0,
+                                                                    2.0,
+                                                                    16.0,
+                                                                    0.0),
                                                             child:
                                                                 TextFormField(
                                                               controller: _model
@@ -853,10 +858,10 @@ class _ServiceProviderRegisterWidgetState
                                                                 contentPadding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            16.0,
-                                                                            16.0,
-                                                                            8.0),
+                                                                        0.0,
+                                                                        16.0,
+                                                                        16.0,
+                                                                        8.0),
                                                                 prefixIcon:
                                                                     const Icon(
                                                                   Icons
@@ -906,10 +911,10 @@ class _ServiceProviderRegisterWidgetState
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        16.0,
-                                                                        12.0,
-                                                                        16.0,
-                                                                        0.0),
+                                                                    16.0,
+                                                                    12.0,
+                                                                    16.0,
+                                                                    0.0),
                                                             child:
                                                                 TextFormField(
                                                               controller: _model
@@ -1103,10 +1108,10 @@ class _ServiceProviderRegisterWidgetState
                                                                 contentPadding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            16.0,
-                                                                            16.0,
-                                                                            8.0),
+                                                                        0.0,
+                                                                        16.0,
+                                                                        16.0,
+                                                                        8.0),
                                                                 suffixIcon:
                                                                     InkWell(
                                                                   onTap: () =>
@@ -1173,10 +1178,10 @@ class _ServiceProviderRegisterWidgetState
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            8.0,
-                                                                            0.0,
-                                                                            8.0,
-                                                                            0.0),
+                                                                        8.0,
+                                                                        0.0,
+                                                                        8.0,
+                                                                        0.0),
                                                                 child:
                                                                     TextFormField(
                                                                   controller: _model
@@ -1288,10 +1293,10 @@ class _ServiceProviderRegisterWidgetState
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                        0.0,
+                                                                        12.0,
+                                                                        0.0,
+                                                                        0.0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -1507,8 +1512,9 @@ class _ServiceProviderRegisterWidgetState
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
+                                                                  padding:
+                                                                      const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           1.0,
                                                                           12.0,
                                                                           1.0,
@@ -1571,12 +1577,14 @@ class _ServiceProviderRegisterWidgetState
                                                                           175.0,
                                                                       height:
                                                                           40.0,
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
-                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -1621,8 +1629,9 @@ class _ServiceProviderRegisterWidgetState
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
+                                                                  padding:
+                                                                      const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           16.0,
                                                                           12.0,
                                                                           16.0,
@@ -1639,12 +1648,14 @@ class _ServiceProviderRegisterWidgetState
                                                                           175.0,
                                                                       height:
                                                                           40.0,
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
-                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -1694,10 +1705,10 @@ class _ServiceProviderRegisterWidgetState
                                                               padding:
                                                                   const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0,
-                                                                          16.0),
+                                                                      0.0,
+                                                                      10.0,
+                                                                      0.0,
+                                                                      16.0),
                                                               child:
                                                                   FFButtonWidget(
                                                                 onPressed:
@@ -1732,14 +1743,16 @@ class _ServiceProviderRegisterWidgetState
                                                                     FFButtonOptions(
                                                                   width: 230.0,
                                                                   height: 52.0,
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
+                                                                  padding:
+                                                                      const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
+                                                                  iconPadding:
+                                                                      const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -1787,11 +1800,13 @@ class _ServiceProviderRegisterWidgetState
                                               ],
                                             ),
                                             Align(
-                                              alignment: const AlignmentDirectional(
-                                                  0.0, -1.0),
+                                              alignment:
+                                                  const AlignmentDirectional(
+                                                      0.0, -1.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
                                                         24.0, 16.0, 24.0, 0.0),
                                                 child: SingleChildScrollView(
                                                   child: Column(
@@ -1847,10 +1862,10 @@ class _ServiceProviderRegisterWidgetState
                                                           padding:
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      0.0,
-                                                                      4.0,
-                                                                      0.0,
-                                                                      24.0),
+                                                                  0.0,
+                                                                  4.0,
+                                                                  0.0,
+                                                                  24.0),
                                                           child: Text(
                                                             'ادخل معلوماتك واستمتع بخدماتنا',
                                                             textAlign:
@@ -1877,11 +1892,8 @@ class _ServiceProviderRegisterWidgetState
                                                       Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    16.0,
-                                                                    2.0,
-                                                                    16.0,
-                                                                    0.0),
+                                                                .fromSTEB(16.0,
+                                                                2.0, 16.0, 0.0),
                                                         child: TextFormField(
                                                           controller: _model
                                                               .textController4,
@@ -1993,10 +2005,10 @@ class _ServiceProviderRegisterWidgetState
                                                             contentPadding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        16.0,
-                                                                        16.0,
-                                                                        8.0),
+                                                                    0.0,
+                                                                    16.0,
+                                                                    16.0,
+                                                                    8.0),
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -2028,10 +2040,10 @@ class _ServiceProviderRegisterWidgetState
                                                         padding:
                                                             const EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    16.0,
-                                                                    12.0,
-                                                                    16.0,
-                                                                    0.0),
+                                                                16.0,
+                                                                12.0,
+                                                                16.0,
+                                                                0.0),
                                                         child: TextFormField(
                                                           controller: _model
                                                               .textController5,
@@ -2147,10 +2159,10 @@ class _ServiceProviderRegisterWidgetState
                                                             contentPadding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        16.0,
-                                                                        16.0,
-                                                                        8.0),
+                                                                    0.0,
+                                                                    16.0,
+                                                                    16.0,
+                                                                    8.0),
                                                             suffixIcon: InkWell(
                                                               onTap: () =>
                                                                   setState(
@@ -2213,10 +2225,10 @@ class _ServiceProviderRegisterWidgetState
                                                           padding:
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      0.0,
-                                                                      30.0,
-                                                                      0.0,
-                                                                      16.0),
+                                                                  0.0,
+                                                                  30.0,
+                                                                  0.0,
+                                                                  16.0),
                                                           child: FFButtonWidget(
                                                             onPressed:
                                                                 () async {
@@ -2253,17 +2265,17 @@ class _ServiceProviderRegisterWidgetState
                                                               padding:
                                                                   const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
                                                               iconPadding:
                                                                   const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
                                                               color: const Color(
                                                                   0xFFF47F2F),
                                                               textStyle:
@@ -2305,10 +2317,10 @@ class _ServiceProviderRegisterWidgetState
                                                           padding:
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      16.0),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  16.0),
                                                           child: FFButtonWidget(
                                                             onPressed:
                                                                 () async {
@@ -2323,17 +2335,17 @@ class _ServiceProviderRegisterWidgetState
                                                               padding:
                                                                   const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          32.0,
-                                                                          0.0,
-                                                                          32.0,
-                                                                          0.0),
+                                                                      32.0,
+                                                                      0.0,
+                                                                      32.0,
+                                                                      0.0),
                                                               iconPadding:
                                                                   const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
                                                               color:
                                                                   Colors.white,
                                                               textStyle:
@@ -2363,8 +2375,9 @@ class _ServiceProviderRegisterWidgetState
                                                                   BorderRadius
                                                                       .circular(
                                                                           40.0),
-                                                              hoverColor: const Color(
-                                                                  0xFFF1F4F8),
+                                                              hoverColor:
+                                                                  const Color(
+                                                                      0xFFF1F4F8),
                                                             ),
                                                           ),
                                                         ),
@@ -2400,8 +2413,7 @@ class _ServiceProviderRegisterWidgetState
                         },
                         child: Icon(
                           Icons.arrow_back,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: FlutterFlowTheme.of(context).primaryText,
                           size: 30.0,
                         ),
                       ),

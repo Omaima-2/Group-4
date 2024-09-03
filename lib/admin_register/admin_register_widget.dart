@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -8,10 +9,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'admin_register_model.dart';
 
 export 'admin_register_model.dart';
@@ -205,8 +202,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                           ),
                                         ),
                                       Align(
-                                        alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                        alignment: const AlignmentDirectional(
+                                            -1.0, 0.0),
                                         child: Text(
                                           'اهلا  بك مجددًا!',
                                           textAlign: TextAlign.start,
@@ -222,8 +219,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                         ),
                                       ),
                                       Align(
-                                        alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                        alignment: const AlignmentDirectional(
+                                            -1.0, 0.0),
                                         child: Padding(
                                           padding: const EdgeInsetsDirectional
                                               .fromSTEB(0.0, 4.0, 0.0, 24.0),
@@ -254,7 +251,7 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                             controller:
                                                 _model.emailTextController,
                                             decoration: InputDecoration(
-                                              labelText: 'الايميل',
+                                              labelText: 'الإيميل',
                                               labelStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -586,8 +583,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                 Align(
                   alignment: const AlignmentDirectional(-1.0, -1.0),
                   child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        12.0, 0.0, 0.0, 0.0),
                     child: FlutterFlowIconButton(
                       borderColor: Colors.transparent,
                       borderRadius: 30.0,
@@ -595,7 +592,7 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                       buttonSize: 50.0,
                       icon: Icon(
                         Icons.arrow_back,
-                        color: FlutterFlowTheme.of(context).primaryBackground,
+                        color: FlutterFlowTheme.of(context).primaryText,
                         size: 30.0,
                       ),
                       onPressed: () async {

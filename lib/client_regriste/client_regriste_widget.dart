@@ -1,13 +1,15 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:map_launcher/map_launcher.dart' as $ml;
+
 import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:map_launcher/map_launcher.dart' as $ml;
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'client_regriste_model.dart';
+
 export 'client_regriste_model.dart';
 
 class ClientRegristeWidget extends StatefulWidget {
@@ -231,13 +233,13 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                       Stack(
                                         children: [
                                           Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 40.0, 0.0, 0.0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(0.0, 40.0, 0.0, 0.0),
                                             child: Column(
                                               children: [
                                                 Align(
-                                                  alignment: const Alignment(0.0, 0),
+                                                  alignment:
+                                                      const Alignment(0.0, 0),
                                                   child: TabBar(
                                                     isScrollable: true,
                                                     labelColor:
@@ -247,7 +249,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                     labelPadding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(32.0, 0.0,
-                                                                32.0, 0.0),
+                                                            32.0, 0.0),
                                                     labelStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleMedium
@@ -281,7 +283,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                     indicatorWeight: 3.0,
                                                     tabs: const [
                                                       Tab(
-                                                        text: 'انشاء حساب',
+                                                        text: 'إنشاء حساب',
                                                         iconMargin:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
@@ -291,7 +293,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                     0.0),
                                                       ),
                                                       Tab(
-                                                        text: 'تسجيل دخول',
+                                                        text: 'تسجيل الدخول',
                                                       ),
                                                     ],
                                                     controller:
@@ -319,10 +321,10 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                               padding:
                                                                   const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          6.0,
-                                                                          10.0,
-                                                                          10.0),
+                                                                      10.0,
+                                                                      6.0,
+                                                                      10.0,
+                                                                      10.0),
                                                               child:
                                                                   SingleChildScrollView(
                                                                 child: Column(
@@ -383,7 +385,8 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                               0.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional
+                                                                            .fromSTEB(
                                                                             0.0,
                                                                             2.0,
                                                                             0.0,
@@ -412,7 +415,8 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                               0.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional
+                                                                            .fromSTEB(
                                                                             16.0,
                                                                             0.0,
                                                                             16.0,
@@ -529,7 +533,8 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           16.0,
                                                                           2.0,
                                                                           16.0,
@@ -547,7 +552,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                         decoration:
                                                                             InputDecoration(
                                                                           labelText:
-                                                                              'الايميل',
+                                                                              'الإيميل',
                                                                           labelStyle: FlutterFlowTheme.of(context)
                                                                               .labelLarge
                                                                               .override(
@@ -613,7 +618,8 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                               true,
                                                                           fillColor:
                                                                               Colors.white,
-                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional
+                                                                              .fromSTEB(
                                                                               0.0,
                                                                               16.0,
                                                                               16.0,
@@ -639,7 +645,8 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           16.0,
                                                                           2.0,
                                                                           16.0,
@@ -725,7 +732,8 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                               true,
                                                                           fillColor:
                                                                               Colors.white,
-                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional
+                                                                              .fromSTEB(
                                                                               0.0,
                                                                               16.0,
                                                                               16.0,
@@ -764,7 +772,8 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           16.0,
                                                                           12.0,
                                                                           16.0,
@@ -850,7 +859,8 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                               true,
                                                                           fillColor:
                                                                               Colors.white,
-                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional
+                                                                              .fromSTEB(
                                                                               0.0,
                                                                               16.0,
                                                                               16.0,
@@ -991,7 +1001,8 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                           0.61),
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional
+                                                                            .fromSTEB(
                                                                             0.0,
                                                                             10.0,
                                                                             0.0,
@@ -1073,10 +1084,10 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                           padding:
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      24.0,
-                                                                      16.0,
-                                                                      24.0,
-                                                                      0.0),
+                                                                  24.0,
+                                                                  16.0,
+                                                                  24.0,
+                                                                  0.0),
                                                           child:
                                                               SingleChildScrollView(
                                                             child: Column(
@@ -1110,7 +1121,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                           -1.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'اهلا  بك مجددًا!',
+                                                                    'أهلا  بك مجددًا!',
                                                                     textAlign:
                                                                         TextAlign
                                                                             .start,
@@ -1140,10 +1151,10 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                       Padding(
                                                                     padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            4.0,
-                                                                            0.0,
-                                                                            24.0),
+                                                                        0.0,
+                                                                        4.0,
+                                                                        0.0,
+                                                                        24.0),
                                                                     child: Text(
                                                                       'ادخل معلوماتك واستمتع بخدماتنا',
                                                                       textAlign:
@@ -1168,8 +1179,9 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
+                                                                  padding:
+                                                                      const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           16.0,
                                                                           2.0,
                                                                           16.0,
@@ -1278,7 +1290,8 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                       fillColor:
                                                                           Colors
                                                                               .white,
-                                                                      contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      contentPadding: const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           0.0,
                                                                           16.0,
                                                                           16.0,
@@ -1313,8 +1326,9 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
+                                                                  padding:
+                                                                      const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           16.0,
                                                                           12.0,
                                                                           16.0,
@@ -1427,7 +1441,8 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                       fillColor:
                                                                           Colors
                                                                               .white,
-                                                                      contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      contentPadding: const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           0.0,
                                                                           16.0,
                                                                           16.0,
@@ -1495,10 +1510,10 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                       Padding(
                                                                     padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            30.0,
-                                                                            0.0,
-                                                                            16.0),
+                                                                        0.0,
+                                                                        30.0,
+                                                                        0.0,
+                                                                        16.0),
                                                                     child:
                                                                         FFButtonWidget(
                                                                       onPressed:
@@ -1533,12 +1548,14 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                             230.0,
                                                                         height:
                                                                             52.0,
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional
+                                                                            .fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        iconPadding: const EdgeInsetsDirectional
+                                                                            .fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -1578,10 +1595,10 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                       Padding(
                                                                     padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            16.0),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        16.0),
                                                                     child:
                                                                         FFButtonWidget(
                                                                       onPressed:
@@ -1595,12 +1612,14 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                                           FFButtonOptions(
                                                                         height:
                                                                             44.0,
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional
+                                                                            .fromSTEB(
                                                                             32.0,
                                                                             0.0,
                                                                             32.0,
                                                                             0.0),
-                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        iconPadding: const EdgeInsetsDirectional
+                                                                            .fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -1666,13 +1685,13 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
                     hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
+                    highlightColor: const Color.fromARGB(0, 0, 0, 0),
                     onTap: () async {
                       context.pushNamed('welcompage');
                     },
                     child: Icon(
                       Icons.arrow_back,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).primaryText,
                       size: 30.0,
                     ),
                   ),
