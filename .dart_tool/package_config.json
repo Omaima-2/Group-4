@@ -260,6 +260,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "flutter_google_places",
+      "rootUri": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache/git/flutter_google_places-52ddef33b785fac671a04dd387c5ba7d921709bf/",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_keyboard_visibility",
       "rootUri": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_keyboard_visibility-5.4.1",
       "packageUri": "lib/",
@@ -356,46 +362,16 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "geolocator",
-      "rootUri": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache/hosted/pub.dev/geolocator-12.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.15"
-    },
-    {
-      "name": "geolocator_android",
-      "rootUri": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache/hosted/pub.dev/geolocator_android-4.6.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.15"
-    },
-    {
-      "name": "geolocator_apple",
-      "rootUri": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache/hosted/pub.dev/geolocator_apple-2.3.7",
-      "packageUri": "lib/",
-      "languageVersion": "2.15"
-    },
-    {
-      "name": "geolocator_platform_interface",
-      "rootUri": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache/hosted/pub.dev/geolocator_platform_interface-4.2.3",
-      "packageUri": "lib/",
-      "languageVersion": "2.15"
-    },
-    {
-      "name": "geolocator_web",
-      "rootUri": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache/hosted/pub.dev/geolocator_web-4.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "3.3"
-    },
-    {
-      "name": "geolocator_windows",
-      "rootUri": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache/hosted/pub.dev/geolocator_windows-0.2.3",
-      "packageUri": "lib/",
-      "languageVersion": "2.15"
-    },
-    {
       "name": "go_router",
       "rootUri": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache/hosted/pub.dev/go_router-12.1.3",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "google_api_headers",
+      "rootUri": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache/hosted/pub.dev/google_api_headers-2.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "google_fonts",
@@ -444,6 +420,12 @@
       "rootUri": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache/hosted/pub.dev/google_maps_flutter_web-0.5.7",
       "packageUri": "lib/",
       "languageVersion": "3.3"
+    },
+    {
+      "name": "google_maps_webservice",
+      "rootUri": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache/git/google_maps_webservice-1588c27229ab48665635acb65c090d6a658da6fc/",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "google_sign_in",
@@ -615,9 +597,9 @@
     },
     {
       "name": "map_launcher",
-      "rootUri": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache/hosted/pub.dev/map_launcher-2.5.0+1",
+      "rootUri": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache/hosted/pub.dev/map_launcher-3.5.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.1"
     },
     {
       "name": "matcher",
@@ -666,6 +648,18 @@
       "rootUri": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache/hosted/pub.dev/octo_image-2.1.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "package_info_plus",
+      "rootUri": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache/hosted/pub.dev/package_info_plus-8.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "package_info_plus_platform_interface",
+      "rootUri": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache/hosted/pub.dev/package_info_plus_platform_interface-3.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
     },
     {
       "name": "page_transition",
@@ -1046,7 +1040,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-09-01T16:19:27.194585Z",
+  "generated": "2024-09-03T21:29:57.335903Z",
   "generator": "pub",
   "generatorVersion": "3.5.1",
   "flutterRoot": "file:///C:/flutter",
