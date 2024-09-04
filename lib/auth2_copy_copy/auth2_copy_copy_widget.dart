@@ -636,7 +636,7 @@ class _Auth2CopyCopyWidgetState extends State<Auth2CopyCopyWidget>
                                                           }
 
                                                           context.goNamedAuth(
-                                                              'auth_2_Login',
+                                                              'ServiceProviderRegister',
                                                               context.mounted);
                                                         },
                                                         text: 'تسجيل دخول',
@@ -1228,7 +1228,7 @@ class _Auth2CopyCopyWidgetState extends State<Auth2CopyCopyWidget>
                                               }
 
                                               context.goNamedAuth(
-                                                  'auth_2_Login',
+                                                  'ServiceProviderRegister',
                                                   context.mounted);
                                             },
                                             text: 'تسجيل',

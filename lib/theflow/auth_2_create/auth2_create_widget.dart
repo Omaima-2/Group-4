@@ -426,8 +426,8 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                     return;
                                   }
 
-                                  context.goNamedAuth(
-                                      'auth_2_Login', context.mounted);
+                                  context.goNamedAuth('ServiceProviderRegister',
+                                      context.mounted);
                                 },
                                 text: 'Continue with Google',
                                 icon: const FaIcon(
@@ -478,7 +478,8 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                         }
 
                                         context.goNamedAuth(
-                                            'auth_2_Login', context.mounted);
+                                            'ServiceProviderRegister',
+                                            context.mounted);
                                       },
                                       text: 'Continue with Apple',
                                       icon: const FaIcon(

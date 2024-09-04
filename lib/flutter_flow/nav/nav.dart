@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -70,14 +71,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const Auth2LoginWidget() : const WelcompageWidget(),
+      errorBuilder: (context, state) => appStateNotifier.loggedIn
+          ? const ServiceProviderRegisterWidget()
+          : const WelcompageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? const Auth2LoginWidget()
+              ? const ServiceProviderRegisterWidget()
               : const WelcompageWidget(),
         ),
         FFRoute(
@@ -369,7 +371,7 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: Colors.transparent,
+                  color: FlutterFlowTheme.of(context).primaryText,
                   child: Center(
                     child: Image.asset(
                       'assets/images/__2024-08-29_221232.png',
