@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:map_launcher/map_launcher.dart' as $ml;
 
 import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -9,9 +8,6 @@ import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'client_regriste_model.dart';
 
 export 'client_regriste_model.dart';

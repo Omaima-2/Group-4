@@ -15,6 +15,8 @@ class FormModel extends FlutterFlowModel<FormWidget> {
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
 
+  get tabBarCurrentIndex => null;
+
   @override
   void initState(BuildContext context) {
     passwordVisibility = false;

@@ -1,12 +1,14 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+
 import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'form_model.dart';
+
 export 'form_model.dart';
 
 class FormWidget extends StatefulWidget {
@@ -111,7 +113,8 @@ class _FormWidgetState extends State<FormWidget> with TickerProviderStateMixin {
               Align(
                 alignment: const AlignmentDirectional(-1.0, 0.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 24.0),
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 24.0),
                   child: Text(
                     'ادخل معلوماتك واستمتع بخدماتنا',
                     textAlign: TextAlign.start,
@@ -126,7 +129,8 @@ class _FormWidgetState extends State<FormWidget> with TickerProviderStateMixin {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 2.0, 16.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(16.0, 2.0, 16.0, 0.0),
                 child: TextFormField(
                   controller: _model.emailTextController,
                   focusNode: _model.emailFocusNode,
@@ -184,8 +188,8 @@ class _FormWidgetState extends State<FormWidget> with TickerProviderStateMixin {
                     ),
                     filled: true,
                     fillColor: Colors.white,
-                    contentPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 16.0, 8.0),
+                    contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                        0.0, 16.0, 16.0, 8.0),
                   ),
                   style: FlutterFlowTheme.of(context).bodyLarge.override(
                         fontFamily: 'Plus Jakarta Sans',
@@ -203,7 +207,8 @@ class _FormWidgetState extends State<FormWidget> with TickerProviderStateMixin {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: TextFormField(
                   controller: _model.passwordTextController,
                   focusNode: _model.passwordFocusNode,
@@ -262,8 +267,8 @@ class _FormWidgetState extends State<FormWidget> with TickerProviderStateMixin {
                     ),
                     filled: true,
                     fillColor: Colors.white,
-                    contentPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 16.0, 8.0),
+                    contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                        0.0, 16.0, 16.0, 8.0),
                     suffixIcon: InkWell(
                       onTap: () => setState(
                         () => _model.passwordVisibility =
@@ -302,16 +307,16 @@ class _FormWidgetState extends State<FormWidget> with TickerProviderStateMixin {
                 Align(
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 16.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        0.0, 30.0, 0.0, 16.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         GoRouter.of(context).prepareAuthEvent();
 
                         final user = await authManager.signInWithEmail(
                           context,
-                          _model.emailTextController1.text,
-                          _model.passwordTextController1.text,
+                          _model.emailTextController.text,
+                          _model.passwordTextController.text,
                         );
                         if (user == null) {
                           return;
@@ -324,10 +329,10 @@ class _FormWidgetState extends State<FormWidget> with TickerProviderStateMixin {
                       options: FFButtonOptions(
                         width: 230.0,
                         height: 52.0,
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 0.0, 0.0),
+                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 0.0, 0.0),
                         color: const Color(0xFFF47F2F),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -350,7 +355,8 @@ class _FormWidgetState extends State<FormWidget> with TickerProviderStateMixin {
               Align(
                 alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       context.pushNamed('ForgetPass');
@@ -358,10 +364,10 @@ class _FormWidgetState extends State<FormWidget> with TickerProviderStateMixin {
                     text: 'نسيت كلمة المرور؟',
                     options: FFButtonOptions(
                       height: 44.0,
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(32.0, 0.0, 32.0, 0.0),
-                      iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          32.0, 0.0, 32.0, 0.0),
+                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 0.0, 0.0, 0.0),
                       color: Colors.white,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
