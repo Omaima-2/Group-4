@@ -1,14 +1,14 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-
 import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_data.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'admin_register_model.dart';
 export 'admin_register_model.dart';
 
@@ -38,10 +38,10 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
     });
 
     _model.emailTextController ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.emailFocusNode ??= FocusNode();
 
-    _model.passwordTextController ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.passTextController ??= TextEditingController();
+    _model.passFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -93,7 +93,7 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -201,8 +201,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                           ),
                                         ),
                                       Align(
-                                        alignment: const AlignmentDirectional(
-                                            -1.0, 0.0),
+                                        alignment:
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Text(
                                           'اهلا  بك مجددًا!',
                                           textAlign: TextAlign.start,
@@ -218,8 +218,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                         ),
                                       ),
                                       Align(
-                                        alignment: const AlignmentDirectional(
-                                            -1.0, 0.0),
+                                        alignment:
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
@@ -250,12 +250,11 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                           child: TextFormField(
                                             controller:
                                                 _model.emailTextController,
-                                            focusNode:
-                                                _model.textFieldFocusNode1,
+                                            focusNode: _model.emailFocusNode,
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              labelText: 'الإيميل',
+                                              labelText: 'الايميل',
                                               labelStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -343,6 +342,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                             maxLength: 30,
                                             maxLengthEnforcement:
                                                 MaxLengthEnforcement.enforced,
+                                            keyboardType:
+                                                TextInputType.emailAddress,
                                             validator: _model
                                                 .emailTextControllerValidator
                                                 .asValidator(context),
@@ -358,14 +359,12 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                                   16.0, 12.0, 16.0, 0.0),
                                           child: TextFormField(
                                             controller:
-                                                _model.passwordTextController,
-                                            focusNode:
-                                                _model.textFieldFocusNode2,
+                                                _model.passTextController,
+                                            focusNode: _model.passFocusNode,
                                             autofocus: false,
                                             textCapitalization:
                                                 TextCapitalization.none,
-                                            obscureText:
-                                                !_model.passwordVisibility,
+                                            obscureText: !_model.passVisibility,
                                             decoration: InputDecoration(
                                               labelText: 'كلمة المرور',
                                               labelStyle: FlutterFlowTheme.of(
@@ -439,16 +438,14 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                                       .fromSTEB(
                                                           0.0, 16.0, 16.0, 8.0),
                                               suffixIcon: InkWell(
-                                                onTap: () => setState(
-                                                  () => _model
-                                                          .passwordVisibility =
-                                                      !_model
-                                                          .passwordVisibility,
+                                                onTap: () => safeSetState(
+                                                  () => _model.passVisibility =
+                                                      !_model.passVisibility,
                                                 ),
                                                 focusNode: FocusNode(
                                                     skipTraversal: true),
                                                 child: Icon(
-                                                  _model.passwordVisibility
+                                                  _model.passVisibility
                                                       ? Icons
                                                           .visibility_outlined
                                                       : Icons
@@ -478,8 +475,109 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                                     maxLength}) =>
                                                 null,
                                             validator: _model
-                                                .passwordTextControllerValidator
+                                                .passTextControllerValidator
                                                 .asValidator(context),
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            final selectedMedia =
+                                                await selectMedia(
+                                              mediaSource:
+                                                  MediaSource.photoGallery,
+                                              multiImage: false,
+                                            );
+                                            if (selectedMedia != null &&
+                                                selectedMedia.every((m) =>
+                                                    validateFileFormat(
+                                                        m.storagePath,
+                                                        context))) {
+                                              safeSetState(() => _model
+                                                  .isDataUploading = true);
+                                              var selectedUploadedFiles =
+                                                  <FFUploadedFile>[];
+
+                                              try {
+                                                selectedUploadedFiles =
+                                                    selectedMedia
+                                                        .map((m) =>
+                                                            FFUploadedFile(
+                                                              name: m
+                                                                  .storagePath
+                                                                  .split('/')
+                                                                  .last,
+                                                              bytes: m.bytes,
+                                                              height: m
+                                                                  .dimensions
+                                                                  ?.height,
+                                                              width: m
+                                                                  .dimensions
+                                                                  ?.width,
+                                                              blurHash:
+                                                                  m.blurHash,
+                                                            ))
+                                                        .toList();
+                                              } finally {
+                                                _model.isDataUploading = false;
+                                              }
+                                              if (selectedUploadedFiles
+                                                      .length ==
+                                                  selectedMedia.length) {
+                                                safeSetState(() {
+                                                  _model.uploadedLocalFile =
+                                                      selectedUploadedFiles
+                                                          .first;
+                                                });
+                                              } else {
+                                                safeSetState(() {});
+                                                return;
+                                              }
+                                            }
+                                          },
+                                          text: 'Button',
+                                          options: FFButtonOptions(
+                                            height: 48.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 0.0, 16.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      color: Colors.white,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ),
+                                      Opacity(
+                                        opacity: 0.1,
+                                        child: Align(
+                                          alignment:
+                                              const AlignmentDirectional(0.0, 0.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            child: Image.memory(
+                                              _model.uploadedLocalFile.bytes ??
+                                                  Uint8List.fromList([]),
+                                              width: 200.0,
+                                              height: 0.0,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -499,15 +597,13 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                                   .signInWithEmail(
                                                 context,
                                                 _model.emailTextController.text,
-                                                _model.passwordTextController
-                                                    .text,
+                                                _model.passTextController.text,
                                               );
                                               if (user == null) {
                                                 return;
                                               }
 
-                                              context.goNamedAuth(
-                                                  'ServiceProviderRegister',
+                                              context.goNamedAuth('ForgetPass',
                                                   context.mounted);
                                             },
                                             text: 'تسجيل دخول',
@@ -601,8 +697,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                 Align(
                   alignment: const AlignmentDirectional(-1.0, -1.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                        12.0, 0.0, 0.0, 0.0),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                     child: FlutterFlowIconButton(
                       borderColor: Colors.transparent,
                       borderRadius: 30.0,
@@ -610,7 +706,7 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                       buttonSize: 50.0,
                       icon: Icon(
                         Icons.arrow_back,
-                        color: FlutterFlowTheme.of(context).primaryText,
+                        color: FlutterFlowTheme.of(context).primaryBackground,
                         size: 30.0,
                       ),
                       onPressed: () async {

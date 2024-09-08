@@ -5,28 +5,30 @@ import 'package:flutter/material.dart';
 class AdminRegisterModel extends FlutterFlowModel<AdminRegisterWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
+  // State field(s) for email widget.
+  FocusNode? emailFocusNode;
   TextEditingController? emailTextController;
   String? Function(BuildContext, String?)? emailTextControllerValidator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? passwordTextController;
-  late bool passwordVisibility;
-  String? Function(BuildContext, String?)? passwordTextControllerValidator;
+  // State field(s) for pass widget.
+  FocusNode? passFocusNode;
+  TextEditingController? passTextController;
+  late bool passVisibility;
+  String? Function(BuildContext, String?)? passTextControllerValidator;
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
 
   @override
   void initState(BuildContext context) {
-    passwordVisibility = false;
+    passVisibility = false;
   }
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
+    emailFocusNode?.dispose();
     emailTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    passwordTextController?.dispose();
+    passFocusNode?.dispose();
+    passTextController?.dispose();
   }
 }
