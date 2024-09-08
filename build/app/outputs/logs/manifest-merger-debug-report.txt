@@ -1,30 +1,30 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:1:1-66:12
-INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:1:1-66:12
-INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:1:1-66:12
-INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:1:1-66:12
-MERGED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:1:1-66:12
-MERGED from [:cloud_firestore] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
-MERGED from [:file_picker] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
-MERGED from [:firebase_auth] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
-MERGED from [:firebase_storage] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
-MERGED from [:firebase_core] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
-MERGED from [:flutter_keyboard_visibility] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\flutter_keyboard_visibility\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:flutter_native_splash] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\flutter_native_splash\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:google_maps_flutter_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\google_maps_flutter_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:image_picker_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
-MERGED from [:video_player_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\video_player_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:flutter_plugin_android_lifecycle] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:google_api_headers] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\google_api_headers\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:google_sign_in_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\google_sign_in_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-38:12
-MERGED from [:package_info_plus] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\package_info_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:path_provider_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:shared_preferences_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:sign_in_with_apple] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\sign_in_with_apple\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:sqflite] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:url_launcher_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-16:12
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:1:1-66:12
+INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:1:1-66:12
+INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:1:1-66:12
+INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:1:1-66:12
+MERGED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:1:1-66:12
+MERGED from [:cloud_firestore] C:\Users\oyyyy\Desktop\Group-4-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
+MERGED from [:file_picker] C:\Users\oyyyy\Desktop\Group-4-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
+MERGED from [:firebase_auth] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
+MERGED from [:firebase_storage] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
+MERGED from [:firebase_core] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
+MERGED from [:flutter_keyboard_visibility] C:\Users\oyyyy\Desktop\Group-4-1\build\flutter_keyboard_visibility\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:flutter_native_splash] C:\Users\oyyyy\Desktop\Group-4-1\build\flutter_native_splash\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:google_maps_flutter_android] C:\Users\oyyyy\Desktop\Group-4-1\build\google_maps_flutter_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:image_picker_android] C:\Users\oyyyy\Desktop\Group-4-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
+MERGED from [:video_player_android] C:\Users\oyyyy\Desktop\Group-4-1\build\video_player_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:flutter_plugin_android_lifecycle] C:\Users\oyyyy\Desktop\Group-4-1\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:google_api_headers] C:\Users\oyyyy\Desktop\Group-4-1\build\google_api_headers\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:google_sign_in_android] C:\Users\oyyyy\Desktop\Group-4-1\build\google_sign_in_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-38:12
+MERGED from [:package_info_plus] C:\Users\oyyyy\Desktop\Group-4-1\build\package_info_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:path_provider_android] C:\Users\oyyyy\Desktop\Group-4-1\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:shared_preferences_android] C:\Users\oyyyy\Desktop\Group-4-1\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:sign_in_with_apple] C:\Users\oyyyy\Desktop\Group-4-1\build\sign_in_with_apple\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:sqflite] C:\Users\oyyyy\Desktop\Group-4-1\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:url_launcher_android] C:\Users\oyyyy\Desktop\Group-4-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-16:12
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\oyyyy\.gradle\caches\transforms-3\1a906dadfe2200139d8468b6c05a211e\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:17:1-75:12
 MERGED from [com.google.firebase:firebase-firestore:24.11.0] C:\Users\oyyyy\.gradle\caches\transforms-3\2bbf3737c2a6ffa02eb7ab7d75089290\transformed\jetified-firebase-firestore-24.11.0\AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.firebase:firebase-storage:20.3.0] C:\Users\oyyyy\.gradle\caches\transforms-3\6c2e39db76bb9509a1f85a17589954e6\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:15:1-39:12
@@ -85,32 +85,32 @@ MERGED from [com.google.maps.android:android-maps-utils:3.6.0] C:\Users\oyyyy\.g
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\oyyyy\.gradle\caches\transforms-3\7ed3e2058d34aaa4a9e434ba60dd4389\transformed\jetified-grpc-android-1.57.2\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\oyyyy\.gradle\caches\transforms-3\3a099f785f8b18f0b81d1e9c2e773ed2\transformed\jetified-annotation-experimental-1.4.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\oyyyy\.gradle\caches\transforms-3\60b8f87efa9e2f976939e0ddb7dc8ccb\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
-INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\debug\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\debug\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 	package
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:2:5-36
-		INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\debug\AndroidManifest.xml
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:2:5-36
+		INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\debug\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:1:1-66:12
-		INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:1:1-66:12
+		INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\debug\AndroidManifest.xml
 	xmlns:tools
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:3:5-51
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:3:5-51
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:3:5-51
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:1:1-66:12
-		INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:1:1-66:12
+		INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\debug\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:4:5-66
-MERGED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:4:5-66
-MERGED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:4:5-66
-MERGED from [:google_sign_in_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\google_sign_in_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-67
-MERGED from [:google_sign_in_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\google_sign_in_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-67
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:4:5-66
+MERGED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:4:5-66
+MERGED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:4:5-66
+MERGED from [:google_sign_in_android] C:\Users\oyyyy\Desktop\Group-4-1\build\google_sign_in_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-67
+MERGED from [:google_sign_in_android] C:\Users\oyyyy\Desktop\Group-4-1\build\google_sign_in_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-67
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\oyyyy\.gradle\caches\transforms-3\1a906dadfe2200139d8468b6c05a211e\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:25:5-67
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\oyyyy\.gradle\caches\transforms-3\1a906dadfe2200139d8468b6c05a211e\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:25:5-67
 MERGED from [com.google.firebase:firebase-firestore:24.11.0] C:\Users\oyyyy\.gradle\caches\transforms-3\2bbf3737c2a6ffa02eb7ab7d75089290\transformed\jetified-firebase-firestore-24.11.0\AndroidManifest.xml:11:5-67
@@ -122,47 +122,47 @@ MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\oyyyy\.g
 MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\oyyyy\.gradle\caches\transforms-3\09e3b77cea3472f242e180e686141e4a\transformed\jetified-recaptcha-18.4.0\AndroidManifest.xml:7:5-67
 MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\oyyyy\.gradle\caches\transforms-3\09e3b77cea3472f242e180e686141e4a\transformed\jetified-recaptcha-18.4.0\AndroidManifest.xml:7:5-67
 	android:name
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:4:22-64
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:4:22-64
 uses-permission#android.permission.CAMERA
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:5:5-64
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:5:5-64
 	android:name
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:5:22-62
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:5:22-62
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:6:5-106
-MERGED from [:file_picker] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-11:38
-MERGED from [:file_picker] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-11:38
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:6:5-106
+MERGED from [:file_picker] C:\Users\oyyyy\Desktop\Group-4-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-11:38
+MERGED from [:file_picker] C:\Users\oyyyy\Desktop\Group-4-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-11:38
 	android:maxSdkVersion
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:6:78-104
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:6:78-104
 	android:name
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:6:22-77
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:6:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:7:5-107
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:7:5-107
 	android:maxSdkVersion
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:7:79-105
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:7:79-105
 	android:name
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:7:22-78
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:7:22-78
 uses-permission#android.permission.READ_MEDIA_IMAGES
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:8:5-75
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:8:5-75
 	android:name
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:8:22-73
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:8:22-73
 uses-permission#android.permission.READ_MEDIA_VIDEO
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:9:5-74
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:9:5-74
 	android:name
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:9:22-72
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:9:22-72
 application
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:11:5-65:19
-MERGED from [:cloud_firestore] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
-MERGED from [:cloud_firestore] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
-MERGED from [:firebase_auth] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
-MERGED from [:firebase_auth] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
-MERGED from [:firebase_storage] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
-MERGED from [:firebase_storage] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
-MERGED from [:firebase_core] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
-MERGED from [:firebase_core] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
-MERGED from [:image_picker_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
-MERGED from [:image_picker_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
-MERGED from [:url_launcher_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-14:19
-MERGED from [:url_launcher_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-14:19
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:11:5-65:19
+MERGED from [:cloud_firestore] C:\Users\oyyyy\Desktop\Group-4-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:cloud_firestore] C:\Users\oyyyy\Desktop\Group-4-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_auth] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_auth] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_storage] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_storage] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_core] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_core] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:image_picker_android] C:\Users\oyyyy\Desktop\Group-4-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
+MERGED from [:image_picker_android] C:\Users\oyyyy\Desktop\Group-4-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
+MERGED from [:url_launcher_android] C:\Users\oyyyy\Desktop\Group-4-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-14:19
+MERGED from [:url_launcher_android] C:\Users\oyyyy\Desktop\Group-4-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-14:19
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\oyyyy\.gradle\caches\transforms-3\1a906dadfe2200139d8468b6c05a211e\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\oyyyy\.gradle\caches\transforms-3\1a906dadfe2200139d8468b6c05a211e\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-firestore:24.11.0] C:\Users\oyyyy\.gradle\caches\transforms-3\2bbf3737c2a6ffa02eb7ab7d75089290\transformed\jetified-firebase-firestore-24.11.0\AndroidManifest.xml:13:5-24:19
@@ -208,137 +208,137 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\oy
 MERGED from [com.google.maps.android:android-maps-utils:3.6.0] C:\Users\oyyyy\.gradle\caches\transforms-3\bcdc4107ecc611d3a14a5fe5c49eb500\transformed\jetified-android-maps-utils-3.6.0\AndroidManifest.xml:7:5-11:19
 MERGED from [com.google.maps.android:android-maps-utils:3.6.0] C:\Users\oyyyy\.gradle\caches\transforms-3\bcdc4107ecc611d3a14a5fe5c49eb500\transformed\jetified-android-maps-utils-3.6.0\AndroidManifest.xml:7:5-11:19
 	android:requestLegacyExternalStorage
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:15:9-52
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:15:9-52
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] C:\Users\oyyyy\.gradle\caches\transforms-3\5af03f1e3bf82b901dd5e3b167881695\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:12:9-32
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:12:9-32
 	android:icon
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:14:9-43
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:14:9-43
 	tools:replace
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:13:9-38
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:13:9-38
 activity#com.mycompany.mitraqa.MainActivity
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:17:9-55:20
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:17:9-55:20
 	android:launchMode
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:20:13-43
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:20:13-43
 	android:hardwareAccelerated
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:23:13-47
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:23:13-47
 	android:windowSoftInputMode
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:24:13-55
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:24:13-55
 	android:exported
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:19:13-36
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:19:13-36
 	android:configChanges
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:22:13-163
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:22:13-163
 	android:theme
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:21:13-47
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:21:13-47
 	android:name
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:18:13-41
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:18:13-41
 meta-data#io.flutter.embedding.android.NormalTheme
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:29:13-32:17
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:29:13-32:17
 	android:resource
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:31:15-52
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:31:15-52
 	android:name
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:30:15-70
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:30:15-70
 meta-data#io.flutter.embedding.android.SplashScreenDrawable
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:38:13-41:17
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:38:13-41:17
 	android:resource
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:40:15-61
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:40:15-61
 	android:name
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:39:15-79
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:39:15-79
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:42:13-45:29
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:42:13-45:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:43:17-68
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:43:17-68
 	android:name
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:43:25-66
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:43:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:44:17-76
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:44:17-76
 	android:name
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:44:27-74
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:44:27-74
 meta-data#flutter_deeplinking_enabled
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:47:13-90
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:47:13-90
 	android:value
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:47:67-87
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:47:67-87
 	android:name
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:47:24-66
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:47:24-66
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:mitraqa.com+data:scheme:mitraqa
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:48:13-53:29
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:48:13-53:29
 	android:autoVerify
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:48:28-53
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:48:28-53
 action#android.intent.action.VIEW
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:49:17-69
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:49:17-69
 	android:name
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:49:25-66
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:49:25-66
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:50:17-76
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:50:17-76
 	android:name
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:50:27-73
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:50:27-73
 category#android.intent.category.BROWSABLE
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:51:17-78
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:51:17-78
 	android:name
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:51:27-75
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:51:27-75
 data
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:52:17-77
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:52:17-77
 	android:host
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:52:48-74
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:52:48-74
 	android:scheme
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:52:23-47
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:52:23-47
 meta-data#flutterEmbedding
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:59:9-61:33
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:59:9-61:33
 	android:value
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:61:13-30
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:61:13-30
 	android:name
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:60:13-44
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:60:13-44
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:62:9-123
+ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:62:9-123
 	android:value
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:62:66-121
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:62:66-121
 	android:name
-		ADDED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml:62:20-65
+		ADDED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml:62:20-65
 uses-sdk
-INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml
-MERGED from [:cloud_firestore] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:cloud_firestore] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:file_picker] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:file_picker] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_auth] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_auth] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_storage] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_storage] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_core] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_core] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:flutter_keyboard_visibility] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\flutter_keyboard_visibility\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:flutter_keyboard_visibility] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\flutter_keyboard_visibility\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:flutter_native_splash] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\flutter_native_splash\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:flutter_native_splash] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\flutter_native_splash\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:google_maps_flutter_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\google_maps_flutter_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:google_maps_flutter_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\google_maps_flutter_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:image_picker_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:image_picker_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:video_player_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\video_player_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:video_player_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\video_player_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:flutter_plugin_android_lifecycle] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:flutter_plugin_android_lifecycle] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:google_api_headers] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\google_api_headers\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:google_api_headers] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\google_api_headers\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:google_sign_in_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\google_sign_in_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:google_sign_in_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\google_sign_in_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:package_info_plus] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\package_info_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:package_info_plus] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\package_info_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:path_provider_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:path_provider_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:shared_preferences_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:shared_preferences_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:sign_in_with_apple] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\sign_in_with_apple\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:sign_in_with_apple] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\sign_in_with_apple\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:sqflite] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:sqflite] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:url_launcher_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:url_launcher_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml
+MERGED from [:cloud_firestore] C:\Users\oyyyy\Desktop\Group-4-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:cloud_firestore] C:\Users\oyyyy\Desktop\Group-4-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:file_picker] C:\Users\oyyyy\Desktop\Group-4-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:file_picker] C:\Users\oyyyy\Desktop\Group-4-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_auth] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_auth] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_storage] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_storage] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_core] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_core] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_keyboard_visibility] C:\Users\oyyyy\Desktop\Group-4-1\build\flutter_keyboard_visibility\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_keyboard_visibility] C:\Users\oyyyy\Desktop\Group-4-1\build\flutter_keyboard_visibility\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_native_splash] C:\Users\oyyyy\Desktop\Group-4-1\build\flutter_native_splash\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_native_splash] C:\Users\oyyyy\Desktop\Group-4-1\build\flutter_native_splash\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:google_maps_flutter_android] C:\Users\oyyyy\Desktop\Group-4-1\build\google_maps_flutter_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:google_maps_flutter_android] C:\Users\oyyyy\Desktop\Group-4-1\build\google_maps_flutter_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:image_picker_android] C:\Users\oyyyy\Desktop\Group-4-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:image_picker_android] C:\Users\oyyyy\Desktop\Group-4-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:video_player_android] C:\Users\oyyyy\Desktop\Group-4-1\build\video_player_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:video_player_android] C:\Users\oyyyy\Desktop\Group-4-1\build\video_player_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_plugin_android_lifecycle] C:\Users\oyyyy\Desktop\Group-4-1\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_plugin_android_lifecycle] C:\Users\oyyyy\Desktop\Group-4-1\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:google_api_headers] C:\Users\oyyyy\Desktop\Group-4-1\build\google_api_headers\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:google_api_headers] C:\Users\oyyyy\Desktop\Group-4-1\build\google_api_headers\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:google_sign_in_android] C:\Users\oyyyy\Desktop\Group-4-1\build\google_sign_in_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:google_sign_in_android] C:\Users\oyyyy\Desktop\Group-4-1\build\google_sign_in_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:package_info_plus] C:\Users\oyyyy\Desktop\Group-4-1\build\package_info_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:package_info_plus] C:\Users\oyyyy\Desktop\Group-4-1\build\package_info_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] C:\Users\oyyyy\Desktop\Group-4-1\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] C:\Users\oyyyy\Desktop\Group-4-1\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:shared_preferences_android] C:\Users\oyyyy\Desktop\Group-4-1\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:shared_preferences_android] C:\Users\oyyyy\Desktop\Group-4-1\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:sign_in_with_apple] C:\Users\oyyyy\Desktop\Group-4-1\build\sign_in_with_apple\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:sign_in_with_apple] C:\Users\oyyyy\Desktop\Group-4-1\build\sign_in_with_apple\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:sqflite] C:\Users\oyyyy\Desktop\Group-4-1\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:sqflite] C:\Users\oyyyy\Desktop\Group-4-1\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] C:\Users\oyyyy\Desktop\Group-4-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] C:\Users\oyyyy\Desktop\Group-4-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\oyyyy\.gradle\caches\transforms-3\1a906dadfe2200139d8468b6c05a211e\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:21:5-23:64
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\oyyyy\.gradle\caches\transforms-3\1a906dadfe2200139d8468b6c05a211e\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:21:5-23:64
 MERGED from [com.google.firebase:firebase-firestore:24.11.0] C:\Users\oyyyy\.gradle\caches\transforms-3\2bbf3737c2a6ffa02eb7ab7d75089290\transformed\jetified-firebase-firestore-24.11.0\AndroidManifest.xml:6:5-44
@@ -459,24 +459,24 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\oyyyy\.
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\oyyyy\.gradle\caches\transforms-3\3a099f785f8b18f0b81d1e9c2e773ed2\transformed\jetified-annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\oyyyy\.gradle\caches\transforms-3\60b8f87efa9e2f976939e0ddb7dc8ccb\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\oyyyy\.gradle\caches\transforms-3\60b8f87efa9e2f976939e0ddb7dc8ccb\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
-INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\debug\AndroidManifest.xml
-INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\debug\AndroidManifest.xml
 	tools:overrideLibrary
 		ADDED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\oyyyy\.gradle\caches\transforms-3\1a906dadfe2200139d8468b6c05a211e\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:23:9-61
 	android:targetSdkVersion
-		INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\debug\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\oyyyy\Desktop\p444\tajreep-1\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\oyyyy\Desktop\Group-4-1\android\app\src\debug\AndroidManifest.xml
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [:cloud_firestore] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
-MERGED from [:firebase_auth] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
-MERGED from [:firebase_auth] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
-MERGED from [:firebase_storage] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
-MERGED from [:firebase_storage] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
-MERGED from [:firebase_core] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
-MERGED from [:firebase_core] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+ADDED from [:cloud_firestore] C:\Users\oyyyy\Desktop\Group-4-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_auth] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_auth] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_storage] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_storage] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_core] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_core] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\oyyyy\.gradle\caches\transforms-3\1a906dadfe2200139d8468b6c05a211e\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:66:9-72:19
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\oyyyy\.gradle\caches\transforms-3\1a906dadfe2200139d8468b6c05a211e\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:66:9-72:19
 MERGED from [com.google.firebase:firebase-firestore:24.11.0] C:\Users\oyyyy\.gradle\caches\transforms-3\2bbf3737c2a6ffa02eb7ab7d75089290\transformed\jetified-firebase-firestore-24.11.0\AndroidManifest.xml:14:9-23:19
@@ -496,173 +496,173 @@ MERGED from [com.google.firebase:firebase-common:20.4.3] C:\Users\oyyyy\.gradle\
 	android:directBootAware
 		ADDED from [com.google.firebase:firebase-common:20.4.3] C:\Users\oyyyy\.gradle\caches\transforms-3\b76ef1c361189bfe324e7d729a5373dc\transformed\jetified-firebase-common-20.4.3\AndroidManifest.xml:32:13-43
 	android:name
-		ADDED from [:cloud_firestore] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
+		ADDED from [:cloud_firestore] C:\Users\oyyyy\Desktop\Group-4-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar
-ADDED from [:cloud_firestore] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+ADDED from [:cloud_firestore] C:\Users\oyyyy\Desktop\Group-4-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 	android:value
-		ADDED from [:cloud_firestore] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+		ADDED from [:cloud_firestore] C:\Users\oyyyy\Desktop\Group-4-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 	android:name
-		ADDED from [:cloud_firestore] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
+		ADDED from [:cloud_firestore] C:\Users\oyyyy\Desktop\Group-4-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
 queries
-ADDED from [:file_picker] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-19:15
-MERGED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-36:15
-MERGED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-36:15
+ADDED from [:file_picker] C:\Users\oyyyy\Desktop\Group-4-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-19:15
+MERGED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-36:15
+MERGED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-36:15
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\oyyyy\.gradle\caches\transforms-3\769d6602098a8fe053727a114f54ed3f\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:30:5-34:15
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\oyyyy\.gradle\caches\transforms-3\769d6602098a8fe053727a114f54ed3f\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:30:5-34:15
 intent#action:name:android.intent.action.GET_CONTENT+data:mimeType:*/*
-ADDED from [:file_picker] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:14:9-18:18
+ADDED from [:file_picker] C:\Users\oyyyy\Desktop\Group-4-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:14:9-18:18
 action#android.intent.action.GET_CONTENT
-ADDED from [:file_picker] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-72
+ADDED from [:file_picker] C:\Users\oyyyy\Desktop\Group-4-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-72
 	android:name
-		ADDED from [:file_picker] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:15:21-69
+		ADDED from [:file_picker] C:\Users\oyyyy\Desktop\Group-4-1\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:15:21-69
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar
-ADDED from [:firebase_auth] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+ADDED from [:firebase_auth] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 	android:value
-		ADDED from [:firebase_auth] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+		ADDED from [:firebase_auth] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 	android:name
-		ADDED from [:firebase_auth] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+		ADDED from [:firebase_auth] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar
-ADDED from [:firebase_storage] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+ADDED from [:firebase_storage] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 	android:value
-		ADDED from [:firebase_storage] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+		ADDED from [:firebase_storage] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 	android:name
-		ADDED from [:firebase_storage] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-126
+		ADDED from [:firebase_storage] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-126
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar
-ADDED from [:firebase_core] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+ADDED from [:firebase_core] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 	android:value
-		ADDED from [:firebase_core] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+		ADDED from [:firebase_core] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 	android:name
-		ADDED from [:firebase_core] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+		ADDED from [:firebase_core] C:\Users\oyyyy\Desktop\Group-4-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
 provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
-ADDED from [:image_picker_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+ADDED from [:image_picker_android] C:\Users\oyyyy\Desktop\Group-4-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
 	android:grantUriPermissions
-		ADDED from [:image_picker_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+		ADDED from [:image_picker_android] C:\Users\oyyyy\Desktop\Group-4-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
 	android:authorities
-		ADDED from [:image_picker_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-74
+		ADDED from [:image_picker_android] C:\Users\oyyyy\Desktop\Group-4-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-74
 	android:exported
-		ADDED from [:image_picker_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+		ADDED from [:image_picker_android] C:\Users\oyyyy\Desktop\Group-4-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
 	android:name
-		ADDED from [:image_picker_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-82
+		ADDED from [:image_picker_android] C:\Users\oyyyy\Desktop\Group-4-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-82
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:image_picker_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:75
+ADDED from [:image_picker_android] C:\Users\oyyyy\Desktop\Group-4-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:75
 	android:resource
-		ADDED from [:image_picker_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-72
+		ADDED from [:image_picker_android] C:\Users\oyyyy\Desktop\Group-4-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-72
 	android:name
-		ADDED from [:image_picker_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+		ADDED from [:image_picker_android] C:\Users\oyyyy\Desktop\Group-4-1\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
 package#com.google.android.apps.maps
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-64
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-64
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\oyyyy\.gradle\caches\transforms-3\769d6602098a8fe053727a114f54ed3f\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:33:9-64
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\oyyyy\.gradle\caches\transforms-3\769d6602098a8fe053727a114f54ed3f\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:33:9-64
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-61
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-61
 package#com.google.android.apps.mapslite
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:11:9-68
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:11:9-68
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:11:18-65
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:11:18-65
 package#com.autonavi.minimap
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:12:9-56
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:12:9-56
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:12:18-53
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:12:18-53
 package#com.baidu.BaiduMap
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:13:9-54
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:13:9-54
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:13:18-51
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:13:18-51
 package#com.waze
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:14:9-44
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:14:9-44
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:14:18-41
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:14:18-41
 package#ru.yandex.yandexnavi
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:15:9-56
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:15:9-56
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:15:18-53
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:15:18-53
 package#ru.yandex.yandexmaps
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-56
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-56
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:16:18-53
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:16:18-53
 package#com.citymapper.app.release
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:17:9-62
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:17:9-62
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:17:18-59
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:17:18-59
 package#com.mapswithme.maps.pro
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:18:9-59
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:18:9-59
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:18:18-56
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:18:18-56
 package#net.osmand
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:19:9-46
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:19:9-46
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:19:18-43
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:19:18-43
 package#net.osmand.plus
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:20:9-51
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:20:9-51
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:20:18-48
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:20:18-48
 package#ru.dublgis.dgismobile
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:21:9-57
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:21:9-57
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:21:18-54
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:21:18-54
 package#com.tencent.map
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:22:9-51
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:22:9-51
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:22:18-48
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:22:18-48
 package#com.here.app.maps
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:23:9-53
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:23:9-53
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:23:18-50
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:23:18-50
 package#com.huawei.maps.app
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:24:9-55
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:24:9-55
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:24:18-52
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:24:18-52
 package#com.alk.copilot.mapviewer
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:25:9-61
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:25:9-61
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:25:18-58
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:25:18-58
 package#com.tomtom.gplay.navapp
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:26:9-59
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:26:9-59
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:26:18-56
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:26:18-56
 package#com.tomtom.gplay.navapp.gofleet
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:27:9-67
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:27:9-67
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:27:18-64
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:27:18-64
 package#com.sygic.truck
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:28:9-51
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:28:9-51
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:28:18-48
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:28:18-48
 package#nl.flitsmeister
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:29:9-51
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:29:9-51
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:29:18-48
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:29:18-48
 package#nl.flitsmeister.flux
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:30:9-56
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:30:9-56
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:30:18-53
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:30:18-53
 package#com.nhn.android.nmap
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:31:9-56
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:31:9-56
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:31:18-53
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:31:18-53
 package#net.daum.android.map
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:32:9-56
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:32:9-56
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:32:18-53
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:32:18-53
 package#com.skt.tmap.ku
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:33:9-51
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:33:9-51
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:33:18-48
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:33:18-48
 package#cz.seznam.mapy
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:34:9-50
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:34:9-50
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:34:18-47
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:34:18-47
 package#com.mmi.maps
-ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:35:9-48
+ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:35:9-48
 	android:name
-		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:35:18-45
+		ADDED from [:map_launcher] C:\Users\oyyyy\Desktop\Group-4-1\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:35:18-45
 activity#io.flutter.plugins.urllauncher.WebViewActivity
-ADDED from [:url_launcher_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
+ADDED from [:url_launcher_android] C:\Users\oyyyy\Desktop\Group-4-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
 	android:exported
-		ADDED from [:url_launcher_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
+		ADDED from [:url_launcher_android] C:\Users\oyyyy\Desktop\Group-4-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
 	android:theme
-		ADDED from [:url_launcher_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
+		ADDED from [:url_launcher_android] C:\Users\oyyyy\Desktop\Group-4-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
 	android:name
-		ADDED from [:url_launcher_android] C:\Users\oyyyy\Desktop\p444\tajreep-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
+		ADDED from [:url_launcher_android] C:\Users\oyyyy\Desktop\Group-4-1\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\oyyyy\.gradle\caches\transforms-3\1a906dadfe2200139d8468b6c05a211e\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:26:5-79
 MERGED from [com.google.firebase:firebase-firestore:24.11.0] C:\Users\oyyyy\.gradle\caches\transforms-3\2bbf3737c2a6ffa02eb7ab7d75089290\transformed\jetified-firebase-firestore-24.11.0\AndroidManifest.xml:10:5-79

@@ -1,11 +1,11 @@
-#Thu Sep 05 08:45:17 GMT+03:00 2024
-base.0=C\:\\Users\\oyyyy\\Desktop\\p444\\tajreep-1\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\oyyyy\\Desktop\\p444\\tajreep-1\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\oyyyy\\Desktop\\p444\\tajreep-1\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.3=C\:\\Users\\oyyyy\\Desktop\\p444\\tajreep-1\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
-base.4=C\:\\Users\\oyyyy\\Desktop\\p444\\tajreep-1\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.5=C\:\\Users\\oyyyy\\Desktop\\p444\\tajreep-1\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
-base.6=C\:\\Users\\oyyyy\\Desktop\\p444\\tajreep-1\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
+#Sun Sep 08 09:15:31 GMT+03:00 2024
+base.0=C\:\\Users\\oyyyy\\Desktop\\Group-4-1\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\oyyyy\\Desktop\\Group-4-1\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\oyyyy\\Desktop\\Group-4-1\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.3=C\:\\Users\\oyyyy\\Desktop\\Group-4-1\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
+base.4=C\:\\Users\\oyyyy\\Desktop\\Group-4-1\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.5=C\:\\Users\\oyyyy\\Desktop\\Group-4-1\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+base.6=C\:\\Users\\oyyyy\\Desktop\\Group-4-1\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=0/classes.dex

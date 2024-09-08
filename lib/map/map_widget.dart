@@ -17,7 +17,7 @@ class MapWidget extends StatefulWidget {
 class _MapWidgetState extends State<MapWidget> {
   late MapModel _model;
   GoogleMapController? _googleMapController;
-  LatLng _initialLocation = LatLng(24.0000, 45.0000); // Saudi Arabia
+  final LatLng _initialLocation = const LatLng(24.0000, 45.0000); // Saudi Arabia
   LatLng? _selectedLocation;
   Marker? _marker;
   final scaffoldKey = GlobalKey<ScaffoldState>();
