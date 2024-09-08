@@ -986,60 +986,53 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 16.0),
                                               child: FFButtonWidget(
-                                                onPressed: true
-                                                    ? null
-                                                    : () async {
-                                                        currentUserLocationValue =
-                                                            await getCurrentUserLocation(
-                                                                defaultLocation:
-                                                                    const LatLng(0.0,
-                                                                        0.0));
-                                                        GoRouter.of(context)
-                                                            .prepareAuthEvent();
+                                                onPressed: () async {
+                                                  currentUserLocationValue =
+                                                      await getCurrentUserLocation(
+                                                          defaultLocation:
+                                                              const LatLng(0.0, 0.0));
+                                                  GoRouter.of(context)
+                                                      .prepareAuthEvent();
 
-                                                        final user =
-                                                            await authManager
-                                                                .createAccountWithEmail(
-                                                          context,
-                                                          _model
-                                                              .email1TextController
-                                                              .text,
-                                                          _model
-                                                              .pass1TextController
-                                                              .text,
-                                                        );
-                                                        if (user == null) {
-                                                          return;
-                                                        }
+                                                  final user = await authManager
+                                                      .createAccountWithEmail(
+                                                    context,
+                                                    _model.email1TextController
+                                                        .text,
+                                                    _model.pass1TextController
+                                                        .text,
+                                                  );
+                                                  if (user == null) {
+                                                    return;
+                                                  }
 
-                                                        await ClientRecord
-                                                            .collection
-                                                            .doc()
-                                                            .set(
-                                                                createClientRecordData(
-                                                              email: _model
-                                                                  .email1TextController
-                                                                  .text,
-                                                              phoneNumber: _model
-                                                                  .phoneTextController
-                                                                  .text,
-                                                              userName: _model
-                                                                  .nameTextController
-                                                                  .text,
-                                                              password: _model
-                                                                  .pass1TextController
-                                                                  .text,
-                                                              photoUrl: _model
-                                                                  .uploadedFileUrl,
-                                                              location:
-                                                                  currentUserLocationValue
-                                                                      ?.toString(),
-                                                            ));
+                                                  await ClientRecord.collection
+                                                      .doc()
+                                                      .set(
+                                                          createClientRecordData(
+                                                        email: _model
+                                                            .email1TextController
+                                                            .text,
+                                                        phoneNumber: _model
+                                                            .phoneTextController
+                                                            .text,
+                                                        userName: _model
+                                                            .nameTextController
+                                                            .text,
+                                                        password: _model
+                                                            .pass1TextController
+                                                            .text,
+                                                        photoUrl: _model
+                                                            .uploadedFileUrl,
+                                                        location:
+                                                            currentUserLocationValue
+                                                                ?.toString(),
+                                                      ));
 
-                                                        context.pushNamedAuth(
-                                                            'ForgetPass',
-                                                            context.mounted);
-                                                      },
+                                                  context.pushNamedAuth(
+                                                      'ForgetPass',
+                                                      context.mounted);
+                                                },
                                                 text: 'تسجيل',
                                                 options: FFButtonOptions(
                                                   width: 280.0,
@@ -1073,14 +1066,6 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           40.0),
-                                                  disabledColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .secondaryText,
-                                                  disabledTextColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .secondaryBackground,
                                                 ),
                                               ),
                                             ),
