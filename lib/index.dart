@@ -11,3 +11,4 @@ export '/signin/signin_widget.dart' show SigninWidget;
 export '/map/map_widget.dart' show MapWidget;
 export '/admin_req/admin_req_widget.dart' show AdminReqWidget;
 export '/signin_copy/signin_copy_widget.dart' show SigninCopyWidget;
+export '/login/login_widget.dart' show LoginWidget;

@@ -701,9 +701,10 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   final selectedMedia =
-                                                      await selectMediaWithSourceBottomSheet(
-                                                    context: context,
-                                                    allowPhoto: true,
+                                                      await selectMedia(
+                                                    mediaSource: MediaSource
+                                                        .photoGallery,
+                                                    multiImage: false,
                                                   );
                                                   if (selectedMedia != null &&
                                                       selectedMedia.every((m) =>
