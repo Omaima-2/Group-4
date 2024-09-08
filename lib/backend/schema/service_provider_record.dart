@@ -51,6 +51,11 @@ class ServiceProviderRecord extends FirestoreRecord {
   List<String> get profession => _profession ?? const [];
   bool hasProfession() => _profession != null;
 
+  // "Avilability" field.
+  bool? _avilability;
+  bool get avilability => _avilability ?? false;
+  bool hasAvilability() => _avilability != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _photoUrl = snapshotData['photo_url'] as String?;
@@ -59,6 +64,7 @@ class ServiceProviderRecord extends FirestoreRecord {
     _password = snapshotData['password'] as String?;
     _location = snapshotData['location'] as String?;
     _profession = getDataList(snapshotData['profession']);
+    _avilability = snapshotData['Avilability'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -102,6 +108,7 @@ Map<String, dynamic> createServiceProviderRecordData({
   String? userName,
   String? password,
   String? location,
+  bool? avilability,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -111,6 +118,7 @@ Map<String, dynamic> createServiceProviderRecordData({
       'user_name': userName,
       'password': password,
       'location': location,
+      'Avilability': avilability,
     }.withoutNulls,
   );
 
@@ -130,7 +138,8 @@ class ServiceProviderRecordDocumentEquality
         e1?.userName == e2?.userName &&
         e1?.password == e2?.password &&
         e1?.location == e2?.location &&
-        listEquality.equals(e1?.profession, e2?.profession);
+        listEquality.equals(e1?.profession, e2?.profession) &&
+        e1?.avilability == e2?.avilability;
   }
 
   @override
@@ -141,7 +150,8 @@ class ServiceProviderRecordDocumentEquality
         e?.userName,
         e?.password,
         e?.location,
-        e?.profession
+        e?.profession,
+        e?.avilability
       ]);
 
   @override

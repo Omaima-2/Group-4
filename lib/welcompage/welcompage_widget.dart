@@ -110,7 +110,7 @@ class _WelcompageWidgetState extends State<WelcompageWidget>
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -167,42 +167,6 @@ class _WelcompageWidgetState extends State<WelcompageWidget>
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Expanded(
-                          child: Align(
-                            alignment: const AlignmentDirectional(-1.0, -0.5),
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                context.safePop();
-                              },
-                              text: '',
-                              icon: const Icon(
-                                Icons.arrow_back,
-                                size: 15.0,
-                              ),
-                              options: FFButtonOptions(
-                                height: 31.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context).tertiary,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      color: Colors.white,
-                                      letterSpacing: 0.0,
-                                    ),
-                                elevation: 3.0,
-                                borderSide: const BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                            ),
-                          ),
-                        ),
                         Opacity(
                           opacity: 0.7,
                           child: ClipRRect(
@@ -255,7 +219,7 @@ class _WelcompageWidgetState extends State<WelcompageWidget>
                   animationsMap['containerOnPageLoadAnimation']!),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 44.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 24.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -277,7 +241,7 @@ class _WelcompageWidgetState extends State<WelcompageWidget>
                           ),
                           options: FFButtonOptions(
                             width: 230.0,
-                            height: 120.0,
+                            height: 90.0,
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             iconPadding: const EdgeInsetsDirectional.fromSTEB(
@@ -286,8 +250,7 @@ class _WelcompageWidgetState extends State<WelcompageWidget>
                             textStyle:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
                                       fontFamily: 'Readex Pro',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                      color: Colors.white,
                                       letterSpacing: 0.0,
                                     ),
                             elevation: 0.0,
@@ -319,7 +282,7 @@ class _WelcompageWidgetState extends State<WelcompageWidget>
                           ),
                           options: FFButtonOptions(
                             width: 230.0,
-                            height: 113.0,
+                            height: 90.0,
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             iconPadding: const EdgeInsetsDirectional.fromSTEB(
@@ -354,7 +317,7 @@ class _WelcompageWidgetState extends State<WelcompageWidget>
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  context.safePop();
+                  context.pushNamed('AdminRegister');
                 },
                 child: Text(
                   'هل أنت مشرف التطبيق ',

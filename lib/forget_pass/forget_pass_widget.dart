@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -29,8 +30,8 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
     super.initState();
     _model = createModel(context, () => ForgetPassModel());
 
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
+    _model.forgetPassFieldTextController ??= TextEditingController();
+    _model.forgetPassFieldFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -82,7 +83,7 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -237,9 +238,10 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 2.0, 16.0, 0.0),
                                           child: TextFormField(
-                                            controller: _model.textController,
+                                            controller: _model
+                                                .forgetPassFieldTextController,
                                             focusNode:
-                                                _model.textFieldFocusNode,
+                                                _model.forgetPassFieldFocusNode,
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
@@ -331,8 +333,10 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
                                             maxLength: 30,
                                             maxLengthEnforcement:
                                                 MaxLengthEnforcement.enforced,
+                                            keyboardType:
+                                                TextInputType.emailAddress,
                                             validator: _model
-                                                .textControllerValidator
+                                                .forgetPassFieldTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -345,7 +349,28 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 30.0, 0.0, 16.0),
                                           child: FFButtonWidget(
-                                            onPressed: () async {},
+                                            onPressed: () async {
+                                              if (_model
+                                                  .forgetPassFieldTextController
+                                                  .text
+                                                  .isEmpty) {
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(
+                                                  const SnackBar(
+                                                    content: Text(
+                                                      'Email required!',
+                                                    ),
+                                                  ),
+                                                );
+                                                return;
+                                              }
+                                              await authManager.resetPassword(
+                                                email: _model
+                                                    .forgetPassFieldTextController
+                                                    .text,
+                                                context: context,
+                                              );
+                                            },
                                             text: 'ارسل رابط عبر الايميل ',
                                             options: FFButtonOptions(
                                               width: 230.0,

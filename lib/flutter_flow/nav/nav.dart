@@ -71,16 +71,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? const ServiceProviderRegisterWidget()
-          : const WelcompageWidget(),
+      errorBuilder: (context, state) =>
+          appStateNotifier.loggedIn ? const ForgetPassWidget() : const SigninWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? const ServiceProviderRegisterWidget()
-              : const WelcompageWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? const ForgetPassWidget() : const SigninWidget(),
         ),
         FFRoute(
           name: 'ServiceProviderRegister',
@@ -88,34 +86,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ServiceProviderRegisterWidget(),
         ),
         FFRoute(
-          name: 'Auth2Copy',
-          path: '/auth2Copy',
-          builder: (context, params) => const Auth2CopyWidget(),
-        ),
-        FFRoute(
-          name: 'Auth2CopyCopy',
-          path: '/auth2CopyCopy',
-          builder: (context, params) => const Auth2CopyCopyWidget(),
-        ),
-        FFRoute(
-          name: 'Profile05',
-          path: '/profile05',
-          builder: (context, params) => const Profile05Widget(),
-        ),
-        FFRoute(
           name: 'welcompage',
           path: '/welcompage',
           builder: (context, params) => const WelcompageWidget(),
-        ),
-        FFRoute(
-          name: 'Auth2Copy2',
-          path: '/auth2Copy2',
-          builder: (context, params) => const Auth2Copy2Widget(),
-        ),
-        FFRoute(
-          name: 'map',
-          path: '/map',
-          builder: (context, params) => const MapWidget(),
         ),
         FFRoute(
           name: 'ClientRegriste',
@@ -128,64 +101,35 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AdminRegisterWidget(),
         ),
         FFRoute(
-          name: 'ForgotPassword02',
-          path: '/forgotPassword02',
-          builder: (context, params) => const ForgotPassword02Widget(),
-        ),
-        FFRoute(
-          name: 'CreateAccount5',
-          path: '/createAccount5',
-          builder: (context, params) => const CreateAccount5Widget(),
-        ),
-        FFRoute(
-          name: 'Profile16CreateEdit',
-          path: '/profile16CreateEdit',
-          builder: (context, params) => const Profile16CreateEditWidget(),
-        ),
-        FFRoute(
-          name: 'auth_2_Create',
-          path: '/auth2Create',
-          builder: (context, params) => const Auth2CreateWidget(),
-        ),
-        FFRoute(
-          name: 'auth_2_Login',
-          path: '/auth2Login',
-          builder: (context, params) => const Auth2LoginWidget(),
-        ),
-        FFRoute(
-          name: 'auth_2_ForgotPassword',
-          path: '/auth2ForgotPassword',
-          builder: (context, params) => const Auth2ForgotPasswordWidget(),
-        ),
-        FFRoute(
-          name: 'auth_2_createProfile',
-          path: '/auth2CreateProfile',
-          builder: (context, params) => const Auth2CreateProfileWidget(),
-        ),
-        FFRoute(
-          name: 'auth_2_Profile',
-          path: '/auth2Profile',
-          builder: (context, params) => const Auth2ProfileWidget(),
-        ),
-        FFRoute(
-          name: 'auth_2_EditProfile',
-          path: '/auth2EditProfile',
-          builder: (context, params) => const Auth2EditProfileWidget(),
-        ),
-        FFRoute(
           name: 'ForgetPass',
           path: '/ForgetPass',
           builder: (context, params) => const ForgetPassWidget(),
         ),
         FFRoute(
-          name: 'IntrestPage',
-          path: '/intrestPage',
-          builder: (context, params) => const IntrestPageWidget(),
+          name: 'HomePageClient',
+          path: '/homePageClient',
+          requireAuth: true,
+          builder: (context, params) => const HomePageClientWidget(),
         ),
         FFRoute(
-          name: 'homepage',
-          path: '/homepage',
-          builder: (context, params) => const HomepageWidget(),
+          name: 'Signin',
+          path: '/signin',
+          builder: (context, params) => const SigninWidget(),
+        ),
+        FFRoute(
+          name: 'map',
+          path: '/map',
+          builder: (context, params) => const MapWidget(),
+        ),
+        FFRoute(
+          name: 'AdminReq',
+          path: '/adminReq',
+          builder: (context, params) => const AdminReqWidget(),
+        ),
+        FFRoute(
+          name: 'SigninCopy',
+          path: '/signinCopy',
+          builder: (context, params) => const SigninCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -356,7 +300,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/welcompage';
+            return '/signin';
           }
           return null;
         },
@@ -374,8 +318,9 @@ class FFRoute {
                   color: FlutterFlowTheme.of(context).primaryText,
                   child: Center(
                     child: Image.asset(
-                      'assets/images/__2024-08-29_221232.png',
-                      width: 1000.0,
+                      'assets/images/__2024-09-07_153317.png',
+                      width: 600.0,
+                      height: 5000.0,
                       fit: BoxFit.cover,
                     ),
                   ),
