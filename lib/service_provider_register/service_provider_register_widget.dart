@@ -696,7 +696,7 @@ class _ServiceProviderRegisterWidgetState
                                                           maxLength}) =>
                                                       null,
                                                   keyboardType:
-                                                      TextInputType.phone,
+                                                      TextInputType.number,
                                                   validator: _model
                                                       .phoneTextControllerValidator
                                                       .asValidator(context),

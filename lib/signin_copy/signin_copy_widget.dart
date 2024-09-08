@@ -99,16 +99,23 @@ class _SigninCopyWidgetState extends State<SigninCopyWidget>
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
-      child: WillPopScope(
-        onWillPop: () async => false,
-        child: Scaffold(
-          key: scaffoldKey,
-          backgroundColor: Colors.white,
-          body: SafeArea(
-            top: true,
-            child: Stack(
-              children: [
-                Stack(
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: Colors.white,
+        body: Stack(
+          children: [
+            Container(
+              width: double.infinity,
+              height: double.infinity,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.white,
+                ),
+              ),
+              child: SizedBox(
+                width: double.infinity,
+                height: double.infinity,
+                child: Stack(
                   alignment: const AlignmentDirectional(0.0, -1.0),
                   children: [
                     Align(
@@ -167,7 +174,7 @@ class _SigninCopyWidgetState extends State<SigninCopyWidget>
                                       ),
                                     )
                                   ],
-                                  borderRadius: BorderRadius.circular(12.0),
+                                  borderRadius: BorderRadius.circular(16.0),
                                   border: Border.all(
                                     color: const Color(0xFFF1F4F8),
                                     width: 2.0,
@@ -182,7 +189,7 @@ class _SigninCopyWidgetState extends State<SigninCopyWidget>
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.start,
+                                            MainAxisAlignment.spaceAround,
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
@@ -553,31 +560,26 @@ class _SigninCopyWidgetState extends State<SigninCopyWidget>
                                                   .fromSTEB(
                                                       0.0, 16.0, 0.0, 16.0),
                                               child: FFButtonWidget(
-                                                onPressed: true
-                                                    ? null
-                                                    : () async {
-                                                        GoRouter.of(context)
-                                                            .prepareAuthEvent();
+                                                onPressed: () async {
+                                                  GoRouter.of(context)
+                                                      .prepareAuthEvent();
 
-                                                        final user =
-                                                            await authManager
-                                                                .signInWithEmail(
-                                                          context,
-                                                          _model
-                                                              .email1TextController
-                                                              .text,
-                                                          _model
-                                                              .pass1TextController
-                                                              .text,
-                                                        );
-                                                        if (user == null) {
-                                                          return;
-                                                        }
+                                                  final user = await authManager
+                                                      .signInWithEmail(
+                                                    context,
+                                                    _model.email1TextController
+                                                        .text,
+                                                    _model.pass1TextController
+                                                        .text,
+                                                  );
+                                                  if (user == null) {
+                                                    return;
+                                                  }
 
-                                                        context.pushNamedAuth(
-                                                            'ForgetPass',
-                                                            context.mounted);
-                                                      },
+                                                  context.pushNamedAuth(
+                                                      'ForgetPass',
+                                                      context.mounted);
+                                                },
                                                 text: 'تسجيل الدخول',
                                                 options: FFButtonOptions(
                                                   width: 280.0,
@@ -611,14 +613,6 @@ class _SigninCopyWidgetState extends State<SigninCopyWidget>
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           40.0),
-                                                  disabledColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .secondaryText,
-                                                  disabledTextColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .secondaryBackground,
                                                 ),
                                               ),
                                             ),
@@ -852,9 +846,9 @@ class _SigninCopyWidgetState extends State<SigninCopyWidget>
                     ),
                   ],
                 ),
-              ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );
