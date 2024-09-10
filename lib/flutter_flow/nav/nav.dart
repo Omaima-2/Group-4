@@ -71,14 +71,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const SigninCopyWidget() : const LoginWidget(),
+      errorBuilder: (context, state) => appStateNotifier.loggedIn
+          ? const ClientRegristeWidget()
+          : const ServiceProviderRegisterWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? const SigninCopyWidget() : const LoginWidget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? const ClientRegristeWidget()
+              : const ServiceProviderRegisterWidget(),
         ),
         FFRoute(
           name: 'ServiceProviderRegister',
@@ -135,6 +137,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'login',
           path: '/login',
           builder: (context, params) => const LoginWidget(),
+        ),
+        FFRoute(
+          name: 'ServiceProviderHomPage',
+          path: '/serviceProviderHomPage',
+          builder: (context, params) => const ServiceProviderHomPageWidget(),
+        ),
+        FFRoute(
+          name: 'first',
+          path: '/first',
+          builder: (context, params) => const FirstWidget(),
+        ),
+        FFRoute(
+          name: 'passwordDoneReset',
+          path: '/passwordDoneReset',
+          builder: (context, params) => const PasswordDoneResetWidget(),
+        ),
+        FFRoute(
+          name: 'adminHomepage',
+          path: '/adminHomepage',
+          builder: (context, params) => const AdminHomepageWidget(),
+        ),
+        FFRoute(
+          name: 'second',
+          path: '/second',
+          builder: (context, params) => const SecondWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -305,7 +332,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/login';
+            return '/ServiceProvider';
           }
           return null;
         },

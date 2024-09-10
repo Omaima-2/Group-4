@@ -230,8 +230,8 @@ class _WelcompageWidgetState extends State<WelcompageWidget>
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 16.0),
                         child: FFButtonWidget(
-                          onPressed: () async {
-                            context.pushNamed('ServiceProviderRegister');
+                          onPressed: () {
+                            print('Button pressed ...');
                           },
                           text: 'مقدم  الخدمة ',
                           icon: const Icon(
@@ -271,8 +271,8 @@ class _WelcompageWidgetState extends State<WelcompageWidget>
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 16.0),
                         child: FFButtonWidget(
-                          onPressed: () async {
-                            context.pushNamed('ClientRegriste');
+                          onPressed: () {
+                            print('Button pressed ...');
                           },
                           text: 'عميل',
                           icon: const Icon(
@@ -311,23 +311,14 @@ class _WelcompageWidgetState extends State<WelcompageWidget>
             ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
-              child: InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  context.pushNamed('AdminRegister');
-                },
-                child: Text(
-                  'هل أنت مشرف التطبيق ',
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Readex Pro',
-                        color: FlutterFlowTheme.of(context).primary,
-                        letterSpacing: 0.0,
-                        decoration: TextDecoration.underline,
-                      ),
-                ),
+              child: Text(
+                'هل أنت مشرف التطبيق ',
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      color: FlutterFlowTheme.of(context).primary,
+                      letterSpacing: 0.0,
+                      decoration: TextDecoration.underline,
+                    ),
               ),
             ),
           ],

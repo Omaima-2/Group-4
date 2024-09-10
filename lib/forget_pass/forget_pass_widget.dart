@@ -370,6 +370,9 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
                                                     .text,
                                                 context: context,
                                               );
+
+                                              context.pushNamed(
+                                                  'passwordDoneReset');
                                             },
                                             text: 'ارسل رابط عبر الايميل ',
                                             options: FFButtonOptions(
