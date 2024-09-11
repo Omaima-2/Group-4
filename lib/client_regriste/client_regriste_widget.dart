@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -24,7 +23,6 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
   late ClientRegristeModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  LatLng? currentUserLocationValue;
 
   final animationsMap = <String, AnimationInfo>{};
 
@@ -227,7 +225,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 2.0, 0.0, 2.0),
                                           child: Text(
-                                            'أنشى حسابك واستمتع بخدماتنا.....',
+                                            'أنشى حسابك واستمتع بخدماتنا.....goo omaima',
                                             textAlign: TextAlign.start,
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
@@ -701,9 +699,10 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   final selectedMedia =
-                                                      await selectMediaWithSourceBottomSheet(
-                                                    context: context,
-                                                    allowPhoto: true,
+                                                      await selectMedia(
+                                                    mediaSource: MediaSource
+                                                        .photoGallery,
+                                                    multiImage: false,
                                                   );
                                                   if (selectedMedia != null &&
                                                       selectedMedia.every((m) =>
@@ -885,10 +884,6 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                   0.0, 10.0, 0.0, 16.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              currentUserLocationValue =
-                                                  await getCurrentUserLocation(
-                                                      defaultLocation:
-                                                          const LatLng(0.0, 0.0));
                                               GoRouter.of(context)
                                                   .prepareAuthEvent();
 
@@ -903,30 +898,8 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                 return;
                                               }
 
-                                              await ClientRecord.collection
-                                                  .doc()
-                                                  .set(createClientRecordData(
-                                                    email: _model
-                                                        .email1TextController
-                                                        .text,
-                                                    phoneNumber: _model
-                                                        .phoneTextController
-                                                        .text,
-                                                    userName: _model
-                                                        .nameTextController
-                                                        .text,
-                                                    password: _model
-                                                        .pass1TextController
-                                                        .text,
-                                                    photoUrl:
-                                                        _model.uploadedFileUrl,
-                                                    location:
-                                                        currentUserLocationValue
-                                                            ?.toString(),
-                                                  ));
-
-                                              context.pushNamedAuth(
-                                                  'ForgetPass',
+                                              context.goNamedAuth(
+                                                  'HomePageClient',
                                                   context.mounted);
                                             },
                                             text: 'تسجيل',
@@ -984,7 +957,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  context.pushNamed('Signin');
+                  context.pushNamed('signinTEST');
                 },
                 child: Icon(
                   Icons.arrow_back,

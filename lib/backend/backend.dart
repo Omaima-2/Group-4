@@ -2,9 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'schema/util/firestore_util.dart';
 
-import 'schema/client_record.dart';
-import 'schema/service_provider_record.dart';
-import 'schema/admin_record.dart';
+import 'schema/user_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -13,116 +11,40 @@ export 'schema/index.dart';
 export 'schema/util/firestore_util.dart';
 export 'schema/util/schema_util.dart';
 
-export 'schema/client_record.dart';
-export 'schema/service_provider_record.dart';
-export 'schema/admin_record.dart';
+export 'schema/user_record.dart';
 
-/// Functions to query ClientRecords (as a Stream and as a Future).
-Future<int> queryClientRecordCount({
+/// Functions to query UserRecords (as a Stream and as a Future).
+Future<int> queryUserRecordCount({
   Query Function(Query)? queryBuilder,
   int limit = -1,
 }) =>
     queryCollectionCount(
-      ClientRecord.collection,
+      UserRecord.collection,
       queryBuilder: queryBuilder,
       limit: limit,
     );
 
-Stream<List<ClientRecord>> queryClientRecord({
+Stream<List<UserRecord>> queryUserRecord({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollection(
-      ClientRecord.collection,
-      ClientRecord.fromSnapshot,
+      UserRecord.collection,
+      UserRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
     );
 
-Future<List<ClientRecord>> queryClientRecordOnce({
+Future<List<UserRecord>> queryUserRecordOnce({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollectionOnce(
-      ClientRecord.collection,
-      ClientRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-/// Functions to query ServiceProviderRecords (as a Stream and as a Future).
-Future<int> queryServiceProviderRecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      ServiceProviderRecord.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<ServiceProviderRecord>> queryServiceProviderRecord({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      ServiceProviderRecord.collection,
-      ServiceProviderRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<ServiceProviderRecord>> queryServiceProviderRecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      ServiceProviderRecord.collection,
-      ServiceProviderRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-/// Functions to query AdminRecords (as a Stream and as a Future).
-Future<int> queryAdminRecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      AdminRecord.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<AdminRecord>> queryAdminRecord({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      AdminRecord.collection,
-      AdminRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<AdminRecord>> queryAdminRecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      AdminRecord.collection,
-      AdminRecord.fromSnapshot,
+      UserRecord.collection,
+      UserRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

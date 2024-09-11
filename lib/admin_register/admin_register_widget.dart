@@ -603,7 +603,8 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                                 return;
                                               }
 
-                                              context.goNamedAuth('ForgetPass',
+                                              context.goNamedAuth(
+                                                  'ClientRegriste',
                                                   context.mounted);
                                             },
                                             text: 'تسجيل دخول',

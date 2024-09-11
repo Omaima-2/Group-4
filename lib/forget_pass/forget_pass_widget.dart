@@ -370,6 +370,9 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
                                                     .text,
                                                 context: context,
                                               );
+
+                                              context.pushNamed(
+                                                  'passwordDoneReset');
                                             },
                                             text: 'ارسل رابط عبر الايميل ',
                                             options: FFButtonOptions(
@@ -429,7 +432,7 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
                       size: 30.0,
                     ),
                     onPressed: () async {
-                      context.safePop();
+                      context.pushNamed('Signin');
                     },
                   ),
                 ),

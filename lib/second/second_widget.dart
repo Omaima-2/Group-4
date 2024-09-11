@@ -1,26 +1,24 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'signin_copy_model.dart';
-export 'signin_copy_model.dart';
+import 'second_model.dart';
+export 'second_model.dart';
 
-class SigninCopyWidget extends StatefulWidget {
-  const SigninCopyWidget({super.key});
+class SecondWidget extends StatefulWidget {
+  const SecondWidget({super.key});
 
   @override
-  State<SigninCopyWidget> createState() => _SigninCopyWidgetState();
+  State<SecondWidget> createState() => _SecondWidgetState();
 }
 
-class _SigninCopyWidgetState extends State<SigninCopyWidget>
+class _SecondWidgetState extends State<SecondWidget>
     with TickerProviderStateMixin {
-  late SigninCopyModel _model;
+  late SecondModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -29,7 +27,7 @@ class _SigninCopyWidgetState extends State<SigninCopyWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => SigninCopyModel());
+    _model = createModel(context, () => SecondModel());
 
     _model.email1TextController ??= TextEditingController();
     _model.email1FocusNode ??= FocusNode();
@@ -101,24 +99,17 @@ class _SigninCopyWidgetState extends State<SigninCopyWidget>
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
-      child: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: Colors.white,
-        body: Stack(
-          children: [
-            Container(
-              width: double.infinity,
-              height: double.infinity,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.white,
-                ),
-              ),
-              child: SizedBox(
-                width: double.infinity,
-                height: double.infinity,
-                child: Stack(
-                  alignment: const AlignmentDirectional(0.0, -1.0),
+      child: WillPopScope(
+        onWillPop: () async => false,
+        child: Scaffold(
+          key: scaffoldKey,
+          backgroundColor: Colors.white,
+          body: SafeArea(
+            top: true,
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Stack(
                   children: [
                     Align(
                       alignment: const AlignmentDirectional(0.0, -1.0),
@@ -176,7 +167,7 @@ class _SigninCopyWidgetState extends State<SigninCopyWidget>
                                       ),
                                     )
                                   ],
-                                  borderRadius: BorderRadius.circular(16.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                   border: Border.all(
                                     color: const Color(0xFFF1F4F8),
                                     width: 2.0,
@@ -191,7 +182,7 @@ class _SigninCopyWidgetState extends State<SigninCopyWidget>
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
+                                            MainAxisAlignment.start,
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
@@ -577,21 +568,6 @@ class _SigninCopyWidgetState extends State<SigninCopyWidget>
                                                   if (user == null) {
                                                     return;
                                                   }
-
-                                                  await queryUserRecordOnce(
-                                                    queryBuilder:
-                                                        (userRecord) =>
-                                                            userRecord.where(
-                                                      'email',
-                                                      isEqualTo:
-                                                          currentUserEmail,
-                                                    ),
-                                                    singleRecord: true,
-                                                  ).then((s) => s.firstOrNull);
-
-                                                  context.pushNamedAuth(
-                                                      'ForgetPass',
-                                                      context.mounted);
                                                 },
                                                 text: 'تسجيل الدخول',
                                                 options: FFButtonOptions(
@@ -859,9 +835,9 @@ class _SigninCopyWidgetState extends State<SigninCopyWidget>
                     ),
                   ],
                 ),
-              ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
