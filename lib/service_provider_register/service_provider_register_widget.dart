@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -1296,16 +1295,6 @@ class _ServiceProviderRegisterWidgetState
                                                         if (user == null) {
                                                           return;
                                                         }
-
-                                                        await UserRecord
-                                                            .collection
-                                                            .doc(user.uid)
-                                                            .update(
-                                                                createUserRecordData(
-                                                              email: '',
-                                                              password: '',
-                                                              client: false,
-                                                            ));
 
                                                         context.pushNamedAuth(
                                                             'ServiceProviderHomPage',

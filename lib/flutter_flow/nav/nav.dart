@@ -73,14 +73,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
           ? const ClientRegristeWidget()
-          : const ServiceProviderRegisterWidget(),
+          : const SigninTESTWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
               ? const ClientRegristeWidget()
-              : const ServiceProviderRegisterWidget(),
+              : const SigninTESTWidget(),
         ),
         FFRoute(
           name: 'ServiceProviderRegister',
@@ -162,6 +162,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'second',
           path: '/second',
           builder: (context, params) => const SecondWidget(),
+        ),
+        FFRoute(
+          name: 'third',
+          path: '/third',
+          builder: (context, params) => const ThirdWidget(),
+        ),
+        FFRoute(
+          name: 'signinTEST',
+          path: '/signinTEST',
+          builder: (context, params) => const SigninTESTWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -332,7 +342,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/ServiceProvider';
+            return '/signinTEST';
           }
           return null;
         },

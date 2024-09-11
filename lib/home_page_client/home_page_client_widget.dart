@@ -399,9 +399,9 @@ class _HomePageClientWidgetState extends State<HomePageClientWidget> {
                         await authManager.signOut();
                         GoRouter.of(context).clearRedirectLocation();
 
-                        context.pushNamedAuth('second', context.mounted);
+                        context.pushNamedAuth('signinTEST', context.mounted);
                       },
-                      text: 'Button',
+                      text: 'sign out\n',
                       options: FFButtonOptions(
                         height: 40.0,
                         padding: const EdgeInsetsDirectional.fromSTEB(

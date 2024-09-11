@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -899,14 +898,6 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                 return;
                                               }
 
-                                              await UserRecord.collection
-                                                  .doc(user.uid)
-                                                  .update(createUserRecordData(
-                                                    email: '',
-                                                    password: '',
-                                                    client: false,
-                                                  ));
-
                                               context.goNamedAuth(
                                                   'HomePageClient',
                                                   context.mounted);
@@ -966,7 +957,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  context.pushNamed('second');
+                  context.pushNamed('signinTEST');
                 },
                 child: Icon(
                   Icons.arrow_back,

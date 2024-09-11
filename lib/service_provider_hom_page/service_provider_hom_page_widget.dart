@@ -68,18 +68,15 @@ class _ServiceProviderHomPageWidgetState
                                     letterSpacing: 0.0,
                                   ),
                         ),
-                        AuthUserStreamWidget(
-                          builder: (context) => Text(
-                            currentUserDisplayName,
-                            textAlign: TextAlign.end,
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  fontSize: 25.0,
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
+                        Text(
+                          currentUserDisplayName,
+                          textAlign: TextAlign.end,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Readex Pro',
+                                    fontSize: 25.0,
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ],
                     ),

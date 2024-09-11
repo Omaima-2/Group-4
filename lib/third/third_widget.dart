@@ -6,19 +6,19 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'second_model.dart';
-export 'second_model.dart';
+import 'third_model.dart';
+export 'third_model.dart';
 
-class SecondWidget extends StatefulWidget {
-  const SecondWidget({super.key});
+class ThirdWidget extends StatefulWidget {
+  const ThirdWidget({super.key});
 
   @override
-  State<SecondWidget> createState() => _SecondWidgetState();
+  State<ThirdWidget> createState() => _ThirdWidgetState();
 }
 
-class _SecondWidgetState extends State<SecondWidget>
+class _ThirdWidgetState extends State<ThirdWidget>
     with TickerProviderStateMixin {
-  late SecondModel _model;
+  late ThirdModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -27,7 +27,7 @@ class _SecondWidgetState extends State<SecondWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => SecondModel());
+    _model = createModel(context, () => ThirdModel());
 
     _model.email1TextController ??= TextEditingController();
     _model.email1FocusNode ??= FocusNode();
