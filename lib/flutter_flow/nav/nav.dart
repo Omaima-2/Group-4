@@ -72,15 +72,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? const ClientRegristeWidget()
-          : const SigninTESTWidget(),
+          ? const HomePageClientWidget()
+          : const ClientRegristeWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? const ClientRegristeWidget()
-              : const SigninTESTWidget(),
+              ? const HomePageClientWidget()
+              : const ClientRegristeWidget(),
         ),
         FFRoute(
           name: 'ServiceProviderRegister',
@@ -342,7 +342,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/signinTEST';
+            return '/clientRegriste';
           }
           return null;
         },

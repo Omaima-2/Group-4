@@ -604,7 +604,7 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                               }
 
                                               context.goNamedAuth(
-                                                  'ClientRegriste',
+                                                  'HomePageClient',
                                                   context.mounted);
                                             },
                                             text: 'تسجيل دخول',

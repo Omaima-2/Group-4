@@ -556,23 +556,6 @@ class _SigninTESTWidgetState extends State<SigninTESTWidget>
                 ),
               ],
             ),
-            Align(
-              alignment: const AlignmentDirectional(-1.0, -1.0),
-              child: InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  context.pushNamed('second');
-                },
-                child: Icon(
-                  Icons.arrow_back,
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  size: 30.0,
-                ),
-              ),
-            ),
           ],
         ),
       ),
