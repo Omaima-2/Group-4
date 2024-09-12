@@ -30,11 +30,11 @@ class ServiceProviderRegisterModel
     return null;
   }
 
-  // State field(s) for Email1 widget.
-  FocusNode? email1FocusNode;
-  TextEditingController? email1TextController;
-  String? Function(BuildContext, String?)? email1TextControllerValidator;
-  String? _email1TextControllerValidator(BuildContext context, String? val) {
+  // State field(s) for Email2 widget.
+  FocusNode? email2FocusNode;
+  TextEditingController? email2TextController;
+  String? Function(BuildContext, String?)? email2TextControllerValidator;
+  String? _email2TextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'اللإيميل غير صحيح';
     }
@@ -72,12 +72,12 @@ class ServiceProviderRegisterModel
     return null;
   }
 
-  // State field(s) for Pass1 widget.
-  FocusNode? pass1FocusNode;
-  TextEditingController? pass1TextController;
-  late bool pass1Visibility;
-  String? Function(BuildContext, String?)? pass1TextControllerValidator;
-  String? _pass1TextControllerValidator(BuildContext context, String? val) {
+  // State field(s) for Pass2 widget.
+  FocusNode? pass2FocusNode;
+  TextEditingController? pass2TextController;
+  late bool pass2Visibility;
+  String? Function(BuildContext, String?)? pass2TextControllerValidator;
+  String? _pass2TextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'كلمة مرور خاطئة';
     }
@@ -112,10 +112,10 @@ class ServiceProviderRegisterModel
   @override
   void initState(BuildContext context) {
     name2TextControllerValidator = _name2TextControllerValidator;
-    email1TextControllerValidator = _email1TextControllerValidator;
+    email2TextControllerValidator = _email2TextControllerValidator;
     phone2TextControllerValidator = _phone2TextControllerValidator;
-    pass1Visibility = false;
-    pass1TextControllerValidator = _pass1TextControllerValidator;
+    pass2Visibility = false;
+    pass2TextControllerValidator = _pass2TextControllerValidator;
   }
 
   @override
@@ -123,13 +123,13 @@ class ServiceProviderRegisterModel
     name2FocusNode?.dispose();
     name2TextController?.dispose();
 
-    email1FocusNode?.dispose();
-    email1TextController?.dispose();
+    email2FocusNode?.dispose();
+    email2TextController?.dispose();
 
     phone2FocusNode?.dispose();
     phone2TextController?.dispose();
 
-    pass1FocusNode?.dispose();
-    pass1TextController?.dispose();
+    pass2FocusNode?.dispose();
+    pass2TextController?.dispose();
   }
 }

@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -7,6 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -26,6 +28,7 @@ class _ServiceProviderRegisterWidgetState
   late ServiceProviderRegisterModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  LatLng? currentUserLocationValue;
 
   final animationsMap = <String, AnimationInfo>{};
 
@@ -37,14 +40,14 @@ class _ServiceProviderRegisterWidgetState
     _model.name2TextController ??= TextEditingController();
     _model.name2FocusNode ??= FocusNode();
 
-    _model.email1TextController ??= TextEditingController();
-    _model.email1FocusNode ??= FocusNode();
+    _model.email2TextController ??= TextEditingController();
+    _model.email2FocusNode ??= FocusNode();
 
     _model.phone2TextController ??= TextEditingController();
     _model.phone2FocusNode ??= FocusNode();
 
-    _model.pass1TextController ??= TextEditingController();
-    _model.pass1FocusNode ??= FocusNode();
+    _model.pass2TextController ??= TextEditingController();
+    _model.pass2FocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -430,9 +433,9 @@ class _ServiceProviderRegisterWidgetState
                                                           16.0, 2.0, 16.0, 0.0),
                                                   child: TextFormField(
                                                     controller: _model
-                                                        .email1TextController,
+                                                        .email2TextController,
                                                     focusNode:
-                                                        _model.email1FocusNode,
+                                                        _model.email2FocusNode,
                                                     autofocus: false,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
@@ -557,7 +560,7 @@ class _ServiceProviderRegisterWidgetState
                                                     keyboardType: TextInputType
                                                         .emailAddress,
                                                     validator: _model
-                                                        .email1TextControllerValidator
+                                                        .email2TextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -570,6 +573,18 @@ class _ServiceProviderRegisterWidgetState
                                                         .phone2TextController,
                                                     focusNode:
                                                         _model.phone2FocusNode,
+                                                    onFieldSubmitted:
+                                                        (_) async {
+                                                      if (functions
+                                                          .newCustomFunction(
+                                                              '0537702320')!) {
+                                                        HapticFeedback
+                                                            .lightImpact();
+                                                      } else {
+                                                        HapticFeedback
+                                                            .heavyImpact();
+                                                      }
+                                                    },
                                                     autofocus: false,
                                                     textCapitalization:
                                                         TextCapitalization.none,
@@ -716,9 +731,9 @@ class _ServiceProviderRegisterWidgetState
                                                           16.0, 0.0),
                                                   child: TextFormField(
                                                     controller: _model
-                                                        .pass1TextController,
+                                                        .pass2TextController,
                                                     focusNode:
-                                                        _model.pass1FocusNode,
+                                                        _model.pass2FocusNode,
                                                     onFieldSubmitted:
                                                         (_) async {
                                                       final selectedMedia =
@@ -808,7 +823,7 @@ class _ServiceProviderRegisterWidgetState
                                                         TextCapitalization
                                                             .characters,
                                                     obscureText:
-                                                        !_model.pass1Visibility,
+                                                        !_model.pass2Visibility,
                                                     decoration: InputDecoration(
                                                       labelText: 'كلمة المرور',
                                                       labelStyle:
@@ -913,15 +928,15 @@ class _ServiceProviderRegisterWidgetState
                                                         onTap: () =>
                                                             safeSetState(
                                                           () => _model
-                                                                  .pass1Visibility =
+                                                                  .pass2Visibility =
                                                               !_model
-                                                                  .pass1Visibility,
+                                                                  .pass2Visibility,
                                                         ),
                                                         focusNode: FocusNode(
                                                             skipTraversal:
                                                                 true),
                                                         child: Icon(
-                                                          _model.pass1Visibility
+                                                          _model.pass2Visibility
                                                               ? Icons
                                                                   .visibility_outlined
                                                               : Icons
@@ -956,7 +971,7 @@ class _ServiceProviderRegisterWidgetState
                                                             maxLength}) =>
                                                         null,
                                                     validator: _model
-                                                        .pass1TextControllerValidator
+                                                        .pass2TextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -1278,6 +1293,11 @@ class _ServiceProviderRegisterWidgetState
                                                                 0.0, 16.0),
                                                     child: FFButtonWidget(
                                                       onPressed: () async {
+                                                        currentUserLocationValue =
+                                                            await getCurrentUserLocation(
+                                                                defaultLocation:
+                                                                    const LatLng(0.0,
+                                                                        0.0));
                                                         GoRouter.of(context)
                                                             .prepareAuthEvent();
 
@@ -1286,15 +1306,52 @@ class _ServiceProviderRegisterWidgetState
                                                                 .createAccountWithEmail(
                                                           context,
                                                           _model
-                                                              .email1TextController
+                                                              .email2TextController
                                                               .text,
                                                           _model
-                                                              .pass1TextController
+                                                              .pass2TextController
                                                               .text,
                                                         );
                                                         if (user == null) {
                                                           return;
                                                         }
+
+                                                        await SpRecord
+                                                            .collection
+                                                            .doc()
+                                                            .set({
+                                                          ...createSpRecordData(
+                                                            email: _model
+                                                                .email2TextController
+                                                                .text,
+                                                            photoUrl: _model
+                                                                .uploadedFileUrl2,
+                                                            phoneNumber: _model
+                                                                .phone2TextController
+                                                                .text,
+                                                            userName: _model
+                                                                .name2TextController
+                                                                .text,
+                                                            password: _model
+                                                                .pass2TextController
+                                                                .text,
+                                                            location:
+                                                                currentUserLocationValue
+                                                                    ?.toString(),
+                                                            profession: _model
+                                                                .dropDownValue,
+                                                            availability: false,
+                                                            isClint: false,
+                                                            displayName: 'SP',
+                                                          ),
+                                                          ...mapToFirestore(
+                                                            {
+                                                              'created_time':
+                                                                  FieldValue
+                                                                      .serverTimestamp(),
+                                                            },
+                                                          ),
+                                                        });
 
                                                         context.pushNamedAuth(
                                                             'ServiceProviderHomPage',

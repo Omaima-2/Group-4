@@ -5,23 +5,74 @@ import 'package:flutter/material.dart';
 class ClientRegristeModel extends FlutterFlowModel<ClientRegristeWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for Name widget.
-  FocusNode? nameFocusNode;
-  TextEditingController? nameTextController;
-  String? Function(BuildContext, String?)? nameTextControllerValidator;
+  final formKey = GlobalKey<FormState>();
+  // State field(s) for Name1 widget.
+  FocusNode? name1FocusNode;
+  TextEditingController? name1TextController;
+  String? Function(BuildContext, String?)? name1TextControllerValidator;
+  String? _name1TextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'اسم السمتخجم خاطئ';
+    }
+
+    if (val.length < 3) {
+      return 'اسم المستخدم قصير جدًا';
+    }
+    if (val.length > 30) {
+      return 'اسم السمتخدم طويل جدًا';
+    }
+    if (!RegExp(kTextValidatorUsernameRegex).hasMatch(val)) {
+      return 'اسم المستخدم غير صحيح(لايجب ان يبدأ بارقام او رموز)';
+    }
+    return null;
+  }
+
   // State field(s) for Email1 widget.
   FocusNode? email1FocusNode;
   TextEditingController? email1TextController;
   String? Function(BuildContext, String?)? email1TextControllerValidator;
-  // State field(s) for Phone widget.
-  FocusNode? phoneFocusNode;
-  TextEditingController? phoneTextController;
-  String? Function(BuildContext, String?)? phoneTextControllerValidator;
+  String? _email1TextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'الايميل خاطئ';
+    }
+
+    if (val.length < 10) {
+      return 'الإيميل طويل جدًا';
+    }
+    if (val.length > 30) {
+      return 'الإيميل طويل جدًا';
+    }
+    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+      return 'الايميل خاطئ';
+    }
+    return null;
+  }
+
+  // State field(s) for Phone1 widget.
+  FocusNode? phone1FocusNode;
+  TextEditingController? phone1TextController;
+  String? Function(BuildContext, String?)? phone1TextControllerValidator;
+  String? _phone1TextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'رقم الهاتف غير صحيح';
+    }
+
+    return null;
+  }
+
   // State field(s) for Pass1 widget.
   FocusNode? pass1FocusNode;
   TextEditingController? pass1TextController;
   late bool pass1Visibility;
   String? Function(BuildContext, String?)? pass1TextControllerValidator;
+  String? _pass1TextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'الرقم السري غير صحيح';
+    }
+
+    return null;
+  }
+
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -29,19 +80,23 @@ class ClientRegristeModel extends FlutterFlowModel<ClientRegristeWidget> {
 
   @override
   void initState(BuildContext context) {
+    name1TextControllerValidator = _name1TextControllerValidator;
+    email1TextControllerValidator = _email1TextControllerValidator;
+    phone1TextControllerValidator = _phone1TextControllerValidator;
     pass1Visibility = false;
+    pass1TextControllerValidator = _pass1TextControllerValidator;
   }
 
   @override
   void dispose() {
-    nameFocusNode?.dispose();
-    nameTextController?.dispose();
+    name1FocusNode?.dispose();
+    name1TextController?.dispose();
 
     email1FocusNode?.dispose();
     email1TextController?.dispose();
 
-    phoneFocusNode?.dispose();
-    phoneTextController?.dispose();
+    phone1FocusNode?.dispose();
+    phone1TextController?.dispose();
 
     pass1FocusNode?.dispose();
     pass1TextController?.dispose();

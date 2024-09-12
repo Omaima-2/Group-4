@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'signin_t_e_s_t_widget.dart' show SigninTESTWidget;
+import 'bb_widget.dart' show BbWidget;
 import 'package:flutter/material.dart';
 
-class SigninTESTModel extends FlutterFlowModel<SigninTESTWidget> {
+class BbModel extends FlutterFlowModel<BbWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for Email1 widget.

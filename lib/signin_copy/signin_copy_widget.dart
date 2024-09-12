@@ -1,10 +1,7 @@
-import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -562,36 +559,8 @@ class _SigninCopyWidgetState extends State<SigninCopyWidget>
                                                   .fromSTEB(
                                                       0.0, 16.0, 0.0, 16.0),
                                               child: FFButtonWidget(
-                                                onPressed: () async {
-                                                  GoRouter.of(context)
-                                                      .prepareAuthEvent();
-
-                                                  final user = await authManager
-                                                      .signInWithEmail(
-                                                    context,
-                                                    _model.email1TextController
-                                                        .text,
-                                                    _model.pass1TextController
-                                                        .text,
-                                                  );
-                                                  if (user == null) {
-                                                    return;
-                                                  }
-
-                                                  await queryUserRecordOnce(
-                                                    queryBuilder:
-                                                        (userRecord) =>
-                                                            userRecord.where(
-                                                      'email',
-                                                      isEqualTo:
-                                                          currentUserEmail,
-                                                    ),
-                                                    singleRecord: true,
-                                                  ).then((s) => s.firstOrNull);
-
-                                                  context.pushNamedAuth(
-                                                      'ForgetPass',
-                                                      context.mounted);
+                                                onPressed: () {
+                                                  print('Button pressed ...');
                                                 },
                                                 text: 'تسجيل الدخول',
                                                 options: FFButtonOptions(

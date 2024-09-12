@@ -604,8 +604,7 @@ class _AdminRegisterWidgetState extends State<AdminRegisterWidget>
                                               }
 
                                               context.goNamedAuth(
-                                                  'HomePageClient',
-                                                  context.mounted);
+                                                  'bb', context.mounted);
                                             },
                                             text: 'تسجيل دخول',
                                             options: FFButtonOptions(
