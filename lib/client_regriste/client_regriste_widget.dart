@@ -1,6 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/backend/schema/enums/enums.dart';
+import '/components/upload_photo_fail_widget.dart';
+import '/components/upload_photo_sucsess_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -25,7 +28,6 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
   late ClientRegristeModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  LatLng? currentUserLocationValue;
 
   final animationsMap = <String, AnimationInfo>{};
 
@@ -233,7 +235,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 2.0, 0.0, 2.0),
                                             child: Text(
-                                              'أنشى حسابك واستمتع بخدماتنا.....goo omaima',
+                                              'أنشى حسابك واستمتع بخدماتنا....',
                                               textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -844,6 +846,59 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                         return;
                                                       }
                                                     }
+
+                                                    if (_model.uploadedFileUrl !=
+                                                            '') {
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        enableDrag: false,
+                                                        context: context,
+                                                        builder: (context) {
+                                                          return GestureDetector(
+                                                            onTap: () =>
+                                                                FocusScope.of(
+                                                                        context)
+                                                                    .unfocus(),
+                                                            child: Padding(
+                                                              padding: MediaQuery
+                                                                  .viewInsetsOf(
+                                                                      context),
+                                                              child:
+                                                                  const UploadPhotoSucsessWidget(),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          safeSetState(() {}));
+                                                    } else {
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        enableDrag: false,
+                                                        context: context,
+                                                        builder: (context) {
+                                                          return GestureDetector(
+                                                            onTap: () =>
+                                                                FocusScope.of(
+                                                                        context)
+                                                                    .unfocus(),
+                                                            child: Padding(
+                                                              padding: MediaQuery
+                                                                  .viewInsetsOf(
+                                                                      context),
+                                                              child:
+                                                                  const UploadPhotoFailWidget(),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          safeSetState(() {}));
+                                                    }
                                                   },
                                                   text: 'رفع صورة',
                                                   options: FFButtonOptions(
@@ -952,10 +1007,6 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                     0.0, 10.0, 0.0, 16.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
-                                                currentUserLocationValue =
-                                                    await getCurrentUserLocation(
-                                                        defaultLocation:
-                                                            const LatLng(0.0, 0.0));
                                                 GoRouter.of(context)
                                                     .prepareAuthEvent();
 
@@ -971,34 +1022,38 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                   return;
                                                 }
 
-                                                await ClientRecord.collection
-                                                    .doc()
-                                                    .set({
-                                                  ...createClientRecordData(
-                                                    email: currentUserEmail,
-                                                    photoUrl: currentUserPhoto,
-                                                    phoneNumber:
-                                                        currentPhoneNumber,
-                                                    userName: _model
-                                                        .name1TextController
-                                                        .text,
-                                                    password: _model
-                                                        .pass1TextController
-                                                        .text,
-                                                    location:
-                                                        currentUserLocationValue
-                                                            ?.toString(),
-                                                    displayName: 'Client',
-                                                    uid: '',
-                                                    isClient: true,
-                                                  ),
-                                                  ...mapToFirestore(
-                                                    {
-                                                      'created_time': FieldValue
-                                                          .serverTimestamp(),
-                                                    },
-                                                  ),
-                                                });
+                                                if (_model.formKey
+                                                            .currentState ==
+                                                        null ||
+                                                    !_model
+                                                        .formKey.currentState!
+                                                        .validate()) {
+                                                  return;
+                                                }
+
+                                                await currentUserReference!
+                                                    .update(
+                                                        createUsers1RecordData(
+                                                  email: currentUserEmail,
+                                                  password: valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.password,
+                                                      ''),
+                                                  displayName:
+                                                      currentUserDisplayName,
+                                                  photoUrl:
+                                                      _model.uploadedFileUrl,
+                                                  phoneNumber: _model
+                                                      .phone1TextController
+                                                      .text,
+                                                  location: currentUserDocument
+                                                      ?.location,
+                                                  username: _model
+                                                      .name1TextController.text,
+                                                  role: Rolee.cl,
+                                                  clientId: currentUserDocument
+                                                      ?.clientId,
+                                                ));
 
                                                 context.goNamedAuth(
                                                     'HomePageClient',
@@ -1072,7 +1127,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  context.pushNamed('signinTEST');
+                  context.pushNamed('login');
                 },
                 child: Icon(
                   Icons.arrow_back,

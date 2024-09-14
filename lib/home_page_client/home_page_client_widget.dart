@@ -175,74 +175,84 @@ class _HomePageClientWidgetState extends State<HomePageClientWidget> {
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
-                      child: Container(
-                        width: double.infinity,
-                        height: 176.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow: const [
-                            BoxShadow(
-                              blurRadius: 3.0,
-                              color: Color(0x411D2429),
-                              offset: Offset(
-                                0.0,
-                                1.0,
-                              ),
-                            )
-                          ],
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 1.0, 1.0, 1.0),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(6.0),
-                                    child: Image.asset(
-                                      'assets/images/how-to-change-a-recessed-light-bullb_1.jpg',
-                                      width: double.infinity,
-                                      height: 127.0,
-                                      fit: BoxFit.cover,
-                                      alignment: const Alignment(0.0, -0.5),
-                                    ),
-                                  ),
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed('Electrics');
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 176.0,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: const [
+                              BoxShadow(
+                                blurRadius: 3.0,
+                                color: Color(0x411D2429),
+                                offset: Offset(
+                                  0.0,
+                                  1.0,
                                 ),
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    'كهرباء',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          fontSize: 20.0,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                  const Flexible(
-                                    child: Align(
-                                      alignment: AlignmentDirectional(1.0, 0.0),
-                                      child: Icon(
-                                        Icons.chevron_right_rounded,
-                                        color: Color(0xFF57636C),
-                                        size: 24.0,
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 1.0, 1.0, 1.0),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(6.0),
+                                      child: Image.asset(
+                                        'assets/images/how-to-change-a-recessed-light-bullb_1.jpg',
+                                        width: double.infinity,
+                                        height: 127.0,
+                                        fit: BoxFit.cover,
+                                        alignment: const Alignment(0.0, -0.5),
                                       ),
                                     ),
                                   ),
-                                ],
-                              ),
-                            ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Text(
+                                      'كهرباء',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            fontSize: 20.0,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                    const Flexible(
+                                      child: Align(
+                                        alignment:
+                                            AlignmentDirectional(1.0, 0.0),
+                                        child: Icon(
+                                          Icons.chevron_right_rounded,
+                                          color: Color(0xFF57636C),
+                                          size: 24.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -393,30 +403,88 @@ class _HomePageClientWidgetState extends State<HomePageClientWidget> {
                         ),
                       ),
                     ),
-                    FFButtonWidget(
-                      onPressed: () async {
-                        GoRouter.of(context).prepareAuthEvent();
-                        await authManager.signOut();
-                        GoRouter.of(context).clearRedirectLocation();
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          FFButtonWidget(
+                            onPressed: () async {
+                              GoRouter.of(context).prepareAuthEvent();
+                              await authManager.signOut();
+                              GoRouter.of(context).clearRedirectLocation();
 
-                        context.pushNamedAuth('bb', context.mounted);
-                      },
-                      text: 'sign out\n',
-                      options: FFButtonOptions(
-                        height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 0.0, 16.0, 0.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
-                        textStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Readex Pro',
-                                  color: Colors.white,
-                                  letterSpacing: 0.0,
-                                ),
-                        elevation: 0.0,
-                        borderRadius: BorderRadius.circular(8.0),
+                              context.pushNamedAuth('login', context.mounted);
+                            },
+                            text: 'تسجيل خروج ',
+                            options: FFButtonOptions(
+                              height: 40.0,
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                  ),
+                              elevation: 0.0,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                          FFButtonWidget(
+                            onPressed: () async {
+                              await authManager.deleteUser(context);
+
+                              context.pushNamed('login');
+                            },
+                            text: 'حذف الحساب',
+                            options: FFButtonOptions(
+                              height: 40.0,
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: const Color(0xFFEF393C),
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                  ),
+                              elevation: 0.0,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                          FFButtonWidget(
+                            onPressed: () async {
+                              context.pushNamed('clientAccount');
+                            },
+                            text: 'الحساب',
+                            options: FFButtonOptions(
+                              height: 40.0,
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                  ),
+                              elevation: 0.0,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],

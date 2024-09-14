@@ -10,6 +10,7 @@ import 'place.dart';
 import 'uploaded_file.dart';
 import '/backend/backend.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import '/backend/schema/enums/enums.dart';
 import '/auth/firebase_auth/auth_util.dart';
 
 bool? newCustomFunction(String phoneNum) {
@@ -42,6 +43,25 @@ String? newCustomFunction2(String? password) {
   }
   if (!password.contains(RegExp(r'[!@#\$%\^&\*]'))) {
     return 'Password must contain at least one special character';
+  }
+  return null;
+}
+
+String? newCustomFunction3(String? pass2) {
+  if (pass2 == null || pass2.isEmpty) {
+    return 'Password cannot be empty.';
+  }
+
+  if (pass2.length < 8) {
+    return 'Password must be at least 8 characters long.';
+  }
+  bool hasUppercase = pass2.contains(RegExp(r'[A-Z]'));
+  bool hasLowercase = pass2.contains(RegExp(r'[a-z]'));
+  if (!hasUppercase || !hasLowercase) {
+    return 'Password must contain both uppercase and lowercase letters.';
+  }
+  if (RegExp(r'[\u0600-\u06FF]').hasMatch(pass2)) {
+    return 'Password cannot contain Arabic characters.';
   }
   return null;
 }

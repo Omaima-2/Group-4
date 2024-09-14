@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
@@ -72,13 +73,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const BbWidget() : const BbWidget(),
+          appStateNotifier.loggedIn ? const LoginWidget() : const LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const BbWidget() : const BbWidget(),
+              appStateNotifier.loggedIn ? const LoginWidget() : const LoginWidget(),
         ),
         FFRoute(
           name: 'ServiceProviderRegister',
@@ -96,11 +97,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ClientRegristeWidget(),
         ),
         FFRoute(
-          name: 'AdminRegister',
-          path: '/AdminRegister',
-          builder: (context, params) => const AdminRegisterWidget(),
-        ),
-        FFRoute(
           name: 'ForgetPass',
           path: '/ForgetPass',
           builder: (context, params) => const ForgetPassWidget(),
@@ -110,11 +106,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/homePageClient',
           requireAuth: true,
           builder: (context, params) => const HomePageClientWidget(),
-        ),
-        FFRoute(
-          name: 'Signin',
-          path: '/signin',
-          builder: (context, params) => const SigninWidget(),
         ),
         FFRoute(
           name: 'map',
@@ -127,24 +118,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AdminReqWidget(),
         ),
         FFRoute(
-          name: 'SigninCopy',
-          path: '/signinCopy',
-          builder: (context, params) => const SigninCopyWidget(),
-        ),
-        FFRoute(
-          name: 'login',
-          path: '/login',
-          builder: (context, params) => const LoginWidget(),
-        ),
-        FFRoute(
           name: 'ServiceProviderHomPage',
           path: '/serviceProviderHomPage',
           builder: (context, params) => const ServiceProviderHomPageWidget(),
-        ),
-        FFRoute(
-          name: 'first',
-          path: '/first',
-          builder: (context, params) => const FirstWidget(),
         ),
         FFRoute(
           name: 'passwordDoneReset',
@@ -157,24 +133,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AdminHomepageWidget(),
         ),
         FFRoute(
-          name: 'second',
-          path: '/second',
-          builder: (context, params) => const SecondWidget(),
+          name: 'login',
+          path: '/login',
+          builder: (context, params) => const LoginWidget(),
         ),
         FFRoute(
-          name: 'third',
-          path: '/third',
-          builder: (context, params) => const ThirdWidget(),
+          name: 'services',
+          path: '/services',
+          builder: (context, params) => const ServicesWidget(),
         ),
         FFRoute(
-          name: 'signinTEST',
-          path: '/signinTEST',
-          builder: (context, params) => const SigninTESTWidget(),
+          name: 'addService',
+          path: '/addService',
+          builder: (context, params) => const AddServiceWidget(),
         ),
         FFRoute(
-          name: 'bb',
-          path: '/bb',
-          builder: (context, params) => const BbWidget(),
+          name: 'Electrics',
+          path: '/electrics',
+          builder: (context, params) => const ElectricsWidget(),
+        ),
+        FFRoute(
+          name: 'globalwrapperpage',
+          path: '/globalwrapperpage',
+          builder: (context, params) => const GlobalwrapperpageWidget(),
+        ),
+        FFRoute(
+          name: 'clientAccount',
+          path: '/clientAccount',
+          builder: (context, params) => const ClientAccountWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -345,7 +331,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/bb';
+            return '/login';
           }
           return null;
         },

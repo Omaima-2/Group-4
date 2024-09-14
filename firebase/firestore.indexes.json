@@ -1,3 +1,32 @@
 {
-  "indexes": []
+  "indexes": [
+    {
+      "collectionGroup": "services",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "user",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "created_time",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users1",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "role",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "display_name",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ]
 }

@@ -1,8 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/backend/schema/enums/enums.dart';
+import '/components/upload_photo_fail_widget.dart';
+import '/components/upload_photo_sucsess_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -28,7 +32,6 @@ class _ServiceProviderRegisterWidgetState
   late ServiceProviderRegisterModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  LatLng? currentUserLocationValue;
 
   final animationsMap = <String, AnimationInfo>{};
 
@@ -192,7 +195,8 @@ class _ServiceProviderRegisterWidgetState
                                   children: [
                                     Form(
                                       key: _model.formKey,
-                                      autovalidateMode: AutovalidateMode.always,
+                                      autovalidateMode:
+                                          AutovalidateMode.disabled,
                                       child: Align(
                                         alignment:
                                             const AlignmentDirectional(0.0, 0.0),
@@ -736,86 +740,17 @@ class _ServiceProviderRegisterWidgetState
                                                         _model.pass2FocusNode,
                                                     onFieldSubmitted:
                                                         (_) async {
-                                                      final selectedMedia =
-                                                          await selectMediaWithSourceBottomSheet(
-                                                        context: context,
-                                                        allowPhoto: true,
-                                                      );
-                                                      if (selectedMedia !=
+                                                      if (functions.newCustomFunction3(
+                                                                  'Aa12345678') !=
                                                               null &&
-                                                          selectedMedia.every((m) =>
-                                                              validateFileFormat(
-                                                                  m.storagePath,
-                                                                  context))) {
-                                                        safeSetState(() => _model
-                                                                .isDataUploading1 =
-                                                            true);
-                                                        var selectedUploadedFiles =
-                                                            <FFUploadedFile>[];
-
-                                                        var downloadUrls =
-                                                            <String>[];
-                                                        try {
-                                                          selectedUploadedFiles =
-                                                              selectedMedia
-                                                                  .map((m) =>
-                                                                      FFUploadedFile(
-                                                                        name: m
-                                                                            .storagePath
-                                                                            .split('/')
-                                                                            .last,
-                                                                        bytes: m
-                                                                            .bytes,
-                                                                        height: m
-                                                                            .dimensions
-                                                                            ?.height,
-                                                                        width: m
-                                                                            .dimensions
-                                                                            ?.width,
-                                                                        blurHash:
-                                                                            m.blurHash,
-                                                                      ))
-                                                                  .toList();
-
-                                                          downloadUrls =
-                                                              (await Future
-                                                                      .wait(
-                                                            selectedMedia.map(
-                                                              (m) async =>
-                                                                  await uploadData(
-                                                                      m.storagePath,
-                                                                      m.bytes),
-                                                            ),
-                                                          ))
-                                                                  .where((u) =>
-                                                                      u != null)
-                                                                  .map(
-                                                                      (u) => u!)
-                                                                  .toList();
-                                                        } finally {
-                                                          _model.isDataUploading1 =
-                                                              false;
-                                                        }
-                                                        if (selectedUploadedFiles
-                                                                    .length ==
-                                                                selectedMedia
-                                                                    .length &&
-                                                            downloadUrls
-                                                                    .length ==
-                                                                selectedMedia
-                                                                    .length) {
-                                                          safeSetState(() {
-                                                            _model.uploadedLocalFile1 =
-                                                                selectedUploadedFiles
-                                                                    .first;
-                                                            _model.uploadedFileUrl1 =
-                                                                downloadUrls
-                                                                    .first;
-                                                          });
-                                                        } else {
-                                                          safeSetState(() {});
-                                                          return;
-                                                        }
+                                                          functions.newCustomFunction3(
+                                                                  'Aa12345678') !=
+                                                              '') {
+                                                        HapticFeedback
+                                                            .lightImpact();
+                                                      } else {
+                                                        HapticFeedback
+                                                            .heavyImpact();
                                                       }
                                                     },
                                                     autofocus: false,
@@ -961,7 +896,7 @@ class _ServiceProviderRegisterWidgetState
                                                               FontWeight.w500,
                                                           lineHeight: 1.0,
                                                         ),
-                                                    maxLength: 10,
+                                                    maxLength: 30,
                                                     maxLengthEnforcement:
                                                         MaxLengthEnforcement
                                                             .enforced,
@@ -1089,7 +1024,7 @@ class _ServiceProviderRegisterWidgetState
                                                                         m.storagePath,
                                                                         context))) {
                                                               safeSetState(() =>
-                                                                  _model.isDataUploading2 =
+                                                                  _model.isDataUploading =
                                                                       true);
                                                               var selectedUploadedFiles =
                                                                   <FFUploadedFile>[];
@@ -1126,7 +1061,7 @@ class _ServiceProviderRegisterWidgetState
                                                                         u!)
                                                                     .toList();
                                                               } finally {
-                                                                _model.isDataUploading2 =
+                                                                _model.isDataUploading =
                                                                     false;
                                                               }
                                                               if (selectedUploadedFiles
@@ -1139,10 +1074,10 @@ class _ServiceProviderRegisterWidgetState
                                                                           .length) {
                                                                 safeSetState(
                                                                     () {
-                                                                  _model.uploadedLocalFile2 =
+                                                                  _model.uploadedLocalFile =
                                                                       selectedUploadedFiles
                                                                           .first;
-                                                                  _model.uploadedFileUrl2 =
+                                                                  _model.uploadedFileUrl =
                                                                       downloadUrls
                                                                           .first;
                                                                 });
@@ -1152,8 +1087,76 @@ class _ServiceProviderRegisterWidgetState
                                                                 return;
                                                               }
                                                             }
+
+                                                            if (_model.uploadedFileUrl !=
+                                                                    '') {
+                                                              await showModalBottomSheet(
+                                                                isScrollControlled:
+                                                                    true,
+                                                                backgroundColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                enableDrag:
+                                                                    false,
+                                                                context:
+                                                                    context,
+                                                                builder:
+                                                                    (context) {
+                                                                  return GestureDetector(
+                                                                    onTap: () =>
+                                                                        FocusScope.of(context)
+                                                                            .unfocus(),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: MediaQuery
+                                                                          .viewInsetsOf(
+                                                                              context),
+                                                                      child:
+                                                                          const UploadPhotoSucsessWidget(),
+                                                                    ),
+                                                                  );
+                                                                },
+                                                              ).then((value) =>
+                                                                  safeSetState(
+                                                                      () {}));
+                                                            } else {
+                                                              await showModalBottomSheet(
+                                                                isScrollControlled:
+                                                                    true,
+                                                                backgroundColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                enableDrag:
+                                                                    false,
+                                                                context:
+                                                                    context,
+                                                                builder:
+                                                                    (context) {
+                                                                  return GestureDetector(
+                                                                    onTap: () =>
+                                                                        FocusScope.of(context)
+                                                                            .unfocus(),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: MediaQuery
+                                                                          .viewInsetsOf(
+                                                                              context),
+                                                                      child:
+                                                                          const UploadPhotoFailWidget(),
+                                                                    ),
+                                                                  );
+                                                                },
+                                                              ).then((value) =>
+                                                                  safeSetState(
+                                                                      () {}));
+                                                            }
                                                           },
                                                           text: 'رفع صورة',
+                                                          icon: const Icon(
+                                                            Icons
+                                                                .add_photo_alternate,
+                                                            size: 20.0,
+                                                          ),
                                                           options:
                                                               FFButtonOptions(
                                                             width: 175.0,
@@ -1166,22 +1169,18 @@ class _ServiceProviderRegisterWidgetState
                                                                         24.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
+                                                                const EdgeInsets.all(
+                                                                    0.0),
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .secondaryText,
                                                             textStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
+                                                                    .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Plus Jakarta Sans',
+                                                                          'Readex Pro',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .secondaryBackground,
@@ -1211,71 +1210,69 @@ class _ServiceProviderRegisterWidgetState
                                                     Align(
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                              -1.0, 0.0),
+                                                              0.0, 0.0),
                                                       child: Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    16.0,
-                                                                    12.0,
-                                                                    16.0,
+                                                                    0.0,
+                                                                    11.0,
+                                                                    10.0,
                                                                     0.0),
-                                                        child: FFButtonWidget(
-                                                          onPressed: () async {
-                                                            context.pushNamed(
-                                                                'map');
+                                                        child:
+                                                            FlutterFlowPlacePicker(
+                                                          iOSGoogleMapsApiKey:
+                                                              'AIzaSyDDuK3Sll_2vPLS2FJCGescGlf6oV2QV5E',
+                                                          androidGoogleMapsApiKey:
+                                                              'AIzaSyDDuK3Sll_2vPLS2FJCGescGlf6oV2QV5E',
+                                                          webGoogleMapsApiKey:
+                                                              'AIzaSyDDuK3Sll_2vPLS2FJCGescGlf6oV2QV5E',
+                                                          onSelect:
+                                                              (place) async {
+                                                            safeSetState(() =>
+                                                                _model.placePickerValue =
+                                                                    place);
                                                           },
-                                                          text: 'تحديد الموقع',
-                                                          options:
+                                                          defaultText:
+                                                              'تحديد الموقع',
+                                                          icon: Icon(
+                                                            Icons.place,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                            size: 20.0,
+                                                          ),
+                                                          buttonOptions:
                                                               FFButtonOptions(
                                                             width: 175.0,
                                                             height: 40.0,
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        24.0,
-                                                                        0.0,
-                                                                        24.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .secondaryText,
                                                             textStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
+                                                                    .titleSmall
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Plus Jakarta Sans',
+                                                                          'Readex Pro',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .secondaryBackground,
-                                                                      fontSize:
-                                                                          16.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w500,
                                                                     ),
-                                                            elevation: 3.0,
+                                                            elevation: 0.0,
                                                             borderSide:
                                                                 const BorderSide(
                                                               color: Colors
                                                                   .transparent,
-                                                              width: 3.0,
+                                                              width: 1.0,
                                                             ),
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8.0),
+                                                                        10.0),
                                                           ),
                                                         ),
                                                       ),
@@ -1293,11 +1290,14 @@ class _ServiceProviderRegisterWidgetState
                                                                 0.0, 16.0),
                                                     child: FFButtonWidget(
                                                       onPressed: () async {
-                                                        currentUserLocationValue =
-                                                            await getCurrentUserLocation(
-                                                                defaultLocation:
-                                                                    const LatLng(0.0,
-                                                                        0.0));
+                                                        if (_model.formKey
+                                                                    .currentState ==
+                                                                null ||
+                                                            !_model.formKey
+                                                                .currentState!
+                                                                .validate()) {
+                                                          return;
+                                                        }
                                                         GoRouter.of(context)
                                                             .prepareAuthEvent();
 
@@ -1316,42 +1316,36 @@ class _ServiceProviderRegisterWidgetState
                                                           return;
                                                         }
 
-                                                        await SpRecord
-                                                            .collection
-                                                            .doc()
-                                                            .set({
-                                                          ...createSpRecordData(
-                                                            email: _model
-                                                                .email2TextController
-                                                                .text,
-                                                            photoUrl: _model
-                                                                .uploadedFileUrl2,
-                                                            phoneNumber: _model
-                                                                .phone2TextController
-                                                                .text,
-                                                            userName: _model
-                                                                .name2TextController
-                                                                .text,
-                                                            password: _model
-                                                                .pass2TextController
-                                                                .text,
-                                                            location:
-                                                                currentUserLocationValue
-                                                                    ?.toString(),
-                                                            profession: _model
-                                                                .dropDownValue,
-                                                            availability: false,
-                                                            isClint: false,
-                                                            displayName: 'SP',
-                                                          ),
-                                                          ...mapToFirestore(
-                                                            {
-                                                              'created_time':
-                                                                  FieldValue
-                                                                      .serverTimestamp(),
-                                                            },
-                                                          ),
-                                                        });
+                                                        await currentUserReference!
+                                                            .update(
+                                                                createUsers1RecordData(
+                                                          email: _model
+                                                              .email2TextController
+                                                              .text,
+                                                          password: _model
+                                                              .pass2TextController
+                                                              .text,
+                                                          displayName:
+                                                              currentUserDisplayName,
+                                                          phoneNumber: _model
+                                                              .phone2TextController
+                                                              .text,
+                                                          avilabilty: false,
+                                                          role: Rolee.sp,
+                                                          location:
+                                                              currentUserDocument
+                                                                  ?.location,
+                                                          username: _model
+                                                              .name2TextController
+                                                              .text,
+                                                          sPid:
+                                                              currentUserDocument
+                                                                  ?.sPid,
+                                                          photoUrl: _model
+                                                              .uploadedFileUrl,
+                                                          pfofission: _model
+                                                              .dropDownValue,
+                                                        ));
 
                                                         context.pushNamedAuth(
                                                             'ServiceProviderHomPage',
@@ -1431,7 +1425,7 @@ class _ServiceProviderRegisterWidgetState
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('second');
+                          context.pushNamed('login');
                         },
                         child: Icon(
                           Icons.arrow_back,

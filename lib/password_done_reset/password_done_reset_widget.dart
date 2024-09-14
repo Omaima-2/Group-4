@@ -106,7 +106,7 @@ class _PasswordDoneResetWidgetState extends State<PasswordDoneResetWidget> {
                           alignment: const AlignmentDirectional(0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              context.pushNamed('Signin');
+                              context.pushNamed('login');
                             },
                             text: 'Go Back to login page',
                             options: FFButtonOptions(

@@ -432,7 +432,7 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
                       size: 30.0,
                     ),
                     onPressed: () async {
-                      context.pushNamed('Signin');
+                      context.pushNamed('login');
                     },
                   ),
                 ),

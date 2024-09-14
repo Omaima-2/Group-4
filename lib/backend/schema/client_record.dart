@@ -65,6 +65,11 @@ class ClientRecord extends FirestoreRecord {
   bool get isClient => _isClient ?? false;
   bool hasIsClient() => _isClient != null;
 
+  // "rolee" field.
+  String? _rolee;
+  String get rolee => _rolee ?? '';
+  bool hasRolee() => _rolee != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _photoUrl = snapshotData['photo_url'] as String?;
@@ -76,6 +81,7 @@ class ClientRecord extends FirestoreRecord {
     _displayName = snapshotData['display_name'] as String?;
     _uid = snapshotData['uid'] as String?;
     _isClient = snapshotData['isClient'] as bool?;
+    _rolee = snapshotData['rolee'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -122,6 +128,7 @@ Map<String, dynamic> createClientRecordData({
   String? displayName,
   String? uid,
   bool? isClient,
+  String? rolee,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -135,6 +142,7 @@ Map<String, dynamic> createClientRecordData({
       'display_name': displayName,
       'uid': uid,
       'isClient': isClient,
+      'rolee': rolee,
     }.withoutNulls,
   );
 
@@ -155,7 +163,8 @@ class ClientRecordDocumentEquality implements Equality<ClientRecord> {
         e1?.location == e2?.location &&
         e1?.displayName == e2?.displayName &&
         e1?.uid == e2?.uid &&
-        e1?.isClient == e2?.isClient;
+        e1?.isClient == e2?.isClient &&
+        e1?.rolee == e2?.rolee;
   }
 
   @override
@@ -169,7 +178,8 @@ class ClientRecordDocumentEquality implements Equality<ClientRecord> {
         e?.location,
         e?.displayName,
         e?.uid,
-        e?.isClient
+        e?.isClient,
+        e?.rolee
       ]);
 
   @override

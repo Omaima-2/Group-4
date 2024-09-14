@@ -19,7 +19,7 @@ class ServiceProviderRegisterModel
     }
 
     if (val.length < 3) {
-      return 'اسم السمتخدم يجب ان يتكون على الاقل من 3 ';
+      return 'اسم السمتخدم يجب ان  يت ';
     }
     if (val.length > 30) {
       return 'اسم السمتخدم طويل جدا';
@@ -88,26 +88,20 @@ class ServiceProviderRegisterModel
     if (val.length > 30) {
       return 'كلمة المرور طويلة جدا';
     }
-    if (!RegExp(
-            '^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@\$!%*?&])[A-Za-z\\d@\$!%*?&]{8,}\$')
-        .hasMatch(val)) {
-      return 'كلمة المرور غير صحيحة';
-    }
+
     return null;
   }
-
-  bool isDataUploading1 = false;
-  FFUploadedFile uploadedLocalFile1 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl1 = '';
 
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
-  bool isDataUploading2 = false;
-  FFUploadedFile uploadedLocalFile2 =
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl2 = '';
+  String uploadedFileUrl = '';
+
+  // State field(s) for PlacePicker widget.
+  FFPlace placePickerValue = const FFPlace();
 
   @override
   void initState(BuildContext context) {

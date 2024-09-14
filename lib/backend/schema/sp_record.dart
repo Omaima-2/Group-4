@@ -60,15 +60,15 @@ class SpRecord extends FirestoreRecord {
   bool get availability => _availability ?? false;
   bool hasAvailability() => _availability != null;
 
-  // "isClint" field.
-  bool? _isClint;
-  bool get isClint => _isClint ?? false;
-  bool hasIsClint() => _isClint != null;
-
   // "display_name" field.
   String? _displayName;
   String get displayName => _displayName ?? '';
   bool hasDisplayName() => _displayName != null;
+
+  // "rolee" field.
+  String? _rolee;
+  String get rolee => _rolee ?? '';
+  bool hasRolee() => _rolee != null;
 
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
@@ -80,8 +80,8 @@ class SpRecord extends FirestoreRecord {
     _location = snapshotData['location'] as String?;
     _profession = snapshotData['profession'] as String?;
     _availability = snapshotData['availability'] as bool?;
-    _isClint = snapshotData['isClint'] as bool?;
     _displayName = snapshotData['display_name'] as String?;
+    _rolee = snapshotData['rolee'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -127,8 +127,8 @@ Map<String, dynamic> createSpRecordData({
   String? location,
   String? profession,
   bool? availability,
-  bool? isClint,
   String? displayName,
+  String? rolee,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -141,8 +141,8 @@ Map<String, dynamic> createSpRecordData({
       'location': location,
       'profession': profession,
       'availability': availability,
-      'isClint': isClint,
       'display_name': displayName,
+      'rolee': rolee,
     }.withoutNulls,
   );
 
@@ -163,8 +163,8 @@ class SpRecordDocumentEquality implements Equality<SpRecord> {
         e1?.location == e2?.location &&
         e1?.profession == e2?.profession &&
         e1?.availability == e2?.availability &&
-        e1?.isClint == e2?.isClint &&
-        e1?.displayName == e2?.displayName;
+        e1?.displayName == e2?.displayName &&
+        e1?.rolee == e2?.rolee;
   }
 
   @override
@@ -178,8 +178,8 @@ class SpRecordDocumentEquality implements Equality<SpRecord> {
         e?.location,
         e?.profession,
         e?.availability,
-        e?.isClint,
-        e?.displayName
+        e?.displayName,
+        e?.rolee
       ]);
 
   @override
