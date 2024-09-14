@@ -16,7 +16,6 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:provider/provider.dart';
 import 'service_provider_register_model.dart';
 export 'service_provider_register_model.dart';
 
@@ -43,18 +42,13 @@ class _ServiceProviderRegisterWidgetState
 
     _model.name2TextController ??= TextEditingController();
     _model.name2FocusNode ??= FocusNode();
-    _model.name2FocusNode!.addListener(
-      () async {
-        _model.nameError =
-            functions.newCustomFunction4(_model.name2TextController.text);
-      },
-    );
+    _model.name2FocusNode!.addListener(() => safeSetState(() {}));
     _model.email2TextController ??= TextEditingController();
     _model.email2FocusNode ??= FocusNode();
     _model.email2FocusNode!.addListener(
       () async {
         if (functions.validateEmail(_model.name2TextController.text)) {
-          _model.emailError = ' ';
+          _model.emailError = 'ok';
         } else {
           _model.emailError = 'البريد الالكتروني غير صحيح';
         }
@@ -128,8 +122,6 @@ class _ServiceProviderRegisterWidgetState
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: WillPopScope(
@@ -469,26 +461,27 @@ class _ServiceProviderRegisterWidgetState
                                                     ),
                                                   ),
                                                 ),
-                                                if (_model.nameError != ' ')
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                16.0, 0.0),
-                                                    child: Text(
-                                                      _model.nameError!,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Plus Jakarta Sans',
-                                                            color: const Color(
-                                                                0xFFFF0000),
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 16.0, 0.0),
+                                                  child: Text(
+                                                    valueOrDefault<String>(
+                                                      _model.nameError,
+                                                      '.',
                                                     ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color:
+                                                              const Color(0xFFFF0000),
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                   ),
+                                                ),
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
@@ -627,14 +620,17 @@ class _ServiceProviderRegisterWidgetState
                                                         .asValidator(context),
                                                   ),
                                                 ),
-                                                if (_model.emailError != ' ')
+                                                if (_model.emailError != 'ok')
                                                   Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 16.0, 0.0),
                                                     child: Text(
-                                                      _model.emailError!,
+                                                      valueOrDefault<String>(
+                                                        _model.emailError,
+                                                        ' .',
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -1073,14 +1069,10 @@ class _ServiceProviderRegisterWidgetState
                                                                   context)
                                                               .primaryText,
                                                       elevation: 2.0,
-                                                      borderColor: FFAppState()
-                                                              .dropstate
-                                                          ? FlutterFlowTheme.of(
+                                                      borderColor:
+                                                          FlutterFlowTheme.of(
                                                                   context)
-                                                              .error
-                                                          : FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
+                                                              .alternate,
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
@@ -1299,15 +1291,9 @@ class _ServiceProviderRegisterWidgetState
                                                                     ),
                                                             elevation: 3.0,
                                                             borderSide:
-                                                                BorderSide(
-                                                              color: FFAppState()
-                                                                      .photostate
-                                                                  ? FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .error
-                                                                  : FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .alternate,
+                                                                const BorderSide(
+                                                              color: Colors
+                                                                  .transparent,
                                                               width: 3.0,
                                                             ),
                                                             borderRadius:
@@ -1400,90 +1386,47 @@ class _ServiceProviderRegisterWidgetState
                                                             .fromSTEB(0.0, 10.0,
                                                                 0.0, 16.0),
                                                     child: FFButtonWidget(
-                                                      onPressed: ((_model.dropDownValue ==
-                                                                      null ||
-                                                                  _model.dropDownValue ==
-                                                                      '') &&
-                                                              (_model.uploadedFileUrl !=
-                                                                      ''))
-                                                          ? null
-                                                          : () async {
-                                                              GoRouter.of(
-                                                                      context)
-                                                                  .prepareAuthEvent();
+                                                      onPressed: () async {
+                                                        GoRouter.of(context)
+                                                            .prepareAuthEvent();
 
-                                                              final user =
-                                                                  await authManager
-                                                                      .createAccountWithEmail(
-                                                                context,
-                                                                _model
-                                                                    .email2TextController
-                                                                    .text,
-                                                                _model
-                                                                    .pass2TextController
-                                                                    .text,
-                                                              );
-                                                              if (user ==
-                                                                  null) {
-                                                                return;
-                                                              }
+                                                        final user =
+                                                            await authManager
+                                                                .createAccountWithEmail(
+                                                          context,
+                                                          _model
+                                                              .email2TextController
+                                                              .text,
+                                                          _model
+                                                              .pass2TextController
+                                                              .text,
+                                                        );
+                                                        if (user == null) {
+                                                          return;
+                                                        }
 
-                                                              await currentUserReference!
-                                                                  .update(
-                                                                      createUsers1RecordData(
-                                                                phoneNumber: _model
-                                                                    .phone2TextController
-                                                                    .text,
-                                                                avilabilty:
-                                                                    false,
-                                                                role: Rolee.sp,
-                                                                location:
-                                                                    currentUserDocument
-                                                                        ?.location,
-                                                                photoUrl: _model
-                                                                    .uploadedFileUrl,
-                                                                pfofission: _model
-                                                                    .dropDownValue,
-                                                                displayName: '',
-                                                              ));
+                                                        await currentUserReference!
+                                                            .update(
+                                                                createUsers1RecordData(
+                                                          phoneNumber: _model
+                                                              .phone2TextController
+                                                              .text,
+                                                          avilabilty: false,
+                                                          role: Rolee.sp,
+                                                          location:
+                                                              currentUserDocument
+                                                                  ?.location,
+                                                          photoUrl: _model
+                                                              .uploadedFileUrl,
+                                                          pfofission: _model
+                                                              .dropDownValue,
+                                                          displayName: '',
+                                                        ));
 
-                                                              context.pushNamedAuth(
-                                                                  'ServiceProviderHomPage',
-                                                                  context
-                                                                      .mounted);
-
-                                                              if (_model.dropDownValue !=
-                                                                      null &&
-                                                                  _model.dropDownValue !=
-                                                                      '') {
-                                                                FFAppState()
-                                                                        .dropstate =
-                                                                    false;
-                                                                safeSetState(
-                                                                    () {});
-                                                              } else {
-                                                                FFAppState()
-                                                                        .dropstate =
-                                                                    true;
-                                                                safeSetState(
-                                                                    () {});
-                                                              }
-
-                                                              if (_model.uploadedFileUrl !=
-                                                                      '') {
-                                                                FFAppState()
-                                                                        .photostate =
-                                                                    false;
-                                                                safeSetState(
-                                                                    () {});
-                                                              } else {
-                                                                FFAppState()
-                                                                        .photostate =
-                                                                    true;
-                                                                safeSetState(
-                                                                    () {});
-                                                              }
-                                                            },
+                                                        context.pushNamedAuth(
+                                                            'ServiceProviderHomPage',
+                                                            context.mounted);
+                                                      },
                                                       text: 'تسجيل',
                                                       options: FFButtonOptions(
                                                         width: 280.0,
@@ -1530,14 +1473,6 @@ class _ServiceProviderRegisterWidgetState
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(40.0),
-                                                        disabledColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
-                                                        disabledTextColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryBackground,
                                                       ),
                                                     ),
                                                   ),
