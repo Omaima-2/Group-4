@@ -267,6 +267,21 @@ class _ServiceProviderRegisterWidgetState
                                                           .name2TextController,
                                                       focusNode:
                                                           _model.name2FocusNode,
+                                                      onFieldSubmitted:
+                                                          (_) async {
+                                                        if (functions.newCustomFunction4(
+                                                                    'suhad') !=
+                                                                null &&
+                                                            functions.newCustomFunction4(
+                                                                    'suhad') !=
+                                                                '') {
+                                                          HapticFeedback
+                                                              .lightImpact();
+                                                        } else {
+                                                          HapticFeedback
+                                                              .heavyImpact();
+                                                        }
+                                                      },
                                                       autofocus: false,
                                                       textCapitalization:
                                                           TextCapitalization
@@ -740,12 +755,10 @@ class _ServiceProviderRegisterWidgetState
                                                         _model.pass2FocusNode,
                                                     onFieldSubmitted:
                                                         (_) async {
-                                                      if (functions.newCustomFunction3(
-                                                                  'Aa12345678') !=
-                                                              null &&
-                                                          functions.newCustomFunction3(
-                                                                  'Aa12345678') !=
-                                                              '') {
+                                                      if (functions
+                                                              .newCustomFunction3(
+                                                                  'Aa12345678') ==
+                                                          'Aa12345678') {
                                                         HapticFeedback
                                                             .lightImpact();
                                                       } else {
@@ -913,13 +926,37 @@ class _ServiceProviderRegisterWidgetState
                                                 Align(
                                                   alignment:
                                                       const AlignmentDirectional(
+                                                          -1.0, 1.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 10.0,
+                                                                10.0, 2.0),
+                                                    child: Text(
+                                                      'ماهو تخصصك',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            color: const Color(
+                                                                0xFF626466),
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
                                                           -1.0, 0.0),
                                                   child: Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 10.0,
-                                                                20.0,
+                                                                10.0,
                                                                 10.0,
                                                                 12.0),
                                                     child: FlutterFlowDropDown<
@@ -927,7 +964,10 @@ class _ServiceProviderRegisterWidgetState
                                                       controller: _model
                                                               .dropDownValueController ??=
                                                           FormFieldController<
-                                                              String>(null),
+                                                              String>(
+                                                        _model.dropDownValue ??=
+                                                            'سباك',
+                                                      ),
                                                       options:
                                                           List<String>.from([
                                                         'سباك',
@@ -1290,14 +1330,6 @@ class _ServiceProviderRegisterWidgetState
                                                                 0.0, 16.0),
                                                     child: FFButtonWidget(
                                                       onPressed: () async {
-                                                        if (_model.formKey
-                                                                    .currentState ==
-                                                                null ||
-                                                            !_model.formKey
-                                                                .currentState!
-                                                                .validate()) {
-                                                          return;
-                                                        }
                                                         GoRouter.of(context)
                                                             .prepareAuthEvent();
 
@@ -1319,14 +1351,6 @@ class _ServiceProviderRegisterWidgetState
                                                         await currentUserReference!
                                                             .update(
                                                                 createUsers1RecordData(
-                                                          email: _model
-                                                              .email2TextController
-                                                              .text,
-                                                          password: _model
-                                                              .pass2TextController
-                                                              .text,
-                                                          displayName:
-                                                              currentUserDisplayName,
                                                           phoneNumber: _model
                                                               .phone2TextController
                                                               .text,
@@ -1335,16 +1359,11 @@ class _ServiceProviderRegisterWidgetState
                                                           location:
                                                               currentUserDocument
                                                                   ?.location,
-                                                          username: _model
-                                                              .name2TextController
-                                                              .text,
-                                                          sPid:
-                                                              currentUserDocument
-                                                                  ?.sPid,
                                                           photoUrl: _model
                                                               .uploadedFileUrl,
                                                           pfofission: _model
                                                               .dropDownValue,
+                                                          displayName: '',
                                                         ));
 
                                                         context.pushNamedAuth(

@@ -65,3 +65,15 @@ String? newCustomFunction3(String? pass2) {
   }
   return null;
 }
+
+String? newCustomFunction4(String? name) {
+  final RegExp nameRegex =
+      RegExp(r'^[A-Za-z\u0621-\u064A\s]+'); // Note the absence of $
+
+  // Check if the name matches the regex and return a message
+  if (name != null && nameRegex.hasMatch(name)) {
+    return null; // Valid name
+  } else {
+    return 'Please enter a valid name in Arabic or English'; // Error message
+  }
+}

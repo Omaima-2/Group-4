@@ -81,12 +81,10 @@ class _ElectricsWidgetState extends State<ElectricsWidget> {
                 padding: const EdgeInsets.all(18.0),
                 child: StreamBuilder<List<Users1Record>>(
                   stream: queryUsers1Record(
-                    queryBuilder: (users1Record) => users1Record
-                        .where(
-                          'role',
-                          isEqualTo: Rolee.sp.serialize(),
-                        )
-                        .orderBy('display_name'),
+                    queryBuilder: (users1Record) => users1Record.where(
+                      'role',
+                      isEqualTo: Rolee.sp.serialize(),
+                    ),
                   ),
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.

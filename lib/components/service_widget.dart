@@ -70,7 +70,10 @@ class _ServiceWidgetState extends State<ServiceWidget> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
-              widget.serName,
+              valueOrDefault<String>(
+                widget.serName,
+                'name',
+              ),
               textAlign: TextAlign.end,
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Outfit',

@@ -371,6 +371,9 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                       _model.serPriceTextController.text),
                                   user: currentUserReference,
                                 ));
+
+                            context.pushNamed('services');
+
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text(
@@ -385,8 +388,6 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                     FlutterFlowTheme.of(context).secondary,
                               ),
                             );
-
-                            context.pushNamed('services');
                           },
                           text: 'حفظ',
                           options: FFButtonOptions(

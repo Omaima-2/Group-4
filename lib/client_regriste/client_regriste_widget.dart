@@ -1039,8 +1039,6 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                       currentUserDocument
                                                           ?.password,
                                                       ''),
-                                                  displayName:
-                                                      currentUserDisplayName,
                                                   photoUrl:
                                                       _model.uploadedFileUrl,
                                                   phoneNumber: _model
@@ -1048,11 +1046,10 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                       .text,
                                                   location: currentUserDocument
                                                       ?.location,
-                                                  username: _model
-                                                      .name1TextController.text,
                                                   role: Rolee.cl,
                                                   clientId: currentUserDocument
                                                       ?.clientId,
+                                                  displayName: '',
                                                 ));
 
                                                 context.goNamedAuth(

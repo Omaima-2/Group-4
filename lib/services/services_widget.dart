@@ -85,12 +85,10 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                 Expanded(
                   child: StreamBuilder<List<ServicesRecord>>(
                     stream: queryServicesRecord(
-                      queryBuilder: (servicesRecord) => servicesRecord
-                          .where(
-                            'user',
-                            isEqualTo: currentUserReference,
-                          )
-                          .orderBy('created_time'),
+                      queryBuilder: (servicesRecord) => servicesRecord.where(
+                        'user',
+                        isEqualTo: currentUserReference,
+                      ),
                     ),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.

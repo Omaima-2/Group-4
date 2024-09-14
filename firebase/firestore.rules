@@ -14,26 +14,5 @@ service cloud.firestore {
       allow write: if request.auth.uid == document;
       allow delete: if request.auth.uid == document;
     }
-
-    match /users1/{document} {
-      allow create: if request.auth.uid == document;
-      allow read: if request.auth.uid == document;
-      allow write: if request.auth.uid == document;
-      allow delete: if request.auth.uid == document;
-    }
-
-    match /services/{document} {
-      allow create: if true;
-      allow read: if true;
-      allow write: if false;
-      allow delete: if false;
-    }
-
-    match /admin/{document} {
-      allow create: if true;
-      allow read: if true;
-      allow write: if false;
-      allow delete: if false;
-    }
   }
 }

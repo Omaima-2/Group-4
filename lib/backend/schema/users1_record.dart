@@ -26,11 +26,6 @@ class Users1Record extends FirestoreRecord {
   String get password => _password ?? '';
   bool hasPassword() => _password != null;
 
-  // "display_name" field.
-  String? _displayName;
-  String get displayName => _displayName ?? '';
-  bool hasDisplayName() => _displayName != null;
-
   // "photo_url" field.
   String? _photoUrl;
   String get photoUrl => _photoUrl ?? '';
@@ -61,11 +56,6 @@ class Users1Record extends FirestoreRecord {
   LatLng? get location => _location;
   bool hasLocation() => _location != null;
 
-  // "username" field.
-  String? _username;
-  String get username => _username ?? '';
-  bool hasUsername() => _username != null;
-
   // "CID" field.
   String? _cid;
   String get cid => _cid ?? '';
@@ -91,22 +81,26 @@ class Users1Record extends FirestoreRecord {
   String get pfofission => _pfofission ?? '';
   bool hasPfofission() => _pfofission != null;
 
+  // "display_name" field.
+  String? _displayName;
+  String get displayName => _displayName ?? '';
+  bool hasDisplayName() => _displayName != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _password = snapshotData['password'] as String?;
-    _displayName = snapshotData['display_name'] as String?;
     _photoUrl = snapshotData['photo_url'] as String?;
     _createdTime = snapshotData['created_time'] as DateTime?;
     _phoneNumber = snapshotData['phone_number'] as String?;
     _avilabilty = snapshotData['Avilabilty'] as bool?;
     _uid = snapshotData['uid'] as String?;
     _location = snapshotData['location'] as LatLng?;
-    _username = snapshotData['username'] as String?;
     _cid = snapshotData['CID'] as String?;
     _clientId = snapshotData['clientId'] as DocumentReference?;
     _sPid = snapshotData['SPid'] as DocumentReference?;
     _role = deserializeEnum<Rolee>(snapshotData['role']);
     _pfofission = snapshotData['pfofission'] as String?;
+    _displayName = snapshotData['display_name'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -145,37 +139,35 @@ class Users1Record extends FirestoreRecord {
 Map<String, dynamic> createUsers1RecordData({
   String? email,
   String? password,
-  String? displayName,
   String? photoUrl,
   DateTime? createdTime,
   String? phoneNumber,
   bool? avilabilty,
   String? uid,
   LatLng? location,
-  String? username,
   String? cid,
   DocumentReference? clientId,
   DocumentReference? sPid,
   Rolee? role,
   String? pfofission,
+  String? displayName,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'email': email,
       'password': password,
-      'display_name': displayName,
       'photo_url': photoUrl,
       'created_time': createdTime,
       'phone_number': phoneNumber,
       'Avilabilty': avilabilty,
       'uid': uid,
       'location': location,
-      'username': username,
       'CID': cid,
       'clientId': clientId,
       'SPid': sPid,
       'role': role,
       'pfofission': pfofission,
+      'display_name': displayName,
     }.withoutNulls,
   );
 
@@ -189,38 +181,36 @@ class Users1RecordDocumentEquality implements Equality<Users1Record> {
   bool equals(Users1Record? e1, Users1Record? e2) {
     return e1?.email == e2?.email &&
         e1?.password == e2?.password &&
-        e1?.displayName == e2?.displayName &&
         e1?.photoUrl == e2?.photoUrl &&
         e1?.createdTime == e2?.createdTime &&
         e1?.phoneNumber == e2?.phoneNumber &&
         e1?.avilabilty == e2?.avilabilty &&
         e1?.uid == e2?.uid &&
         e1?.location == e2?.location &&
-        e1?.username == e2?.username &&
         e1?.cid == e2?.cid &&
         e1?.clientId == e2?.clientId &&
         e1?.sPid == e2?.sPid &&
         e1?.role == e2?.role &&
-        e1?.pfofission == e2?.pfofission;
+        e1?.pfofission == e2?.pfofission &&
+        e1?.displayName == e2?.displayName;
   }
 
   @override
   int hash(Users1Record? e) => const ListEquality().hash([
         e?.email,
         e?.password,
-        e?.displayName,
         e?.photoUrl,
         e?.createdTime,
         e?.phoneNumber,
         e?.avilabilty,
         e?.uid,
         e?.location,
-        e?.username,
         e?.cid,
         e?.clientId,
         e?.sPid,
         e?.role,
-        e?.pfofission
+        e?.pfofission,
+        e?.displayName
       ]);
 
   @override

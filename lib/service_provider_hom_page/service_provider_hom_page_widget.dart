@@ -359,6 +359,31 @@ class _ServiceProviderHomPageWidgetState
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
+                        FFButtonWidget(
+                          onPressed: () async {
+                            context.pushNamed('clientAccount');
+                          },
+                          text: 'الحساب',
+                          options: FFButtonOptions(
+                            width: 300.0,
+                            height: 40.0,
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 0.0),
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).tertiary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                  letterSpacing: 0.0,
+                                ),
+                            elevation: 0.0,
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
                       ].divide(const SizedBox(height: 20.0)),
                     ),
                   ),

@@ -419,6 +419,7 @@ class _HomePageClientWidgetState extends State<HomePageClientWidget> {
                             },
                             text: 'تسجيل خروج ',
                             options: FFButtonOptions(
+                              width: 110.0,
                               height: 40.0,
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
@@ -430,6 +431,7 @@ class _HomePageClientWidgetState extends State<HomePageClientWidget> {
                                   .override(
                                     fontFamily: 'Readex Pro',
                                     color: Colors.white,
+                                    fontSize: 7.0,
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 0.0,
@@ -455,6 +457,7 @@ class _HomePageClientWidgetState extends State<HomePageClientWidget> {
                                   .override(
                                     fontFamily: 'Readex Pro',
                                     color: Colors.white,
+                                    fontSize: 7.0,
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 0.0,
@@ -478,13 +481,14 @@ class _HomePageClientWidgetState extends State<HomePageClientWidget> {
                                   .override(
                                     fontFamily: 'Readex Pro',
                                     color: Colors.white,
+                                    fontSize: 7.0,
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 0.0,
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
-                        ],
+                        ].divide(const SizedBox(width: 10.0)),
                       ),
                     ),
                   ],
