@@ -45,7 +45,11 @@ class _ServiceProviderRegisterWidgetState
     _model.name2FocusNode ??= FocusNode();
     _model.name2FocusNode!.addListener(
       () async {
-        _model.nameError = '';
+        if (functions.validateEmail(_model.name2TextController.text)) {
+          _model.nameError = ' ';
+        } else {
+          _model.nameError = ' الاسم غير صحيح';
+        }
       },
     );
     _model.email2TextController ??= TextEditingController();
@@ -460,6 +464,26 @@ class _ServiceProviderRegisterWidgetState
                                                     ),
                                                   ),
                                                 ),
+                                                if (_model.nameError != ' ')
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                16.0, 0.0),
+                                                    child: Text(
+                                                      _model.nameError!,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Plus Jakarta Sans',
+                                                            color: const Color(
+                                                                0xFFFF0000),
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
@@ -1354,7 +1378,7 @@ class _ServiceProviderRegisterWidgetState
                                                       onPressed: ((_model.dropDownValue ==
                                                                       null ||
                                                                   _model.dropDownValue ==
-                                                                      '') ||
+                                                                      '') &&
                                                               (_model.uploadedFileUrl !=
                                                                       ''))
                                                           ? null
@@ -1402,6 +1426,38 @@ class _ServiceProviderRegisterWidgetState
                                                                   'ServiceProviderHomPage',
                                                                   context
                                                                       .mounted);
+
+                                                              if (_model.dropDownValue !=
+                                                                      null &&
+                                                                  _model.dropDownValue !=
+                                                                      '') {
+                                                                FFAppState()
+                                                                        .dropstate =
+                                                                    false;
+                                                                safeSetState(
+                                                                    () {});
+                                                              } else {
+                                                                FFAppState()
+                                                                        .dropstate =
+                                                                    true;
+                                                                safeSetState(
+                                                                    () {});
+                                                              }
+
+                                                              if (_model.uploadedFileUrl !=
+                                                                      '') {
+                                                                FFAppState()
+                                                                        .photostate =
+                                                                    false;
+                                                                safeSetState(
+                                                                    () {});
+                                                              } else {
+                                                                FFAppState()
+                                                                        .photostate =
+                                                                    true;
+                                                                safeSetState(
+                                                                    () {});
+                                                              }
                                                             },
                                                       text: 'تسجيل',
                                                       options: FFButtonOptions(
