@@ -45,11 +45,8 @@ class _ServiceProviderRegisterWidgetState
     _model.name2FocusNode ??= FocusNode();
     _model.name2FocusNode!.addListener(
       () async {
-        if (functions.validateEmail(_model.name2TextController.text)) {
-          _model.nameError = ' ';
-        } else {
-          _model.nameError = ' الاسم غير صحيح';
-        }
+        _model.nameError =
+            functions.newCustomFunction4(_model.name2TextController.text);
       },
     );
     _model.email2TextController ??= TextEditingController();
