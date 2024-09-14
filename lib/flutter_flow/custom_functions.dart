@@ -77,3 +77,9 @@ String? newCustomFunction4(String? name) {
     return 'Please enter a valid name in Arabic or English'; // Error message
   }
 }
+
+bool validateEmail(String email) {
+  // wrtie me a validateEmail function that return true if the emali entered by the user in the form  is in valid format , false otherwize
+  final RegExp emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+  return emailRegex.hasMatch(email);
+}

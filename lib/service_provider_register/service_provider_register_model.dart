@@ -6,6 +6,16 @@ import 'package:flutter/material.dart';
 
 class ServiceProviderRegisterModel
     extends FlutterFlowModel<ServiceProviderRegisterWidget> {
+  ///  Local state fields for this page.
+
+  String? nameError = '';
+
+  String? emailError;
+
+  String? phoneError;
+
+  String? passError;
+
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();

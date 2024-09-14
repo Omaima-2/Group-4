@@ -267,7 +267,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                   TextCapitalization.none,
                                               obscureText: false,
                                               decoration: InputDecoration(
-                                                labelText: 'اسم المستخدم',
+                                                labelText: 'الاسم كاملاً',
                                                 labelStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .labelLarge
@@ -400,7 +400,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              labelText: 'الايميل',
+                                              labelText: 'البريد الإلكتروني',
                                               labelStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .labelLarge

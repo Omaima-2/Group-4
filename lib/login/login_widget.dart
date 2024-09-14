@@ -177,7 +177,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 children: [
                                   Form(
                                     key: _model.formKey,
-                                    autovalidateMode: AutovalidateMode.always,
+                                    autovalidateMode: AutovalidateMode.disabled,
                                     child: Align(
                                       alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(

@@ -361,34 +361,45 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                           ),
                         ),
                         FFButtonWidget(
-                          onPressed: () async {
-                            await ServicesRecord.collection
-                                .doc()
-                                .set(createServicesRecordData(
-                                  name: _model.serNameTextController.text,
-                                  description: _model.serDesTextController.text,
-                                  price: double.tryParse(
-                                      _model.serPriceTextController.text),
-                                  user: currentUserReference,
-                                ));
+                          onPressed: ((_model.serNameTextController.text ==
+                                          '') &&
+                                  (/* NOT RECOMMENDED */ _model
+                                          .serDesTextController.text ==
+                                      'true') &&
+                                  (/* NOT RECOMMENDED */ _model
+                                          .serPriceTextController.text ==
+                                      'true'))
+                              ? null
+                              : () async {
+                                  await ServicesRecord.collection
+                                      .doc()
+                                      .set(createServicesRecordData(
+                                        name: _model.serNameTextController.text,
+                                        description:
+                                            _model.serDesTextController.text,
+                                        price: double.tryParse(
+                                            _model.serPriceTextController.text),
+                                        user: currentUserReference,
+                                      ));
 
-                            context.pushNamed('services');
+                                  context.pushNamed('services');
 
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(
-                                  'تم إضافة الخدمة بنجاح',
-                                  style: TextStyle(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                  ),
-                                ),
-                                duration: const Duration(milliseconds: 4000),
-                                backgroundColor:
-                                    FlutterFlowTheme.of(context).secondary,
-                              ),
-                            );
-                          },
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        'تم إضافة الخدمة بنجاح',
+                                        style: TextStyle(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
+                                      ),
+                                      duration: const Duration(milliseconds: 4000),
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .secondary,
+                                    ),
+                                  );
+                                },
                           text: 'حفظ',
                           options: FFButtonOptions(
                             width: 100.0,
@@ -407,6 +418,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                 ),
                             elevation: 0.0,
                             borderRadius: BorderRadius.circular(8.0),
+                            disabledColor: const Color(0x5D8CDBAF),
                           ),
                         ),
                       ],
