@@ -54,7 +54,15 @@ class _ServiceProviderRegisterWidgetState
     );
     _model.email2TextController ??= TextEditingController();
     _model.email2FocusNode ??= FocusNode();
-    _model.email2FocusNode!.addListener(() => safeSetState(() {}));
+    _model.email2FocusNode!.addListener(
+      () async {
+        if (functions.validateEmail(_model.name2TextController.text)) {
+          _model.emailError = ' ';
+        } else {
+          _model.emailError = 'البريد الالكتروني غير صحيح';
+        }
+      },
+    );
     _model.phone2TextController ??= TextEditingController();
     _model.phone2FocusNode ??= FocusNode();
 
@@ -622,6 +630,26 @@ class _ServiceProviderRegisterWidgetState
                                                         .asValidator(context),
                                                   ),
                                                 ),
+                                                if (_model.emailError != ' ')
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                16.0, 0.0),
+                                                    child: Text(
+                                                      _model.emailError!,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Plus Jakarta Sans',
+                                                            color: const Color(
+                                                                0xFFFF0000),
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
