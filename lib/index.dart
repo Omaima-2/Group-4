@@ -20,3 +20,5 @@ export '/electrics/electrics_widget.dart' show ElectricsWidget;
 export '/globalwrapperpage/globalwrapperpage_widget.dart'
     show GlobalwrapperpageWidget;
 export '/client_account/client_account_widget.dart' show ClientAccountWidget;
+export '/details19_transaction_budget/details19_transaction_budget_widget.dart'
+    show Details19TransactionBudgetWidget;

@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -305,58 +306,88 @@ class _ServiceProviderHomPageWidgetState
                             ),
                           ],
                         ),
-                        FFButtonWidget(
-                          onPressed: () async {
-                            context.pushNamed('clientAccount');
-                          },
-                          text: 'الحساب',
-                          options: FFButtonOptions(
-                            width: 300.0,
-                            height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: const Color(0xFFF68833),
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  color: Colors.white,
-                                  fontSize: 16.0,
-                                  letterSpacing: 0.0,
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Align(
+                              alignment: const AlignmentDirectional(1.0, 0.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 11.0, 1.0, 0.0),
+                                child: FlutterFlowPlacePicker(
+                                  iOSGoogleMapsApiKey:
+                                      'AIzaSyDDuK3Sll_2vPLS2FJCGescGlf6oV2QV5E',
+                                  androidGoogleMapsApiKey:
+                                      'AIzaSyDDuK3Sll_2vPLS2FJCGescGlf6oV2QV5E',
+                                  webGoogleMapsApiKey:
+                                      'AIzaSyDDuK3Sll_2vPLS2FJCGescGlf6oV2QV5E',
+                                  onSelect: (place) async {
+                                    safeSetState(
+                                        () => _model.buttonValue1 = place);
+                                  },
+                                  defaultText: 'تسجيل خروج',
+                                  buttonOptions: FFButtonOptions(
+                                    width: 175.0,
+                                    height: 40.0,
+                                    color: const Color(0xFFD30713),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 0.0,
+                                    borderSide: const BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
                                 ),
-                            elevation: 0.0,
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
-                        FFButtonWidget(
-                          onPressed: () async {
-                            GoRouter.of(context).prepareAuthEvent();
-                            await authManager.signOut();
-                            GoRouter.of(context).clearRedirectLocation();
-
-                            context.pushNamedAuth('login', context.mounted);
-                          },
-                          text: 'تسجيل خروج',
-                          options: FFButtonOptions(
-                            width: 300.0,
-                            height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: const Color(0xFFD30713),
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  color: Colors.white,
-                                  letterSpacing: 0.0,
+                              ),
+                            ),
+                            Align(
+                              alignment: const AlignmentDirectional(1.0, 0.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 11.0, 1.0, 0.0),
+                                child: FlutterFlowPlacePicker(
+                                  iOSGoogleMapsApiKey:
+                                      'AIzaSyDDuK3Sll_2vPLS2FJCGescGlf6oV2QV5E',
+                                  androidGoogleMapsApiKey:
+                                      'AIzaSyDDuK3Sll_2vPLS2FJCGescGlf6oV2QV5E',
+                                  webGoogleMapsApiKey:
+                                      'AIzaSyDDuK3Sll_2vPLS2FJCGescGlf6oV2QV5E',
+                                  onSelect: (place) async {
+                                    safeSetState(
+                                        () => _model.buttonValue2 = place);
+                                  },
+                                  defaultText: 'تسجيل خروج',
+                                  buttonOptions: FFButtonOptions(
+                                    width: 175.0,
+                                    height: 40.0,
+                                    color: const Color(0xFFD30713),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 0.0,
+                                    borderSide: const BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
                                 ),
-                            elevation: 0.0,
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
+                              ),
+                            ),
+                          ],
                         ),
                       ].divide(const SizedBox(height: 20.0)),
                     ),

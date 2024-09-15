@@ -40,7 +40,7 @@ class _ClientAccountWidgetState extends State<ClientAccountWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFFF7ECEC),
+        backgroundColor: FlutterFlowTheme.of(context).primaryText,
         appBar: AppBar(
           backgroundColor: const Color(0xFFF68833),
           automaticallyImplyLeading: false,
@@ -88,11 +88,12 @@ class _ClientAccountWidgetState extends State<ClientAccountWidget> {
                       width: 318.0,
                       height: 651.0,
                       decoration: BoxDecoration(
-                        color: const Color(0xFFC9CDD2),
+                        color: const Color(0xFFF6F0F0),
                         boxShadow: [
                           BoxShadow(
                             blurRadius: 4.0,
-                            color: FlutterFlowTheme.of(context).primaryText,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
                             offset: const Offset(
                               0.0,
                               2.0,
@@ -143,8 +144,8 @@ class _ClientAccountWidgetState extends State<ClientAccountWidget> {
                                   width: 276.0,
                                   height: 48.0,
                                   decoration: BoxDecoration(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4.0,
@@ -155,7 +156,10 @@ class _ClientAccountWidgetState extends State<ClientAccountWidget> {
                                         ),
                                       )
                                     ],
-                                    borderRadius: BorderRadius.circular(18.0),
+                                    borderRadius: BorderRadius.circular(0.0),
+                                    border: Border.all(
+                                      width: 2.0,
+                                    ),
                                   ),
                                   child: Align(
                                     alignment: const AlignmentDirectional(-1.0, 0.0),

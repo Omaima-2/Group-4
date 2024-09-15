@@ -9,6 +9,10 @@ class ServiceProviderHomPageModel
 
   // State field(s) for SwitchListTile widget.
   bool? switchListTileValue;
+  // State field(s) for button widget.
+  FFPlace buttonValue1 = const FFPlace();
+  // State field(s) for button widget.
+  FFPlace buttonValue2 = const FFPlace();
 
   @override
   void initState(BuildContext context) {}

@@ -161,6 +161,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'clientAccount',
           path: '/clientAccount',
           builder: (context, params) => const ClientAccountWidget(),
+        ),
+        FFRoute(
+          name: 'Details19TransactionBudget',
+          path: '/details19TransactionBudget',
+          builder: (context, params) => const Details19TransactionBudgetWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

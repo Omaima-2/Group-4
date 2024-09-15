@@ -5,31 +5,35 @@ import 'package:flutter/material.dart';
 class AddServiceModel extends FlutterFlowModel<AddServiceWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for serName widget.
-  FocusNode? serNameFocusNode;
-  TextEditingController? serNameTextController;
-  String? Function(BuildContext, String?)? serNameTextControllerValidator;
-  // State field(s) for serDes widget.
-  FocusNode? serDesFocusNode;
-  TextEditingController? serDesTextController;
-  String? Function(BuildContext, String?)? serDesTextControllerValidator;
-  // State field(s) for serPrice widget.
-  FocusNode? serPriceFocusNode;
-  TextEditingController? serPriceTextController;
-  String? Function(BuildContext, String?)? serPriceTextControllerValidator;
+  // State field(s) for Name2 widget.
+  FocusNode? name2FocusNode1;
+  TextEditingController? name2TextController1;
+  String? Function(BuildContext, String?)? name2TextController1Validator;
+  // State field(s) for Name2 widget.
+  FocusNode? name2FocusNode2;
+  TextEditingController? name2TextController2;
+  String? Function(BuildContext, String?)? name2TextController2Validator;
+  // State field(s) for Name2 widget.
+  FocusNode? name2FocusNode3;
+  TextEditingController? name2TextController3;
+  String? Function(BuildContext, String?)? name2TextController3Validator;
+  // State field(s) for PlacePicker widget.
+  FFPlace placePickerValue1 = const FFPlace();
+  // State field(s) for PlacePicker widget.
+  FFPlace placePickerValue2 = const FFPlace();
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    serNameFocusNode?.dispose();
-    serNameTextController?.dispose();
+    name2FocusNode1?.dispose();
+    name2TextController1?.dispose();
 
-    serDesFocusNode?.dispose();
-    serDesTextController?.dispose();
+    name2FocusNode2?.dispose();
+    name2TextController2?.dispose();
 
-    serPriceFocusNode?.dispose();
-    serPriceTextController?.dispose();
+    name2FocusNode3?.dispose();
+    name2TextController3?.dispose();
   }
 }
