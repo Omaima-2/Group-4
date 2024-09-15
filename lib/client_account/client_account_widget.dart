@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'client_account_model.dart';
 export 'client_account_model.dart';
@@ -39,9 +40,9 @@ class _ClientAccountWidgetState extends State<ClientAccountWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: const Color(0xFFF7ECEC),
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).tertiary,
+          backgroundColor: const Color(0xFFF68833),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -73,7 +74,7 @@ class _ClientAccountWidgetState extends State<ClientAccountWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 1.0),
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
@@ -87,12 +88,12 @@ class _ClientAccountWidgetState extends State<ClientAccountWidget> {
                       width: 318.0,
                       height: 651.0,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
+                        color: const Color(0xFFC9CDD2),
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 4.0,
-                            color: Color(0x33000000),
-                            offset: Offset(
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            offset: const Offset(
                               0.0,
                               2.0,
                             ),
@@ -325,6 +326,38 @@ class _ClientAccountWidgetState extends State<ClientAccountWidget> {
                               ].divide(const SizedBox(height: 15.0)),
                             ),
                           ].divide(const SizedBox(height: 15.0)),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: const AlignmentDirectional(0.0, 1.0),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          await authManager.deleteUser(context);
+
+                          context.pushNamed('login');
+                        },
+                        text: 'حذف الحساب',
+                        options: FFButtonOptions(
+                          width: 300.0,
+                          height: 40.0,
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 16.0, 0.0),
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: const Color(0xFFD30713),
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                  ),
+                          elevation: 0.0,
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                     ),

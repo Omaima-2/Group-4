@@ -49,7 +49,7 @@ class _UploadPhotoSucsessWidgetState extends State<UploadPhotoSucsessWidget> {
         ),
         child: Container(
           width: 500.0,
-          height: 500.0,
+          height: 272.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).primaryText,
             boxShadow: [

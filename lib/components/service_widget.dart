@@ -50,7 +50,7 @@ class _ServiceWidgetState extends State<ServiceWidget> {
       width: 166.0,
       height: 170.0,
       decoration: BoxDecoration(
-        color: FlutterFlowTheme.of(context).alternate,
+        color: FlutterFlowTheme.of(context).secondaryBackground,
         boxShadow: const [
           BoxShadow(
             blurRadius: 4.0,

@@ -191,18 +191,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              if (responsiveVisibility(
-                                                context: context,
-                                                phone: false,
-                                                tablet: false,
-                                              ))
-                                                Container(
-                                                  width: 230.0,
-                                                  height: 40.0,
-                                                  decoration: const BoxDecoration(
-                                                    color: Colors.white,
-                                                  ),
-                                                ),
                                               Align(
                                                 alignment: const AlignmentDirectional(
                                                     -1.0, 0.0),
@@ -230,6 +218,18 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   ),
                                                 ),
                                               ),
+                                              if (responsiveVisibility(
+                                                context: context,
+                                                phone: false,
+                                                tablet: false,
+                                              ))
+                                                Container(
+                                                  width: 230.0,
+                                                  height: 40.0,
+                                                  decoration: const BoxDecoration(
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
                                               Align(
                                                 alignment: const AlignmentDirectional(
                                                     -1.0, 0.0),

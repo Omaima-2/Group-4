@@ -8,13 +8,13 @@ class ServiceProviderRegisterModel
     extends FlutterFlowModel<ServiceProviderRegisterWidget> {
   ///  Local state fields for this page.
 
-  String? nameError = '';
+  String nameError = ' ';
 
-  String? emailError;
+  String emailError = ' ';
 
-  String? phoneError;
+  String phoneError = ' ';
 
-  String? passError;
+  String passError = ' ';
 
   ///  State fields for stateful widgets in this page.
 
@@ -23,85 +23,19 @@ class ServiceProviderRegisterModel
   FocusNode? name2FocusNode;
   TextEditingController? name2TextController;
   String? Function(BuildContext, String?)? name2TextControllerValidator;
-  String? _name2TextControllerValidator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'اسم المستخدم غير صحيح ';
-    }
-
-    if (val.length < 3) {
-      return 'اسم السمتخدم يجب ان  يت ';
-    }
-    if (val.length > 30) {
-      return 'اسم السمتخدم طويل جدا';
-    }
-    if (!RegExp(kTextValidatorUsernameRegex).hasMatch(val)) {
-      return 'اسم المستخد غير صحيح ';
-    }
-    return null;
-  }
-
   // State field(s) for Email2 widget.
   FocusNode? email2FocusNode;
   TextEditingController? email2TextController;
   String? Function(BuildContext, String?)? email2TextControllerValidator;
-  String? _email2TextControllerValidator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'اللإيميل غير صحيح';
-    }
-
-    if (val.length < 12) {
-      return 'الإيميل يجب ان يتكون من 12 ';
-    }
-    if (val.length > 40) {
-      return 'الإيميل طويل جدا';
-    }
-    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
-      return 'اللإيميل غير صحيح';
-    }
-    return null;
-  }
-
   // State field(s) for Phone2 widget.
   FocusNode? phone2FocusNode;
   TextEditingController? phone2TextController;
   String? Function(BuildContext, String?)? phone2TextControllerValidator;
-  String? _phone2TextControllerValidator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'رقم الهاتف غير صحيح';
-    }
-
-    if (val.length < 10) {
-      return 'يجب ان يتكون من 10 ارقام';
-    }
-    if (val.length > 10) {
-      return 'يجب ان يتكون من 10 ارقام';
-    }
-    if (!RegExp('^05[0-9]{8}\$').hasMatch(val)) {
-      return 'رقم الهاتف غير صحيح';
-    }
-    return null;
-  }
-
   // State field(s) for Pass2 widget.
   FocusNode? pass2FocusNode;
   TextEditingController? pass2TextController;
   late bool pass2Visibility;
   String? Function(BuildContext, String?)? pass2TextControllerValidator;
-  String? _pass2TextControllerValidator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'كلمة مرور خاطئة';
-    }
-
-    if (val.length < 10) {
-      return 'يجب  ان  تتكون على الاقل من 10 ';
-    }
-    if (val.length > 30) {
-      return 'كلمة المرور طويلة جدا';
-    }
-
-    return null;
-  }
-
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
@@ -115,11 +49,7 @@ class ServiceProviderRegisterModel
 
   @override
   void initState(BuildContext context) {
-    name2TextControllerValidator = _name2TextControllerValidator;
-    email2TextControllerValidator = _email2TextControllerValidator;
-    phone2TextControllerValidator = _phone2TextControllerValidator;
     pass2Visibility = false;
-    pass2TextControllerValidator = _pass2TextControllerValidator;
   }
 
   @override

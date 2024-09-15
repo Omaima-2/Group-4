@@ -42,24 +42,48 @@ class _ServiceProviderRegisterWidgetState
 
     _model.name2TextController ??= TextEditingController();
     _model.name2FocusNode ??= FocusNode();
-    _model.name2FocusNode!.addListener(() => safeSetState(() {}));
+    _model.name2FocusNode!.addListener(
+      () async {
+        _model.nameError = valueOrDefault<String>(
+          functions.newCustomFunction4(_model.name2TextController.text),
+          '.',
+        );
+        safeSetState(() {});
+      },
+    );
     _model.email2TextController ??= TextEditingController();
     _model.email2FocusNode ??= FocusNode();
     _model.email2FocusNode!.addListener(
       () async {
-        if (functions.validateEmail(_model.name2TextController.text)) {
-          _model.emailError = 'ok';
-        } else {
-          _model.emailError = 'البريد الالكتروني غير صحيح';
-        }
+        _model.emailError = valueOrDefault<String>(
+          functions.validateEmail(_model.email2TextController.text),
+          '.',
+        );
+        safeSetState(() {});
       },
     );
     _model.phone2TextController ??= TextEditingController();
     _model.phone2FocusNode ??= FocusNode();
-
+    _model.phone2FocusNode!.addListener(
+      () async {
+        _model.phoneError = valueOrDefault<String>(
+          functions.validatePhoneNumber(_model.phone2TextController.text),
+          '.',
+        );
+        safeSetState(() {});
+      },
+    );
     _model.pass2TextController ??= TextEditingController();
     _model.pass2FocusNode ??= FocusNode();
-
+    _model.pass2FocusNode!.addListener(
+      () async {
+        _model.passError = valueOrDefault<String>(
+          functions.validatePassword(_model.pass2TextController.text),
+          '.',
+        );
+        safeSetState(() {});
+      },
+    );
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -214,7 +238,7 @@ class _ServiceProviderRegisterWidgetState
                                                   10.0, 6.0, 10.0, 10.0),
                                           child: SingleChildScrollView(
                                             child: Column(
-                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisSize: MainAxisSize.min,
                                               mainAxisAlignment:
                                                   MainAxisAlignment.start,
                                               crossAxisAlignment:
@@ -461,176 +485,14 @@ class _ServiceProviderRegisterWidgetState
                                                     ),
                                                   ),
                                                 ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 16.0, 0.0),
-                                                  child: Text(
-                                                    valueOrDefault<String>(
-                                                      _model.nameError,
-                                                      '.',
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color:
-                                                              const Color(0xFFFF0000),
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          16.0, 2.0, 16.0, 0.0),
-                                                  child: TextFormField(
-                                                    controller: _model
-                                                        .email2TextController,
-                                                    focusNode:
-                                                        _model.email2FocusNode,
-                                                    autofocus: false,
-                                                    obscureText: false,
-                                                    decoration: InputDecoration(
-                                                      labelText:
-                                                          'البريد الإلكتروني',
-                                                      labelStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Plus Jakarta Sans',
-                                                                color: const Color(
-                                                                    0xFF57636C),
-                                                                fontSize: 16.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                      enabledBorder:
-                                                          UnderlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          width: 2.0,
-                                                        ),
-                                                        borderRadius:
-                                                            const BorderRadius
-                                                                .only(
-                                                          topLeft:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                          topRight:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                        ),
-                                                      ),
-                                                      focusedBorder:
-                                                          const UnderlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color:
-                                                              Color(0xFF4B39EF),
-                                                          width: 2.0,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .only(
-                                                          topLeft:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                          topRight:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                        ),
-                                                      ),
-                                                      errorBorder:
-                                                          const UnderlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color:
-                                                              Color(0xFFFF5963),
-                                                          width: 2.0,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .only(
-                                                          topLeft:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                          topRight:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                        ),
-                                                      ),
-                                                      focusedErrorBorder:
-                                                          const UnderlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color:
-                                                              Color(0xFFFF5963),
-                                                          width: 2.0,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .only(
-                                                          topLeft:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                          topRight:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                        ),
-                                                      ),
-                                                      filled: true,
-                                                      fillColor: Colors.white,
-                                                      contentPadding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  16.0,
-                                                                  16.0,
-                                                                  8.0),
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyLarge
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color:
-                                                              const Color(0xFF101213),
-                                                          fontSize: 16.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          lineHeight: 1.0,
-                                                        ),
-                                                    maxLength: 30,
-                                                    maxLengthEnforcement:
-                                                        MaxLengthEnforcement
-                                                            .enforced,
-                                                    keyboardType: TextInputType
-                                                        .emailAddress,
-                                                    validator: _model
-                                                        .email2TextControllerValidator
-                                                        .asValidator(context),
-                                                  ),
-                                                ),
-                                                if (_model.emailError != 'ok')
+                                                if (_model.nameError != '.')
                                                   Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
-                                                                16.0, 0.0),
+                                                                16.0, 5.0),
                                                     child: Text(
-                                                      valueOrDefault<String>(
-                                                        _model.emailError,
-                                                        ' .',
-                                                      ),
+                                                      _model.nameError,
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -643,27 +505,199 @@ class _ServiceProviderRegisterWidgetState
                                                           ),
                                                     ),
                                                   ),
+                                                Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          1.0, 0.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
+                                                    child: TextFormField(
+                                                      controller: _model
+                                                          .email2TextController,
+                                                      focusNode: _model
+                                                          .email2FocusNode,
+                                                      autofocus: false,
+                                                      obscureText: false,
+                                                      decoration:
+                                                          InputDecoration(
+                                                        labelText:
+                                                            'البريد الإلكتروني',
+                                                        labelStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Plus Jakarta Sans',
+                                                                  color: const Color(
+                                                                      0xFF57636C),
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                        enabledBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              const BorderRadius
+                                                                  .only(
+                                                            topLeft:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                            topRight:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                          ),
+                                                        ),
+                                                        focusedBorder:
+                                                            const UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Color(
+                                                                0xFF4B39EF),
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .only(
+                                                            topLeft:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                            topRight:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                          ),
+                                                        ),
+                                                        errorBorder:
+                                                            const UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Color(
+                                                                0xFFFF5963),
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .only(
+                                                            topLeft:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                            topRight:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                          ),
+                                                        ),
+                                                        focusedErrorBorder:
+                                                            const UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Color(
+                                                                0xFFFF5963),
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .only(
+                                                            topLeft:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                            topRight:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                          ),
+                                                        ),
+                                                        filled: true,
+                                                        fillColor: Colors.white,
+                                                        contentPadding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    16.0,
+                                                                    16.0,
+                                                                    8.0),
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                'Plus Jakarta Sans',
+                                                            color: const Color(
+                                                                0xFF101213),
+                                                            fontSize: 16.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            lineHeight: 1.0,
+                                                          ),
+                                                      maxLength: 30,
+                                                      maxLengthEnforcement:
+                                                          MaxLengthEnforcement
+                                                              .enforced,
+                                                      keyboardType:
+                                                          TextInputType
+                                                              .emailAddress,
+                                                      validator: _model
+                                                          .email2TextControllerValidator
+                                                          .asValidator(context),
+                                                    ),
+                                                  ),
+                                                ),
+                                                if (_model.emailError != '.')
+                                                  Align(
+                                                    alignment:
+                                                        const AlignmentDirectional(
+                                                            -1.0, -1.0),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  5.0),
+                                                      child: Text(
+                                                        valueOrDefault<String>(
+                                                          _model.emailError,
+                                                          ' .',
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Plus Jakarta Sans',
+                                                                  color: const Color(
+                                                                      0xFFFF0000),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ),
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 2.0, 16.0, 0.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   child: TextFormField(
                                                     controller: _model
                                                         .phone2TextController,
                                                     focusNode:
                                                         _model.phone2FocusNode,
-                                                    onFieldSubmitted:
-                                                        (_) async {
-                                                      if (functions
-                                                          .newCustomFunction(
-                                                              '0537702320')!) {
-                                                        HapticFeedback
-                                                            .lightImpact();
-                                                      } else {
-                                                        HapticFeedback
-                                                            .heavyImpact();
-                                                      }
-                                                    },
                                                     autofocus: false,
                                                     textCapitalization:
                                                         TextCapitalization.none,
@@ -804,28 +838,35 @@ class _ServiceProviderRegisterWidgetState
                                                         .asValidator(context),
                                                   ),
                                                 ),
+                                                if (_model.phoneError != '.')
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                16.0, 5.0),
+                                                    child: Text(
+                                                      _model.phoneError,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Plus Jakarta Sans',
+                                                            color: const Color(
+                                                                0xFFFF0000),
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(16.0, 12.0,
-                                                          16.0, 0.0),
+                                                      .fromSTEB(
+                                                          16.0, 5.0, 16.0, 0.0),
                                                   child: TextFormField(
                                                     controller: _model
                                                         .pass2TextController,
                                                     focusNode:
                                                         _model.pass2FocusNode,
-                                                    onFieldSubmitted:
-                                                        (_) async {
-                                                      if (functions
-                                                              .newCustomFunction3(
-                                                                  'Aa12345678') ==
-                                                          'Aa12345678') {
-                                                        HapticFeedback
-                                                            .lightImpact();
-                                                      } else {
-                                                        HapticFeedback
-                                                            .heavyImpact();
-                                                      }
-                                                    },
                                                     autofocus: false,
                                                     textCapitalization:
                                                         TextCapitalization
@@ -983,6 +1024,26 @@ class _ServiceProviderRegisterWidgetState
                                                         .asValidator(context),
                                                   ),
                                                 ),
+                                                if (_model.passError != '.')
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                16.0, 5.0),
+                                                    child: Text(
+                                                      _model.passError,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Plus Jakarta Sans',
+                                                            color: const Color(
+                                                                0xFFFF0000),
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
                                                 Align(
                                                   alignment:
                                                       const AlignmentDirectional(

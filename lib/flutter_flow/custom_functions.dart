@@ -67,19 +67,89 @@ String? newCustomFunction3(String? pass2) {
 }
 
 String newCustomFunction4(String? name) {
+  // Regular expression to match only alphabetic characters (English and Arabic) and spaces
   final RegExp nameRegex =
-      RegExp(r'^[A-Za-z\u0621-\u064A\s]+'); // Note the absence of $
+      RegExp(r'^[A-Za-z\u0621-\u064A\s]+$'); // Added $ to ensure full match
 
-  // Check if the name matches the regex and return a message
-  if (name != null && nameRegex.hasMatch(name)) {
-    return ' '; // Valid name
+  // Check if the name is null or empty
+  if (name == null || name.isEmpty) {
+    return ' الرجاء ادخال الاسم بالعربية او بالانجليزية'; // Return message if the name is empty
+  }
+
+  // Check if the name matches the regex
+  if (nameRegex.hasMatch(name)) {
+    return '.'; // Return '.' for valid name
   } else {
-    return 'Please enter a valid name in Arabic or English'; // Error message
+    return 'الرجاء ادخال الاسم بدون ارقان او رموز'; // Return error message in Arabic for invalid format
   }
 }
 
-bool validateEmail(String email) {
-  // wrtie me a validateEmail function that return true if the emali entered by the user in the form  is in valid format , false otherwize
-  final RegExp emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
-  return emailRegex.hasMatch(email);
+String validateEmail(String email) {
+  // Updated regex pattern for better email validation
+  final RegExp emailRegex =
+      RegExp(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
+
+  // Check if the email is empty
+  if (email.isEmpty) {
+    return 'الرجاء ادخال البريد الالكتروني';
+  }
+
+  // Check if the email matches the regex pattern
+  if (emailRegex.hasMatch(email)) {
+    return '.'; // Return message for valid email
+  } else {
+    return 'البريد الالكتروني غير صحيح'; // Return message for invalid email format
+  }
+}
+
+String validatePhoneNumber(String phoneNumber) {
+  // Regular expression to match a phone number starting with '05' and exactly 10 digits long
+  final RegExp phoneRegex = RegExp(r'^05\d{8}$');
+
+  // Check if the phone number is empty
+  if (phoneNumber.isEmpty) {
+    return 'الرجاء ادخال رقم الهاتف';
+  }
+
+  // Check if the phone number matches the regex pattern
+  if (phoneRegex.hasMatch(phoneNumber)) {
+    return '.'; // Return message for valid phone number
+  } else {
+    return 'رقم الهاتف غير صحيح'; // Return message for invalid phone number
+  }
+}
+
+String validatePassword(String password) {
+  // Regular expression to validate:
+  // - Only English letters and numbers allowed
+  final RegExp containsEnglishLettersAndNumbers = RegExp(r'^[A-Za-z0-9]*$');
+
+  final RegExp containsLowercase =
+      RegExp(r'(?=.*[a-z])'); // At least one lowercase letter
+  final RegExp containsUppercase =
+      RegExp(r'(?=.*[A-Z])'); // At least one uppercase letter
+
+  // Check if the password is empty
+  if (password.isEmpty) {
+    return 'Password cannot be empty';
+  }
+
+  // Check if the password is too short
+  if (password.length < 8) {
+    return 'Password must be at least 8 characters long';
+  }
+
+  // Check if the password contains only English letters and numbers (no special characters)
+  if (!containsEnglishLettersAndNumbers.hasMatch(password)) {
+    return 'Password can contain only English letters and numbers';
+  }
+
+  // Check if the password contains both uppercase and lowercase letters
+  if (!containsLowercase.hasMatch(password) ||
+      !containsUppercase.hasMatch(password)) {
+    return 'Password must contain at least one uppercase and one lowercase letter';
+  }
+
+  // If all conditions are met, return valid message
+  return '.';
 }

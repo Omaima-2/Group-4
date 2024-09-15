@@ -41,11 +41,11 @@ class _ServicesWidgetState extends State<ServicesWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).primaryText,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(60.0),
+          preferredSize: const Size.fromHeight(40.0),
           child: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).tertiary,
+            backgroundColor: const Color(0xFFF68833),
             automaticallyImplyLeading: false,
             leading: FlutterFlowIconButton(
               borderColor: Colors.transparent,
@@ -138,7 +138,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                   child: FlutterFlowIconButton(
                     borderRadius: 30.0,
                     buttonSize: 50.0,
-                    fillColor: const Color(0xFF1FC16B),
+                    fillColor: const Color(0xFFF68833),
                     icon: Icon(
                       Icons.add,
                       color: FlutterFlowTheme.of(context).info,
