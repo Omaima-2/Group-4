@@ -211,7 +211,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
-                                                                    0.0,
+                                                                    16.0,
                                                                     2.0),
                                                         child: Text(
                                                           'مرحبا بك في مطرقة',
@@ -260,7 +260,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     2.0,
-                                                                    0.0,
+                                                                    16.0,
                                                                     2.0),
                                                         child: Text(
                                                           'سجّل دخولك وابدأ بالعمل..',
