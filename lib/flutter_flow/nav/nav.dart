@@ -131,9 +131,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ClientAccountWidget(),
         ),
         FFRoute(
-          name: 'ServiceProviderHomPageCopy',
-          path: '/serviceProviderHomPageCopy',
-          builder: (context, params) => const ServiceProviderHomPageCopyWidget(),
+          name: 'ServiceProviderHomePage',
+          path: '/serviceProviderHomePage',
+          builder: (context, params) => const ServiceProviderHomePageWidget(),
         ),
         FFRoute(
           name: 'AdminHomePage',

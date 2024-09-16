@@ -813,7 +813,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                       ?.role ==
                                                                   Rolee.sp) {
                                                                 context.pushNamedAuth(
-                                                                    'ServiceProviderHomPageCopy',
+                                                                    'ServiceProviderHomePage',
                                                                     context
                                                                         .mounted);
                                                               } else {

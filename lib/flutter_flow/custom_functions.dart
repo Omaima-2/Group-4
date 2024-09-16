@@ -73,7 +73,7 @@ String newCustomFunction4(String? name) {
 
   // Check if the name matches the regex
   if (nameRegex.hasMatch(name!)) {
-    return '.'; // Return '.' for valid name
+    return ' '; // Return '.' for valid name
   } else {
     return 'الرجاء ادخال الاسم بدون ارقام او رموز'; // Return error message in Arabic for invalid format
   }
@@ -86,7 +86,7 @@ String validateEmail(String email) {
 
   // Check if the email matches the regex pattern
   if (emailRegex.hasMatch(email)) {
-    return '.'; // Return message for valid email
+    return ' '; // Return message for valid email
   } else {
     return 'البريد الالكتروني غير صحيح'; // Return message for invalid email format
   }
@@ -98,7 +98,7 @@ String validatePhoneNumber(String phoneNumber) {
 
   // Check if the phone number matches the regex pattern
   if (phoneRegex.hasMatch(phoneNumber)) {
-    return '.'; // Return message for valid phone number
+    return ' '; // Return message for valid phone number
   } else {
     return 'رقم الهاتف غير صحيح'; // Return message for invalid phone number
   }
@@ -115,5 +115,5 @@ String validatePassword(String password) {
   }
 
   // If all conditions are met, return valid message
-  return '.';
+  return ' ';
 }

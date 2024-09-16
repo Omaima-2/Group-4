@@ -702,7 +702,7 @@ class _ServiceProviderRegisterWidgetState
                                                       ),
                                                     ),
                                                   ),
-                                                  if (_model.emailError != '.')
+                                                  if (_model.emailError != ' ')
                                                     Align(
                                                       alignment:
                                                           const AlignmentDirectional(
@@ -924,7 +924,7 @@ class _ServiceProviderRegisterWidgetState
                                                       ),
                                                     ),
                                                   ),
-                                                  if (_model.phoneError != '.')
+                                                  if (_model.phoneError != ' ')
                                                     Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
@@ -1156,7 +1156,7 @@ class _ServiceProviderRegisterWidgetState
                                                       ),
                                                     ),
                                                   ),
-                                                  if (_model.passError != '.')
+                                                  if (_model.passError != ' ')
                                                     Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
@@ -1854,22 +1854,27 @@ class _ServiceProviderRegisterWidgetState
                                                                     0.0,
                                                                     16.0),
                                                         child: FFButtonWidget(
-                                                          onPressed: ((_model.emailSPTextController.text ==
+                                                          onPressed: ((_model.emailSPTextController.text == '') ||
+                                                                  (_model.displayNameSPTextController.text ==
                                                                           '') ||
-                                                                  (_model.displayNameSPTextController
-                                                                              .text ==
+                                                                  (_model.phoneNumberSPTextController.text ==
                                                                           '') ||
-                                                                  (_model.phoneNumberSPTextController
-                                                                              .text ==
+                                                                  (_model.passSPTextController.text ==
                                                                           '') ||
-                                                                  (_model.passSPTextController
-                                                                              .text ==
-                                                                          '') ||
-                                                                  (_model.passSPTextController
-                                                                          .text !=
+                                                                  (_model.passSPTextController.text !=
                                                                       _model
                                                                           .confirmPassSPTextController
-                                                                          .text))
+                                                                          .text) ||
+                                                                  (_model.nameError !=
+                                                                      ' ') ||
+                                                                  (_model.emailError !=
+                                                                      ' ') ||
+                                                                  (_model.phoneError !=
+                                                                      ' ') ||
+                                                                  (_model.passError !=
+                                                                      ' ') ||
+                                                                  (_model.comfPassErrror !=
+                                                                      ' '))
                                                               ? null
                                                               : () async {
                                                                   GoRouter.of(
@@ -1911,7 +1916,7 @@ class _ServiceProviderRegisterWidgetState
                                                                   ));
 
                                                                   context.pushNamedAuth(
-                                                                      'ServiceProviderHomPageCopy',
+                                                                      'ServiceProviderHomePage',
                                                                       context
                                                                           .mounted);
                                                                 },

@@ -148,7 +148,7 @@ class _NavBarSPWidgetState extends State<NavBarSPWidget> {
                             size: 20.0,
                           ),
                           onPressed: () async {
-                            context.pushNamed('ServiceProviderHomPageCopy');
+                            context.pushNamed('ServiceProviderHomePage');
                           },
                         ),
                       ),

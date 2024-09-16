@@ -1,10 +1,10 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'service_provider_hom_page_copy_widget.dart'
-    show ServiceProviderHomPageCopyWidget;
+import 'service_provider_home_page_widget.dart'
+    show ServiceProviderHomePageWidget;
 import 'package:flutter/material.dart';
 
-class ServiceProviderHomPageCopyModel
-    extends FlutterFlowModel<ServiceProviderHomPageCopyWidget> {
+class ServiceProviderHomePageModel
+    extends FlutterFlowModel<ServiceProviderHomePageWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for SwitchListTile widget.

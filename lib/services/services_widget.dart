@@ -63,7 +63,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                       size: 30.0,
                     ),
                     onPressed: () async {
-                      context.pushNamed('ServiceProviderHomPageCopy');
+                      context.pushNamed('ServiceProviderHomePage');
                     },
                   ),
                 ),

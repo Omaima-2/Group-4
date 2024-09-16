@@ -3,27 +3,27 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'service_provider_hom_page_copy_model.dart';
-export 'service_provider_hom_page_copy_model.dart';
+import 'service_provider_home_page_model.dart';
+export 'service_provider_home_page_model.dart';
 
-class ServiceProviderHomPageCopyWidget extends StatefulWidget {
-  const ServiceProviderHomPageCopyWidget({super.key});
+class ServiceProviderHomePageWidget extends StatefulWidget {
+  const ServiceProviderHomePageWidget({super.key});
 
   @override
-  State<ServiceProviderHomPageCopyWidget> createState() =>
-      _ServiceProviderHomPageCopyWidgetState();
+  State<ServiceProviderHomePageWidget> createState() =>
+      _ServiceProviderHomePageWidgetState();
 }
 
-class _ServiceProviderHomPageCopyWidgetState
-    extends State<ServiceProviderHomPageCopyWidget> {
-  late ServiceProviderHomPageCopyModel _model;
+class _ServiceProviderHomePageWidgetState
+    extends State<ServiceProviderHomePageWidget> {
+  late ServiceProviderHomePageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ServiceProviderHomPageCopyModel());
+    _model = createModel(context, () => ServiceProviderHomePageModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }

@@ -11,8 +11,8 @@ export '/password_done_reset/password_done_reset_widget.dart'
 export '/login/login_widget.dart' show LoginWidget;
 export '/add_service/add_service_widget.dart' show AddServiceWidget;
 export '/client_account/client_account_widget.dart' show ClientAccountWidget;
-export '/service_provider_hom_page_copy/service_provider_hom_page_copy_widget.dart'
-    show ServiceProviderHomPageCopyWidget;
+export '/service_provider_home_page/service_provider_home_page_widget.dart'
+    show ServiceProviderHomePageWidget;
 export '/admin_home_page/admin_home_page_widget.dart' show AdminHomePageWidget;
 export '/services/services_widget.dart' show ServicesWidget;
 export '/view_service/view_service_widget.dart' show ViewServiceWidget;
