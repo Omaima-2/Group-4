@@ -72,24 +72,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const LoginWidget() : const LoginWidget(),
+      errorBuilder: (context, state) => appStateNotifier.loggedIn
+          ? const ClientRegristeWidget()
+          : const ClientRegristeWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? const LoginWidget() : const LoginWidget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? const ClientRegristeWidget()
+              : const ClientRegristeWidget(),
         ),
         FFRoute(
           name: 'ServiceProviderRegister',
           path: '/ServiceProvider',
           builder: (context, params) => const ServiceProviderRegisterWidget(),
-        ),
-        FFRoute(
-          name: 'welcompage',
-          path: '/welcompage',
-          builder: (context, params) => const WelcompageWidget(),
         ),
         FFRoute(
           name: 'ClientRegriste',
@@ -113,24 +110,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const MapWidget(),
         ),
         FFRoute(
-          name: 'AdminReq',
-          path: '/adminReq',
-          builder: (context, params) => const AdminReqWidget(),
-        ),
-        FFRoute(
-          name: 'ServiceProviderHomPage',
-          path: '/serviceProviderHomPage',
-          builder: (context, params) => const ServiceProviderHomPageWidget(),
-        ),
-        FFRoute(
           name: 'passwordDoneReset',
           path: '/passwordDoneReset',
           builder: (context, params) => const PasswordDoneResetWidget(),
-        ),
-        FFRoute(
-          name: 'adminHomepage',
-          path: '/adminHomepage',
-          builder: (context, params) => const AdminHomepageWidget(),
         ),
         FFRoute(
           name: 'login',
@@ -148,24 +130,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AddServiceWidget(),
         ),
         FFRoute(
-          name: 'Electrics',
-          path: '/electrics',
-          builder: (context, params) => const ElectricsWidget(),
-        ),
-        FFRoute(
-          name: 'globalwrapperpage',
-          path: '/globalwrapperpage',
-          builder: (context, params) => const GlobalwrapperpageWidget(),
-        ),
-        FFRoute(
           name: 'clientAccount',
           path: '/clientAccount',
           builder: (context, params) => const ClientAccountWidget(),
         ),
         FFRoute(
-          name: 'Details19TransactionBudget',
-          path: '/details19TransactionBudget',
-          builder: (context, params) => const Details19TransactionBudgetWidget(),
+          name: 'ServiceProviderHomPageCopy',
+          path: '/serviceProviderHomPageCopy',
+          builder: (context, params) => const ServiceProviderHomPageCopyWidget(),
+        ),
+        FFRoute(
+          name: 'AdminHomePage',
+          path: '/adminHomePage',
+          builder: (context, params) => const AdminHomePageWidget(),
+        ),
+        FFRoute(
+          name: 'SPsignUp',
+          path: '/sPsignUp',
+          builder: (context, params) => const SPsignUpWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -336,7 +318,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/login';
+            return '/clientRegriste';
           }
           return null;
         },

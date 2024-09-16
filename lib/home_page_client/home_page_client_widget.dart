@@ -1,6 +1,5 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
@@ -156,8 +155,8 @@ class _HomePageClientWidgetState extends State<HomePageClientWidget> {
                       const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 14.0, 0.0),
                   child: Text(
                     'ما نوع المشكله التي تعاني منها؟',
-                    style: FlutterFlowTheme.of(context).labelLarge.override(
-                          fontFamily: 'Plus Jakarta Sans',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Outfit',
                           color: const Color(0xFF57636C),
                           fontSize: 16.0,
                           letterSpacing: 0.0,
@@ -175,86 +174,84 @@ class _HomePageClientWidgetState extends State<HomePageClientWidget> {
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 8.0),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed('Electrics');
-                          },
-                          child: Container(
-                            width: double.infinity,
-                            height: 176.0,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              boxShadow: const [
-                                BoxShadow(
-                                  blurRadius: 3.0,
-                                  color: Color(0x411D2429),
-                                  offset: Offset(
-                                    0.0,
-                                    1.0,
-                                  ),
-                                )
+                        child: Container(
+                          width: double.infinity,
+                          height: 176.0,
+                          decoration: BoxDecoration(
+                            boxShadow: const [
+                              BoxShadow(
+                                blurRadius: 3.0,
+                                color: Color(0x411D2429),
+                                offset: Offset(
+                                  0.0,
+                                  1.0,
+                                ),
+                              )
+                            ],
+                            gradient: LinearGradient(
+                              colors: [
+                                const Color(0xFFA8C2E0),
+                                FlutterFlowTheme.of(context).primaryText
                               ],
-                              borderRadius: BorderRadius.circular(8.0),
+                              stops: const [0.0, 1.0],
+                              begin: const AlignmentDirectional(1.0, -0.98),
+                              end: const AlignmentDirectional(-1.0, 0.98),
                             ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(4.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 1.0, 1.0, 1.0),
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(6.0),
-                                        child: Image.asset(
-                                          'assets/images/how-to-change-a-recessed-light-bullb_1.jpg',
-                                          width: double.infinity,
-                                          height: 127.0,
-                                          fit: BoxFit.cover,
-                                          alignment: const Alignment(0.0, -0.5),
-                                        ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 1.0, 1.0, 1.0),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(6.0),
+                                      child: Image.asset(
+                                        'assets/images/how-to-change-a-recessed-light-bullb_1.jpg',
+                                        width: double.infinity,
+                                        height: 127.0,
+                                        fit: BoxFit.cover,
+                                        alignment: const Alignment(0.0, -0.5),
                                       ),
                                     ),
                                   ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Text(
-                                        'كهرباء',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              fontSize: 20.0,
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                      const Flexible(
-                                        child: Align(
-                                          alignment:
-                                              AlignmentDirectional(1.0, 0.0),
-                                          child: Icon(
-                                            Icons.chevron_right_rounded,
-                                            color: Color(0xFF57636C),
-                                            size: 24.0,
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Text(
+                                      'كهرباء',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            fontSize: 20.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
                                           ),
+                                    ),
+                                    const Flexible(
+                                      child: Align(
+                                        alignment:
+                                            AlignmentDirectional(1.0, 0.0),
+                                        child: Icon(
+                                          Icons.chevron_right_rounded,
+                                          color: Color(0xFF57636C),
+                                          size: 24.0,
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                ],
-                              ),
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
                           ),
                         ),
@@ -266,7 +263,6 @@ class _HomePageClientWidgetState extends State<HomePageClientWidget> {
                           width: double.infinity,
                           height: 170.0,
                           decoration: BoxDecoration(
-                            color: Colors.white,
                             boxShadow: const [
                               BoxShadow(
                                 blurRadius: 3.0,
@@ -277,6 +273,15 @@ class _HomePageClientWidgetState extends State<HomePageClientWidget> {
                                 ),
                               )
                             ],
+                            gradient: LinearGradient(
+                              colors: [
+                                const Color(0xFFA8C2E0),
+                                FlutterFlowTheme.of(context).primaryText
+                              ],
+                              stops: const [0.0, 1.0],
+                              begin: const AlignmentDirectional(1.0, -0.98),
+                              end: const AlignmentDirectional(-1.0, 0.98),
+                            ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           child: Padding(
@@ -306,11 +311,12 @@ class _HomePageClientWidgetState extends State<HomePageClientWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Outfit',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             fontSize: 20.0,
                                             letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
                                           ),
                                     ),
                                     const Flexible(
@@ -340,7 +346,6 @@ class _HomePageClientWidgetState extends State<HomePageClientWidget> {
                             width: double.infinity,
                             height: 180.0,
                             decoration: BoxDecoration(
-                              color: Colors.white,
                               boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 3.0,
@@ -351,6 +356,15 @@ class _HomePageClientWidgetState extends State<HomePageClientWidget> {
                                   ),
                                 )
                               ],
+                              gradient: LinearGradient(
+                                colors: [
+                                  const Color(0xFFA8C2E0),
+                                  FlutterFlowTheme.of(context).primaryText
+                                ],
+                                stops: const [0.0, 1.0],
+                                begin: const AlignmentDirectional(1.0, -0.98),
+                                end: const AlignmentDirectional(-1.0, 0.98),
+                              ),
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             child: Padding(
@@ -380,12 +394,13 @@ class _HomePageClientWidgetState extends State<HomePageClientWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Outfit',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
                                               fontSize: 20.0,
                                               letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w500,
                                             ),
                                       ),
                                       const Flexible(
@@ -404,100 +419,6 @@ class _HomePageClientWidgetState extends State<HomePageClientWidget> {
                                 ],
                               ),
                             ),
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Flexible(
-                                child: Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 12.0, 0.0, 0.0),
-                                    child: FFButtonWidget(
-                                      onPressed: () async {
-                                        context.safePop();
-
-                                        context.pushNamed('HomePageClient');
-                                      },
-                                      text: 'حسابي',
-                                      options: FFButtonOptions(
-                                        width: 150.0,
-                                        height: 40.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
-                                        iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: const Color(0xFFF68833),
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w300,
-                                            ),
-                                        elevation: 3.0,
-                                        borderSide: const BorderSide(
-                                          color: Colors.transparent,
-                                          width: 3.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Flexible(
-                                child: Align(
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 12.0, 0.0, 0.0),
-                                    child: FFButtonWidget(
-                                      onPressed: () async {
-                                        context.safePop();
-
-                                        context.pushNamed('HomePageClient');
-                                      },
-                                      text: 'تسجيل خروج',
-                                      options: FFButtonOptions(
-                                        width: 150.0,
-                                        height: 40.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
-                                        iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: const Color(0xFFD30713),
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w300,
-                                            ),
-                                        elevation: 3.0,
-                                        borderSide: const BorderSide(
-                                          color: Colors.transparent,
-                                          width: 3.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ].divide(const SizedBox(width: 10.0)),
                           ),
                         ),
                       ),

@@ -197,11 +197,13 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
                                           'نسيت كلمة المرور',
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
-                                              .headlineMedium
+                                              .bodyMedium
                                               .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                color: const Color(0xFF101213),
-                                                fontSize: 24.0,
+                                                fontFamily: 'Outfit',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                fontSize: 20.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -215,15 +217,13 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 24.0),
                                           child: Text(
-                                            'من فضلك ادخل ايميلك  لاعادة تعيين كلمة المرور ',
+                                            'من فضلك ادخل بريدك  لاعادة تعيين كلمة المرور ',
                                             textAlign: TextAlign.start,
                                             style: FlutterFlowTheme.of(context)
-                                                .labelMedium
+                                                .bodyMedium
                                                 .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
+                                                  fontFamily: 'Outfit',
                                                   color: const Color(0xFF57636C),
-                                                  fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -245,7 +245,7 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              labelText: 'الايميل',
+                                              labelText: 'البريد الإلكتروني',
                                               labelStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -319,12 +319,10 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
                                                           0.0, 16.0, 16.0, 8.0),
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
+                                                .bodyMedium
                                                 .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: const Color(0xFF101213),
-                                                  fontSize: 16.0,
+                                                  fontFamily: 'Outfit',
+                                                  color: const Color(0xFF57636C),
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
                                                   lineHeight: 1.0,
@@ -374,7 +372,7 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
                                               context.pushNamed(
                                                   'passwordDoneReset');
                                             },
-                                            text: 'ارسل رابط عبر الايميل ',
+                                            text: 'أرسل رابط عبر البريد  ',
                                             options: FFButtonOptions(
                                               width: 230.0,
                                               height: 52.0,
@@ -385,12 +383,9 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
                                               color: const Color(0xFFF47F2F),
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .titleSmall
+                                                      .bodyMedium
                                                       .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color: Colors.white,
-                                                        fontSize: 16.0,
+                                                        fontFamily: 'Outfit',
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
@@ -422,7 +417,6 @@ class _ForgetPassWidgetState extends State<ForgetPassWidget>
                 Align(
                   alignment: const AlignmentDirectional(-1.0, -1.0),
                   child: FlutterFlowIconButton(
-                    borderColor: Colors.transparent,
                     borderRadius: 30.0,
                     borderWidth: 1.0,
                     buttonSize: 60.0,

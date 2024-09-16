@@ -41,11 +41,6 @@ class Users1Record extends FirestoreRecord {
   String get phoneNumber => _phoneNumber ?? '';
   bool hasPhoneNumber() => _phoneNumber != null;
 
-  // "Avilabilty" field.
-  bool? _avilabilty;
-  bool get avilabilty => _avilabilty ?? false;
-  bool hasAvilabilty() => _avilabilty != null;
-
   // "uid" field.
   String? _uid;
   String get uid => _uid ?? '';
@@ -55,11 +50,6 @@ class Users1Record extends FirestoreRecord {
   LatLng? _location;
   LatLng? get location => _location;
   bool hasLocation() => _location != null;
-
-  // "CID" field.
-  String? _cid;
-  String get cid => _cid ?? '';
-  bool hasCid() => _cid != null;
 
   // "clientId" field.
   DocumentReference? _clientId;
@@ -76,11 +66,6 @@ class Users1Record extends FirestoreRecord {
   Rolee? get role => _role;
   bool hasRole() => _role != null;
 
-  // "pfofission" field.
-  String? _pfofission;
-  String get pfofission => _pfofission ?? '';
-  bool hasPfofission() => _pfofission != null;
-
   // "display_name" field.
   String? _displayName;
   String get displayName => _displayName ?? '';
@@ -92,14 +77,11 @@ class Users1Record extends FirestoreRecord {
     _photoUrl = snapshotData['photo_url'] as String?;
     _createdTime = snapshotData['created_time'] as DateTime?;
     _phoneNumber = snapshotData['phone_number'] as String?;
-    _avilabilty = snapshotData['Avilabilty'] as bool?;
     _uid = snapshotData['uid'] as String?;
     _location = snapshotData['location'] as LatLng?;
-    _cid = snapshotData['CID'] as String?;
     _clientId = snapshotData['clientId'] as DocumentReference?;
     _sPid = snapshotData['SPid'] as DocumentReference?;
     _role = deserializeEnum<Rolee>(snapshotData['role']);
-    _pfofission = snapshotData['pfofission'] as String?;
     _displayName = snapshotData['display_name'] as String?;
   }
 
@@ -142,14 +124,11 @@ Map<String, dynamic> createUsers1RecordData({
   String? photoUrl,
   DateTime? createdTime,
   String? phoneNumber,
-  bool? avilabilty,
   String? uid,
   LatLng? location,
-  String? cid,
   DocumentReference? clientId,
   DocumentReference? sPid,
   Rolee? role,
-  String? pfofission,
   String? displayName,
 }) {
   final firestoreData = mapToFirestore(
@@ -159,14 +138,11 @@ Map<String, dynamic> createUsers1RecordData({
       'photo_url': photoUrl,
       'created_time': createdTime,
       'phone_number': phoneNumber,
-      'Avilabilty': avilabilty,
       'uid': uid,
       'location': location,
-      'CID': cid,
       'clientId': clientId,
       'SPid': sPid,
       'role': role,
-      'pfofission': pfofission,
       'display_name': displayName,
     }.withoutNulls,
   );
@@ -184,14 +160,11 @@ class Users1RecordDocumentEquality implements Equality<Users1Record> {
         e1?.photoUrl == e2?.photoUrl &&
         e1?.createdTime == e2?.createdTime &&
         e1?.phoneNumber == e2?.phoneNumber &&
-        e1?.avilabilty == e2?.avilabilty &&
         e1?.uid == e2?.uid &&
         e1?.location == e2?.location &&
-        e1?.cid == e2?.cid &&
         e1?.clientId == e2?.clientId &&
         e1?.sPid == e2?.sPid &&
         e1?.role == e2?.role &&
-        e1?.pfofission == e2?.pfofission &&
         e1?.displayName == e2?.displayName;
   }
 
@@ -202,14 +175,11 @@ class Users1RecordDocumentEquality implements Equality<Users1Record> {
         e?.photoUrl,
         e?.createdTime,
         e?.phoneNumber,
-        e?.avilabilty,
         e?.uid,
         e?.location,
-        e?.cid,
         e?.clientId,
         e?.sPid,
         e?.role,
-        e?.pfofission,
         e?.displayName
       ]);
 

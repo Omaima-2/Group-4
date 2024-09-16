@@ -90,21 +90,23 @@ class _UploadPhotoSucsessWidgetState extends State<UploadPhotoSucsessWidget> {
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     'تم الرفع',
-                    style: FlutterFlowTheme.of(context).headlineLarge.override(
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Outfit',
-                          color: FlutterFlowTheme.of(context).tertiary,
+                          color: const Color(0xFFF68833),
+                          fontSize: 34.0,
                           letterSpacing: 0.0,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w500,
                         ),
                   ),
                 ),
                 Text(
                   'تم رفع الصورة بنجاح ',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Readex Pro',
+                        fontFamily: 'Outfit',
                         color: FlutterFlowTheme.of(context).secondaryBackground,
+                        fontSize: 18.0,
                         letterSpacing: 0.0,
-                        fontWeight: FontWeight.normal,
+                        fontWeight: FontWeight.w500,
                       ),
                 ),
                 Align(
@@ -121,10 +123,10 @@ class _UploadPhotoSucsessWidgetState extends State<UploadPhotoSucsessWidget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).tertiary,
+                      color: const Color(0xFFF68833),
                       textStyle:
                           FlutterFlowTheme.of(context).labelLarge.override(
-                                fontFamily: 'Readex Pro',
+                                fontFamily: 'Outfit',
                                 color: Colors.white,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,

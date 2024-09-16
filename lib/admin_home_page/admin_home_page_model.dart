@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'electric_s_p_widget.dart' show ElectricSPWidget;
+import 'admin_home_page_widget.dart' show AdminHomePageWidget;
 import 'package:flutter/material.dart';
 
-class ElectricSPModel extends FlutterFlowModel<ElectricSPWidget> {
+class AdminHomePageModel extends FlutterFlowModel<AdminHomePageWidget> {
   @override
   void initState(BuildContext context) {}
 

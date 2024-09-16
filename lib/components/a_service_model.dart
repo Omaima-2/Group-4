@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'globalwrapperpage_widget.dart' show GlobalwrapperpageWidget;
+import 'a_service_widget.dart' show AServiceWidget;
 import 'package:flutter/material.dart';
 
-class GlobalwrapperpageModel extends FlutterFlowModel<GlobalwrapperpageWidget> {
+class AServiceModel extends FlutterFlowModel<AServiceWidget> {
   @override
   void initState(BuildContext context) {}
 

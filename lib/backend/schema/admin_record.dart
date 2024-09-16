@@ -15,18 +15,12 @@ class AdminRecord extends FirestoreRecord {
     _initializeFields();
   }
 
-  // "uid" field.
-  String? _uid;
-  String get uid => _uid ?? '';
-  bool hasUid() => _uid != null;
-
   // "user" field.
   DocumentReference? _user;
   DocumentReference? get user => _user;
   bool hasUser() => _user != null;
 
   void _initializeFields() {
-    _uid = snapshotData['uid'] as String?;
     _user = snapshotData['user'] as DocumentReference?;
   }
 
@@ -64,12 +58,10 @@ class AdminRecord extends FirestoreRecord {
 }
 
 Map<String, dynamic> createAdminRecordData({
-  String? uid,
   DocumentReference? user,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
-      'uid': uid,
       'user': user,
     }.withoutNulls,
   );
@@ -82,11 +74,11 @@ class AdminRecordDocumentEquality implements Equality<AdminRecord> {
 
   @override
   bool equals(AdminRecord? e1, AdminRecord? e2) {
-    return e1?.uid == e2?.uid && e1?.user == e2?.user;
+    return e1?.user == e2?.user;
   }
 
   @override
-  int hash(AdminRecord? e) => const ListEquality().hash([e?.uid, e?.user]);
+  int hash(AdminRecord? e) => const ListEquality().hash([e?.user]);
 
   @override
   bool isValidKey(Object? o) => o is AdminRecord;

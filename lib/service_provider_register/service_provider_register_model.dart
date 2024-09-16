@@ -16,26 +16,33 @@ class ServiceProviderRegisterModel
 
   String passError = ' ';
 
+  String comfPassErrror = ' ';
+
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for Name2 widget.
-  FocusNode? name2FocusNode;
-  TextEditingController? name2TextController;
-  String? Function(BuildContext, String?)? name2TextControllerValidator;
-  // State field(s) for Email2 widget.
-  FocusNode? email2FocusNode;
-  TextEditingController? email2TextController;
-  String? Function(BuildContext, String?)? email2TextControllerValidator;
-  // State field(s) for Phone2 widget.
-  FocusNode? phone2FocusNode;
-  TextEditingController? phone2TextController;
-  String? Function(BuildContext, String?)? phone2TextControllerValidator;
-  // State field(s) for Pass2 widget.
-  FocusNode? pass2FocusNode;
-  TextEditingController? pass2TextController;
-  late bool pass2Visibility;
-  String? Function(BuildContext, String?)? pass2TextControllerValidator;
+  // State field(s) for displayNameSP widget.
+  FocusNode? displayNameSPFocusNode;
+  TextEditingController? displayNameSPTextController;
+  String? Function(BuildContext, String?)? displayNameSPTextControllerValidator;
+  // State field(s) for EmailSP widget.
+  FocusNode? emailSPFocusNode;
+  TextEditingController? emailSPTextController;
+  String? Function(BuildContext, String?)? emailSPTextControllerValidator;
+  // State field(s) for PhoneNumberSP widget.
+  FocusNode? phoneNumberSPFocusNode;
+  TextEditingController? phoneNumberSPTextController;
+  String? Function(BuildContext, String?)? phoneNumberSPTextControllerValidator;
+  // State field(s) for PassSP widget.
+  FocusNode? passSPFocusNode;
+  TextEditingController? passSPTextController;
+  late bool passSPVisibility;
+  String? Function(BuildContext, String?)? passSPTextControllerValidator;
+  // State field(s) for ConfirmPassSP widget.
+  FocusNode? confirmPassSPFocusNode;
+  TextEditingController? confirmPassSPTextController;
+  late bool confirmPassSPVisibility;
+  String? Function(BuildContext, String?)? confirmPassSPTextControllerValidator;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
@@ -49,21 +56,25 @@ class ServiceProviderRegisterModel
 
   @override
   void initState(BuildContext context) {
-    pass2Visibility = false;
+    passSPVisibility = false;
+    confirmPassSPVisibility = false;
   }
 
   @override
   void dispose() {
-    name2FocusNode?.dispose();
-    name2TextController?.dispose();
+    displayNameSPFocusNode?.dispose();
+    displayNameSPTextController?.dispose();
 
-    email2FocusNode?.dispose();
-    email2TextController?.dispose();
+    emailSPFocusNode?.dispose();
+    emailSPTextController?.dispose();
 
-    phone2FocusNode?.dispose();
-    phone2TextController?.dispose();
+    phoneNumberSPFocusNode?.dispose();
+    phoneNumberSPTextController?.dispose();
 
-    pass2FocusNode?.dispose();
-    pass2TextController?.dispose();
+    passSPFocusNode?.dispose();
+    passSPTextController?.dispose();
+
+    confirmPassSPFocusNode?.dispose();
+    confirmPassSPTextController?.dispose();
   }
 }

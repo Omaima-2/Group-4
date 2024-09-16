@@ -31,23 +31,6 @@ class ClientRegristeModel extends FlutterFlowModel<ClientRegristeWidget> {
   FocusNode? email1FocusNode;
   TextEditingController? email1TextController;
   String? Function(BuildContext, String?)? email1TextControllerValidator;
-  String? _email1TextControllerValidator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'الايميل خاطئ';
-    }
-
-    if (val.length < 10) {
-      return 'الإيميل طويل جدًا';
-    }
-    if (val.length > 30) {
-      return 'الإيميل طويل جدًا';
-    }
-    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
-      return 'الايميل خاطئ';
-    }
-    return null;
-  }
-
   // State field(s) for Phone1 widget.
   FocusNode? phone1FocusNode;
   TextEditingController? phone1TextController;
@@ -73,6 +56,13 @@ class ClientRegristeModel extends FlutterFlowModel<ClientRegristeWidget> {
     return null;
   }
 
+  // State field(s) for conPass widget.
+  FocusNode? conPassFocusNode;
+  TextEditingController? conPassTextController;
+  late bool conPassVisibility;
+  String? Function(BuildContext, String?)? conPassTextControllerValidator;
+  // State field(s) for PlacePicker widget.
+  FFPlace placePickerValue = const FFPlace();
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -81,10 +71,10 @@ class ClientRegristeModel extends FlutterFlowModel<ClientRegristeWidget> {
   @override
   void initState(BuildContext context) {
     name1TextControllerValidator = _name1TextControllerValidator;
-    email1TextControllerValidator = _email1TextControllerValidator;
     phone1TextControllerValidator = _phone1TextControllerValidator;
     pass1Visibility = false;
     pass1TextControllerValidator = _pass1TextControllerValidator;
+    conPassVisibility = false;
   }
 
   @override
@@ -100,5 +90,8 @@ class ClientRegristeModel extends FlutterFlowModel<ClientRegristeWidget> {
 
     pass1FocusNode?.dispose();
     pass1TextController?.dispose();
+
+    conPassFocusNode?.dispose();
+    conPassTextController?.dispose();
   }
 }

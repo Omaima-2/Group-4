@@ -30,11 +30,6 @@ class ServicesRecord extends FirestoreRecord {
   String get description => _description ?? '';
   bool hasDescription() => _description != null;
 
-  // "price" field.
-  double? _price;
-  double get price => _price ?? 0.0;
-  bool hasPrice() => _price != null;
-
   // "photo" field.
   String? _photo;
   String get photo => _photo ?? '';
@@ -45,13 +40,18 @@ class ServicesRecord extends FirestoreRecord {
   DateTime? get createdTime => _createdTime;
   bool hasCreatedTime() => _createdTime != null;
 
+  // "price" field.
+  int? _price;
+  int get price => _price ?? 0;
+  bool hasPrice() => _price != null;
+
   void _initializeFields() {
     _user = snapshotData['user'] as DocumentReference?;
     _name = snapshotData['name'] as String?;
     _description = snapshotData['description'] as String?;
-    _price = castToType<double>(snapshotData['price']);
     _photo = snapshotData['photo'] as String?;
     _createdTime = snapshotData['created_time'] as DateTime?;
+    _price = castToType<int>(snapshotData['price']);
   }
 
   static CollectionReference get collection =>
@@ -92,18 +92,18 @@ Map<String, dynamic> createServicesRecordData({
   DocumentReference? user,
   String? name,
   String? description,
-  double? price,
   String? photo,
   DateTime? createdTime,
+  int? price,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'user': user,
       'name': name,
       'description': description,
-      'price': price,
       'photo': photo,
       'created_time': createdTime,
+      'price': price,
     }.withoutNulls,
   );
 
@@ -118,14 +118,14 @@ class ServicesRecordDocumentEquality implements Equality<ServicesRecord> {
     return e1?.user == e2?.user &&
         e1?.name == e2?.name &&
         e1?.description == e2?.description &&
-        e1?.price == e2?.price &&
         e1?.photo == e2?.photo &&
-        e1?.createdTime == e2?.createdTime;
+        e1?.createdTime == e2?.createdTime &&
+        e1?.price == e2?.price;
   }
 
   @override
   int hash(ServicesRecord? e) => const ListEquality().hash(
-      [e?.user, e?.name, e?.description, e?.price, e?.photo, e?.createdTime]);
+      [e?.user, e?.name, e?.description, e?.photo, e?.createdTime, e?.price]);
 
   @override
   bool isValidKey(Object? o) => o is ServicesRecord;

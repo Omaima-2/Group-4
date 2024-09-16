@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'admin_req_widget.dart' show AdminReqWidget;
+import 'nav_bar_s_p_widget.dart' show NavBarSPWidget;
 import 'package:flutter/material.dart';
 
-class AdminReqModel extends FlutterFlowModel<AdminReqWidget> {
+class NavBarSPModel extends FlutterFlowModel<NavBarSPWidget> {
   @override
   void initState(BuildContext context) {}
 

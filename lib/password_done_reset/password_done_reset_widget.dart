@@ -95,10 +95,12 @@ class _PasswordDoneResetWidgetState extends State<PasswordDoneResetWidget> {
                             'شيك على الايميل',
                             textAlign: TextAlign.start,
                             style: FlutterFlowTheme.of(context)
-                                .headlineLarge
+                                .bodyMedium
                                 .override(
                                   fontFamily: 'Outfit',
+                                  fontSize: 34.0,
                                   letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
                                 ),
                           ),
                         ),
@@ -108,7 +110,7 @@ class _PasswordDoneResetWidgetState extends State<PasswordDoneResetWidget> {
                             onPressed: () async {
                               context.pushNamed('login');
                             },
-                            text: 'Go Back to login page',
+                            text: 'تسجيل الدخول',
                             options: FFButtonOptions(
                               width: 250.0,
                               height: 40.0,
@@ -117,13 +119,14 @@ class _PasswordDoneResetWidgetState extends State<PasswordDoneResetWidget> {
                               iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
+                                  .secondaryBackground,
                               textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
+                                  .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
-                                    color: Colors.white,
+                                    fontFamily: 'Outfit',
+                                    fontSize: 24.0,
                                     letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
                                   ),
                               elevation: 0.0,
                               borderRadius: BorderRadius.circular(8.0),
