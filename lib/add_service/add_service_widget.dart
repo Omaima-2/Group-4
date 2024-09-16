@@ -138,7 +138,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                         fontFamily: 'Outfit',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
-                                        fontSize: 25.0,
+                                        fontSize: 30.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),

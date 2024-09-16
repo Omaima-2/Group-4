@@ -25,6 +25,19 @@ class ServiceProviderRegisterModel
   FocusNode? displayNameSPFocusNode;
   TextEditingController? displayNameSPTextController;
   String? Function(BuildContext, String?)? displayNameSPTextControllerValidator;
+  String? _displayNameSPTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    if (!RegExp('RegExp emptyTextRegExp = RegExp(r\'^\\s*\$\');')
+        .hasMatch(val)) {
+      return 'الاسم  يجب ان لا يكون فارغ ';
+    }
+    return null;
+  }
+
   // State field(s) for EmailSP widget.
   FocusNode? emailSPFocusNode;
   TextEditingController? emailSPTextController;
@@ -56,6 +69,8 @@ class ServiceProviderRegisterModel
 
   @override
   void initState(BuildContext context) {
+    displayNameSPTextControllerValidator =
+        _displayNameSPTextControllerValidator;
     passSPVisibility = false;
     confirmPassSPVisibility = false;
   }

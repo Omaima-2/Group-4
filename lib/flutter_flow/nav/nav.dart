@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '/backend/backend.dart';
 
 
 import '/auth/base_auth_user_provider.dart';
@@ -120,11 +121,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const LoginWidget(),
         ),
         FFRoute(
-          name: 'services',
-          path: '/services',
-          builder: (context, params) => const ServicesWidget(),
-        ),
-        FFRoute(
           name: 'addService',
           path: '/addService',
           builder: (context, params) => const AddServiceWidget(),
@@ -145,9 +141,38 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AdminHomePageWidget(),
         ),
         FFRoute(
-          name: 'SPsignUp',
-          path: '/sPsignUp',
-          builder: (context, params) => const SPsignUpWidget(),
+          name: 'services',
+          path: '/services',
+          builder: (context, params) => const ServicesWidget(),
+        ),
+        FFRoute(
+          name: 'view_Service',
+          path: '/viewService',
+          asyncParams: {
+            'serviceDoc': getDoc(['services'], ServicesRecord.fromSnapshot),
+          },
+          builder: (context, params) => ViewServiceWidget(
+            serviceName: params.getParam(
+              'serviceName',
+              ParamType.String,
+            ),
+            servicePrice: params.getParam(
+              'servicePrice',
+              ParamType.int,
+            ),
+            servicePhoto: params.getParam(
+              'servicePhoto',
+              ParamType.String,
+            ),
+            serviceDesc: params.getParam(
+              'serviceDesc',
+              ParamType.String,
+            ),
+            serviceDoc: params.getParam(
+              'serviceDoc',
+              ParamType.Document,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

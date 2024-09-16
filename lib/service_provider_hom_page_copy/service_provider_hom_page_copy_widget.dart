@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -425,19 +426,56 @@ class _ServiceProviderHomPageCopyWidgetState
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
-                                      Text(
-                                        '12',
-                                        textAlign: TextAlign.end,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              fontSize: 30.0,
-                                              letterSpacing: 0.0,
+                                      StreamBuilder<List<ServicesRecord>>(
+                                        stream: queryServicesRecord(
+                                          queryBuilder: (servicesRecord) =>
+                                              servicesRecord.where(
+                                            'user',
+                                            isEqualTo: currentUserReference,
+                                          ),
+                                        ),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          }
+                                          List<ServicesRecord>
+                                              textServicesRecordList =
+                                              snapshot.data!;
+
+                                          return Text(
+                                            valueOrDefault<String>(
+                                              textServicesRecordList.length
+                                                  .toString(),
+                                              '0',
                                             ),
+                                            textAlign: TextAlign.end,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Outfit',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 30.0,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          );
+                                        },
                                       ),
                                     ],
                                   ),

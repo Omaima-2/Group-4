@@ -187,7 +187,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                             AutovalidateMode.disabled,
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, -1.0),
                                           child: Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
@@ -222,7 +222,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Outfit',
+                                                                    'Baloo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryBackground,
@@ -232,6 +232,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                         ),
                                                       ),
@@ -271,7 +273,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Outfit',
+                                                                    'Baloo',
                                                                 color: const Color(
                                                                     0xFF57636C),
                                                                 letterSpacing:
@@ -279,6 +281,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                         ),
                                                       ),
@@ -424,10 +428,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             ),
                                                         textAlign:
                                                             TextAlign.justify,
-                                                        maxLength: 30,
-                                                        maxLengthEnforcement:
-                                                            MaxLengthEnforcement
-                                                                .enforced,
                                                         keyboardType:
                                                             TextInputType
                                                                 .emailAddress,

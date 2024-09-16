@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 's_psign_up_widget.dart' show SPsignUpWidget;
+import 'no_services_widget.dart' show NoServicesWidget;
 import 'package:flutter/material.dart';
 
-class SPsignUpModel extends FlutterFlowModel<SPsignUpWidget> {
+class NoServicesModel extends FlutterFlowModel<NoServicesWidget> {
   @override
   void initState(BuildContext context) {}
 

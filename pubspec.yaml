@@ -162,6 +162,19 @@ flutter:
     - assets/lottie_animations/
     - assets/rive_animations/
     - assets/pdfs/
+  fonts:
+    - family: 'Baloo'
+      fonts:
+        - asset: assets/fonts/BalooBhaijaan2-SemiBold.ttf
+          weight: 600
+    - family: 'Noto'
+      fonts:
+        - asset: assets/fonts/NotoSansArabic_SemiCondensed-SemiBold.ttf
+          weight: 600
+    - family: 'SS'
+      fonts:
+        - asset: assets/fonts/GE_SS_Two_Bold-1.otf
+          weight: 700
 
   
   # An image asset can refer to one or more resolution-specific "variants", see

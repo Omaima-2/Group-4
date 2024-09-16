@@ -46,49 +46,16 @@ class _ServiceProviderRegisterWidgetState
 
     _model.emailSPTextController ??= TextEditingController();
     _model.emailSPFocusNode ??= FocusNode();
-    _model.emailSPFocusNode!.addListener(
-      () async {
-        _model.emailError = valueOrDefault<String>(
-          functions.validateEmail(_model.emailSPTextController.text),
-          '.',
-        );
-        safeSetState(() {});
-      },
-    );
+
     _model.phoneNumberSPTextController ??= TextEditingController();
     _model.phoneNumberSPFocusNode ??= FocusNode();
-    _model.phoneNumberSPFocusNode!.addListener(
-      () async {
-        _model.phoneError = valueOrDefault<String>(
-          functions
-              .validatePhoneNumber(_model.phoneNumberSPTextController.text),
-          '.',
-        );
-        safeSetState(() {});
-      },
-    );
+
     _model.passSPTextController ??= TextEditingController();
     _model.passSPFocusNode ??= FocusNode();
-    _model.passSPFocusNode!.addListener(
-      () async {
-        _model.passError = valueOrDefault<String>(
-          functions.validatePassword(_model.passSPTextController.text),
-          '.',
-        );
-        safeSetState(() {});
-      },
-    );
+
     _model.confirmPassSPTextController ??= TextEditingController();
     _model.confirmPassSPFocusNode ??= FocusNode();
-    _model.confirmPassSPFocusNode!.addListener(
-      () async {
-        _model.passError = valueOrDefault<String>(
-          functions.validatePassword(_model.confirmPassSPTextController.text),
-          '.',
-        );
-        safeSetState(() {});
-      },
-    );
+
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -237,7 +204,7 @@ class _ServiceProviderRegisterWidgetState
                                             child: Padding(
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      10.0, 6.0, 10.0, 10.0),
+                                                      10.0, 20.0, 10.0, 10.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.min,
                                                 mainAxisAlignment:
@@ -264,22 +231,30 @@ class _ServiceProviderRegisterWidgetState
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
-                                                                  20.0,
+                                                                  16.0,
                                                                   0.0),
-                                                      child: Text(
-                                                        'أنشئ حسابك',
-                                                        textAlign:
-                                                            TextAlign.end,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .start,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Text(
+                                                            'أن',
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Open Sans',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
+                                                                      'Outfit',
+                                                                  color: Colors
+                                                                      .white,
                                                                   fontSize:
                                                                       20.0,
                                                                   letterSpacing:
@@ -288,6 +263,29 @@ class _ServiceProviderRegisterWidgetState
                                                                       FontWeight
                                                                           .w500,
                                                                 ),
+                                                          ),
+                                                          Text(
+                                                            'أنشئ حسابك',
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontSize:
+                                                                      20.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
                                                   ),
@@ -539,6 +537,26 @@ class _ServiceProviderRegisterWidgetState
                                                             .emailSPTextController,
                                                         focusNode: _model
                                                             .emailSPFocusNode,
+                                                        onChanged: (_) =>
+                                                            EasyDebounce
+                                                                .debounce(
+                                                          '_model.emailSPTextController',
+                                                          const Duration(
+                                                              milliseconds:
+                                                                  2000),
+                                                          () async {
+                                                            _model.emailError =
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              functions.validateEmail(
+                                                                  _model
+                                                                      .emailSPTextController
+                                                                      .text),
+                                                              '.',
+                                                            );
+                                                            safeSetState(() {});
+                                                          },
+                                                        ),
                                                         autofocus: false,
                                                         obscureText: false,
                                                         decoration:
@@ -552,16 +570,13 @@ class _ServiceProviderRegisterWidgetState
                                                                   .override(
                                                                     fontFamily:
                                                                         'Outfit',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryBackground,
+                                                                    color: const Color(
+                                                                        0xFF57636C),
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
-                                                                    lineHeight:
-                                                                        1.0,
                                                                   ),
                                                           enabledBorder:
                                                               UnderlineInputBorder(
@@ -738,6 +753,27 @@ class _ServiceProviderRegisterWidgetState
                                                               .phoneNumberSPTextController,
                                                           focusNode: _model
                                                               .phoneNumberSPFocusNode,
+                                                          onChanged: (_) =>
+                                                              EasyDebounce
+                                                                  .debounce(
+                                                            '_model.phoneNumberSPTextController',
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    2000),
+                                                            () async {
+                                                              _model.phoneError =
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                functions.validatePhoneNumber(
+                                                                    _model
+                                                                        .phoneNumberSPTextController
+                                                                        .text),
+                                                                '.',
+                                                              );
+                                                              safeSetState(
+                                                                  () {});
+                                                            },
+                                                          ),
                                                           autofocus: false,
                                                           textCapitalization:
                                                               TextCapitalization
@@ -931,6 +967,27 @@ class _ServiceProviderRegisterWidgetState
                                                               .passSPTextController,
                                                           focusNode: _model
                                                               .passSPFocusNode,
+                                                          onChanged: (_) =>
+                                                              EasyDebounce
+                                                                  .debounce(
+                                                            '_model.passSPTextController',
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    2000),
+                                                            () async {
+                                                              _model.passError =
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                functions.validatePassword(
+                                                                    _model
+                                                                        .passSPTextController
+                                                                        .text),
+                                                                '.',
+                                                              );
+                                                              safeSetState(
+                                                                  () {});
+                                                            },
+                                                          ),
                                                           autofocus: false,
                                                           textCapitalization:
                                                               TextCapitalization
@@ -1142,6 +1199,32 @@ class _ServiceProviderRegisterWidgetState
                                                               .confirmPassSPTextController,
                                                           focusNode: _model
                                                               .confirmPassSPFocusNode,
+                                                          onChanged: (_) =>
+                                                              EasyDebounce
+                                                                  .debounce(
+                                                            '_model.confirmPassSPTextController',
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    2000),
+                                                            () async {
+                                                              if (_model
+                                                                      .confirmPassSPTextController
+                                                                      .text !=
+                                                                  _model
+                                                                      .passSPTextController
+                                                                      .text) {
+                                                                _model.comfPassErrror =
+                                                                    'كلمة المرور لا تتطابق';
+                                                                safeSetState(
+                                                                    () {});
+                                                              } else {
+                                                                _model.comfPassErrror =
+                                                                    ' ';
+                                                                safeSetState(
+                                                                    () {});
+                                                              }
+                                                            },
+                                                          ),
                                                           autofocus: false,
                                                           textCapitalization:
                                                               TextCapitalization
@@ -1342,25 +1425,52 @@ class _ServiceProviderRegisterWidgetState
                                                           const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
-                                                                  16.0,
-                                                                  16.0,
-                                                                  0.0),
-                                                      child: Text(
-                                                        'ما هو تخصصك',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Outfit',
-                                                              color:
-                                                                  Colors.black,
-                                                              letterSpacing:
+                                                                  10.0,
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
-                                                            ),
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            'أن',
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  color: Colors
+                                                                      .white,
+                                                                  fontSize:
+                                                                      20.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                          Text(
+                                                            'ما هو تخصصك',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  color: const Color(
+                                                                      0xFF57636C),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
                                                   ),
@@ -1744,45 +1854,67 @@ class _ServiceProviderRegisterWidgetState
                                                                     0.0,
                                                                     16.0),
                                                         child: FFButtonWidget(
-                                                          onPressed: () async {
-                                                            GoRouter.of(context)
-                                                                .prepareAuthEvent();
+                                                          onPressed: ((_model.emailSPTextController.text ==
+                                                                          '') ||
+                                                                  (_model.displayNameSPTextController
+                                                                              .text ==
+                                                                          '') ||
+                                                                  (_model.phoneNumberSPTextController
+                                                                              .text ==
+                                                                          '') ||
+                                                                  (_model.passSPTextController
+                                                                              .text ==
+                                                                          '') ||
+                                                                  (_model.passSPTextController
+                                                                          .text !=
+                                                                      _model
+                                                                          .confirmPassSPTextController
+                                                                          .text))
+                                                              ? null
+                                                              : () async {
+                                                                  GoRouter.of(
+                                                                          context)
+                                                                      .prepareAuthEvent();
 
-                                                            final user =
-                                                                await authManager
-                                                                    .createAccountWithEmail(
-                                                              context,
-                                                              _model
-                                                                  .emailSPTextController
-                                                                  .text,
-                                                              _model
-                                                                  .passSPTextController
-                                                                  .text,
-                                                            );
-                                                            if (user == null) {
-                                                              return;
-                                                            }
+                                                                  final user =
+                                                                      await authManager
+                                                                          .createAccountWithEmail(
+                                                                    context,
+                                                                    _model
+                                                                        .emailSPTextController
+                                                                        .text,
+                                                                    _model
+                                                                        .passSPTextController
+                                                                        .text,
+                                                                  );
+                                                                  if (user ==
+                                                                      null) {
+                                                                    return;
+                                                                  }
 
-                                                            await currentUserReference!
-                                                                .update(
-                                                                    createUsers1RecordData(
-                                                              phoneNumber: _model
-                                                                  .phoneNumberSPTextController
-                                                                  .text,
-                                                              role: Rolee.sp,
-                                                              location:
-                                                                  currentUserDocument
-                                                                      ?.location,
-                                                              photoUrl: _model
-                                                                  .uploadedFileUrl,
-                                                              displayName: '',
-                                                            ));
+                                                                  await currentUserReference!
+                                                                      .update(
+                                                                          createUsers1RecordData(
+                                                                    phoneNumber:
+                                                                        _model
+                                                                            .phoneNumberSPTextController
+                                                                            .text,
+                                                                    role: Rolee
+                                                                        .sp,
+                                                                    location:
+                                                                        currentUserDocument
+                                                                            ?.location,
+                                                                    photoUrl: _model
+                                                                        .uploadedFileUrl,
+                                                                    displayName:
+                                                                        '',
+                                                                  ));
 
-                                                            context.pushNamedAuth(
-                                                                'ServiceProviderHomPageCopy',
-                                                                context
-                                                                    .mounted);
-                                                          },
+                                                                  context.pushNamedAuth(
+                                                                      'ServiceProviderHomPageCopy',
+                                                                      context
+                                                                          .mounted);
+                                                                },
                                                           text: 'تسجيل',
                                                           options:
                                                               FFButtonOptions(
@@ -1830,6 +1962,13 @@ class _ServiceProviderRegisterWidgetState
                                                                 BorderRadius
                                                                     .circular(
                                                                         40.0),
+                                                            disabledColor:
+                                                                const Color(
+                                                                    0xFF57636C),
+                                                            disabledTextColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
                                                           ),
                                                         ),
                                                       ),
