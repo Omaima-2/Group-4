@@ -12,18 +12,9 @@ export 'view_service_model.dart';
 class ViewServiceWidget extends StatefulWidget {
   const ViewServiceWidget({
     super.key,
-    String? serviceName,
-    int? servicePrice,
-    required this.servicePhoto,
-    required this.serviceDesc,
     required this.serviceDoc,
-  })  : serviceName = serviceName ?? 'عنوان الخدمة',
-        servicePrice = servicePrice ?? 0;
+  });
 
-  final String serviceName;
-  final int servicePrice;
-  final String? servicePhoto;
-  final String? serviceDesc;
   final ServicesRecord? serviceDoc;
 
   @override
@@ -40,17 +31,23 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
     super.initState();
     _model = createModel(context, () => ViewServiceModel());
 
-    _model.servNameTextController ??=
-        TextEditingController(text: widget.serviceName);
+    _model.servNameTextController ??= TextEditingController(
+        text: valueOrDefault<String>(
+      widget.serviceDoc?.name,
+      'عنوان الخدمة',
+    ));
     _model.servNameFocusNode ??= FocusNode();
 
-    _model.servDescTextController ??=
-        TextEditingController(text: widget.serviceDesc);
+    _model.servDescTextController ??= TextEditingController(
+        text: valueOrDefault<String>(
+      widget.serviceDoc?.description,
+      'وصف الخدمة ',
+    ));
     _model.servDescFocusNode ??= FocusNode();
 
     _model.servPriceTextController ??= TextEditingController(
         text: valueOrDefault<String>(
-      widget.servicePrice.toString(),
+      widget.serviceDoc?.price.toString(),
       '0',
     ));
     _model.servPriceFocusNode ??= FocusNode();
@@ -91,7 +88,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                       size: 30.0,
                     ),
                     onPressed: () async {
-                      context.pushNamed('ServiceProviderHomePage');
+                      context.pushNamed('services');
                     },
                   ),
                 ),
@@ -139,7 +136,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                 Icons.edit,
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                size: 24.0,
+                                size: 25.0,
                               ),
                               onPressed: () async {
                                 _model.editMode = !_model.editMode;
@@ -153,55 +150,66 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              final selectedMedia =
-                                  await selectMediaWithSourceBottomSheet(
-                                context: context,
-                                allowPhoto: true,
-                              );
-                              if (selectedMedia != null &&
-                                  selectedMedia.every((m) => validateFileFormat(
-                                      m.storagePath, context))) {
-                                safeSetState(
-                                    () => _model.isDataUploading = true);
-                                var selectedUploadedFiles = <FFUploadedFile>[];
+                              if (_model.editMode) {
+                                final selectedMedia =
+                                    await selectMediaWithSourceBottomSheet(
+                                  context: context,
+                                  allowPhoto: true,
+                                );
+                                if (selectedMedia != null &&
+                                    selectedMedia.every((m) =>
+                                        validateFileFormat(
+                                            m.storagePath, context))) {
+                                  safeSetState(
+                                      () => _model.isDataUploading = true);
+                                  var selectedUploadedFiles =
+                                      <FFUploadedFile>[];
 
-                                var downloadUrls = <String>[];
-                                try {
-                                  selectedUploadedFiles = selectedMedia
-                                      .map((m) => FFUploadedFile(
-                                            name: m.storagePath.split('/').last,
-                                            bytes: m.bytes,
-                                            height: m.dimensions?.height,
-                                            width: m.dimensions?.width,
-                                            blurHash: m.blurHash,
-                                          ))
-                                      .toList();
+                                  var downloadUrls = <String>[];
+                                  try {
+                                    selectedUploadedFiles = selectedMedia
+                                        .map((m) => FFUploadedFile(
+                                              name:
+                                                  m.storagePath.split('/').last,
+                                              bytes: m.bytes,
+                                              height: m.dimensions?.height,
+                                              width: m.dimensions?.width,
+                                              blurHash: m.blurHash,
+                                            ))
+                                        .toList();
 
-                                  downloadUrls = (await Future.wait(
-                                    selectedMedia.map(
-                                      (m) async => await uploadData(
-                                          m.storagePath, m.bytes),
-                                    ),
-                                  ))
-                                      .where((u) => u != null)
-                                      .map((u) => u!)
-                                      .toList();
-                                } finally {
-                                  _model.isDataUploading = false;
+                                    downloadUrls = (await Future.wait(
+                                      selectedMedia.map(
+                                        (m) async => await uploadData(
+                                            m.storagePath, m.bytes),
+                                      ),
+                                    ))
+                                        .where((u) => u != null)
+                                        .map((u) => u!)
+                                        .toList();
+                                  } finally {
+                                    _model.isDataUploading = false;
+                                  }
+                                  if (selectedUploadedFiles.length ==
+                                          selectedMedia.length &&
+                                      downloadUrls.length ==
+                                          selectedMedia.length) {
+                                    safeSetState(() {
+                                      _model.uploadedLocalFile =
+                                          selectedUploadedFiles.first;
+                                      _model.uploadedFileUrl =
+                                          downloadUrls.first;
+                                    });
+                                  } else {
+                                    safeSetState(() {});
+                                    return;
+                                  }
                                 }
-                                if (selectedUploadedFiles.length ==
-                                        selectedMedia.length &&
-                                    downloadUrls.length ==
-                                        selectedMedia.length) {
-                                  safeSetState(() {
-                                    _model.uploadedLocalFile =
-                                        selectedUploadedFiles.first;
-                                    _model.uploadedFileUrl = downloadUrls.first;
-                                  });
-                                } else {
-                                  safeSetState(() {});
-                                  return;
-                                }
+
+                                await widget.serviceDoc!.reference
+                                    .update(createServicesRecordData(
+                                  photo: _model.uploadedFileUrl,
+                                ));
                               }
                             },
                             child: Container(
@@ -214,7 +222,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                   fit: BoxFit.cover,
                                   image: Image.network(
                                     valueOrDefault<String>(
-                                      widget.servicePhoto,
+                                      widget.serviceDoc?.photo,
                                       'https://live.staticflickr.com/5477/11771444463_b379b039bc_w.jpg',
                                     ),
                                   ).image,
@@ -233,227 +241,260 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 18.0, 0.0, 0.0),
-                            child: SizedBox(
-                              width: double.infinity,
-                              child: TextFormField(
-                                controller: _model.servNameTextController,
-                                focusNode: _model.servNameFocusNode,
-                                autofocus: false,
-                                textInputAction: TextInputAction.next,
-                                readOnly: _model.editMode,
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  isDense: true,
-                                  labelStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        letterSpacing: 0.0,
+                          Form(
+                            key: _model.formKey,
+                            autovalidateMode: AutovalidateMode.disabled,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 18.0, 0.0, 0.0),
+                                  child: SizedBox(
+                                    width: double.infinity,
+                                    child: TextFormField(
+                                      controller: _model.servNameTextController,
+                                      focusNode: _model.servNameFocusNode,
+                                      autofocus: false,
+                                      textInputAction: TextInputAction.next,
+                                      readOnly: !_model.editMode,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        isDense: true,
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        hintText: 'عنوان الخدمة',
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        filled: true,
+                                        fillColor: _model.editMode
+                                            ? FlutterFlowTheme.of(context)
+                                                .secondaryText
+                                            : FlutterFlowTheme.of(context)
+                                                .primaryText,
                                       ),
-                                  hintText: 'عنوان الخدمة',
-                                  hintStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 1.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 1.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  filled: true,
-                                  fillColor: _model.editMode
-                                      ? FlutterFlowTheme.of(context)
-                                          .secondaryText
-                                      : FlutterFlowTheme.of(context)
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      cursorColor: FlutterFlowTheme.of(context)
                                           .primaryText,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      letterSpacing: 0.0,
+                                      validator: _model
+                                          .servNameTextControllerValidator
+                                          .asValidator(context),
                                     ),
-                                cursorColor:
-                                    FlutterFlowTheme.of(context).primaryText,
-                                validator: _model
-                                    .servNameTextControllerValidator
-                                    .asValidator(context),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: double.infinity,
-                            child: TextFormField(
-                              controller: _model.servDescTextController,
-                              focusNode: _model.servDescFocusNode,
-                              autofocus: false,
-                              textInputAction: TextInputAction.next,
-                              readOnly: !_model.editMode,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                isDense: true,
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      letterSpacing: 0.0,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: double.infinity,
+                                  child: TextFormField(
+                                    controller: _model.servDescTextController,
+                                    focusNode: _model.servDescFocusNode,
+                                    autofocus: false,
+                                    textInputAction: TextInputAction.next,
+                                    readOnly: !_model.editMode,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      isDense: true,
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'وصف الخدمة ',
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      filled: true,
+                                      fillColor: _model.editMode
+                                          ? FlutterFlowTheme.of(context)
+                                              .secondaryText
+                                          : FlutterFlowTheme.of(context)
+                                              .primaryText,
                                     ),
-                                hintText: 'وصف الخدمة ',
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      letterSpacing: 0.0,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    textAlign: TextAlign.start,
+                                    maxLines: 4,
+                                    cursorColor: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    validator: _model
+                                        .servDescTextControllerValidator
+                                        .asValidator(context),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: double.infinity,
+                                  child: TextFormField(
+                                    controller: _model.servPriceTextController,
+                                    focusNode: _model.servPriceFocusNode,
+                                    autofocus: false,
+                                    textInputAction: TextInputAction.done,
+                                    readOnly: !_model.editMode,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      isDense: true,
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'سعر الخدمة',
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      filled: true,
+                                      fillColor: _model.editMode
+                                          ? FlutterFlowTheme.of(context)
+                                              .secondaryText
+                                          : FlutterFlowTheme.of(context)
+                                              .primaryText,
                                     ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                    color: Color(0x00000000),
-                                    width: 1.0,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    keyboardType: TextInputType.number,
+                                    cursorColor: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    validator: _model
+                                        .servPriceTextControllerValidator
+                                        .asValidator(context),
                                   ),
-                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                    color: Color(0x00000000),
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                filled: true,
-                                fillColor: _model.editMode
-                                    ? FlutterFlowTheme.of(context).secondaryText
-                                    : FlutterFlowTheme.of(context).primaryText,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Readex Pro',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    letterSpacing: 0.0,
-                                  ),
-                              textAlign: TextAlign.start,
-                              maxLines: 4,
-                              cursorColor:
-                                  FlutterFlowTheme.of(context).primaryText,
-                              validator: _model.servDescTextControllerValidator
-                                  .asValidator(context),
-                            ),
-                          ),
-                          SizedBox(
-                            width: double.infinity,
-                            child: TextFormField(
-                              controller: _model.servPriceTextController,
-                              focusNode: _model.servPriceFocusNode,
-                              autofocus: false,
-                              textInputAction: TextInputAction.done,
-                              readOnly: !_model.editMode,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                isDense: true,
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: 'سعر الخدمة',
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      letterSpacing: 0.0,
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                    color: Color(0x00000000),
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                    color: Color(0x00000000),
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                filled: true,
-                                fillColor: _model.editMode
-                                    ? FlutterFlowTheme.of(context).secondaryText
-                                    : FlutterFlowTheme.of(context).primaryText,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Readex Pro',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    letterSpacing: 0.0,
-                                  ),
-                              keyboardType: TextInputType.number,
-                              cursorColor:
-                                  FlutterFlowTheme.of(context).primaryText,
-                              validator: _model.servPriceTextControllerValidator
-                                  .asValidator(context),
+                              ].divide(const SizedBox(height: 10.0)),
                             ),
                           ),
                           Padding(
@@ -483,6 +524,26 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                       onPressed: () async {
                                         await widget.serviceDoc!.reference
                                             .delete();
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'تم بنجاح حذف الخدمة ${widget.serviceDoc?.name}',
+                                              style: TextStyle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
+                                            ),
+                                            duration:
+                                                const Duration(milliseconds: 4000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondary,
+                                          ),
+                                        );
+
+                                        context.pushNamed('services');
                                       },
                                       text: 'حذف',
                                       options: FFButtonOptions(
@@ -506,8 +567,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                         elevation: 0.0,
                                         borderRadius:
                                             BorderRadius.circular(8.0),
-                                        hoverColor: FlutterFlowTheme.of(context)
-                                            .tertiary,
+                                        hoverColor: const Color(0xFFFF0002),
                                         hoverTextColor:
                                             FlutterFlowTheme.of(context)
                                                 .primaryText,
@@ -533,14 +593,67 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                     ),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        await widget.serviceDoc!.reference
-                                            .update(createServicesRecordData(
-                                          name: _model
-                                              .servNameTextController.text,
-                                          description: widget.serviceDesc,
-                                          price: widget.servicePrice,
-                                          photo: _model.uploadedFileUrl,
-                                        ));
+                                        if (_model.editMode) {
+                                          if (_model.formKey.currentState ==
+                                                  null ||
+                                              !_model.formKey.currentState!
+                                                  .validate()) {
+                                            return;
+                                          }
+
+                                          await widget.serviceDoc!.reference
+                                              .update(createServicesRecordData(
+                                            name: valueOrDefault<String>(
+                                              _model
+                                                  .servNameTextController.text,
+                                              'عنوان',
+                                            ),
+                                            description: _model
+                                                .servDescTextController.text,
+                                            price: int.tryParse(_model
+                                                .servPriceTextController.text),
+                                          ));
+                                          _model.editMode = false;
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'تم تعديل الخدمة ${widget.serviceDoc?.name} بنجاح',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  const Duration(milliseconds: 4000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                            ),
+                                          );
+
+                                          context.pushNamed('services');
+                                        } else {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'لا يوجد بيانات معدلة لحفظها',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  const Duration(milliseconds: 4000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                            ),
+                                          );
+                                        }
                                       },
                                       text: 'حفظ',
                                       options: FFButtonOptions(

@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 class MapModel extends FlutterFlowModel<MapWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for PlacePicker widget.
-  FFPlace placePickerValue = const FFPlace();
   // State field(s) for GoogleMap widget.
   LatLng? googleMapsCenter;
   final googleMapsController = Completer<GoogleMapController>();

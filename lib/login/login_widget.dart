@@ -6,8 +6,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'login_model.dart';
 export 'login_model.dart';
@@ -302,6 +303,22 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             .emailTextController,
                                                         focusNode: _model
                                                             .emailFocusNode,
+                                                        onChanged: (_) =>
+                                                            EasyDebounce
+                                                                .debounce(
+                                                          '_model.emailTextController',
+                                                          const Duration(
+                                                              milliseconds:
+                                                                  2000),
+                                                          () async {
+                                                            _model.emailError =
+                                                                functions.validateEmail(
+                                                                    _model
+                                                                        .emailTextController
+                                                                        .text);
+                                                            safeSetState(() {});
+                                                          },
+                                                        ),
                                                         autofocus: false,
                                                         obscureText: false,
                                                         decoration:
@@ -427,7 +444,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               lineHeight: 1.0,
                                                             ),
                                                         textAlign:
-                                                            TextAlign.justify,
+                                                            TextAlign.start,
                                                         keyboardType:
                                                             TextInputType
                                                                 .emailAddress,
@@ -438,6 +455,35 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       ),
                                                     ),
                                                   ),
+                                                  if (_model.emailError != ' ')
+                                                    Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              -1.0, -1.0),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    16.0,
+                                                                    5.0),
+                                                        child: Text(
+                                                          _model.emailError,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Plus Jakarta Sans',
+                                                                color: const Color(
+                                                                    0xFFFF0000),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    ),
                                                   Flexible(
                                                     child: Padding(
                                                       padding:
@@ -685,15 +731,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                       .w500,
                                                               lineHeight: 1.0,
                                                             ),
-                                                        maxLength: 10,
-                                                        maxLengthEnforcement:
-                                                            MaxLengthEnforcement
-                                                                .enforced,
-                                                        buildCounter: (context,
-                                                                {required currentLength,
-                                                                required isFocused,
-                                                                maxLength}) =>
-                                                            null,
                                                         validator: _model
                                                             .passTextControllerValidator
                                                             .asValidator(
@@ -768,6 +805,36 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       ),
                                                     ),
                                                   ),
+                                                  if (_model.emailPassError !=
+                                                      ' ')
+                                                    Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              -1.0, -1.0),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    16.0,
+                                                                    5.0),
+                                                        child: Text(
+                                                          _model.emailPassError,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Plus Jakarta Sans',
+                                                                color: const Color(
+                                                                    0xFFFF0000),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    ),
                                                   Flexible(
                                                     child: Align(
                                                       alignment:
@@ -783,6 +850,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                     16.0),
                                                         child: FFButtonWidget(
                                                           onPressed: () async {
+                                                            if (_model.formKey
+                                                                    .currentState !=
+                                                                null) {
+                                                              _model.formKey
+                                                                  .currentState!
+                                                                  .validate();
+                                                            }
                                                             GoRouter.of(context)
                                                                 .prepareAuthEvent();
 
@@ -854,6 +928,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                           'Outfit',
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .normal,
                                                                     ),
                                                             elevation: 3.0,
                                                             borderSide:

@@ -152,27 +152,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             'serviceDoc': getDoc(['services'], ServicesRecord.fromSnapshot),
           },
           builder: (context, params) => ViewServiceWidget(
-            serviceName: params.getParam(
-              'serviceName',
-              ParamType.String,
-            ),
-            servicePrice: params.getParam(
-              'servicePrice',
-              ParamType.int,
-            ),
-            servicePhoto: params.getParam(
-              'servicePhoto',
-              ParamType.String,
-            ),
-            serviceDesc: params.getParam(
-              'serviceDesc',
-              ParamType.String,
-            ),
             serviceDoc: params.getParam(
               'serviceDoc',
               ParamType.Document,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'log1',
+          path: '/log1',
+          builder: (context, params) => const Log1Widget(),
+        ),
+        FFRoute(
+          name: 'loginTest',
+          path: '/loginTest',
+          builder: (context, params) => const LoginTestWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

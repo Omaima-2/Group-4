@@ -147,22 +147,6 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                               context.pushNamed(
                                 'view_Service',
                                 queryParameters: {
-                                  'serviceName': serializeParam(
-                                    gridViewServicesRecord.name,
-                                    ParamType.String,
-                                  ),
-                                  'servicePhoto': serializeParam(
-                                    gridViewServicesRecord.photo,
-                                    ParamType.String,
-                                  ),
-                                  'servicePrice': serializeParam(
-                                    gridViewServicesRecord.price,
-                                    ParamType.int,
-                                  ),
-                                  'serviceDesc': serializeParam(
-                                    gridViewServicesRecord.description,
-                                    ParamType.String,
-                                  ),
                                   'serviceDoc': serializeParam(
                                     gridViewServicesRecord,
                                     ParamType.Document,
@@ -183,7 +167,10 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                                   'Key0yl_${gridViewIndex}_of_${gridViewServicesRecordList.length}'),
                               nameService: gridViewServicesRecord.name,
                               servicePrice: gridViewServicesRecord.price,
-                              photoService: gridViewServicesRecord.photo,
+                              photoService: valueOrDefault<String>(
+                                gridViewServicesRecord.photo,
+                                'https://live.staticflickr.com/5477/11771444463_b379b039bc_w.jpg',
+                              ),
                             ),
                           );
                         },

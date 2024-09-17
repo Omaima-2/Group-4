@@ -447,6 +447,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                             fontWeight: FontWeight.w500,
                                             lineHeight: 1.0,
                                           ),
+                                      maxLines: 2,
                                       maxLength: 15,
                                       maxLengthEnforcement:
                                           MaxLengthEnforcement.enforced,
@@ -641,6 +642,9 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                           getCurrentTimestamp,
                                                       user:
                                                           currentUserReference,
+                                                      price: int.tryParse(_model
+                                                          .servicePriceTextController
+                                                          .text),
                                                     ));
 
                                                 context.pushNamed('services');

@@ -16,3 +16,5 @@ export '/service_provider_home_page/service_provider_home_page_widget.dart'
 export '/admin_home_page/admin_home_page_widget.dart' show AdminHomePageWidget;
 export '/services/services_widget.dart' show ServicesWidget;
 export '/view_service/view_service_widget.dart' show ViewServiceWidget;
+export '/log1/log1_widget.dart' show Log1Widget;
+export '/login_test/login_test_widget.dart' show LoginTestWidget;

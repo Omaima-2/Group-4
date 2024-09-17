@@ -1353,6 +1353,22 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                 onPressed: () async {
                                                   GoRouter.of(context)
                                                       .prepareAuthEvent();
+                                                  if (_model.pass1TextController
+                                                          .text !=
+                                                      _model
+                                                          .conPassTextController
+                                                          .text) {
+                                                    ScaffoldMessenger.of(
+                                                            context)
+                                                        .showSnackBar(
+                                                      const SnackBar(
+                                                        content: Text(
+                                                          'Passwords don\'t match!',
+                                                        ),
+                                                      ),
+                                                    );
+                                                    return;
+                                                  }
 
                                                   final user = await authManager
                                                       .createAccountWithEmail(

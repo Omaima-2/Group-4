@@ -3,6 +3,12 @@ import 'login_widget.dart' show LoginWidget;
 import 'package:flutter/material.dart';
 
 class LoginModel extends FlutterFlowModel<LoginWidget> {
+  ///  Local state fields for this page.
+
+  String emailError = ' ';
+
+  String emailPassError = ' ';
+
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
