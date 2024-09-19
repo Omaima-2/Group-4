@@ -106,19 +106,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const HomePageClientWidget(),
         ),
         FFRoute(
-          name: 'map',
-          path: '/map',
-          builder: (context, params) => const MapWidget(),
-        ),
-        FFRoute(
           name: 'login',
           path: '/login',
           builder: (context, params) => const LoginWidget(),
-        ),
-        FFRoute(
-          name: 'clientAccount',
-          path: '/clientAccount',
-          builder: (context, params) => const ClientAccountWidget(),
         ),
         FFRoute(
           name: 'ServiceProviderHomePage',
@@ -177,6 +167,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Setting_ServiceProvider',
           path: '/settingServiceProvider',
           builder: (context, params) => const SettingServiceProviderWidget(),
+        ),
+        FFRoute(
+          name: 'viewClientProfile',
+          path: '/viewClientProfile',
+          builder: (context, params) => const ViewClientProfileWidget(),
+        ),
+        FFRoute(
+          name: 'viewSPpage',
+          path: '/viewSPpage',
+          builder: (context, params) => const ViewSPpageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

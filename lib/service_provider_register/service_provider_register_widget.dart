@@ -1935,9 +1935,10 @@ class _ServiceProviderRegisterWidgetState
                                                                           .text,
                                                                       role: Rolee
                                                                           .sp,
-                                                                      location:
+                                                                      location: valueOrDefault(
                                                                           currentUserDocument
                                                                               ?.location,
+                                                                          ''),
                                                                       photoUrl:
                                                                           _model
                                                                               .uploadedFileUrl,

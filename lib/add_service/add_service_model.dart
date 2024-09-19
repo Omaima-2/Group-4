@@ -1,3 +1,4 @@
+import '/components/nav_bar_s_p_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'add_service_widget.dart' show AddServiceWidget;
 import 'package:flutter/material.dart';
@@ -59,11 +60,15 @@ class AddServiceModel extends FlutterFlowModel<AddServiceWidget> {
     return null;
   }
 
+  // Model for navBarSP component.
+  late NavBarSPModel navBarSPModel;
+
   @override
   void initState(BuildContext context) {
     servNameTextControllerValidator = _servNameTextControllerValidator;
     servDescTextControllerValidator = _servDescTextControllerValidator;
     servPriceTextControllerValidator = _servPriceTextControllerValidator;
+    navBarSPModel = createModel(context, () => NavBarSPModel());
   }
 
   @override
@@ -76,5 +81,7 @@ class AddServiceModel extends FlutterFlowModel<AddServiceWidget> {
 
     servPriceFocusNode?.dispose();
     servPriceTextController?.dispose();
+
+    navBarSPModel.dispose();
   }
 }

@@ -402,6 +402,42 @@ class _LoginTestWidgetState extends State<LoginTestWidget>
                               ),
                             ),
                           ),
+                          Align(
+                            alignment: const AlignmentDirectional(-0.9, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 8.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(
+                                    'forgetPassword',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: const TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.rightToLeft,
+                                      ),
+                                    },
+                                  );
+                                },
+                                child: Text(
+                                  'نسيت كلمة المرور؟',
+                                  style: FlutterFlowTheme.of(context)
+                                      .displayMedium
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: const Color(0xFF54575D),
+                                        fontSize: 12.0,
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -468,58 +504,24 @@ class _LoginTestWidgetState extends State<LoginTestWidget>
                         ),
                       ),
                     ),
-                    Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
-                      child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed(
-                              'forgetPassword',
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: const TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType:
-                                      PageTransitionType.rightToLeft,
-                                ),
-                              },
-                            );
-                          },
-                          child: Text(
-                            'نسيت كلمة المرور؟',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  color: FlutterFlowTheme.of(context).alternate,
-                                  fontSize: 13.0,
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                        ),
-                      ),
-                    ),
                   ],
                 ).animateOnPageLoad(
                     animationsMap['columnOnPageLoadAnimation']!),
               ),
             ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-              child: Text(
-                'ليس لديك حساب ؟ انشئ حسابك',
-                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Readex Pro',
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      fontSize: 17.0,
-                      letterSpacing: 0.0,
-                      fontWeight: FontWeight.w500,
-                    ),
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                child: Text(
+                  'ليس لديك حساب ؟ انشئ حسابك',
+                  style: FlutterFlowTheme.of(context).displayMedium.override(
+                        fontFamily: 'Outfit',
+                        color: const Color(0xF8232C2F),
+                        fontSize: 18.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+                ),
               ),
             ),
             Flexible(
@@ -529,14 +531,7 @@ class _LoginTestWidgetState extends State<LoginTestWidget>
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      GoRouter.of(context).prepareAuthEvent();
-                      final user = await authManager.signInWithGoogle(context);
-                      if (user == null) {
-                        return;
-                      }
-
-                      context.goNamedAuth(
-                          'ServiceProviderRegister', context.mounted);
+                      context.pushNamed('SignUpTestClient');
                     },
                     text: 'عميل',
                     options: FFButtonOptions(
@@ -574,14 +569,7 @@ class _LoginTestWidgetState extends State<LoginTestWidget>
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      GoRouter.of(context).prepareAuthEvent();
-                      final user = await authManager.signInWithGoogle(context);
-                      if (user == null) {
-                        return;
-                      }
-
-                      context.goNamedAuth(
-                          'ServiceProviderRegister', context.mounted);
+                      context.pushNamed('SignUpTestSP');
                     },
                     text: 'مقدم خدمة',
                     options: FFButtonOptions(

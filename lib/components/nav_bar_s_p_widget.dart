@@ -75,15 +75,16 @@ class _NavBarSPWidgetState extends State<NavBarSPWidget> {
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: FlutterFlowIconButton(
+                          borderColor: Colors.transparent,
                           borderRadius: 8.0,
                           buttonSize: 40.0,
                           fillColor: FlutterFlowTheme.of(context).primaryText,
                           hoverColor: const Color(0xFFF68833),
                           hoverIconColor: const Color(0xFFF68833),
                           icon: Icon(
-                            Icons.person,
+                            Icons.home_sharp,
                             color: valueOrDefault<Color>(
-                              widget.page == 'settingSp'
+                              widget.page == 'ServiceProviderHomePage'
                                   ? const Color(0xFFF68833)
                                   : FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -101,6 +102,29 @@ class _NavBarSPWidgetState extends State<NavBarSPWidget> {
                       child: Align(
                         alignment: const AlignmentDirectional(1.0, 0.0),
                         child: FlutterFlowIconButton(
+                          borderColor: Colors.transparent,
+                          borderRadius: 8.0,
+                          buttonSize: 40.0,
+                          fillColor: FlutterFlowTheme.of(context).primaryText,
+                          hoverColor: const Color(0xFFF68833),
+                          hoverIconColor: const Color(0xFFF68833),
+                          icon: Icon(
+                            Icons.view_timeline,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            size: 20.0,
+                          ),
+                          onPressed: () {
+                            print('reqSP pressed ...');
+                          },
+                        ),
+                      ),
+                    ),
+                    Flexible(
+                      child: Align(
+                        alignment: const AlignmentDirectional(1.0, 0.0),
+                        child: FlutterFlowIconButton(
+                          borderColor: Colors.transparent,
                           borderRadius: 8.0,
                           buttonSize: 40.0,
                           fillColor: FlutterFlowTheme.of(context).primaryText,
@@ -117,8 +141,8 @@ class _NavBarSPWidgetState extends State<NavBarSPWidget> {
                             ),
                             size: 20.0,
                           ),
-                          onPressed: () async {
-                            context.pushNamed('services');
+                          onPressed: () {
+                            print('service pressed ...');
                           },
                         ),
                       ),
@@ -127,15 +151,16 @@ class _NavBarSPWidgetState extends State<NavBarSPWidget> {
                       child: Align(
                         alignment: const AlignmentDirectional(1.0, 0.0),
                         child: FlutterFlowIconButton(
+                          borderColor: Colors.transparent,
                           borderRadius: 8.0,
                           buttonSize: 40.0,
                           fillColor: FlutterFlowTheme.of(context).primaryText,
                           hoverColor: const Color(0xFFF68833),
                           hoverIconColor: const Color(0xFFF68833),
                           icon: Icon(
-                            Icons.home,
+                            Icons.person,
                             color: valueOrDefault<Color>(
-                              widget.page == 'ServiceProviderHomePage'
+                              widget.page == 'Setting_ServiceProvider'
                                   ? const Color(0xFFF68833)
                                   : FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -144,7 +169,7 @@ class _NavBarSPWidgetState extends State<NavBarSPWidget> {
                             size: 20.0,
                           ),
                           onPressed: () async {
-                            context.pushNamed('ServiceProviderHomePage');
+                            context.pushNamed('HomePageClient');
                           },
                         ),
                       ),

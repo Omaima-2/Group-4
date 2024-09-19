@@ -1,6 +1,8 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/components/nav_bar_admin_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'admin_home_page_model.dart';
 export 'admin_home_page_model.dart';
@@ -42,79 +44,60 @@ class _AdminHomePageWidgetState extends State<AdminHomePageWidget> {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(140.0),
           child: AppBar(
-            backgroundColor: const Color(0xFFF68833),
+            backgroundColor: const Color(0xFF202F36),
             automaticallyImplyLeading: false,
             actions: const [],
             flexibleSpace: FlexibleSpaceBar(
-              title: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Align(
-                          alignment: const AlignmentDirectional(-1.0, -1.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Align(
-                                alignment: const AlignmentDirectional(0.0, -1.0),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      60.0, 5.0, 25.0, 0.0),
-                                  child: Text(
-                                    'أهلًا فيك نورتنا',
-                                    textAlign: TextAlign.end,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          fontSize: 34.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: const AlignmentDirectional(0.0, -1.0),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 20.0, 0.0),
-                                  child: Text(
-                                    'اعمل بجد في إدارة مطرقة',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          fontSize: 24.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                          fontStyle: FontStyle.italic,
-                                        ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
+              title: Stack(
+                children: [
+                  Opacity(
+                    opacity: 0.6,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.network(
+                        'https://images.unsplash.com/photo-1665686308827-eb62e4f6604d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyfHxtYW5hZ2VyfGVufDB8fHx8MTcyNjcyNDcxMXww&ixlib=rb-4.0.3&q=80&w=1080',
+                        width: 409.0,
+                        height: 300.0,
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                  ],
-                ),
+                  ),
+                  Align(
+                    alignment: const AlignmentDirectional(-1.0, -0.5),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                      child: Text(
+                        'نورتنا',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Readex Pro',
+                              fontSize: 35.0,
+                              letterSpacing: 0.0,
+                            ),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: const AlignmentDirectional(-1.0, 0.5),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                      child: Text(
+                        'احترف بإدارة مطرقة',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Readex Pro',
+                              fontSize: 20.0,
+                              letterSpacing: 0.0,
+                            ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               background: ClipRRect(
                 borderRadius: BorderRadius.circular(0.0),
-                child: Image.asset(
-                  'assets/images/__2024-09-18_181523.png',
+                child: Image.network(
+                  'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyNHx8bWFuYWdlfGVufDB8fHx8MTcyNjcyNDM3N3ww&ixlib=rb-4.0.3&q=80&w=1080',
                   height: 10.0,
                   fit: BoxFit.cover,
                   alignment: const Alignment(1.0, -1.0),
@@ -151,21 +134,22 @@ class _AdminHomePageWidgetState extends State<AdminHomePageWidget> {
                                 boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 3.0,
-                                    color: Color(0x08426234),
+                                    color: Color(0x84262D34),
                                     offset: Offset(
                                       0.0,
                                       1.0,
                                     ),
                                   )
                                 ],
-                                gradient: LinearGradient(
+                                gradient: const LinearGradient(
                                   colors: [
-                                    const Color(0xFFA8C2E0),
-                                    FlutterFlowTheme.of(context).primaryText
+                                    Color(0xFFFFB67D),
+                                    Color(0xFFB7C7FB),
+                                    Color(0xFFD1DCF9)
                                   ],
-                                  stops: const [0.0, 1.0],
-                                  begin: const AlignmentDirectional(1.0, -0.98),
-                                  end: const AlignmentDirectional(-1.0, 0.98),
+                                  stops: [0.0, 0.6, 1.0],
+                                  begin: AlignmentDirectional(-1.0, -1.0),
+                                  end: AlignmentDirectional(1.0, 1.0),
                                 ),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
@@ -179,7 +163,7 @@ class _AdminHomePageWidgetState extends State<AdminHomePageWidget> {
                                       CrossAxisAlignment.stretch,
                                   children: [
                                     Text(
-                                      'ادارة الشكاوى',
+                                      'إدارة الشكاوى',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -218,21 +202,22 @@ class _AdminHomePageWidgetState extends State<AdminHomePageWidget> {
                             boxShadow: const [
                               BoxShadow(
                                 blurRadius: 3.0,
-                                color: Color(0x08426234),
+                                color: Color(0x84262D34),
                                 offset: Offset(
                                   0.0,
                                   1.0,
                                 ),
                               )
                             ],
-                            gradient: LinearGradient(
+                            gradient: const LinearGradient(
                               colors: [
-                                const Color(0xFFA8C2E0),
-                                FlutterFlowTheme.of(context).primaryText
+                                Color(0xFFFFB67D),
+                                Color(0xFFB7C7FB),
+                                Color(0xFFD1DCF9)
                               ],
-                              stops: const [0.0, 1.0],
-                              begin: const AlignmentDirectional(1.0, -0.98),
-                              end: const AlignmentDirectional(-1.0, 0.98),
+                              stops: [0.0, 0.6, 1.0],
+                              begin: AlignmentDirectional(-1.0, -1.0),
+                              end: AlignmentDirectional(1.0, 1.0),
                             ),
                             borderRadius: BorderRadius.circular(10.0),
                           ),
@@ -271,6 +256,45 @@ class _AdminHomePageWidgetState extends State<AdminHomePageWidget> {
                                       ),
                                 ),
                               ],
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          child: Align(
+                            alignment: const AlignmentDirectional(0.0, 1.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 160.0, 0.0, 0.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  GoRouter.of(context).prepareAuthEvent();
+                                  await authManager.signOut();
+                                  GoRouter.of(context).clearRedirectLocation();
+
+                                  context.pushNamedAuth(
+                                      'login', context.mounted);
+                                },
+                                text: 'تسجيل خروج',
+                                options: FFButtonOptions(
+                                  width: 190.0,
+                                  height: 60.0,
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: const Color(0xFFEE6062),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        letterSpacing: 0.0,
+                                      ),
+                                  elevation: 0.0,
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                              ),
                             ),
                           ),
                         ),

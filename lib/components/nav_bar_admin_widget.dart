@@ -72,52 +72,8 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
                     Align(
                       alignment: const AlignmentDirectional(1.0, 0.0),
                       child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                        child: FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderRadius: 8.0,
-                          buttonSize: 40.0,
-                          fillColor: FlutterFlowTheme.of(context).primaryText,
-                          hoverColor: const Color(0xFFF68833),
-                          hoverIconColor: const Color(0xFFF68833),
-                          icon: Icon(
-                            Icons.person,
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            size: 20.0,
-                          ),
-                          onPressed: () {
-                            print('profileSP pressed ...');
-                          },
-                        ),
-                      ),
-                    ),
-                    Flexible(
-                      child: Align(
-                        alignment: const AlignmentDirectional(1.0, 0.0),
-                        child: FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderRadius: 8.0,
-                          buttonSize: 40.0,
-                          fillColor: FlutterFlowTheme.of(context).primaryText,
-                          hoverColor: const Color(0xFFF68833),
-                          hoverIconColor: const Color(0xFFF68833),
-                          icon: Icon(
-                            Icons.view_timeline,
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            size: 20.0,
-                          ),
-                          onPressed: () {
-                            print('Complaints pressed ...');
-                          },
-                        ),
-                      ),
-                    ),
-                    Flexible(
-                      child: Align(
-                        alignment: const AlignmentDirectional(1.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            10.0, 0.0, 30.0, 0.0),
                         child: FlutterFlowIconButton(
                           borderColor: Colors.transparent,
                           borderRadius: 8.0,
@@ -137,8 +93,34 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
                             size: 20.0,
                           ),
                           onPressed: () async {
-                            context.pushNamed('ServiceProviderHomePage');
+                            context.pushNamed('AdminHomePage');
                           },
+                        ),
+                      ),
+                    ),
+                    Flexible(
+                      child: Align(
+                        alignment: const AlignmentDirectional(1.0, 0.0),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              30.0, 0.0, 0.0, 0.0),
+                          child: FlutterFlowIconButton(
+                            borderColor: Colors.transparent,
+                            borderRadius: 8.0,
+                            buttonSize: 40.0,
+                            fillColor: FlutterFlowTheme.of(context).primaryText,
+                            hoverColor: const Color(0xFFF68833),
+                            hoverIconColor: const Color(0xFFF68833),
+                            icon: Icon(
+                              Icons.view_timeline,
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              size: 20.0,
+                            ),
+                            onPressed: () {
+                              print('Complaints pressed ...');
+                            },
+                          ),
                         ),
                       ),
                     ),

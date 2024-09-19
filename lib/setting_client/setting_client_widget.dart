@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/components/nav_bar_client_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsets.all(4.0),
+            padding: const EdgeInsets.all(2.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -475,7 +476,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, -1.0),
                         child: Text(
                           'نسخة التطبيق : 1.0.0 ',
                           style:
@@ -487,6 +488,16 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                         ),
                       ),
                     ],
+                  ),
+                ),
+                Align(
+                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  child: wrapWithModel(
+                    model: _model.navBarClientModel,
+                    updateCallback: () => safeSetState(() {}),
+                    child: const NavBarClientWidget(
+                      page: 'Setting_Client',
+                    ),
                   ),
                 ),
               ],

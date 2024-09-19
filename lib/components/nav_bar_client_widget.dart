@@ -70,10 +70,81 @@ class _NavBarClientWidgetState extends State<NavBarClientWidget> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(1.0, 0.0),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            10.0, 0.0, 40.0, 0.0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                        child: FlutterFlowIconButton(
+                          borderColor: Colors.transparent,
+                          borderRadius: 8.0,
+                          buttonSize: 40.0,
+                          fillColor: FlutterFlowTheme.of(context).primaryText,
+                          hoverColor: const Color(0xFFF68833),
+                          hoverIconColor: const Color(0xFFF68833),
+                          icon: Icon(
+                            Icons.home,
+                            color: valueOrDefault<Color>(
+                              widget.page == 'HomePageClient'
+                                  ? const Color(0xFFF68833)
+                                  : FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                            ),
+                            size: 20.0,
+                          ),
+                          onPressed: () async {
+                            context.pushNamed('HomePageClient');
+                          },
+                        ),
+                      ),
+                    ),
+                    Flexible(
+                      child: Align(
+                        alignment: const AlignmentDirectional(1.0, 0.0),
+                        child: FlutterFlowIconButton(
+                          borderColor: Colors.transparent,
+                          borderRadius: 8.0,
+                          buttonSize: 40.0,
+                          fillColor: FlutterFlowTheme.of(context).primaryText,
+                          hoverColor: const Color(0xFFF68833),
+                          hoverIconColor: const Color(0xFFF68833),
+                          icon: Icon(
+                            Icons.pageview,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            size: 20.0,
+                          ),
+                          onPressed: () {
+                            print('reqSP pressed ...');
+                          },
+                        ),
+                      ),
+                    ),
+                    Flexible(
+                      child: Align(
+                        alignment: const AlignmentDirectional(1.0, 0.0),
+                        child: FlutterFlowIconButton(
+                          borderColor: Colors.transparent,
+                          borderRadius: 8.0,
+                          buttonSize: 40.0,
+                          fillColor: FlutterFlowTheme.of(context).primaryText,
+                          hoverColor: const Color(0xFFF68833),
+                          hoverIconColor: const Color(0xFFF68833),
+                          icon: Icon(
+                            Icons.ballot_sharp,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            size: 20.0,
+                          ),
+                          onPressed: () {
+                            print('service pressed ...');
+                          },
+                        ),
+                      ),
+                    ),
+                    Flexible(
+                      child: Align(
+                        alignment: const AlignmentDirectional(1.0, 0.0),
                         child: FlutterFlowIconButton(
                           borderColor: Colors.transparent,
                           borderRadius: 8.0,
@@ -84,7 +155,7 @@ class _NavBarClientWidgetState extends State<NavBarClientWidget> {
                           icon: Icon(
                             Icons.person,
                             color: valueOrDefault<Color>(
-                              widget.page == 'setting'
+                              widget.page == 'Setting'
                                   ? const Color(0xFFF68833)
                                   : FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -92,41 +163,9 @@ class _NavBarClientWidgetState extends State<NavBarClientWidget> {
                             ),
                             size: 20.0,
                           ),
-                          onPressed: () {
-                            print('profileSP pressed ...');
+                          onPressed: () async {
+                            context.pushNamed('Setting_client');
                           },
-                        ),
-                      ),
-                    ),
-                    Flexible(
-                      child: Align(
-                        alignment: const AlignmentDirectional(1.0, 0.0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              40.0, 0.0, 0.0, 0.0),
-                          child: FlutterFlowIconButton(
-                            borderColor: Colors.transparent,
-                            borderRadius: 8.0,
-                            buttonSize: 40.0,
-                            fillColor: FlutterFlowTheme.of(context).primaryText,
-                            hoverColor: const Color(0xFFF68833),
-                            hoverIconColor: const Color(0xFFF68833),
-                            icon: Icon(
-                              Icons.home,
-                              color: valueOrDefault<Color>(
-                                widget.page == 'HomePageClient'
-                                    ? const Color(0xFFF68833)
-                                    : FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                              ),
-                              size: 20.0,
-                            ),
-                            onPressed: () async {
-                              context.pushNamed('HomePageClient');
-                            },
-                          ),
                         ),
                       ),
                     ),

@@ -1421,9 +1421,10 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                     phoneNumber: _model
                                                         .phone1TextController
                                                         .text,
-                                                    location:
+                                                    location: valueOrDefault(
                                                         currentUserDocument
                                                             ?.location,
+                                                        ''),
                                                     role: Rolee.cl,
                                                     clientId:
                                                         currentUserDocument

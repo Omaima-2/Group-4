@@ -46,11 +46,6 @@ class Users1Record extends FirestoreRecord {
   String get uid => _uid ?? '';
   bool hasUid() => _uid != null;
 
-  // "location" field.
-  LatLng? _location;
-  LatLng? get location => _location;
-  bool hasLocation() => _location != null;
-
   // "clientId" field.
   DocumentReference? _clientId;
   DocumentReference? get clientId => _clientId;
@@ -71,6 +66,11 @@ class Users1Record extends FirestoreRecord {
   String get displayName => _displayName ?? '';
   bool hasDisplayName() => _displayName != null;
 
+  // "location" field.
+  String? _location;
+  String get location => _location ?? '';
+  bool hasLocation() => _location != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _password = snapshotData['password'] as String?;
@@ -78,11 +78,11 @@ class Users1Record extends FirestoreRecord {
     _createdTime = snapshotData['created_time'] as DateTime?;
     _phoneNumber = snapshotData['phone_number'] as String?;
     _uid = snapshotData['uid'] as String?;
-    _location = snapshotData['location'] as LatLng?;
     _clientId = snapshotData['clientId'] as DocumentReference?;
     _sPid = snapshotData['SPid'] as DocumentReference?;
     _role = deserializeEnum<Rolee>(snapshotData['role']);
     _displayName = snapshotData['display_name'] as String?;
+    _location = snapshotData['location'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -125,11 +125,11 @@ Map<String, dynamic> createUsers1RecordData({
   DateTime? createdTime,
   String? phoneNumber,
   String? uid,
-  LatLng? location,
   DocumentReference? clientId,
   DocumentReference? sPid,
   Rolee? role,
   String? displayName,
+  String? location,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -139,11 +139,11 @@ Map<String, dynamic> createUsers1RecordData({
       'created_time': createdTime,
       'phone_number': phoneNumber,
       'uid': uid,
-      'location': location,
       'clientId': clientId,
       'SPid': sPid,
       'role': role,
       'display_name': displayName,
+      'location': location,
     }.withoutNulls,
   );
 
@@ -161,11 +161,11 @@ class Users1RecordDocumentEquality implements Equality<Users1Record> {
         e1?.createdTime == e2?.createdTime &&
         e1?.phoneNumber == e2?.phoneNumber &&
         e1?.uid == e2?.uid &&
-        e1?.location == e2?.location &&
         e1?.clientId == e2?.clientId &&
         e1?.sPid == e2?.sPid &&
         e1?.role == e2?.role &&
-        e1?.displayName == e2?.displayName;
+        e1?.displayName == e2?.displayName &&
+        e1?.location == e2?.location;
   }
 
   @override
@@ -176,11 +176,11 @@ class Users1RecordDocumentEquality implements Equality<Users1Record> {
         e?.createdTime,
         e?.phoneNumber,
         e?.uid,
-        e?.location,
         e?.clientId,
         e?.sPid,
         e?.role,
-        e?.displayName
+        e?.displayName,
+        e?.location
       ]);
 
   @override

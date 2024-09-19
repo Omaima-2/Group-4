@@ -31,20 +31,23 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
     super.initState();
     _model = createModel(context, () => SignUpTestSPModel());
 
-    _model.emailAddressTextController1 ??= TextEditingController();
-    _model.emailAddressFocusNode1 ??= FocusNode();
+    _model.nameTextController ??= TextEditingController();
+    _model.nameFocusNode ??= FocusNode();
 
-    _model.emailAddressTextController2 ??= TextEditingController();
-    _model.emailAddressFocusNode2 ??= FocusNode();
+    _model.emailAddressTextController ??= TextEditingController();
+    _model.emailAddressFocusNode ??= FocusNode();
 
-    _model.emailAddressTextController3 ??= TextEditingController();
-    _model.emailAddressFocusNode3 ??= FocusNode();
+    _model.passwordTextController ??= TextEditingController();
+    _model.passwordFocusNode ??= FocusNode();
 
-    _model.passwordTextController1 ??= TextEditingController();
-    _model.passwordFocusNode1 ??= FocusNode();
+    _model.confirmPasswordTextController ??= TextEditingController();
+    _model.confirmPasswordFocusNode ??= FocusNode();
 
-    _model.passwordTextController2 ??= TextEditingController();
-    _model.passwordFocusNode2 ??= FocusNode();
+    _model.phoneNumberTextController ??= TextEditingController();
+    _model.phoneNumberFocusNode ??= FocusNode();
+
+    _model.locationTextController ??= TextEditingController();
+    _model.locationFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -267,10 +270,8 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                     child: SizedBox(
                                       width: double.infinity,
                                       child: TextFormField(
-                                        controller:
-                                            _model.emailAddressTextController1,
-                                        focusNode:
-                                            _model.emailAddressFocusNode1,
+                                        controller: _model.nameTextController,
+                                        focusNode: _model.nameFocusNode,
                                         autofocus: true,
                                         autofillHints: const [AutofillHints.email],
                                         textInputAction: TextInputAction.next,
@@ -337,7 +338,7 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                         keyboardType:
                                             TextInputType.emailAddress,
                                         validator: _model
-                                            .emailAddressTextController1Validator
+                                            .nameTextControllerValidator
                                             .asValidator(context),
                                       ),
                                     ),
@@ -349,9 +350,8 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                       width: double.infinity,
                                       child: TextFormField(
                                         controller:
-                                            _model.emailAddressTextController2,
-                                        focusNode:
-                                            _model.emailAddressFocusNode2,
+                                            _model.emailAddressTextController,
+                                        focusNode: _model.emailAddressFocusNode,
                                         autofocus: true,
                                         autofillHints: const [AutofillHints.email],
                                         textInputAction: TextInputAction.next,
@@ -418,7 +418,7 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                         keyboardType:
                                             TextInputType.emailAddress,
                                         validator: _model
-                                            .emailAddressTextController2Validator
+                                            .emailAddressTextControllerValidator
                                             .asValidator(context),
                                       ),
                                     ),
@@ -430,9 +430,200 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                       width: double.infinity,
                                       child: TextFormField(
                                         controller:
-                                            _model.emailAddressTextController3,
+                                            _model.passwordTextController,
+                                        focusNode: _model.passwordFocusNode,
+                                        autofocus: false,
+                                        autofillHints: const [AutofillHints.password],
+                                        textInputAction: TextInputAction.done,
+                                        obscureText: !_model.passwordVisibility,
+                                        decoration: InputDecoration(
+                                          labelText: 'كلمة المرور',
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily:
+                                                        'Plus Jakarta Sans',
+                                                    color: const Color(0xFF57636C),
+                                                    fontSize: 14.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFFE0E3E7),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFF4B39EF),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFFFF5963),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFFFF5963),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                          filled: true,
+                                          fillColor: Colors.white,
+                                          contentPadding: const EdgeInsets.all(24.0),
+                                          suffixIcon: InkWell(
+                                            onTap: () => safeSetState(
+                                              () => _model.passwordVisibility =
+                                                  !_model.passwordVisibility,
+                                            ),
+                                            focusNode:
+                                                FocusNode(skipTraversal: true),
+                                            child: Icon(
+                                              _model.passwordVisibility
+                                                  ? Icons.visibility_outlined
+                                                  : Icons
+                                                      .visibility_off_outlined,
+                                              color: const Color(0xFF57636C),
+                                              size: 24.0,
+                                            ),
+                                          ),
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              color: const Color(0xFF101213),
+                                              fontSize: 14.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                        validator: _model
+                                            .passwordTextControllerValidator
+                                            .asValidator(context),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 16.0),
+                                    child: SizedBox(
+                                      width: double.infinity,
+                                      child: TextFormField(
+                                        controller: _model
+                                            .confirmPasswordTextController,
                                         focusNode:
-                                            _model.emailAddressFocusNode3,
+                                            _model.confirmPasswordFocusNode,
+                                        autofocus: false,
+                                        autofillHints: const [AutofillHints.password],
+                                        textInputAction: TextInputAction.done,
+                                        obscureText:
+                                            !_model.confirmPasswordVisibility,
+                                        decoration: InputDecoration(
+                                          labelText: 'تأكيد كلمة المرور',
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily:
+                                                        'Plus Jakarta Sans',
+                                                    color: const Color(0xFF57636C),
+                                                    fontSize: 14.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFFE0E3E7),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFF4B39EF),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFFFF5963),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFFFF5963),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                          filled: true,
+                                          fillColor: Colors.white,
+                                          contentPadding: const EdgeInsets.all(24.0),
+                                          suffixIcon: InkWell(
+                                            onTap: () => safeSetState(
+                                              () => _model
+                                                      .confirmPasswordVisibility =
+                                                  !_model
+                                                      .confirmPasswordVisibility,
+                                            ),
+                                            focusNode:
+                                                FocusNode(skipTraversal: true),
+                                            child: Icon(
+                                              _model.confirmPasswordVisibility
+                                                  ? Icons.visibility_outlined
+                                                  : Icons
+                                                      .visibility_off_outlined,
+                                              color: const Color(0xFF57636C),
+                                              size: 24.0,
+                                            ),
+                                          ),
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              color: const Color(0xFF101213),
+                                              fontSize: 14.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                        validator: _model
+                                            .confirmPasswordTextControllerValidator
+                                            .asValidator(context),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 16.0),
+                                    child: SizedBox(
+                                      width: double.infinity,
+                                      child: TextFormField(
+                                        controller:
+                                            _model.phoneNumberTextController,
+                                        focusNode: _model.phoneNumberFocusNode,
                                         autofocus: true,
                                         autofillHints: const [AutofillHints.email],
                                         textInputAction: TextInputAction.next,
@@ -499,228 +690,149 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                         keyboardType:
                                             TextInputType.emailAddress,
                                         validator: _model
-                                            .emailAddressTextController3Validator
+                                            .phoneNumberTextControllerValidator
                                             .asValidator(context),
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 16.0),
-                                    child: SizedBox(
-                                      width: double.infinity,
-                                      child: TextFormField(
-                                        controller:
-                                            _model.passwordTextController1,
-                                        focusNode: _model.passwordFocusNode1,
-                                        autofocus: false,
-                                        autofillHints: const [AutofillHints.password],
-                                        textInputAction: TextInputAction.done,
-                                        obscureText:
-                                            !_model.passwordVisibility1,
-                                        decoration: InputDecoration(
-                                          labelText: 'كلمة المرور',
-                                          labelStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                        width: 177.0,
+                                        decoration: const BoxDecoration(),
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 16.0),
+                                          child: SizedBox(
+                                            width: double.infinity,
+                                            child: TextFormField(
+                                              controller:
+                                                  _model.locationTextController,
+                                              focusNode:
+                                                  _model.locationFocusNode,
+                                              autofocus: true,
+                                              autofillHints: const [
+                                                AutofillHints.email
+                                              ],
+                                              obscureText: false,
+                                              decoration: InputDecoration(
+                                                labelText: 'العنوان الوطني',
+                                                labelStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color:
+                                                              const Color(0xFF57636C),
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                enabledBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: const BorderSide(
+                                                    color: Color(0xFFE0E3E7),
+                                                    width: 2.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12.0),
+                                                ),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: const BorderSide(
+                                                    color: Color(0xFF4B39EF),
+                                                    width: 2.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12.0),
+                                                ),
+                                                errorBorder: OutlineInputBorder(
+                                                  borderSide: const BorderSide(
+                                                    color: Color(0xFFFF5963),
+                                                    width: 2.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12.0),
+                                                ),
+                                                focusedErrorBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: const BorderSide(
+                                                    color: Color(0xFFFF5963),
+                                                    width: 2.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12.0),
+                                                ),
+                                                filled: true,
+                                                fillColor: Colors.white,
+                                                contentPadding:
+                                                    const EdgeInsets.all(24.0),
+                                              ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: const Color(0xFF57636C),
+                                                    color: const Color(0xFF101213),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                              color: Color(0xFFE0E3E7),
-                                              width: 2.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(12.0),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                              color: Color(0xFF4B39EF),
-                                              width: 2.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(12.0),
-                                          ),
-                                          errorBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                              color: Color(0xFFFF5963),
-                                              width: 2.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(12.0),
-                                          ),
-                                          focusedErrorBorder:
-                                              OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                              color: Color(0xFFFF5963),
-                                              width: 2.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(12.0),
-                                          ),
-                                          filled: true,
-                                          fillColor: Colors.white,
-                                          contentPadding: const EdgeInsets.all(24.0),
-                                          suffixIcon: InkWell(
-                                            onTap: () => safeSetState(
-                                              () => _model.passwordVisibility1 =
-                                                  !_model.passwordVisibility1,
-                                            ),
-                                            focusNode:
-                                                FocusNode(skipTraversal: true),
-                                            child: Icon(
-                                              _model.passwordVisibility1
-                                                  ? Icons.visibility_outlined
-                                                  : Icons
-                                                      .visibility_off_outlined,
-                                              color: const Color(0xFF57636C),
-                                              size: 24.0,
+                                              validator: _model
+                                                  .locationTextControllerValidator
+                                                  .asValidator(context),
+                                              inputFormatters: [
+                                                _model.locationMask
+                                              ],
                                             ),
                                           ),
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              color: const Color(0xFF101213),
-                                              fontSize: 14.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                        validator: _model
-                                            .passwordTextController1Validator
-                                            .asValidator(context),
                                       ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 16.0),
-                                    child: SizedBox(
-                                      width: double.infinity,
-                                      child: TextFormField(
-                                        controller:
-                                            _model.passwordTextController2,
-                                        focusNode: _model.passwordFocusNode2,
-                                        autofocus: false,
-                                        autofillHints: const [AutofillHints.password],
-                                        textInputAction: TextInputAction.done,
-                                        obscureText:
-                                            !_model.passwordVisibility2,
-                                        decoration: InputDecoration(
-                                          labelText: 'تأكيد كلمة المرور',
-                                          labelStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily:
-                                                        'Plus Jakarta Sans',
-                                                    color: const Color(0xFF57636C),
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                              color: Color(0xFFE0E3E7),
-                                              width: 2.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(12.0),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                              color: Color(0xFF4B39EF),
-                                              width: 2.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(12.0),
-                                          ),
-                                          errorBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                              color: Color(0xFFFF5963),
-                                              width: 2.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(12.0),
-                                          ),
-                                          focusedErrorBorder:
-                                              OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                              color: Color(0xFFFF5963),
-                                              width: 2.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(12.0),
-                                          ),
-                                          filled: true,
-                                          fillColor: Colors.white,
-                                          contentPadding: const EdgeInsets.all(24.0),
-                                          suffixIcon: InkWell(
-                                            onTap: () => safeSetState(
-                                              () => _model.passwordVisibility2 =
-                                                  !_model.passwordVisibility2,
-                                            ),
-                                            focusNode:
-                                                FocusNode(skipTraversal: true),
-                                            child: Icon(
-                                              _model.passwordVisibility2
-                                                  ? Icons.visibility_outlined
-                                                  : Icons
-                                                      .visibility_off_outlined,
-                                              color: const Color(0xFF57636C),
-                                              size: 24.0,
-                                            ),
-                                          ),
+                                      Container(
+                                        width: 149.0,
+                                        decoration: const BoxDecoration(
+                                          shape: BoxShape.rectangle,
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              color: const Color(0xFF101213),
-                                              fontSize: 14.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                        validator: _model
-                                            .passwordTextController2Validator
-                                            .asValidator(context),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 613.0,
-                                    child: Align(
-                                      alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
-                                      child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            1.0, 0.0, 1.0, 12.0),
-                                        child: FlutterFlowDropDown<String>(
-                                          controller:
-                                              _model.dropDownValueController ??=
+                                        child: Align(
+                                          alignment:
+                                              const AlignmentDirectional(-1.0, 0.0),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    1.0, 0.0, 1.0, 12.0),
+                                            child: FlutterFlowDropDown<String>(
+                                              controller: _model
+                                                      .dropDownValueController ??=
                                                   FormFieldController<String>(
-                                            _model.dropDownValue ??= 'سباك',
-                                          ),
-                                          options: List<String>.from(
-                                              ['سباك', 'كهربائي', 'فني تكييف']),
-                                          optionLabels: const [
-                                            'سباك',
-                                            'كهربائي',
-                                            'فني تكيف'
-                                          ],
-                                          onChanged: (val) => safeSetState(
-                                              () => _model.dropDownValue = val),
-                                          width: 607.0,
-                                          height: 57.0,
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
+                                                      null),
+                                              options: List<String>.from([
+                                                'سباك',
+                                                'كهربائي',
+                                                'فني تكييف'
+                                              ]),
+                                              optionLabels: const [
+                                                'سباك',
+                                                'كهربائي',
+                                                'فني تكيف'
+                                              ],
+                                              onChanged: (val) => safeSetState(
+                                                  () => _model.dropDownValue =
+                                                      val),
+                                              width: 607.0,
+                                              height: 57.0,
+                                              textStyle: FlutterFlowTheme.of(
+                                                      context)
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Outfit',
@@ -728,30 +840,45 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
-                                          hintText: '...',
-                                          icon: Icon(
-                                            Icons.keyboard_arrow_down_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            size: 24.0,
+                                              hintText: 'اختر تخصصك',
+                                              icon: Icon(
+                                                Icons
+                                                    .keyboard_arrow_down_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 24.0,
+                                              ),
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              elevation: 2.0,
+                                              borderColor: const Color(0xFFE0E3E7),
+                                              borderWidth: 2.0,
+                                              borderRadius: 8.0,
+                                              margin: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 5.0, 0.0),
+                                              hidesUnderline: true,
+                                              isOverButton: true,
+                                              isSearchable: false,
+                                              isMultiSelect: false,
+                                              labelText: '',
+                                              labelTextStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
                                           ),
-                                          fillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primaryText,
-                                          elevation: 2.0,
-                                          borderColor: const Color(0xFFE0E3E7),
-                                          borderWidth: 2.0,
-                                          borderRadius: 8.0,
-                                          margin:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 0.0, 5.0, 0.0),
-                                          hidesUnderline: true,
-                                          isOverButton: true,
-                                          isSearchable: false,
-                                          isMultiSelect: false,
                                         ),
                                       ),
-                                    ),
+                                    ],
                                   ),
                                   Align(
                                     alignment: const AlignmentDirectional(0.0, 0.0),
@@ -763,40 +890,6 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            FFButtonWidget(
-                                              onPressed: () {
-                                                print('Button pressed ...');
-                                              },
-                                              text: 'أضف موقعك',
-                                              icon: const Icon(
-                                                Icons.location_on_outlined,
-                                                size: 15.0,
-                                              ),
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 0.0, 16.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFF9AB1FF),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: Colors.white,
-                                                          fontSize: 12.0,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                elevation: 0.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                            ),
                                             FFButtonWidget(
                                               onPressed: () {
                                                 print('Button pressed ...');
@@ -859,8 +952,8 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
 
                               final user = await authManager.signInWithEmail(
                                 context,
-                                _model.emailAddressTextController1.text,
-                                _model.passwordTextController1.text,
+                                _model.nameTextController.text,
+                                _model.passwordTextController.text,
                               );
                               if (user == null) {
                                 return;
