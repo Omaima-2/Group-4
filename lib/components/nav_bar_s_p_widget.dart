@@ -78,10 +78,17 @@ class _NavBarSPWidgetState extends State<NavBarSPWidget> {
                           borderRadius: 8.0,
                           buttonSize: 40.0,
                           fillColor: FlutterFlowTheme.of(context).primaryText,
-                          hoverIconColor: FlutterFlowTheme.of(context).tertiary,
+                          hoverColor: const Color(0xFFF68833),
+                          hoverIconColor: const Color(0xFFF68833),
                           icon: Icon(
                             Icons.person,
-                            color: FlutterFlowTheme.of(context).alternate,
+                            color: valueOrDefault<Color>(
+                              widget.page == 'settingSp'
+                                  ? const Color(0xFFF68833)
+                                  : FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                            ),
                             size: 20.0,
                           ),
                           onPressed: () {
@@ -97,32 +104,17 @@ class _NavBarSPWidgetState extends State<NavBarSPWidget> {
                           borderRadius: 8.0,
                           buttonSize: 40.0,
                           fillColor: FlutterFlowTheme.of(context).primaryText,
-                          hoverIconColor: FlutterFlowTheme.of(context).tertiary,
-                          icon: Icon(
-                            Icons.view_timeline,
-                            color: FlutterFlowTheme.of(context).alternate,
-                            size: 20.0,
-                          ),
-                          onPressed: () {
-                            print('reqSP pressed ...');
-                          },
-                        ),
-                      ),
-                    ),
-                    Flexible(
-                      child: Align(
-                        alignment: const AlignmentDirectional(1.0, 0.0),
-                        child: FlutterFlowIconButton(
-                          borderRadius: 8.0,
-                          buttonSize: 40.0,
-                          fillColor: FlutterFlowTheme.of(context).primaryText,
-                          hoverIconColor: FlutterFlowTheme.of(context).tertiary,
+                          hoverColor: const Color(0xFFF68833),
+                          hoverIconColor: const Color(0xFFF68833),
                           icon: Icon(
                             Icons.design_services,
-                            color: widget.page == 'services'
-                                ? const Color(0xFF1872C4)
-                                : FlutterFlowTheme.of(context)
-                                    .primaryBackground,
+                            color: valueOrDefault<Color>(
+                              widget.page == 'services'
+                                  ? const Color(0xFFF68833)
+                                  : FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                            ),
                             size: 20.0,
                           ),
                           onPressed: () async {
@@ -138,13 +130,17 @@ class _NavBarSPWidgetState extends State<NavBarSPWidget> {
                           borderRadius: 8.0,
                           buttonSize: 40.0,
                           fillColor: FlutterFlowTheme.of(context).primaryText,
-                          hoverIconColor: FlutterFlowTheme.of(context).tertiary,
+                          hoverColor: const Color(0xFFF68833),
+                          hoverIconColor: const Color(0xFFF68833),
                           icon: Icon(
                             Icons.home,
-                            color: widget.page == 'serviceProviderHomPageCopy'
-                                ? const Color(0xFF1872C4)
-                                : FlutterFlowTheme.of(context)
-                                    .primaryBackground,
+                            color: valueOrDefault<Color>(
+                              widget.page == 'ServiceProviderHomePage'
+                                  ? const Color(0xFFF68833)
+                                  : FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                            ),
                             size: 20.0,
                           ),
                           onPressed: () async {

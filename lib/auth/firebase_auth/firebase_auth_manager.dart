@@ -110,10 +110,12 @@ class FirebaseAuthManager extends AuthManager
   }) async {
     try {
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
-    } on FirebaseAuthException catch (e) {
+    } on FirebaseAuthException {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error: ${e.message!}')),
+        const SnackBar(
+            content: Text(
+                'البريد الألكتروني/ كلمة المرور خاطئة، الرجاء اعادة المحاولة')),
       );
       return null;
     }
@@ -183,8 +185,9 @@ class FirebaseAuthManager extends AuthManager
             .update(() => phoneAuthManager.triggerOnCodeSent = false);
       } else if (phoneAuthManager.phoneAuthError != null) {
         final e = phoneAuthManager.phoneAuthError!;
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text('Error: ${e.message!}'),
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text(
+              'البريد الألكتروني/ كلمة المرور خاطئة، الرجاء اعادة المحاولة'),
         ));
         phoneAuthManager.update(() => phoneAuthManager.phoneAuthError = null);
       }
@@ -290,11 +293,10 @@ class FirebaseAuthManager extends AuthManager
           : MitraqaFirebaseUser.fromUserCredential(userCredential);
     } on FirebaseAuthException catch (e) {
       final errorMsg = switch (e.code) {
-        'email-already-in-use' =>
-          'Error: The email is already in use by a different account',
+        'email-already-in-use' => 'البريد الألكتروني مسجل سابقًا في مطرقة',
         'INVALID_LOGIN_CREDENTIALS' =>
-          'Error: The supplied auth credential is incorrect, malformed or has expired',
-        _ => 'Error: ${e.message!}',
+          'البريد الألكتروني/ كلمة المرور خاطئة، الرجاء اعادة المحاولة',
+        _ => 'البريد الألكتروني/ كلمة المرور خاطئة، الرجاء اعادة المحاولة',
       };
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(

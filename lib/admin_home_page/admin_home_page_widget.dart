@@ -1,3 +1,4 @@
+import '/components/nav_bar_admin_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,7 @@ class _AdminHomePageWidgetState extends State<AdminHomePageWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryText,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(100.0),
+          preferredSize: const Size.fromHeight(140.0),
           child: AppBar(
             backgroundColor: const Color(0xFFF68833),
             automaticallyImplyLeading: false,
@@ -74,7 +75,7 @@ class _AdminHomePageWidgetState extends State<AdminHomePageWidget> {
                                           fontFamily: 'Outfit',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
-                                          fontSize: 24.0,
+                                          fontSize: 34.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
                                         ),
@@ -94,7 +95,7 @@ class _AdminHomePageWidgetState extends State<AdminHomePageWidget> {
                                           fontFamily: 'Outfit',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
-                                          fontSize: 18.0,
+                                          fontSize: 24.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
                                           fontStyle: FontStyle.italic,
@@ -111,10 +112,12 @@ class _AdminHomePageWidgetState extends State<AdminHomePageWidget> {
                 ),
               ),
               background: ClipRRect(
-                borderRadius: BorderRadius.circular(8.0),
+                borderRadius: BorderRadius.circular(0.0),
                 child: Image.asset(
-                  'assets/images/__2024-09-15_230048.png',
+                  'assets/images/__2024-09-18_181523.png',
+                  height: 10.0,
                   fit: BoxFit.cover,
+                  alignment: const Alignment(1.0, -1.0),
                 ),
               ),
               centerTitle: true,
@@ -273,6 +276,16 @@ class _AdminHomePageWidgetState extends State<AdminHomePageWidget> {
                         ),
                       ].divide(const SizedBox(height: 20.0)),
                     ),
+                  ),
+                ),
+              ),
+              Align(
+                alignment: const AlignmentDirectional(0.0, 1.0),
+                child: wrapWithModel(
+                  model: _model.navBarAdminModel,
+                  updateCallback: () => safeSetState(() {}),
+                  child: const NavBarAdminWidget(
+                    page: 'AdminHomePage',
                   ),
                 ),
               ),

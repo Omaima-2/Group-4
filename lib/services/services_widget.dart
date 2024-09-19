@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/a_service_widget.dart';
+import '/components/nav_bar_s_p_widget.dart';
 import '/components/no_services_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -47,7 +48,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsets.all(24.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 20.0, 24.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -69,14 +70,17 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                 ),
                 Align(
                   alignment: const AlignmentDirectional(-1.0, 0.0),
-                  child: Text(
-                    'خدماتي',
-                    style: FlutterFlowTheme.of(context).displaySmall.override(
-                          fontFamily: 'Outfit',
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          letterSpacing: 0.0,
-                        ),
+                  child: Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+                    child: Text(
+                      'خدماتي',
+                      style: FlutterFlowTheme.of(context).displaySmall.override(
+                            fontFamily: 'Outfit',
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            letterSpacing: 0.0,
+                          ),
+                    ),
                   ),
                 ),
                 Align(
@@ -189,7 +193,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('addService');
+                        context.pushNamed('add_Service');
                       },
                       child: Container(
                         width: 200.0,
@@ -213,7 +217,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                           alignment: const AlignmentDirectional(1.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              context.pushNamed('addService');
+                              context.pushNamed('add_Service');
                             },
                             text: 'إضافة خدمة ',
                             icon: const Icon(
@@ -246,6 +250,13 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                         ),
                       ),
                     ),
+                  ),
+                ),
+                wrapWithModel(
+                  model: _model.navBarSPModel,
+                  updateCallback: () => safeSetState(() {}),
+                  child: const NavBarSPWidget(
+                    page: 'Services',
                   ),
                 ),
               ],

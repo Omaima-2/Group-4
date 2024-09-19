@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -6,8 +7,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'login_model.dart';
@@ -303,22 +302,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             .emailTextController,
                                                         focusNode: _model
                                                             .emailFocusNode,
-                                                        onChanged: (_) =>
-                                                            EasyDebounce
-                                                                .debounce(
-                                                          '_model.emailTextController',
-                                                          const Duration(
-                                                              milliseconds:
-                                                                  2000),
-                                                          () async {
-                                                            _model.emailError =
-                                                                functions.validateEmail(
-                                                                    _model
-                                                                        .emailTextController
-                                                                        .text);
-                                                            safeSetState(() {});
-                                                          },
-                                                        ),
                                                         autofocus: false,
                                                         obscureText: false,
                                                         decoration:
@@ -455,42 +438,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       ),
                                                     ),
                                                   ),
-                                                  if (_model.emailError != ' ')
-                                                    Align(
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                              -1.0, -1.0),
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    16.0,
-                                                                    5.0),
-                                                        child: Text(
-                                                          _model.emailError,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Plus Jakarta Sans',
-                                                                color: const Color(
-                                                                    0xFFFF0000),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                    ),
                                                   Flexible(
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  2.0,
+                                                                  16.0,
                                                                   16.0,
                                                                   0.0),
                                                       child: TextFormField(
@@ -758,7 +712,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                              'ForgetPass');
+                                                              'forgetPassword');
                                                         },
                                                         child: RichText(
                                                           textScaler:
@@ -810,17 +764,19 @@ class _LoginWidgetState extends State<LoginWidget>
                                                     Align(
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                              -1.0, -1.0),
+                                                              0.0, -1.0),
                                                       child: Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
-                                                                    16.0,
+                                                                    0.0,
                                                                     5.0),
                                                         child: Text(
                                                           _model.emailPassError,
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium
@@ -848,79 +804,151 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                     10.0,
                                                                     0.0,
                                                                     16.0),
-                                                        child: FFButtonWidget(
-                                                          onPressed: () async {
-                                                            if (_model.formKey
-                                                                    .currentState !=
-                                                                null) {
-                                                              _model.formKey
-                                                                  .currentState!
-                                                                  .validate();
+                                                        child: StreamBuilder<
+                                                            List<Users1Record>>(
+                                                          stream:
+                                                              queryUsers1Record(
+                                                            queryBuilder:
+                                                                (users1Record) =>
+                                                                    users1Record
+                                                                        .where(
+                                                              'email',
+                                                              isNotEqualTo: _model
+                                                                          .emailTextController
+                                                                          .text !=
+                                                                      ''
+                                                                  ? _model
+                                                                      .emailTextController
+                                                                      .text
+                                                                  : null,
+                                                            ),
+                                                            singleRecord: true,
+                                                          )..listen((snapshot) {
+                                                                  List<Users1Record>
+                                                                      buttonUsers1RecordList =
+                                                                      snapshot;
+                                                                  final buttonUsers1Record = buttonUsers1RecordList
+                                                                          .isNotEmpty
+                                                                      ? buttonUsers1RecordList
+                                                                          .first
+                                                                      : null;
+                                                                  if (_model.buttonPreviousSnapshot !=
+                                                                          null &&
+                                                                      !const ListEquality(Users1RecordDocumentEquality()).equals(
+                                                                          buttonUsers1RecordList,
+                                                                          _model
+                                                                              .buttonPreviousSnapshot)) {
+                                                                    () async {}();
+                                                                  }
+                                                                  _model.buttonPreviousSnapshot =
+                                                                      snapshot;
+                                                                }),
+                                                          builder: (context,
+                                                              snapshot) {
+                                                            // Customize what your widget looks like when it's loading.
+                                                            if (!snapshot
+                                                                .hasData) {
+                                                              return Center(
+                                                                child: SizedBox(
+                                                                  width: 50.0,
+                                                                  height: 50.0,
+                                                                  child:
+                                                                      CircularProgressIndicator(
+                                                                    valueColor:
+                                                                        AlwaysStoppedAnimation<
+                                                                            Color>(
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              );
                                                             }
-                                                            GoRouter.of(context)
-                                                                .prepareAuthEvent();
+                                                            List<Users1Record>
+                                                                buttonUsers1RecordList =
+                                                                snapshot.data!;
+                                                            // Return an empty Container when the item does not exist.
+                                                            if (snapshot.data!
+                                                                .isEmpty) {
+                                                              return Container();
+                                                            }
+                                                            final buttonUsers1Record =
+                                                                buttonUsers1RecordList
+                                                                        .isNotEmpty
+                                                                    ? buttonUsers1RecordList
+                                                                        .first
+                                                                    : null;
 
-                                                            final user =
-                                                                await authManager
-                                                                    .signInWithEmail(
-                                                              context,
-                                                              _model
-                                                                  .emailTextController
-                                                                  .text,
-                                                              _model
-                                                                  .passTextController
-                                                                  .text,
-                                                            );
-                                                            if (user == null) {
-                                                              return;
-                                                            }
+                                                            return FFButtonWidget(
+                                                              onPressed: ((_model.emailTextController.text ==
+                                                                              '') ||
+                                                                      (_model.passTextController.text ==
+                                                                              ''))
+                                                                  ? null
+                                                                  : () async {
+                                                                      GoRouter.of(
+                                                                              context)
+                                                                          .prepareAuthEvent();
 
-                                                            if (currentUserDocument
-                                                                    ?.role ==
-                                                                Rolee.cl) {
-                                                              context.pushNamedAuth(
-                                                                  'HomePageClient',
-                                                                  context
-                                                                      .mounted);
-                                                            } else {
-                                                              if (currentUserDocument
-                                                                      ?.role ==
-                                                                  Rolee.sp) {
-                                                                context.pushNamedAuth(
-                                                                    'ServiceProviderHomePage',
-                                                                    context
-                                                                        .mounted);
-                                                              } else {
-                                                                context.pushNamedAuth(
-                                                                    'AdminHomePage',
-                                                                    context
-                                                                        .mounted);
-                                                              }
-                                                            }
-                                                          },
-                                                          text: 'تسجيل',
-                                                          options:
-                                                              FFButtonOptions(
-                                                            width: 280.0,
-                                                            height: 52.0,
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            color: const Color(
-                                                                0xFFF68833),
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
+                                                                      final user =
+                                                                          await authManager
+                                                                              .signInWithEmail(
+                                                                        context,
+                                                                        _model
+                                                                            .emailTextController
+                                                                            .text,
+                                                                        _model
+                                                                            .passTextController
+                                                                            .text,
+                                                                      );
+                                                                      if (user ==
+                                                                          null) {
+                                                                        return;
+                                                                      }
+
+                                                                      if (currentUserDocument
+                                                                              ?.role ==
+                                                                          Rolee
+                                                                              .cl) {
+                                                                        context.pushNamedAuth(
+                                                                            'HomePageClient',
+                                                                            context.mounted);
+                                                                      } else {
+                                                                        if (currentUserDocument?.role ==
+                                                                            Rolee.sp) {
+                                                                          context.pushNamedAuth(
+                                                                              'ServiceProviderHomePage',
+                                                                              context.mounted);
+                                                                        } else {
+                                                                          context.pushNamedAuth(
+                                                                              'AdminHomePage',
+                                                                              context.mounted);
+                                                                        }
+                                                                      }
+                                                                    },
+                                                              text: 'تسجيل',
+                                                              options:
+                                                                  FFButtonOptions(
+                                                                width: 280.0,
+                                                                height: 52.0,
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                iconPadding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                color: const Color(
+                                                                    0xFFF68833),
+                                                                textStyle: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
@@ -932,18 +960,28 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                           FontWeight
                                                                               .normal,
                                                                     ),
-                                                            elevation: 3.0,
-                                                            borderSide:
-                                                                const BorderSide(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              width: 1.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        40.0),
-                                                          ),
+                                                                elevation: 3.0,
+                                                                borderSide:
+                                                                    const BorderSide(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  width: 1.0,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            40.0),
+                                                                disabledColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryText,
+                                                                disabledTextColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryBackground,
+                                                              ),
+                                                            );
+                                                          },
                                                         ),
                                                       ),
                                                     ),
@@ -1165,6 +1203,54 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                         40.0),
                                                           ),
                                                         ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 10.0,
+                                                                10.0, 0.0),
+                                                    child: InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        context.pushNamed(
+                                                          'loginTest',
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            kTransitionInfoKey:
+                                                                const TransitionInfo(
+                                                              hasTransition:
+                                                                  true,
+                                                              transitionType:
+                                                                  PageTransitionType
+                                                                      .bottomToTop,
+                                                            ),
+                                                          },
+                                                        );
+                                                      },
+                                                      child: Text(
+                                                        'الصفحة التجريبية من هنا',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                   ),

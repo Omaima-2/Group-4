@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'password_done_reset_widget.dart' show PasswordDoneResetWidget;
+import 'nav_bar_s_p_copy_widget.dart' show NavBarSPCopyWidget;
 import 'package:flutter/material.dart';
 
-class PasswordDoneResetModel extends FlutterFlowModel<PasswordDoneResetWidget> {
+class NavBarSPCopyModel extends FlutterFlowModel<NavBarSPCopyWidget> {
   @override
   void initState(BuildContext context) {}
 

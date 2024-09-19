@@ -314,7 +314,7 @@ class _ServiceProviderRegisterWidgetState
                                                             '_model.displayNameSPTextController',
                                                             const Duration(
                                                                 milliseconds:
-                                                                    2000),
+                                                                    100),
                                                             () async {
                                                               _model.nameError =
                                                                   valueOrDefault<
@@ -544,7 +544,7 @@ class _ServiceProviderRegisterWidgetState
                                                             '_model.emailSPTextController',
                                                             const Duration(
                                                                 milliseconds:
-                                                                    2000),
+                                                                    100),
                                                             () async {
                                                               _model.emailError =
                                                                   valueOrDefault<
@@ -1587,7 +1587,7 @@ class _ServiceProviderRegisterWidgetState
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             1.0,
-                                                                            12.0,
+                                                                            0.0,
                                                                             1.0,
                                                                             0.0),
                                                                 child:
@@ -1774,12 +1774,13 @@ class _ServiceProviderRegisterWidgetState
                                                                   const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Padding(
-                                                                padding: const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        11.0,
-                                                                        10.0,
-                                                                        0.0),
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0),
                                                                 child:
                                                                     FlutterFlowPlacePicker(
                                                                   iOSGoogleMapsApiKey:
@@ -1834,74 +1835,6 @@ class _ServiceProviderRegisterWidgetState
                                                                     borderRadius:
                                                                         BorderRadius.circular(
                                                                             10.0),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          Expanded(
-                                                            child: Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 1.0),
-                                                              child: Padding(
-                                                                padding: const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        40.0,
-                                                                        10.0,
-                                                                        0.0),
-                                                                child:
-                                                                    FFButtonWidget(
-                                                                  onPressed:
-                                                                      () async {
-                                                                    context.pushNamed(
-                                                                        'map');
-                                                                  },
-                                                                  text: 'إضافة',
-                                                                  options:
-                                                                      FFButtonOptions(
-                                                                    width:
-                                                                        175.0,
-                                                                    height:
-                                                                        40.0,
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            24.0,
-                                                                            0.0,
-                                                                            24.0,
-                                                                            0.0),
-                                                                    iconPadding:
-                                                                        const EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    color: const Color(
-                                                                        0xFFF68833),
-                                                                    textStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Outfit',
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          fontWeight:
-                                                                              FontWeight.w500,
-                                                                        ),
-                                                                    elevation:
-                                                                        3.0,
-                                                                    borderSide:
-                                                                        const BorderSide(
-                                                                      color: Colors
-                                                                          .transparent,
-                                                                      width:
-                                                                          3.0,
-                                                                    ),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            8.0),
                                                                   ),
                                                                 ),
                                                               ),
@@ -1971,7 +1904,7 @@ class _ServiceProviderRegisterWidgetState
                                                                         const SnackBar(
                                                                           content:
                                                                               Text(
-                                                                            'Passwords don\'t match!',
+                                                                            'كلمتي المرور لا تتطابق',
                                                                           ),
                                                                         ),
                                                                       );

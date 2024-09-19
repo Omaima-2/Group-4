@@ -1,6 +1,8 @@
 import '/flutter_flow/flutter_flow_google_map.dart';
+import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'map_model.dart';
 export 'map_model.dart';
@@ -65,6 +67,37 @@ class _MapWidgetState extends State<MapWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
+              FlutterFlowPlacePicker(
+                iOSGoogleMapsApiKey: 'AIzaSyDDuK3Sll_2vPLS2FJCGescGlf6oV2QV5E',
+                androidGoogleMapsApiKey:
+                    'AIzaSyDDuK3Sll_2vPLS2FJCGescGlf6oV2QV5E',
+                webGoogleMapsApiKey: 'AIzaSyDDuK3Sll_2vPLS2FJCGescGlf6oV2QV5E',
+                onSelect: (place) async {
+                  safeSetState(() => _model.placePickerValue = place);
+                },
+                defaultText: 'Select Location',
+                icon: Icon(
+                  Icons.place,
+                  color: FlutterFlowTheme.of(context).info,
+                  size: 16.0,
+                ),
+                buttonOptions: FFButtonOptions(
+                  width: 200.0,
+                  height: 40.0,
+                  color: FlutterFlowTheme.of(context).primary,
+                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                        fontFamily: 'Readex Pro',
+                        color: FlutterFlowTheme.of(context).info,
+                        letterSpacing: 0.0,
+                      ),
+                  elevation: 0.0,
+                  borderSide: const BorderSide(
+                    color: Colors.transparent,
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+              ),
               Expanded(
                 child: Builder(builder: (context) {
                   final googleMapMarker = currentUserLocationValue;
@@ -72,7 +105,7 @@ class _MapWidgetState extends State<MapWidget> {
                     controller: _model.googleMapsController,
                     onCameraIdle: (latLng) => _model.googleMapsCenter = latLng,
                     initialLocation: _model.googleMapsCenter ??=
-                        const LatLng(24.7136, 46.6753),
+                        const LatLng(13.106061, -59.613158),
                     markers: [
                       if (googleMapMarker != null)
                         FlutterFlowMarker(
@@ -80,10 +113,10 @@ class _MapWidgetState extends State<MapWidget> {
                           googleMapMarker,
                         ),
                     ],
-                    markerColor: GoogleMarkerColor.red,
+                    markerColor: GoogleMarkerColor.violet,
                     mapType: MapType.normal,
                     style: GoogleMapStyle.standard,
-                    initialZoom: 13.0,
+                    initialZoom: 14.0,
                     allowInteraction: true,
                     allowZoom: true,
                     showZoomControls: true,

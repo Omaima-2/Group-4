@@ -1338,6 +1338,23 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                       ),
                                                     ),
                                                   ),
+                                                  Text(
+                                                    valueOrDefault<String>(
+                                                      _model.uploadedFileUrl,
+                                                      'لم يتم إدراج صورة',
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
                                                 ],
                                               ),
                                             ),
@@ -1363,7 +1380,7 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                         .showSnackBar(
                                                       const SnackBar(
                                                         content: Text(
-                                                          'Passwords don\'t match!',
+                                                          'كلمتي المرور لا تتطابق',
                                                         ),
                                                       ),
                                                     );

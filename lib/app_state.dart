@@ -31,4 +31,10 @@ class FFAppState extends ChangeNotifier {
   set dropstate(bool value) {
     _dropstate = value;
   }
+
+  String _loginAttempt = '';
+  String get loginAttempt => _loginAttempt;
+  set loginAttempt(String value) {
+    _loginAttempt = value;
+  }
 }

@@ -1,2 +1,1 @@
-export 'sig_in_fail.dart' show sigInFail;
-export 'check_internet_connection.dart' show checkInternetConnection;
+export 'sign_in.dart' show signIn;

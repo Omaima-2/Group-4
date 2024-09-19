@@ -75,14 +75,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
           ? const ServiceProviderRegisterWidget()
-          : const LoginWidget(),
+          : const LoginTestWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
               ? const ServiceProviderRegisterWidget()
-              : const LoginWidget(),
+              : const LoginTestWidget(),
         ),
         FFRoute(
           name: 'ServiceProviderRegister',
@@ -95,9 +95,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ClientRegristeWidget(),
         ),
         FFRoute(
-          name: 'ForgetPass',
+          name: 'forgetPassword',
           path: '/ForgetPass',
-          builder: (context, params) => const ForgetPassWidget(),
+          builder: (context, params) => const ForgetPasswordWidget(),
         ),
         FFRoute(
           name: 'HomePageClient',
@@ -111,19 +111,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const MapWidget(),
         ),
         FFRoute(
-          name: 'passwordDoneReset',
-          path: '/passwordDoneReset',
-          builder: (context, params) => const PasswordDoneResetWidget(),
-        ),
-        FFRoute(
           name: 'login',
           path: '/login',
           builder: (context, params) => const LoginWidget(),
-        ),
-        FFRoute(
-          name: 'addService',
-          path: '/addService',
-          builder: (context, params) => const AddServiceWidget(),
         ),
         FFRoute(
           name: 'clientAccount',
@@ -159,14 +149,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'log1',
-          path: '/log1',
-          builder: (context, params) => const Log1Widget(),
-        ),
-        FFRoute(
           name: 'loginTest',
           path: '/loginTest',
           builder: (context, params) => const LoginTestWidget(),
+        ),
+        FFRoute(
+          name: 'SignUpTestClient',
+          path: '/SignUpTestClient',
+          builder: (context, params) => const SignUpTestClientWidget(),
+        ),
+        FFRoute(
+          name: 'SignUpTestSP',
+          path: '/SignUpTestSP',
+          builder: (context, params) => const SignUpTestSPWidget(),
+        ),
+        FFRoute(
+          name: 'add_Service',
+          path: '/addService',
+          builder: (context, params) => const AddServiceWidget(),
+        ),
+        FFRoute(
+          name: 'Setting_client',
+          path: '/settingClient',
+          builder: (context, params) => const SettingClientWidget(),
+        ),
+        FFRoute(
+          name: 'Setting_ServiceProvider',
+          path: '/settingServiceProvider',
+          builder: (context, params) => const SettingServiceProviderWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -337,7 +347,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/login';
+            return '/loginTest';
           }
           return null;
         },

@@ -62,14 +62,11 @@ class _AServiceWidgetState extends State<AServiceWidget> {
               ),
             )
           ],
-          gradient: LinearGradient(
-            colors: [
-              const Color(0xFFA8C2E0),
-              FlutterFlowTheme.of(context).primaryText
-            ],
-            stops: const [0.0, 1.0],
-            begin: const AlignmentDirectional(1.0, -0.34),
-            end: const AlignmentDirectional(-1.0, 0.34),
+          gradient: const LinearGradient(
+            colors: [Color(0xFFFFB67D), Color(0xFFB7C7FB), Color(0xFFD1DCF9)],
+            stops: [0.0, 0.6, 1.0],
+            begin: AlignmentDirectional(-1.0, -1.0),
+            end: AlignmentDirectional(1.0, 1.0),
           ),
           borderRadius: BorderRadius.circular(18.0),
           shape: BoxShape.rectangle,
@@ -125,7 +122,7 @@ class _AServiceWidgetState extends State<AServiceWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: RichText(
                           textScaler: MediaQuery.of(context).textScaler,
                           text: TextSpan(

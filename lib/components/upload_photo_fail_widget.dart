@@ -92,7 +92,8 @@ class _UploadPhotoFailWidgetState extends State<UploadPhotoFailWidget> {
                     'خطأ',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Outfit',
-                          color: const Color(0xFFF68833),
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
                           fontSize: 34.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w500,
@@ -106,6 +107,7 @@ class _UploadPhotoFailWidgetState extends State<UploadPhotoFailWidget> {
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         fontSize: 18.0,
                         letterSpacing: 0.0,
+                        fontWeight: FontWeight.w500,
                       ),
                 ),
                 Align(

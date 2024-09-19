@@ -92,7 +92,8 @@ class _UploadPhotoSucsessWidgetState extends State<UploadPhotoSucsessWidget> {
                     'تم الرفع',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Outfit',
-                          color: const Color(0xFFF68833),
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
                           fontSize: 34.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w500,
