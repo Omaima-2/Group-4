@@ -64,9 +64,6 @@ class ServiceProviderRegisterModel
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl = '';
 
-  // State field(s) for PlacePicker widget.
-  FFPlace placePickerValue = const FFPlace();
-
   @override
   void initState(BuildContext context) {
     displayNameSPTextControllerValidator =

@@ -8,7 +8,7 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   String emailError = ' ';
 
-  String emailPassError = ' ';
+  String emailPassError = '.';
 
   ///  State fields for stateful widgets in this page.
 

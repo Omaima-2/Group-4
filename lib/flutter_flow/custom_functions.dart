@@ -117,3 +117,8 @@ String validatePassword(String password) {
   // If all conditions are met, return valid message
   return ' ';
 }
+
+String? newCustomFunction5() {
+  // function return the string 'unknown'
+  return 'unknown';
+}

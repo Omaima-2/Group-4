@@ -143,7 +143,7 @@ class _LoginTestWidgetState extends State<LoginTestWidget>
         key: scaffoldKey,
         backgroundColor: Colors.white,
         body: Column(
-          mainAxisSize: MainAxisSize.max,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Container(
               width: double.infinity,
@@ -600,7 +600,7 @@ class _LoginTestWidgetState extends State<LoginTestWidget>
                         width: 2.0,
                       ),
                       borderRadius: BorderRadius.circular(24.0),
-                      hoverColor: const Color(0xFFF1F4F8),
+                      hoverColor: const Color(0xFFDADDE8),
                     ),
                   ),
                 ),

@@ -1,11 +1,17 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
 import '/backend/schema/enums/enums.dart';
+import '/components/upload_photo_fail_widget.dart';
+import '/components/upload_photo_sucsess_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/upload_data.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'sign_up_test_s_p_model.dart';
@@ -156,7 +162,7 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
         key: scaffoldKey,
         backgroundColor: Colors.white,
         body: Column(
-          mainAxisSize: MainAxisSize.max,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Container(
               width: double.infinity,
@@ -185,7 +191,7 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                   ),
                 ),
                 child: Column(
-                  mainAxisSize: MainAxisSize.max,
+                  mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
@@ -249,7 +255,7 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
-                    mainAxisSize: MainAxisSize.max,
+                    mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -262,18 +268,18 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                             alignment: const AlignmentDirectional(0.0, -1.0),
                             child: SingleChildScrollView(
                               child: Column(
-                                mainAxisSize: MainAxisSize.max,
+                                mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 16.0),
+                                        0.0, 0.0, 0.0, 5.0),
                                     child: SizedBox(
                                       width: double.infinity,
                                       child: TextFormField(
                                         controller: _model.nameTextController,
                                         focusNode: _model.nameFocusNode,
                                         autofocus: true,
-                                        autofillHints: const [AutofillHints.email],
+                                        autofillHints: const [AutofillHints.name],
                                         textInputAction: TextInputAction.next,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -335,8 +341,7 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
-                                        keyboardType:
-                                            TextInputType.emailAddress,
+                                        keyboardType: TextInputType.name,
                                         validator: _model
                                             .nameTextControllerValidator
                                             .asValidator(context),
@@ -345,13 +350,18 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 16.0),
+                                        0.0, 0.0, 0.0, 5.0),
                                     child: SizedBox(
                                       width: double.infinity,
                                       child: TextFormField(
                                         controller:
                                             _model.emailAddressTextController,
                                         focusNode: _model.emailAddressFocusNode,
+                                        onChanged: (_) => EasyDebounce.debounce(
+                                          '_model.emailAddressTextController',
+                                          const Duration(milliseconds: 200),
+                                          () => safeSetState(() {}),
+                                        ),
                                         autofocus: true,
                                         autofillHints: const [AutofillHints.email],
                                         textInputAction: TextInputAction.next,
@@ -425,13 +435,18 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 16.0),
+                                        0.0, 0.0, 0.0, 5.0),
                                     child: SizedBox(
                                       width: double.infinity,
                                       child: TextFormField(
                                         controller:
                                             _model.passwordTextController,
                                         focusNode: _model.passwordFocusNode,
+                                        onChanged: (_) => EasyDebounce.debounce(
+                                          '_model.passwordTextController',
+                                          const Duration(milliseconds: 200),
+                                          () => safeSetState(() {}),
+                                        ),
                                         autofocus: false,
                                         autofillHints: const [AutofillHints.password],
                                         textInputAction: TextInputAction.done,
@@ -519,7 +534,7 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 16.0),
+                                        0.0, 0.0, 0.0, 5.0),
                                     child: SizedBox(
                                       width: double.infinity,
                                       child: TextFormField(
@@ -527,6 +542,11 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                             .confirmPasswordTextController,
                                         focusNode:
                                             _model.confirmPasswordFocusNode,
+                                        onChanged: (_) => EasyDebounce.debounce(
+                                          '_model.confirmPasswordTextController',
+                                          const Duration(milliseconds: 200),
+                                          () => safeSetState(() {}),
+                                        ),
                                         autofocus: false,
                                         autofillHints: const [AutofillHints.password],
                                         textInputAction: TextInputAction.done,
@@ -617,7 +637,7 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 16.0),
+                                        0.0, 0.0, 0.0, 5.0),
                                     child: SizedBox(
                                       width: double.infinity,
                                       child: TextFormField(
@@ -625,7 +645,9 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                             _model.phoneNumberTextController,
                                         focusNode: _model.phoneNumberFocusNode,
                                         autofocus: true,
-                                        autofillHints: const [AutofillHints.email],
+                                        autofillHints: const [
+                                          AutofillHints.telephoneNumber
+                                        ],
                                         textInputAction: TextInputAction.next,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -687,8 +709,7 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
-                                        keyboardType:
-                                            TextInputType.emailAddress,
+                                        keyboardType: TextInputType.phone,
                                         validator: _model
                                             .phoneNumberTextControllerValidator
                                             .asValidator(context),
@@ -696,241 +717,339 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                     ),
                                   ),
                                   Row(
-                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Container(
-                                        width: 177.0,
-                                        decoration: const BoxDecoration(),
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 16.0),
-                                          child: SizedBox(
-                                            width: double.infinity,
-                                            child: TextFormField(
-                                              controller:
-                                                  _model.locationTextController,
-                                              focusNode:
-                                                  _model.locationFocusNode,
-                                              autofocus: true,
-                                              autofillHints: const [
-                                                AutofillHints.email
-                                              ],
-                                              obscureText: false,
-                                              decoration: InputDecoration(
-                                                labelText: 'العنوان الوطني',
-                                                labelStyle:
+                                      Flexible(
+                                        child: Container(
+                                          width: double.infinity,
+                                          decoration: const BoxDecoration(),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 5.0),
+                                            child: SizedBox(
+                                              width: double.infinity,
+                                              child: TextFormField(
+                                                controller: _model
+                                                    .locationTextController,
+                                                focusNode:
+                                                    _model.locationFocusNode,
+                                                autofocus: true,
+                                                autofillHints: const [
+                                                  AutofillHints.postalCode
+                                                ],
+                                                obscureText: false,
+                                                decoration: InputDecoration(
+                                                  labelText:
+                                                      'العنوان الوطني (eg. RRRD2929 ). ',
+                                                  labelStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        color:
+                                                            const Color(0xFF57636C),
+                                                        fontSize: 14.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                  enabledBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: const BorderSide(
+                                                      color: Color(0xFFE0E3E7),
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12.0),
+                                                  ),
+                                                  focusedBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: const BorderSide(
+                                                      color: Color(0xFF4B39EF),
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12.0),
+                                                  ),
+                                                  errorBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: const BorderSide(
+                                                      color: Color(0xFFFF5963),
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12.0),
+                                                  ),
+                                                  focusedErrorBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: const BorderSide(
+                                                      color: Color(0xFFFF5963),
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12.0),
+                                                  ),
+                                                  filled: true,
+                                                  fillColor: Colors.white,
+                                                  contentPadding:
+                                                      const EdgeInsets.all(24.0),
+                                                ),
+                                                style:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelMedium
+                                                        .bodyMedium
                                                         .override(
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF57636C),
+                                                              const Color(0xFF101213),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
-                                                enabledBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: const BorderSide(
-                                                    color: Color(0xFFE0E3E7),
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
-                                                ),
-                                                focusedBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: const BorderSide(
-                                                    color: Color(0xFF4B39EF),
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
-                                                ),
-                                                errorBorder: OutlineInputBorder(
-                                                  borderSide: const BorderSide(
-                                                    color: Color(0xFFFF5963),
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
-                                                ),
-                                                focusedErrorBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: const BorderSide(
-                                                    color: Color(0xFFFF5963),
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
-                                                ),
-                                                filled: true,
-                                                fillColor: Colors.white,
-                                                contentPadding:
-                                                    const EdgeInsets.all(24.0),
+                                                textAlign: TextAlign.end,
+                                                keyboardType:
+                                                    TextInputType.streetAddress,
+                                                validator: _model
+                                                    .locationTextControllerValidator
+                                                    .asValidator(context),
+                                                inputFormatters: [
+                                                  _model.locationMask
+                                                ],
                                               ),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily:
-                                                        'Plus Jakarta Sans',
-                                                    color: const Color(0xFF101213),
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                              validator: _model
-                                                  .locationTextControllerValidator
-                                                  .asValidator(context),
-                                              inputFormatters: [
-                                                _model.locationMask
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        width: 149.0,
-                                        decoration: const BoxDecoration(
-                                          shape: BoxShape.rectangle,
-                                        ),
-                                        child: Align(
-                                          alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    1.0, 0.0, 1.0, 12.0),
-                                            child: FlutterFlowDropDown<String>(
-                                              controller: _model
-                                                      .dropDownValueController ??=
-                                                  FormFieldController<String>(
-                                                      null),
-                                              options: List<String>.from([
-                                                'سباك',
-                                                'كهربائي',
-                                                'فني تكييف'
-                                              ]),
-                                              optionLabels: const [
-                                                'سباك',
-                                                'كهربائي',
-                                                'فني تكيف'
-                                              ],
-                                              onChanged: (val) => safeSetState(
-                                                  () => _model.dropDownValue =
-                                                      val),
-                                              width: 607.0,
-                                              height: 57.0,
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: const Color(0xFF57636C),
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                              hintText: 'اختر تخصصك',
-                                              icon: Icon(
-                                                Icons
-                                                    .keyboard_arrow_down_rounded,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                size: 24.0,
-                                              ),
-                                              fillColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              elevation: 2.0,
-                                              borderColor: const Color(0xFFE0E3E7),
-                                              borderWidth: 2.0,
-                                              borderRadius: 8.0,
-                                              margin: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 5.0, 0.0),
-                                              hidesUnderline: true,
-                                              isOverButton: true,
-                                              isSearchable: false,
-                                              isMultiSelect: false,
-                                              labelText: '',
-                                              labelTextStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Outfit',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                        letterSpacing: 0.0,
-                                                      ),
                                             ),
                                           ),
                                         ),
                                       ),
                                     ],
                                   ),
+                                  Container(
+                                    decoration: const BoxDecoration(
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Align(
+                                      alignment:
+                                          const AlignmentDirectional(-1.0, 0.0),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            1.0, 0.0, 1.0, 5.0),
+                                        child: FlutterFlowDropDown<String>(
+                                          controller: _model
+                                                  .dropDownValueController ??=
+                                              FormFieldController<String>(null),
+                                          options: List<String>.from(
+                                              ['سباك', 'كهربائي', 'فني تكييف']),
+                                          optionLabels: const [
+                                            'سباك',
+                                            'كهربائي',
+                                            'فني تكيف'
+                                          ],
+                                          onChanged: (val) => safeSetState(
+                                              () => _model.dropDownValue = val),
+                                          width: 607.0,
+                                          height: 57.0,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily:
+                                                        'Plus Jakarta Sans',
+                                                    color: const Color(0xFF57636C),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                          hintText: 'اختر تخصصك',
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 24.0,
+                                          ),
+                                          fillColor: const Color(0xFFB7A1A1),
+                                          elevation: 2.0,
+                                          borderColor: const Color(0xFFE0E3E7),
+                                          borderWidth: 2.0,
+                                          borderRadius: 8.0,
+                                          margin:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 0.0, 5.0, 0.0),
+                                          hidesUnderline: true,
+                                          isOverButton: true,
+                                          isSearchable: false,
+                                          isMultiSelect: false,
+                                          labelText: '',
+                                          labelTextStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Outfit',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                   Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 20.0),
-                                      child: SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Flexible(
-                                              child: FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
-                                                },
-                                                text: 'صورة',
-                                                icon: const Icon(
-                                                  Icons.upload,
-                                                  size: 15.0,
+                                          1.0, 0.0, 1.0, 16.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          final selectedMedia =
+                                              await selectMedia(
+                                            mediaSource:
+                                                MediaSource.photoGallery,
+                                            multiImage: false,
+                                          );
+                                          if (selectedMedia != null &&
+                                              selectedMedia.every((m) =>
+                                                  validateFileFormat(
+                                                      m.storagePath,
+                                                      context))) {
+                                            safeSetState(() =>
+                                                _model.isDataUploading = true);
+                                            var selectedUploadedFiles =
+                                                <FFUploadedFile>[];
+
+                                            var downloadUrls = <String>[];
+                                            try {
+                                              selectedUploadedFiles =
+                                                  selectedMedia
+                                                      .map(
+                                                          (m) => FFUploadedFile(
+                                                                name: m
+                                                                    .storagePath
+                                                                    .split('/')
+                                                                    .last,
+                                                                bytes: m.bytes,
+                                                                height: m
+                                                                    .dimensions
+                                                                    ?.height,
+                                                                width: m
+                                                                    .dimensions
+                                                                    ?.width,
+                                                                blurHash:
+                                                                    m.blurHash,
+                                                              ))
+                                                      .toList();
+
+                                              downloadUrls = (await Future.wait(
+                                                selectedMedia.map(
+                                                  (m) async => await uploadData(
+                                                      m.storagePath, m.bytes),
                                                 ),
-                                                options: FFButtonOptions(
-                                                  height: 40.0,
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          16.0, 0.0, 16.0, 0.0),
-                                                  iconPadding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: const Color(0xFF9AB1FF),
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Readex Pro',
-                                                            color: Colors.white,
-                                                            fontSize: 12.0,
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                  elevation: 0.0,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                              ),
-                                            ),
-                                          ]
-                                              .divide(const SizedBox(width: 30.0))
-                                              .around(const SizedBox(width: 30.0)),
+                                              ))
+                                                  .where((u) => u != null)
+                                                  .map((u) => u!)
+                                                  .toList();
+                                            } finally {
+                                              _model.isDataUploading = false;
+                                            }
+                                            if (selectedUploadedFiles.length ==
+                                                    selectedMedia.length &&
+                                                downloadUrls.length ==
+                                                    selectedMedia.length) {
+                                              safeSetState(() {
+                                                _model.uploadedLocalFile =
+                                                    selectedUploadedFiles.first;
+                                                _model.uploadedFileUrl =
+                                                    downloadUrls.first;
+                                              });
+                                            } else {
+                                              safeSetState(() {});
+                                              return;
+                                            }
+                                          }
+
+                                          if (_model.uploadedFileUrl != '') {
+                                            await showModalBottomSheet(
+                                              isScrollControlled: true,
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              enableDrag: false,
+                                              context: context,
+                                              builder: (context) {
+                                                return GestureDetector(
+                                                  onTap: () =>
+                                                      FocusScope.of(context)
+                                                          .unfocus(),
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child:
+                                                        const UploadPhotoSucsessWidget(),
+                                                  ),
+                                                );
+                                              },
+                                            ).then(
+                                                (value) => safeSetState(() {}));
+                                          } else {
+                                            await showModalBottomSheet(
+                                              isScrollControlled: true,
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              enableDrag: false,
+                                              context: context,
+                                              builder: (context) {
+                                                return GestureDetector(
+                                                  onTap: () =>
+                                                      FocusScope.of(context)
+                                                          .unfocus(),
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child:
+                                                        const UploadPhotoFailWidget(),
+                                                  ),
+                                                );
+                                              },
+                                            ).then(
+                                                (value) => safeSetState(() {}));
+                                          }
+                                        },
+                                        text: 'رفع صورة',
+                                        icon: const Icon(
+                                          Icons.add_photo_alternate,
+                                          size: 20.0,
+                                        ),
+                                        options: FFButtonOptions(
+                                          width: 150.0,
+                                          height: 35.0,
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  24.0, 0.0, 24.0, 0.0),
+                                          iconPadding: const EdgeInsets.all(0.0),
+                                          color: const Color(0xFFF68833),
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily:
+                                                        'Plus Jakarta Sans',
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                          elevation: 3.0,
+                                          borderSide: const BorderSide(
+                                            color: Colors.transparent,
+                                            width: 3.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
                                         ),
                                       ),
                                     ),
@@ -947,36 +1066,78 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 16.0),
                           child: FFButtonWidget(
-                            onPressed: () async {
-                              if (_model.formKey.currentState == null ||
-                                  !_model.formKey.currentState!.validate()) {
-                                return;
-                              }
-                              GoRouter.of(context).prepareAuthEvent();
+                            onPressed: ((_model.nameTextController.text == '') ||
+                                    (_model.emailAddressTextController.text ==
+                                            '') ||
+                                    (_model.passwordTextController.text ==
+                                            '') ||
+                                    (_model.confirmPasswordTextController.text ==
+                                            '') ||
+                                    (_model.phoneNumberTextController.text ==
+                                            '') ||
+                                    (_model.locationTextController.text ==
+                                            '') ||
+                                    (_model.dropDownValue == null ||
+                                        _model.dropDownValue == '') ||
+                                    (_model.uploadedFileUrl == ''))
+                                ? null
+                                : () async {
+                                    if (_model.formKey.currentState != null) {
+                                      _model.formKey.currentState!.validate();
+                                    }
+                                    if (_model.dropDownValue == null) {}
+                                    if (_model.uploadedFileUrl.isEmpty) {}
+                                    GoRouter.of(context).prepareAuthEvent();
+                                    if (_model.passwordTextController.text !=
+                                        _model.confirmPasswordTextController
+                                            .text) {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        const SnackBar(
+                                          content: Text(
+                                            'كلمتي المرور لا تتطابق',
+                                          ),
+                                        ),
+                                      );
+                                      return;
+                                    }
 
-                              final user = await authManager.signInWithEmail(
-                                context,
-                                _model.nameTextController.text,
-                                _model.passwordTextController.text,
-                              );
-                              if (user == null) {
-                                return;
-                              }
+                                    final user = await authManager
+                                        .createAccountWithEmail(
+                                      context,
+                                      _model.emailAddressTextController.text,
+                                      _model.passwordTextController.text,
+                                    );
+                                    if (user == null) {
+                                      return;
+                                    }
 
-                              if (currentUserDocument?.role == Rolee.cl) {
-                                context.pushNamedAuth(
-                                    'HomePageClient', context.mounted);
-                              } else {
-                                if (currentUserDocument?.role == Rolee.sp) {
-                                  context.pushNamedAuth(
-                                      'ServiceProviderHomePage',
-                                      context.mounted);
-                                } else {
-                                  context.pushNamedAuth(
-                                      'AdminHomePage', context.mounted);
-                                }
-                              }
-                            },
+                                    await currentUserReference!.update({
+                                      ...createUsers1RecordData(
+                                        phoneNumber: _model
+                                            .phoneNumberTextController.text,
+                                        role: Rolee.sp,
+                                        location: valueOrDefault(
+                                            currentUserDocument?.location, ''),
+                                        displayName:
+                                            _model.nameTextController.text,
+                                        email: currentUserEmail,
+                                        password:
+                                            _model.passwordTextController.text,
+                                        photoUrl: _model.uploadedFileUrl,
+                                      ),
+                                      ...mapToFirestore(
+                                        {
+                                          'created_time':
+                                              FieldValue.serverTimestamp(),
+                                        },
+                                      ),
+                                    });
+
+                                    context.pushNamedAuth(
+                                        'ServiceProviderHomePage',
+                                        context.mounted);
+                                  },
                             text: 'التسجيل',
                             options: FFButtonOptions(
                               width: 200.0,
@@ -1001,6 +1162,7 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(12.0),
+                              disabledColor: const Color(0xFFDADDE8),
                             ),
                           ),
                         ),

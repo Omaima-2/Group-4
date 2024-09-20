@@ -21,7 +21,7 @@ export '/setting_service_provider/setting_service_provider_widget.dart'
     show SettingServiceProviderWidget;
 export '/view_profile_client/view_profile_client_widget.dart'
     show ViewProfileClientWidget;
-export '/view_profile_s_p/view_profile_s_p_widget.dart'
-    show ViewProfileSPWidget;
 export '/about_page/about_page_widget.dart' show AboutPageWidget;
 export '/delete_account/delete_account_widget.dart' show DeleteAccountWidget;
+export '/view_profile_s_p/view_profile_s_p_widget.dart'
+    show ViewProfileSPWidget;

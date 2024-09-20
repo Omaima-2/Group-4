@@ -172,11 +172,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ViewProfileClientWidget(),
         ),
         FFRoute(
-          name: 'viewProfile_SP',
-          path: '/viewProfileSP',
-          builder: (context, params) => const ViewProfileSPWidget(),
-        ),
-        FFRoute(
           name: 'About_page',
           path: '/aboutPage',
           builder: (context, params) => const AboutPageWidget(),
@@ -185,6 +180,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'delete_Account',
           path: '/deleteAccount',
           builder: (context, params) => const DeleteAccountWidget(),
+        ),
+        FFRoute(
+          name: 'viewProfile_SP',
+          path: '/viewProfileSP',
+          builder: (context, params) => const ViewProfileSPWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

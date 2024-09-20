@@ -14,11 +14,11 @@ class SignUpTestSPModel extends FlutterFlowModel<SignUpTestSPWidget> {
   String? Function(BuildContext, String?)? nameTextControllerValidator;
   String? _nameTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'البريد الألكتروني مطلوب';
+      return ' ';
     }
 
-    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
-      return 'صيغة البريد الإلكتروني خاطئة، الرجاء إعادة المحاولة';
+    if (!RegExp('^[A-Za-z ,.\'-]+\$').hasMatch(val)) {
+      return 'الاسم  غير صالح، الرجاء إعادة المحاولة';
     }
     return null;
   }
@@ -27,6 +27,18 @@ class SignUpTestSPModel extends FlutterFlowModel<SignUpTestSPWidget> {
   FocusNode? emailAddressFocusNode;
   TextEditingController? emailAddressTextController;
   String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
+  String? _emailAddressTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return ' ';
+    }
+
+    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+      return 'البريد الاكتروني غير صالح, الرجاء إعادة المحاولة';
+    }
+    return null;
+  }
+
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
@@ -34,9 +46,12 @@ class SignUpTestSPModel extends FlutterFlowModel<SignUpTestSPWidget> {
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
   String? _passwordTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return ' ';
     }
 
+    if (!RegExp('^.{8,}\$').hasMatch(val)) {
+      return 'يجب أن تكون كلمة المرور على الأقل 8 خانات.';
+    }
     return null;
   }
 
@@ -46,25 +61,69 @@ class SignUpTestSPModel extends FlutterFlowModel<SignUpTestSPWidget> {
   late bool confirmPasswordVisibility;
   String? Function(BuildContext, String?)?
       confirmPasswordTextControllerValidator;
+  String? _confirmPasswordTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return ' ';
+    }
+
+    if (!RegExp('^.{8,}\$').hasMatch(val)) {
+      return 'تأكيد كلمة المرور غير صحيح';
+    }
+    return null;
+  }
+
   // State field(s) for phoneNumber widget.
   FocusNode? phoneNumberFocusNode;
   TextEditingController? phoneNumberTextController;
   String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
+  String? _phoneNumberTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return ' ';
+    }
+
+    if (!RegExp('^05\\d{8}\$').hasMatch(val)) {
+      return 'رقم الهاتف غير صالح.';
+    }
+    return null;
+  }
+
   // State field(s) for location widget.
   FocusNode? locationFocusNode;
   TextEditingController? locationTextController;
   final locationMask = MaskTextInputFormatter(mask: 'AAAA####');
   String? Function(BuildContext, String?)? locationTextControllerValidator;
+  String? _locationTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return ' ';
+    }
+
+    if (!RegExp('^[A-Za-z]{4}\\d{4}\$').hasMatch(val)) {
+      return 'العنوان البريدي غير صالح';
+    }
+    return null;
+  }
+
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
 
   @override
   void initState(BuildContext context) {
     nameTextControllerValidator = _nameTextControllerValidator;
+    emailAddressTextControllerValidator = _emailAddressTextControllerValidator;
     passwordVisibility = false;
     passwordTextControllerValidator = _passwordTextControllerValidator;
     confirmPasswordVisibility = false;
+    confirmPasswordTextControllerValidator =
+        _confirmPasswordTextControllerValidator;
+    phoneNumberTextControllerValidator = _phoneNumberTextControllerValidator;
+    locationTextControllerValidator = _locationTextControllerValidator;
   }
 
   @override

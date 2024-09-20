@@ -1,5 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
-import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -29,20 +27,20 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
     super.initState();
     _model = createModel(context, () => SignUpTestClientModel());
 
-    _model.emailAddressTextController1 ??= TextEditingController();
-    _model.emailAddressFocusNode1 ??= FocusNode();
+    _model.displayNameTextController ??= TextEditingController();
+    _model.displayNameFocusNode ??= FocusNode();
 
-    _model.emailAddressTextController2 ??= TextEditingController();
-    _model.emailAddressFocusNode2 ??= FocusNode();
+    _model.emailAddressTextController ??= TextEditingController();
+    _model.emailAddressFocusNode ??= FocusNode();
 
-    _model.emailAddressTextController3 ??= TextEditingController();
-    _model.emailAddressFocusNode3 ??= FocusNode();
+    _model.phoneNumberTextController ??= TextEditingController();
+    _model.phoneNumberFocusNode ??= FocusNode();
 
-    _model.passwordTextController1 ??= TextEditingController();
-    _model.passwordFocusNode1 ??= FocusNode();
+    _model.passwordTextController ??= TextEditingController();
+    _model.passwordFocusNode ??= FocusNode();
 
-    _model.passwordTextController2 ??= TextEditingController();
-    _model.passwordFocusNode2 ??= FocusNode();
+    _model.confirmPasswordTextController ??= TextEditingController();
+    _model.confirmPasswordFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -259,9 +257,8 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                               child: SizedBox(
                                 width: double.infinity,
                                 child: TextFormField(
-                                  controller:
-                                      _model.emailAddressTextController1,
-                                  focusNode: _model.emailAddressFocusNode1,
+                                  controller: _model.displayNameTextController,
+                                  focusNode: _model.displayNameFocusNode,
                                   autofocus: true,
                                   autofillHints: const [AutofillHints.email],
                                   textInputAction: TextInputAction.next,
@@ -318,9 +315,8 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
-                                  keyboardType: TextInputType.emailAddress,
                                   validator: _model
-                                      .emailAddressTextController1Validator
+                                      .displayNameTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -331,9 +327,8 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                               child: SizedBox(
                                 width: double.infinity,
                                 child: TextFormField(
-                                  controller:
-                                      _model.emailAddressTextController2,
-                                  focusNode: _model.emailAddressFocusNode2,
+                                  controller: _model.emailAddressTextController,
+                                  focusNode: _model.emailAddressFocusNode,
                                   autofocus: true,
                                   autofillHints: const [AutofillHints.email],
                                   textInputAction: TextInputAction.next,
@@ -392,7 +387,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                       ),
                                   keyboardType: TextInputType.emailAddress,
                                   validator: _model
-                                      .emailAddressTextController2Validator
+                                      .emailAddressTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -403,9 +398,8 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                               child: SizedBox(
                                 width: double.infinity,
                                 child: TextFormField(
-                                  controller:
-                                      _model.emailAddressTextController3,
-                                  focusNode: _model.emailAddressFocusNode3,
+                                  controller: _model.phoneNumberTextController,
+                                  focusNode: _model.phoneNumberFocusNode,
                                   autofocus: true,
                                   autofillHints: const [AutofillHints.email],
                                   textInputAction: TextInputAction.next,
@@ -464,7 +458,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                       ),
                                   keyboardType: TextInputType.emailAddress,
                                   validator: _model
-                                      .emailAddressTextController3Validator
+                                      .phoneNumberTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -475,12 +469,12 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                               child: SizedBox(
                                 width: double.infinity,
                                 child: TextFormField(
-                                  controller: _model.passwordTextController1,
-                                  focusNode: _model.passwordFocusNode1,
+                                  controller: _model.passwordTextController,
+                                  focusNode: _model.passwordFocusNode,
                                   autofocus: false,
                                   autofillHints: const [AutofillHints.password],
                                   textInputAction: TextInputAction.done,
-                                  obscureText: !_model.passwordVisibility1,
+                                  obscureText: !_model.passwordVisibility,
                                   decoration: InputDecoration(
                                     labelText: 'كلمة المرور',
                                     labelStyle: FlutterFlowTheme.of(context)
@@ -525,12 +519,12 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                     contentPadding: const EdgeInsets.all(24.0),
                                     suffixIcon: InkWell(
                                       onTap: () => safeSetState(
-                                        () => _model.passwordVisibility1 =
-                                            !_model.passwordVisibility1,
+                                        () => _model.passwordVisibility =
+                                            !_model.passwordVisibility,
                                       ),
                                       focusNode: FocusNode(skipTraversal: true),
                                       child: Icon(
-                                        _model.passwordVisibility1
+                                        _model.passwordVisibility
                                             ? Icons.visibility_outlined
                                             : Icons.visibility_off_outlined,
                                         color: const Color(0xFF57636C),
@@ -548,7 +542,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                         fontWeight: FontWeight.w500,
                                       ),
                                   validator: _model
-                                      .passwordTextController1Validator
+                                      .passwordTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -559,12 +553,14 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                               child: SizedBox(
                                 width: double.infinity,
                                 child: TextFormField(
-                                  controller: _model.passwordTextController2,
-                                  focusNode: _model.passwordFocusNode2,
+                                  controller:
+                                      _model.confirmPasswordTextController,
+                                  focusNode: _model.confirmPasswordFocusNode,
                                   autofocus: false,
                                   autofillHints: const [AutofillHints.password],
                                   textInputAction: TextInputAction.done,
-                                  obscureText: !_model.passwordVisibility2,
+                                  obscureText:
+                                      !_model.confirmPasswordVisibility,
                                   decoration: InputDecoration(
                                     labelText: 'تأكيد كلمة المرور',
                                     labelStyle: FlutterFlowTheme.of(context)
@@ -609,12 +605,12 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                     contentPadding: const EdgeInsets.all(24.0),
                                     suffixIcon: InkWell(
                                       onTap: () => safeSetState(
-                                        () => _model.passwordVisibility2 =
-                                            !_model.passwordVisibility2,
+                                        () => _model.confirmPasswordVisibility =
+                                            !_model.confirmPasswordVisibility,
                                       ),
                                       focusNode: FocusNode(skipTraversal: true),
                                       child: Icon(
-                                        _model.passwordVisibility2
+                                        _model.confirmPasswordVisibility
                                             ? Icons.visibility_outlined
                                             : Icons.visibility_off_outlined,
                                         color: const Color(0xFF57636C),
@@ -632,7 +628,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                         fontWeight: FontWeight.w500,
                                       ),
                                   validator: _model
-                                      .passwordTextController2Validator
+                                      .confirmPasswordTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -700,29 +696,6 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                             if (_model.formKey.currentState == null ||
                                 !_model.formKey.currentState!.validate()) {
                               return;
-                            }
-                            GoRouter.of(context).prepareAuthEvent();
-
-                            final user = await authManager.signInWithEmail(
-                              context,
-                              _model.emailAddressTextController1.text,
-                              _model.passwordTextController1.text,
-                            );
-                            if (user == null) {
-                              return;
-                            }
-
-                            if (currentUserDocument?.role == Rolee.cl) {
-                              context.pushNamedAuth(
-                                  'HomePageClient', context.mounted);
-                            } else {
-                              if (currentUserDocument?.role == Rolee.sp) {
-                                context.pushNamedAuth(
-                                    'ServiceProviderHomePage', context.mounted);
-                              } else {
-                                context.pushNamedAuth(
-                                    'AdminHomePage', context.mounted);
-                              }
                             }
                           },
                           text: 'التسجيل',

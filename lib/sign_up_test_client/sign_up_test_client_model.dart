@@ -6,11 +6,11 @@ class SignUpTestClientModel extends FlutterFlowModel<SignUpTestClientWidget> {
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for emailAddress widget.
-  FocusNode? emailAddressFocusNode1;
-  TextEditingController? emailAddressTextController1;
-  String? Function(BuildContext, String?)? emailAddressTextController1Validator;
-  String? _emailAddressTextController1Validator(
+  // State field(s) for displayName widget.
+  FocusNode? displayNameFocusNode;
+  TextEditingController? displayNameTextController;
+  String? Function(BuildContext, String?)? displayNameTextControllerValidator;
+  String? _displayNameTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Field is required';
@@ -23,19 +23,19 @@ class SignUpTestClientModel extends FlutterFlowModel<SignUpTestClientWidget> {
   }
 
   // State field(s) for emailAddress widget.
-  FocusNode? emailAddressFocusNode2;
-  TextEditingController? emailAddressTextController2;
-  String? Function(BuildContext, String?)? emailAddressTextController2Validator;
-  // State field(s) for emailAddress widget.
-  FocusNode? emailAddressFocusNode3;
-  TextEditingController? emailAddressTextController3;
-  String? Function(BuildContext, String?)? emailAddressTextController3Validator;
+  FocusNode? emailAddressFocusNode;
+  TextEditingController? emailAddressTextController;
+  String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
+  // State field(s) for phoneNumber widget.
+  FocusNode? phoneNumberFocusNode;
+  TextEditingController? phoneNumberTextController;
+  String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
   // State field(s) for password widget.
-  FocusNode? passwordFocusNode1;
-  TextEditingController? passwordTextController1;
-  late bool passwordVisibility1;
-  String? Function(BuildContext, String?)? passwordTextController1Validator;
-  String? _passwordTextController1Validator(BuildContext context, String? val) {
+  FocusNode? passwordFocusNode;
+  TextEditingController? passwordTextController;
+  late bool passwordVisibility;
+  String? Function(BuildContext, String?)? passwordTextControllerValidator;
+  String? _passwordTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Field is required';
     }
@@ -43,36 +43,36 @@ class SignUpTestClientModel extends FlutterFlowModel<SignUpTestClientWidget> {
     return null;
   }
 
-  // State field(s) for password widget.
-  FocusNode? passwordFocusNode2;
-  TextEditingController? passwordTextController2;
-  late bool passwordVisibility2;
-  String? Function(BuildContext, String?)? passwordTextController2Validator;
+  // State field(s) for confirmPassword widget.
+  FocusNode? confirmPasswordFocusNode;
+  TextEditingController? confirmPasswordTextController;
+  late bool confirmPasswordVisibility;
+  String? Function(BuildContext, String?)?
+      confirmPasswordTextControllerValidator;
 
   @override
   void initState(BuildContext context) {
-    emailAddressTextController1Validator =
-        _emailAddressTextController1Validator;
-    passwordVisibility1 = false;
-    passwordTextController1Validator = _passwordTextController1Validator;
-    passwordVisibility2 = false;
+    displayNameTextControllerValidator = _displayNameTextControllerValidator;
+    passwordVisibility = false;
+    passwordTextControllerValidator = _passwordTextControllerValidator;
+    confirmPasswordVisibility = false;
   }
 
   @override
   void dispose() {
-    emailAddressFocusNode1?.dispose();
-    emailAddressTextController1?.dispose();
+    displayNameFocusNode?.dispose();
+    displayNameTextController?.dispose();
 
-    emailAddressFocusNode2?.dispose();
-    emailAddressTextController2?.dispose();
+    emailAddressFocusNode?.dispose();
+    emailAddressTextController?.dispose();
 
-    emailAddressFocusNode3?.dispose();
-    emailAddressTextController3?.dispose();
+    phoneNumberFocusNode?.dispose();
+    phoneNumberTextController?.dispose();
 
-    passwordFocusNode1?.dispose();
-    passwordTextController1?.dispose();
+    passwordFocusNode?.dispose();
+    passwordTextController?.dispose();
 
-    passwordFocusNode2?.dispose();
-    passwordTextController2?.dispose();
+    confirmPasswordFocusNode?.dispose();
+    confirmPasswordTextController?.dispose();
   }
 }
