@@ -61,8 +61,6 @@ class ClientRegristeModel extends FlutterFlowModel<ClientRegristeWidget> {
   TextEditingController? conPassTextController;
   late bool conPassVisibility;
   String? Function(BuildContext, String?)? conPassTextControllerValidator;
-  // State field(s) for PlacePicker widget.
-  FFPlace placePickerValue = const FFPlace();
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));

@@ -4,26 +4,25 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'view_client_profile_model.dart';
-export 'view_client_profile_model.dart';
+import 'view_profile_s_p_model.dart';
+export 'view_profile_s_p_model.dart';
 
-class ViewClientProfileWidget extends StatefulWidget {
-  const ViewClientProfileWidget({super.key});
+class ViewProfileSPWidget extends StatefulWidget {
+  const ViewProfileSPWidget({super.key});
 
   @override
-  State<ViewClientProfileWidget> createState() =>
-      _ViewClientProfileWidgetState();
+  State<ViewProfileSPWidget> createState() => _ViewProfileSPWidgetState();
 }
 
-class _ViewClientProfileWidgetState extends State<ViewClientProfileWidget> {
-  late ViewClientProfileModel _model;
+class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
+  late ViewProfileSPModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ViewClientProfileModel());
+    _model = createModel(context, () => ViewProfileSPModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -42,6 +41,35 @@ class _ViewClientProfileWidgetState extends State<ViewClientProfileWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryText,
+        appBar: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).primaryText,
+          automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              color: FlutterFlowTheme.of(context).secondaryBackground,
+              size: 30.0,
+            ),
+            onPressed: () async {
+              context.pop();
+            },
+          ),
+          title: Text(
+            'معلومات الحساب',
+            style: FlutterFlowTheme.of(context).headlineLarge.override(
+                  fontFamily: 'Outfit',
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  letterSpacing: 0.0,
+                ),
+          ),
+          actions: const [],
+          centerTitle: false,
+          elevation: 0.0,
+        ),
         body: SafeArea(
           top: true,
           child: Align(
@@ -52,28 +80,6 @@ class _ViewClientProfileWidgetState extends State<ViewClientProfileWidget> {
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  FlutterFlowIconButton(
-                    borderRadius: 8.0,
-                    buttonSize: 40.0,
-                    icon: Icon(
-                      Icons.arrow_back,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      size: 30.0,
-                    ),
-                    onPressed: () {
-                      print('IconButton pressed ...');
-                    },
-                  ),
-                  Text(
-                    'معلومات الحساب',
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Readex Pro',
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          fontSize: 30.0,
-                          letterSpacing: 0.0,
-                        ),
-                  ),
                   Align(
                     alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
@@ -299,6 +305,51 @@ class _ViewClientProfileWidgetState extends State<ViewClientProfileWidget> {
                                               letterSpacing: 0.0,
                                             ),
                                       ),
+                                    ),
+                                  ].divide(const SizedBox(width: 18.0)),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              width: double.infinity,
+                              height: 73.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                boxShadow: const [
+                                  BoxShadow(
+                                    blurRadius: 10.0,
+                                    color: Color(0x33000000),
+                                    offset: Offset(
+                                      0.0,
+                                      2.0,
+                                    ),
+                                  )
+                                ],
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 5.0, 20.0, 5.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    const Icon(
+                                      Icons.handyman,
+                                      color: Color(0xFFED7D41),
+                                      size: 24.0,
+                                    ),
+                                    Text(
+                                      'التخصص! لازم نسويه',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            fontSize: 20.0,
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                   ].divide(const SizedBox(width: 18.0)),
                                 ),

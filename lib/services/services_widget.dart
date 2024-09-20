@@ -45,6 +45,35 @@ class _ServicesWidgetState extends State<ServicesWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryText,
+        appBar: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).primaryText,
+          automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              color: FlutterFlowTheme.of(context).secondaryBackground,
+              size: 30.0,
+            ),
+            onPressed: () async {
+              context.pop();
+            },
+          ),
+          title: Text(
+            'خدماتي',
+            style: FlutterFlowTheme.of(context).headlineLarge.override(
+                  fontFamily: 'Outfit',
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  letterSpacing: 0.0,
+                ),
+          ),
+          actions: const [],
+          centerTitle: false,
+          elevation: 0.0,
+        ),
         body: SafeArea(
           top: true,
           child: Padding(
@@ -53,36 +82,6 @@ class _ServicesWidgetState extends State<ServicesWidget> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Align(
-                  alignment: const AlignmentDirectional(-1.0, 0.0),
-                  child: FlutterFlowIconButton(
-                    borderRadius: 8.0,
-                    buttonSize: 40.0,
-                    icon: Icon(
-                      Icons.arrow_back,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      size: 30.0,
-                    ),
-                    onPressed: () async {
-                      context.pushNamed('ServiceProviderHomePage');
-                    },
-                  ),
-                ),
-                Align(
-                  alignment: const AlignmentDirectional(-1.0, 0.0),
-                  child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
-                    child: Text(
-                      'خدماتي',
-                      style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Outfit',
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            letterSpacing: 0.0,
-                          ),
-                    ),
-                  ),
-                ),
                 Align(
                   alignment: const AlignmentDirectional(-1.0, 0.0),
                   child: Text(
@@ -96,90 +95,95 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                   ),
                 ),
                 Expanded(
-                  child: StreamBuilder<List<ServicesRecord>>(
-                    stream: queryServicesRecord(
-                      queryBuilder: (servicesRecord) => servicesRecord.where(
-                        'user',
-                        isEqualTo: currentUserReference,
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                    child: StreamBuilder<List<ServicesRecord>>(
+                      stream: queryServicesRecord(
+                        queryBuilder: (servicesRecord) => servicesRecord.where(
+                          'user',
+                          isEqualTo: currentUserReference,
+                        ),
                       ),
-                    ),
-                    builder: (context, snapshot) {
-                      // Customize what your widget looks like when it's loading.
-                      if (!snapshot.hasData) {
-                        return Center(
-                          child: SizedBox(
-                            width: 50.0,
-                            height: 50.0,
-                            child: CircularProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                FlutterFlowTheme.of(context).primary,
-                              ),
-                            ),
-                          ),
-                        );
-                      }
-                      List<ServicesRecord> gridViewServicesRecordList =
-                          snapshot.data!;
-                      if (gridViewServicesRecordList.isEmpty) {
-                        return const NoServicesWidget();
-                      }
-
-                      return GridView.builder(
-                        padding: const EdgeInsets.fromLTRB(
-                          0,
-                          20.0,
-                          0,
-                          10.0,
-                        ),
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          crossAxisSpacing: 10.0,
-                          mainAxisSpacing: 15.0,
-                          childAspectRatio: 1.0,
-                        ),
-                        scrollDirection: Axis.vertical,
-                        itemCount: gridViewServicesRecordList.length,
-                        itemBuilder: (context, gridViewIndex) {
-                          final gridViewServicesRecord =
-                              gridViewServicesRecordList[gridViewIndex];
-                          return InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              context.pushNamed(
-                                'view_Service',
-                                queryParameters: {
-                                  'serviceDoc': serializeParam(
-                                    gridViewServicesRecord,
-                                    ParamType.Document,
-                                  ),
-                                }.withoutNulls,
-                                extra: <String, dynamic>{
-                                  'serviceDoc': gridViewServicesRecord,
-                                  kTransitionInfoKey: const TransitionInfo(
-                                    hasTransition: true,
-                                    transitionType:
-                                        PageTransitionType.rightToLeft,
-                                  ),
-                                },
-                              );
-                            },
-                            child: AServiceWidget(
-                              key: Key(
-                                  'Key0yl_${gridViewIndex}_of_${gridViewServicesRecordList.length}'),
-                              nameService: gridViewServicesRecord.name,
-                              servicePrice: gridViewServicesRecord.price,
-                              photoService: valueOrDefault<String>(
-                                gridViewServicesRecord.photo,
-                                'https://live.staticflickr.com/5477/11771444463_b379b039bc_w.jpg',
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
+                                ),
                               ),
                             ),
                           );
-                        },
-                      );
-                    },
+                        }
+                        List<ServicesRecord> gridViewServicesRecordList =
+                            snapshot.data!;
+                        if (gridViewServicesRecordList.isEmpty) {
+                          return const NoServicesWidget();
+                        }
+
+                        return GridView.builder(
+                          padding: const EdgeInsets.fromLTRB(
+                            0,
+                            20.0,
+                            0,
+                            10.0,
+                          ),
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 10.0,
+                            mainAxisSpacing: 15.0,
+                            childAspectRatio: 1.0,
+                          ),
+                          scrollDirection: Axis.vertical,
+                          itemCount: gridViewServicesRecordList.length,
+                          itemBuilder: (context, gridViewIndex) {
+                            final gridViewServicesRecord =
+                                gridViewServicesRecordList[gridViewIndex];
+                            return InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed(
+                                  'view_Service',
+                                  queryParameters: {
+                                    'serviceDoc': serializeParam(
+                                      gridViewServicesRecord,
+                                      ParamType.Document,
+                                    ),
+                                  }.withoutNulls,
+                                  extra: <String, dynamic>{
+                                    'serviceDoc': gridViewServicesRecord,
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType:
+                                          PageTransitionType.rightToLeft,
+                                    ),
+                                  },
+                                );
+                              },
+                              child: AServiceWidget(
+                                key: Key(
+                                    'Key0yl_${gridViewIndex}_of_${gridViewServicesRecordList.length}'),
+                                nameService: gridViewServicesRecord.name,
+                                servicePrice: gridViewServicesRecord.price,
+                                photoService: valueOrDefault<String>(
+                                  gridViewServicesRecord.photo,
+                                  'https://live.staticflickr.com/5477/11771444463_b379b039bc_w.jpg',
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    ),
                   ),
                 ),
                 Align(

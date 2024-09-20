@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'login_test_model.dart';
@@ -255,6 +256,11 @@ class _LoginTestWidgetState extends State<LoginTestWidget>
                               child: TextFormField(
                                 controller: _model.emailAddressTextController,
                                 focusNode: _model.emailAddressFocusNode,
+                                onChanged: (_) => EasyDebounce.debounce(
+                                  '_model.emailAddressTextController',
+                                  const Duration(milliseconds: 2000),
+                                  () => safeSetState(() {}),
+                                ),
                                 autofocus: false,
                                 autofillHints: const [AutofillHints.email],
                                 textInputAction: TextInputAction.next,

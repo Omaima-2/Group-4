@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'error_widget.dart' show ErrorWidget;
+import 'view_profile_client_widget.dart' show ViewProfileClientWidget;
 import 'package:flutter/material.dart';
 
-class ErrorModel extends FlutterFlowModel<ErrorWidget> {
+class ViewProfileClientModel extends FlutterFlowModel<ViewProfileClientWidget> {
   @override
   void initState(BuildContext context) {}
 

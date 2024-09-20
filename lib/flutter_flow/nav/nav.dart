@@ -73,16 +73,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? const ServiceProviderRegisterWidget()
-          : const LoginTestWidget(),
+      errorBuilder: (context, state) =>
+          appStateNotifier.loggedIn ? const LoginTestWidget() : const LoginTestWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? const ServiceProviderRegisterWidget()
-              : const LoginTestWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? const LoginTestWidget() : const LoginTestWidget(),
         ),
         FFRoute(
           name: 'ServiceProviderRegister',
@@ -169,14 +167,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const SettingServiceProviderWidget(),
         ),
         FFRoute(
-          name: 'viewClientProfile',
-          path: '/viewClientProfile',
-          builder: (context, params) => const ViewClientProfileWidget(),
+          name: 'viewProfile_client',
+          path: '/viewProfileClient',
+          builder: (context, params) => const ViewProfileClientWidget(),
         ),
         FFRoute(
-          name: 'viewSPpage',
-          path: '/viewSPpage',
-          builder: (context, params) => const ViewSPpageWidget(),
+          name: 'viewProfile_SP',
+          path: '/viewProfileSP',
+          builder: (context, params) => const ViewProfileSPWidget(),
+        ),
+        FFRoute(
+          name: 'About_page',
+          path: '/aboutPage',
+          builder: (context, params) => const AboutPageWidget(),
+        ),
+        FFRoute(
+          name: 'delete_Account',
+          path: '/deleteAccount',
+          builder: (context, params) => const DeleteAccountWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

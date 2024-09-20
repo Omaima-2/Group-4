@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'view_client_profile_widget.dart' show ViewClientProfileWidget;
+import 'about_page_widget.dart' show AboutPageWidget;
 import 'package:flutter/material.dart';
 
-class ViewClientProfileModel extends FlutterFlowModel<ViewClientProfileWidget> {
+class AboutPageModel extends FlutterFlowModel<AboutPageWidget> {
   @override
   void initState(BuildContext context) {}
 

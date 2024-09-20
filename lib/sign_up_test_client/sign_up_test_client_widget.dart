@@ -151,7 +151,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
         key: scaffoldKey,
         backgroundColor: Colors.white,
         body: Column(
-          mainAxisSize: MainAxisSize.max,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Container(
               width: double.infinity,
@@ -180,7 +180,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                   ),
                 ),
                 child: Column(
-                  mainAxisSize: MainAxisSize.max,
+                  mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
@@ -654,38 +654,6 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                         text: 'رفع صورة',
                                         icon: const Icon(
                                           Icons.cloud_upload_outlined,
-                                          size: 15.0,
-                                        ),
-                                        options: FFButtonOptions(
-                                          height: 40.0,
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 16.0, 0.0),
-                                          iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: const Color(0xFF9AB1FF),
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    color: Colors.white,
-                                                    fontSize: 12.0,
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                          elevation: 0.0,
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                      ),
-                                      FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
-                                        },
-                                        text: 'أضف موقعك',
-                                        icon: const Icon(
-                                          Icons.location_on_outlined,
                                           size: 15.0,
                                         ),
                                         options: FFButtonOptions(

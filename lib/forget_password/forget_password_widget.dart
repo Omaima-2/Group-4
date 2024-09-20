@@ -75,6 +75,36 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
         child: Scaffold(
           key: scaffoldKey,
           backgroundColor: Colors.white,
+          appBar: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).primaryText,
+            automaticallyImplyLeading: false,
+            leading: FlutterFlowIconButton(
+              borderColor: Colors.transparent,
+              borderRadius: 30.0,
+              borderWidth: 1.0,
+              buttonSize: 60.0,
+              icon: Icon(
+                Icons.arrow_back_rounded,
+                color: FlutterFlowTheme.of(context).secondaryBackground,
+                size: 30.0,
+              ),
+              onPressed: () async {
+                context.pop();
+              },
+            ),
+            title: Text(
+              'إعادة تعيين كلمة المرور',
+              style: FlutterFlowTheme.of(context).headlineLarge.override(
+                    fontFamily: 'Outfit',
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    fontSize: 30.0,
+                    letterSpacing: 0.0,
+                  ),
+            ),
+            actions: const [],
+            centerTitle: false,
+            elevation: 0.0,
+          ),
           body: SafeArea(
             top: true,
             child: Align(
@@ -83,32 +113,6 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
-                          child: FlutterFlowIconButton(
-                            borderRadius: 8.0,
-                            buttonSize: 40.0,
-                            icon: Icon(
-                              Icons.arrow_back,
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              size: 30.0,
-                            ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                   Align(
                     alignment: const AlignmentDirectional(0.0, -1.0),
                     child: Padding(
@@ -132,23 +136,6 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                                   color: Colors.white,
                                 ),
                               ),
-                            Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
-                              child: Text(
-                                'إعادة تعيين كلمة المرور',
-                                textAlign: TextAlign.start,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Outfit',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      fontSize: 28.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                              ),
-                            ),
                             Align(
                               alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Padding(

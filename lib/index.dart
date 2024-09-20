@@ -19,6 +19,9 @@ export '/add_service/add_service_widget.dart' show AddServiceWidget;
 export '/setting_client/setting_client_widget.dart' show SettingClientWidget;
 export '/setting_service_provider/setting_service_provider_widget.dart'
     show SettingServiceProviderWidget;
-export '/view_client_profile/view_client_profile_widget.dart'
-    show ViewClientProfileWidget;
-export '/view_s_ppage/view_s_ppage_widget.dart' show ViewSPpageWidget;
+export '/view_profile_client/view_profile_client_widget.dart'
+    show ViewProfileClientWidget;
+export '/view_profile_s_p/view_profile_s_p_widget.dart'
+    show ViewProfileSPWidget;
+export '/about_page/about_page_widget.dart' show AboutPageWidget;
+export '/delete_account/delete_account_widget.dart' show DeleteAccountWidget;

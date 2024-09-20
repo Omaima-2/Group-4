@@ -5,7 +5,6 @@ import '/backend/schema/enums/enums.dart';
 import '/components/upload_photo_fail_widget.dart';
 import '/components/upload_photo_sucsess_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -1014,109 +1013,6 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                 validator: _model
                                                     .conPassTextControllerValidator
                                                     .asValidator(context),
-                                              ),
-                                            ),
-                                          ),
-                                          Flexible(
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 10.0, 16.0, 0.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Flexible(
-                                                    child:
-                                                        FlutterFlowPlacePicker(
-                                                      iOSGoogleMapsApiKey:
-                                                          'AIzaSyDDuK3Sll_2vPLS2FJCGescGlf6oV2QV5E',
-                                                      androidGoogleMapsApiKey:
-                                                          'AIzaSyDDuK3Sll_2vPLS2FJCGescGlf6oV2QV5E',
-                                                      webGoogleMapsApiKey:
-                                                          'AIzaSyDDuK3Sll_2vPLS2FJCGescGlf6oV2QV5E',
-                                                      onSelect: (place) async {
-                                                        safeSetState(() => _model
-                                                                .placePickerValue =
-                                                            place);
-                                                      },
-                                                      defaultText: 'أضف عنوانك',
-                                                      icon: Icon(
-                                                        Icons.place,
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        size: 16.0,
-                                                      ),
-                                                      buttonOptions:
-                                                          FFButtonOptions(
-                                                        width: 200.0,
-                                                        height: 40.0,
-                                                        color:
-                                                            const Color(0xFF95A1AC),
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Outfit',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                ),
-                                                        elevation: 0.0,
-                                                        borderSide: const BorderSide(
-                                                          color: Colors
-                                                              .transparent,
-                                                          width: 1.0,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Flexible(
-                                                    child: Align(
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                              1.0, 0.0),
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    16.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            _model
-                                                                .placePickerValue
-                                                                .name,
-                                                            'لم تحدد العنوان بعد',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Plus Jakarta Sans',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryBackground,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                lineHeight: 2.0,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
                                               ),
                                             ),
                                           ),
