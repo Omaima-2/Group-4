@@ -142,7 +142,28 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
     );
     _model.phoneNumberTextController ??= TextEditingController();
     _model.phoneNumberFocusNode ??= FocusNode();
-
+    _model.phoneNumberFocusNode!.addListener(
+      () async {
+        if (_model.phoneNumberTextController.text ==
+            functions
+                .validatePhoneNumber(_model.phoneNumberTextController.text)) {
+          ScaffoldMessenger.of(context).hideCurrentSnackBar();
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                'رقم الهاتف غير صالح.',
+                style: TextStyle(
+                  color: FlutterFlowTheme.of(context).primaryText,
+                ),
+              ),
+              duration: const Duration(milliseconds: 4000),
+              backgroundColor: FlutterFlowTheme.of(context).secondary,
+            ),
+          );
+        }
+      },
+    );
     _model.locationTextController ??= TextEditingController();
     _model.locationFocusNode ??= FocusNode();
 
