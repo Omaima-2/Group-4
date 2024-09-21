@@ -898,6 +898,7 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                                       fontWeight:
                                                           FontWeight.w500,
                                                     ),
+                                            hintText: '05########',
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
                                                 color: Color(0xFFE0E3E7),
@@ -1021,7 +1022,7 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText:
-                                                        ' العنوان الوطني (eg. RRRD2929 ). ',
+                                                        ' العنوان الوطني ',
                                                     labelStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .labelMedium

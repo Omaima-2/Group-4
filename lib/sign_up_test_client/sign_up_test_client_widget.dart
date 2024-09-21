@@ -285,7 +285,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                             children: [
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 16.0),
+                                    0.0, 0.0, 0.0, 5.0),
                                 child: SizedBox(
                                   width: double.infinity,
                                   child: TextFormField(
@@ -294,7 +294,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                     focusNode: _model.displayNameFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.displayNameTextController',
-                                      const Duration(milliseconds: 2000),
+                                      const Duration(milliseconds: 600),
                                       () async {
                                         if ((_model.displayNameTextController
                                                     .text ==
@@ -331,7 +331,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                       },
                                     ),
                                     autofocus: true,
-                                    autofillHints: const [AutofillHints.email],
+                                    autofillHints: const [AutofillHints.name],
                                     textInputAction: TextInputAction.next,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -398,7 +398,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 16.0),
+                                    0.0, 0.0, 0.0, 5.0),
                                 child: SizedBox(
                                   width: double.infinity,
                                   child: TextFormField(
@@ -407,7 +407,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                     focusNode: _model.emailAddressFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.emailAddressTextController',
-                                      const Duration(milliseconds: 2000),
+                                      const Duration(milliseconds: 1000),
                                       () async {
                                         if ((_model.emailAddressTextController
                                                     .text ==
@@ -511,7 +511,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 16.0),
+                                    0.0, 0.0, 0.0, 5.0),
                                 child: SizedBox(
                                   width: double.infinity,
                                   child: TextFormField(
@@ -519,7 +519,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                     focusNode: _model.passwordFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.passwordTextController',
-                                      const Duration(milliseconds: 2000),
+                                      const Duration(milliseconds: 600),
                                       () async {
                                         if ((_model.passwordTextController
                                                     .text ==
@@ -638,7 +638,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 16.0),
+                                    0.0, 0.0, 0.0, 5.0),
                                 child: SizedBox(
                                   width: double.infinity,
                                   child: TextFormField(
@@ -647,7 +647,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                     focusNode: _model.confirmPasswordFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.confirmPasswordTextController',
-                                      const Duration(milliseconds: 2000),
+                                      const Duration(milliseconds: 600),
                                       () async {
                                         if ((_model.confirmPasswordTextController
                                                     .text ==
@@ -766,7 +766,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 16.0),
+                                    0.0, 0.0, 0.0, 5.0),
                                 child: SizedBox(
                                   width: double.infinity,
                                   child: TextFormField(
@@ -775,7 +775,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                     focusNode: _model.phoneNumberFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.phoneNumberTextController',
-                                      const Duration(milliseconds: 2000),
+                                      const Duration(milliseconds: 600),
                                       () async {
                                         if ((_model.phoneNumberTextController
                                                     .text ==
@@ -828,6 +828,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
                                           ),
+                                      hintText: '05########',
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: const BorderSide(
                                           color: Color(0xFFE0E3E7),
@@ -877,7 +878,6 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                     validator: _model
                                         .phoneNumberTextControllerValidator
                                         .asValidator(context),
-                                    inputFormatters: [_model.phoneNumberMask],
                                   ),
                                 ),
                               ),
@@ -1148,25 +1148,22 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                     context.goNamedAuth(
                                         'HomePageClient', context.mounted);
                                   },
-                            text:
-                                (_model.displayNameTextController
-                                                    .text !=
-                                                '') &&
-                                        (_model
-                                                    .emailAddressTextController.text !=
-                                                '') &&
-                                        (_model.passwordTextController
-                                                    .text !=
-                                                '') &&
-                                        (_model
-                                                    .confirmPasswordTextController.text !=
-                                                '') &&
-                                        (_model.phoneNumberTextController
-                                                    .text !=
-                                                '') &&
-                                        (_model.uploadedFileUrl != '')
-                                    ? 'التسجيل'
-                                    : 'لم تكتمل البيانات',
+                            text: (_model.displayNameTextController
+                                                .text !=
+                                            '') &&
+                                    (_model.emailAddressTextController
+                                                .text !=
+                                            '') &&
+                                    (_model
+                                                .passwordTextController.text !=
+                                            '') &&
+                                    (_model.confirmPasswordTextController
+                                                .text !=
+                                            '') &&
+                                    (_model.phoneNumberTextController.text !=
+                                            '')
+                                ? 'التسجيل'
+                                : 'لم تكتمل البيانات',
                             options: FFButtonOptions(
                               width: 230.0,
                               height: 52.0,
