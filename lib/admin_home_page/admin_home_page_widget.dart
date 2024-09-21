@@ -272,7 +272,7 @@ class _AdminHomePageWidgetState extends State<AdminHomePageWidget> {
                                   GoRouter.of(context).clearRedirectLocation();
 
                                   context.pushNamedAuth(
-                                      'login', context.mounted);
+                                      'loginTest', context.mounted);
                                 },
                                 text: 'تسجيل خروج',
                                 options: FFButtonOptions(

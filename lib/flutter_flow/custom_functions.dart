@@ -115,3 +115,16 @@ String validatePassword(String password) {
   // If all conditions are met, return valid message
   return password;
 }
+
+String? validateLocation(String? locatiom) {
+  // a function the receive a string and shecks that it stars with only 4 char and then 4 numbers like this RRRI4333 and return a msg if no match
+  // Regular expression to match a string that starts with 3 uppercase letters followed by 4 digits
+  final RegExp locationRegex = RegExp(r'^[A-Za-z]{4}\d{4}$');
+
+  // Check if the location matches the regex pattern
+  if (locationRegex.hasMatch(locatiom!)) {
+    return locatiom; // Return null for valid location
+  } else {
+    return 'Location must start with 3 uppercase letters followed by 4 digits'; // Return error message for invalid format
+  }
+}

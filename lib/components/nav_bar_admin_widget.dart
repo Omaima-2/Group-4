@@ -52,9 +52,12 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
           color: FlutterFlowTheme.of(context).primaryText,
           borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
-            bottomRight: Radius.circular(15.0),
-            topLeft: Radius.circular(15.0),
+            bottomRight: Radius.circular(0.0),
+            topLeft: Radius.circular(0.0),
             topRight: Radius.circular(0.0),
+          ),
+          border: Border.all(
+            color: Colors.black,
           ),
         ),
         child: Stack(
@@ -85,12 +88,11 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
                             Icons.home,
                             color: valueOrDefault<Color>(
                               widget.page == 'AdminHomePage'
-                                  ? const Color(0xFFF68833)
-                                  : FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                  ? const Color(0xFFFFB67D)
+                                  : Colors.black,
                               FlutterFlowTheme.of(context).secondaryBackground,
                             ),
-                            size: 20.0,
+                            size: 25.0,
                           ),
                           onPressed: () async {
                             context.pushNamed('AdminHomePage');
@@ -105,17 +107,14 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               30.0, 0.0, 0.0, 0.0),
                           child: FlutterFlowIconButton(
-                            borderColor: Colors.transparent,
                             borderRadius: 8.0,
                             buttonSize: 40.0,
-                            fillColor: FlutterFlowTheme.of(context).primaryText,
                             hoverColor: const Color(0xFFF68833),
                             hoverIconColor: const Color(0xFFF68833),
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.view_timeline,
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              size: 20.0,
+                              color: Colors.black,
+                              size: 25.0,
                             ),
                             onPressed: () {
                               print('Complaints pressed ...');

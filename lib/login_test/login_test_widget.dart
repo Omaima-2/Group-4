@@ -119,13 +119,13 @@ class _LoginTestWidgetState extends State<LoginTestWidget>
                     ),
                   ),
                   child: Column(
-                    mainAxisSize: MainAxisSize.min,
+                    mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Expanded(
                         child: Container(
-                          width: 100.0,
-                          height: 100.0,
+                          width: 130.0,
+                          height: 200.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).primaryText,
                             borderRadius: BorderRadius.circular(16.0),
@@ -133,10 +133,10 @@ class _LoginTestWidgetState extends State<LoginTestWidget>
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.asset(
-                              'assets/images/Screenshot_2024-09-17_122542.png',
+                              'assets/images/icon.jpg',
                               width: double.infinity,
                               height: double.infinity,
-                              fit: BoxFit.fill,
+                              fit: BoxFit.contain,
                             ),
                           ),
                         ).animateOnPageLoad(
@@ -183,7 +183,7 @@ class _LoginTestWidgetState extends State<LoginTestWidget>
                 alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 16.0, 16.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -395,60 +395,65 @@ class _LoginTestWidgetState extends State<LoginTestWidget>
                       ),
                       Align(
                         alignment: const AlignmentDirectional(0.0, 1.0),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            if (_model.formKey.currentState == null ||
-                                !_model.formKey.currentState!.validate()) {
-                              return;
-                            }
-                            GoRouter.of(context).prepareAuthEvent();
-
-                            final user = await authManager.signInWithEmail(
-                              context,
-                              _model.emailAddressTextController.text,
-                              _model.passwordTextController.text,
-                            );
-                            if (user == null) {
-                              return;
-                            }
-
-                            if (currentUserDocument?.role == Rolee.cl) {
-                              context.pushNamedAuth(
-                                  'HomePageClient', context.mounted);
-                            } else {
-                              if (currentUserDocument?.role == Rolee.sp) {
-                                context.pushNamedAuth(
-                                    'ServiceProviderHomePage', context.mounted);
-                              } else {
-                                context.pushNamedAuth(
-                                    'AdminHomePage', context.mounted);
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 15.0, 0.0, 0.0),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              if (_model.formKey.currentState == null ||
+                                  !_model.formKey.currentState!.validate()) {
+                                return;
                               }
-                            }
-                          },
-                          text: 'تسجيل الدخول',
-                          options: FFButtonOptions(
-                            width: 230.0,
-                            height: 52.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: const Color(0xFFF68833),
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Plus Jakarta Sans',
-                                  color: Colors.white,
-                                  fontSize: 16.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                            elevation: 3.0,
-                            borderSide: const BorderSide(
-                              color: Colors.transparent,
-                              width: 1.0,
+                              GoRouter.of(context).prepareAuthEvent();
+
+                              final user = await authManager.signInWithEmail(
+                                context,
+                                _model.emailAddressTextController.text,
+                                _model.passwordTextController.text,
+                              );
+                              if (user == null) {
+                                return;
+                              }
+
+                              if (currentUserDocument?.role == Rolee.cl) {
+                                context.pushNamedAuth(
+                                    'HomePageClient', context.mounted);
+                              } else {
+                                if (currentUserDocument?.role == Rolee.sp) {
+                                  context.pushNamedAuth(
+                                      'ServiceProviderHomePage',
+                                      context.mounted);
+                                } else {
+                                  context.pushNamedAuth(
+                                      'AdminHomePage', context.mounted);
+                                }
+                              }
+                            },
+                            text: 'تسجيل الدخول',
+                            options: FFButtonOptions(
+                              width: 230.0,
+                              height: 52.0,
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: const Color(0xFFF68833),
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    color: Colors.white,
+                                    fontSize: 16.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                              elevation: 3.0,
+                              borderSide: const BorderSide(
+                                color: Colors.transparent,
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(12.0),
                             ),
-                            borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
                       ),
@@ -457,7 +462,7 @@ class _LoginTestWidgetState extends State<LoginTestWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                 child: SizedBox(
                   width: double.infinity,
                   height: 100.0,

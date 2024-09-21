@@ -10,8 +10,11 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'sign_up_test_client_model.dart';
 export 'sign_up_test_client_model.dart';
 
@@ -289,6 +292,44 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                     controller:
                                         _model.displayNameTextController,
                                     focusNode: _model.displayNameFocusNode,
+                                    onChanged: (_) => EasyDebounce.debounce(
+                                      '_model.displayNameTextController',
+                                      const Duration(milliseconds: 2000),
+                                      () async {
+                                        if ((_model.displayNameTextController
+                                                    .text ==
+                                                functions.newCustomFunction4(
+                                                    _model
+                                                        .displayNameTextController
+                                                        .text)) ||
+                                            (_model.displayNameTextController
+                                                    .text ==
+                                                '')) {
+                                          ScaffoldMessenger.of(context)
+                                              .clearSnackBars();
+                                        } else {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'الاسم غير صالح, الرجاء اعادة المحاولة.',
+                                                style: GoogleFonts.getFont(
+                                                  'Outfit',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  const Duration(milliseconds: 3000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                            ),
+                                          );
+                                        }
+                                      },
+                                    ),
                                     autofocus: true,
                                     autofillHints: const [AutofillHints.email],
                                     textInputAction: TextInputAction.next,
@@ -364,6 +405,43 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                     controller:
                                         _model.emailAddressTextController,
                                     focusNode: _model.emailAddressFocusNode,
+                                    onChanged: (_) => EasyDebounce.debounce(
+                                      '_model.emailAddressTextController',
+                                      const Duration(milliseconds: 2000),
+                                      () async {
+                                        if ((_model.emailAddressTextController
+                                                    .text ==
+                                                functions.validateEmail(_model
+                                                    .emailAddressTextController
+                                                    .text)) ||
+                                            (_model.emailAddressTextController
+                                                    .text ==
+                                                '')) {
+                                          ScaffoldMessenger.of(context)
+                                              .clearSnackBars();
+                                        } else {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'البريد الاكتروني غير صالح, الرجاء اعادة المحاولة.',
+                                                style: GoogleFonts.getFont(
+                                                  'Outfit',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  const Duration(milliseconds: 3000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                            ),
+                                          );
+                                        }
+                                      },
+                                    ),
                                     autofocus: true,
                                     autofillHints: const [AutofillHints.email],
                                     textInputAction: TextInputAction.next,
@@ -439,6 +517,44 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                   child: TextFormField(
                                     controller: _model.passwordTextController,
                                     focusNode: _model.passwordFocusNode,
+                                    onChanged: (_) => EasyDebounce.debounce(
+                                      '_model.passwordTextController',
+                                      const Duration(milliseconds: 2000),
+                                      () async {
+                                        if ((_model.passwordTextController
+                                                    .text ==
+                                                functions.validatePassword(
+                                                    _model
+                                                        .passwordTextController
+                                                        .text)) ||
+                                            (_model.passwordTextController
+                                                    .text ==
+                                                '')) {
+                                          ScaffoldMessenger.of(context)
+                                              .clearSnackBars();
+                                        } else {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'كلمة المرور غير صالحة, يجب ان تكون 8 خانات على الاقل',
+                                                style: GoogleFonts.getFont(
+                                                  'Outfit',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  const Duration(milliseconds: 3000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                            ),
+                                          );
+                                        }
+                                      },
+                                    ),
                                     autofocus: false,
                                     autofillHints: const [AutofillHints.password],
                                     textInputAction: TextInputAction.done,
@@ -529,6 +645,42 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                     controller:
                                         _model.confirmPasswordTextController,
                                     focusNode: _model.confirmPasswordFocusNode,
+                                    onChanged: (_) => EasyDebounce.debounce(
+                                      '_model.confirmPasswordTextController',
+                                      const Duration(milliseconds: 2000),
+                                      () async {
+                                        if ((_model.confirmPasswordTextController
+                                                    .text ==
+                                                '') ||
+                                            (_model.confirmPasswordTextController
+                                                    .text ==
+                                                _model.passwordTextController
+                                                    .text)) {
+                                          ScaffoldMessenger.of(context)
+                                              .clearSnackBars();
+                                        } else {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'تأكيد كلمة المرور لا يطابق كلمة المرور.',
+                                                style: GoogleFonts.getFont(
+                                                  'Outfit',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  const Duration(milliseconds: 3000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                            ),
+                                          );
+                                        }
+                                      },
+                                    ),
                                     autofocus: false,
                                     autofillHints: const [AutofillHints.password],
                                     textInputAction: TextInputAction.done,
@@ -621,12 +773,52 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                     controller:
                                         _model.phoneNumberTextController,
                                     focusNode: _model.phoneNumberFocusNode,
+                                    onChanged: (_) => EasyDebounce.debounce(
+                                      '_model.phoneNumberTextController',
+                                      const Duration(milliseconds: 2000),
+                                      () async {
+                                        if ((_model.phoneNumberTextController
+                                                    .text ==
+                                                functions.validatePhoneNumber(
+                                                    _model
+                                                        .phoneNumberTextController
+                                                        .text)) ||
+                                            (_model.phoneNumberTextController
+                                                    .text ==
+                                                '')) {
+                                          ScaffoldMessenger.of(context)
+                                              .clearSnackBars();
+                                        } else {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'رقم الهاتف غير صالح.',
+                                                style: GoogleFonts.getFont(
+                                                  'Outfit',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  const Duration(milliseconds: 3000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                            ),
+                                          );
+                                        }
+                                      },
+                                    ),
                                     autofocus: true,
-                                    autofillHints: const [AutofillHints.email],
+                                    autofillHints: const [
+                                      AutofillHints.telephoneNumber
+                                    ],
                                     textInputAction: TextInputAction.next,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText: 'رقم الهاتف (05#######)',
+                                      labelText: 'رقم الهاتف',
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -681,10 +873,11 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
                                         ),
-                                    keyboardType: TextInputType.emailAddress,
+                                    keyboardType: TextInputType.number,
                                     validator: _model
                                         .phoneNumberTextControllerValidator
                                         .asValidator(context),
+                                    inputFormatters: [_model.phoneNumberMask],
                                   ),
                                 ),
                               ),
@@ -955,7 +1148,25 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                     context.goNamedAuth(
                                         'HomePageClient', context.mounted);
                                   },
-                            text: 'التسجيل',
+                            text:
+                                (_model.displayNameTextController
+                                                    .text !=
+                                                '') &&
+                                        (_model
+                                                    .emailAddressTextController.text !=
+                                                '') &&
+                                        (_model.passwordTextController
+                                                    .text !=
+                                                '') &&
+                                        (_model
+                                                    .confirmPasswordTextController.text !=
+                                                '') &&
+                                        (_model.phoneNumberTextController
+                                                    .text !=
+                                                '') &&
+                                        (_model.uploadedFileUrl != '')
+                                    ? 'التسجيل'
+                                    : 'لم تكتمل البيانات',
                             options: FFButtonOptions(
                               width: 230.0,
                               height: 52.0,
@@ -979,7 +1190,7 @@ class _SignUpTestClientWidgetState extends State<SignUpTestClientWidget>
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(12.0),
-                              disabledColor: const Color(0xFFDADDE8),
+                              disabledColor: const Color(0xFF585F69),
                             ),
                           ),
                         ),

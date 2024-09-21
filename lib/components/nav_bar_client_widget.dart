@@ -52,9 +52,12 @@ class _NavBarClientWidgetState extends State<NavBarClientWidget> {
           color: FlutterFlowTheme.of(context).primaryText,
           borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
-            bottomRight: Radius.circular(15.0),
-            topLeft: Radius.circular(15.0),
+            bottomRight: Radius.circular(0.0),
+            topLeft: Radius.circular(0.0),
             topRight: Radius.circular(0.0),
+          ),
+          border: Border.all(
+            color: Colors.black,
           ),
         ),
         child: Stack(
@@ -75,22 +78,19 @@ class _NavBarClientWidgetState extends State<NavBarClientWidget> {
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
                           borderRadius: 8.0,
                           buttonSize: 40.0,
-                          fillColor: FlutterFlowTheme.of(context).primaryText,
                           hoverColor: const Color(0xFFF68833),
                           hoverIconColor: const Color(0xFFF68833),
                           icon: Icon(
                             Icons.home,
                             color: valueOrDefault<Color>(
                               widget.page == 'HomePageClient'
-                                  ? const Color(0xFFF68833)
-                                  : FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                  ? const Color(0xFFFFB67D)
+                                  : Colors.black,
                               FlutterFlowTheme.of(context).secondaryBackground,
                             ),
-                            size: 20.0,
+                            size: 25.0,
                           ),
                           onPressed: () async {
                             context.pushNamed('HomePageClient');
@@ -102,17 +102,15 @@ class _NavBarClientWidgetState extends State<NavBarClientWidget> {
                       child: Align(
                         alignment: const AlignmentDirectional(1.0, 0.0),
                         child: FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
                           borderRadius: 8.0,
                           buttonSize: 40.0,
-                          fillColor: FlutterFlowTheme.of(context).primaryText,
                           hoverColor: const Color(0xFFF68833),
                           hoverIconColor: const Color(0xFFF68833),
                           icon: Icon(
                             Icons.pageview,
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            size: 20.0,
+                            size: 25.0,
                           ),
                           onPressed: () {
                             print('reqSP pressed ...');
@@ -124,17 +122,15 @@ class _NavBarClientWidgetState extends State<NavBarClientWidget> {
                       child: Align(
                         alignment: const AlignmentDirectional(1.0, 0.0),
                         child: FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
                           borderRadius: 8.0,
                           buttonSize: 40.0,
-                          fillColor: FlutterFlowTheme.of(context).primaryText,
                           hoverColor: const Color(0xFFF68833),
                           hoverIconColor: const Color(0xFFF68833),
                           icon: Icon(
                             Icons.ballot_sharp,
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            size: 20.0,
+                            size: 25.0,
                           ),
                           onPressed: () {
                             print('service pressed ...');
@@ -146,22 +142,19 @@ class _NavBarClientWidgetState extends State<NavBarClientWidget> {
                       child: Align(
                         alignment: const AlignmentDirectional(1.0, 0.0),
                         child: FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
                           borderRadius: 8.0,
                           buttonSize: 40.0,
-                          fillColor: FlutterFlowTheme.of(context).primaryText,
                           hoverColor: const Color(0xFFF68833),
                           hoverIconColor: const Color(0xFFF68833),
                           icon: Icon(
                             Icons.person,
                             color: valueOrDefault<Color>(
-                              widget.page == 'Setting'
-                                  ? const Color(0xFFF68833)
-                                  : FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                              widget.page == 'Setting_client'
+                                  ? const Color(0xFFFFB67D)
+                                  : Colors.black,
                               FlutterFlowTheme.of(context).secondaryBackground,
                             ),
-                            size: 20.0,
+                            size: 25.0,
                           ),
                           onPressed: () async {
                             context.pushNamed('Setting_client');
