@@ -73,7 +73,7 @@ String newCustomFunction4(String? name) {
 
   // Check if the name matches the regex
   if (nameRegex.hasMatch(name!)) {
-    return ' '; // Return '.' for valid name
+    return name; // Return '.' for valid name
   } else {
     return 'الرجاء ادخال الاسم بدون ارقام او رموز'; // Return error message in Arabic for invalid format
   }
@@ -86,7 +86,7 @@ String validateEmail(String email) {
 
   // Check if the email matches the regex pattern
   if (emailRegex.hasMatch(email)) {
-    return ' '; // Return message for valid email
+    return email; // Return message for valid email
   } else {
     return 'البريد الالكتروني غير صحيح'; // Return message for invalid email format
   }
@@ -98,7 +98,7 @@ String validatePhoneNumber(String phoneNumber) {
 
   // Check if the phone number matches the regex pattern
   if (phoneRegex.hasMatch(phoneNumber)) {
-    return ' '; // Return message for valid phone number
+    return phoneNumber; // Return message for valid phone number
   } else {
     return 'رقم الهاتف غير صحيح'; // Return message for invalid phone number
   }
@@ -107,18 +107,11 @@ String validatePhoneNumber(String phoneNumber) {
 String validatePassword(String password) {
   // Regular expression to validate:
 
-  // Check if the password is too short
+  // Check if the password is tohort
   if (password.length < 8) {
-    String s =
-        ' يجب أن تكون كلمة المرور مكونة من 8 أحرف على الأقل وتحتوي على رقم واحد على الأقل ورمز خاص واحد مثل(!@#%^&*)';
-    return s;
+    return 'كلمة المرور غير صحيحة';
   }
 
   // If all conditions are met, return valid message
-  return ' ';
-}
-
-String? newCustomFunction5() {
-  // function return the string 'unknown'
-  return 'unknown';
+  return password;
 }

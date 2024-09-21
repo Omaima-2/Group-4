@@ -1239,15 +1239,6 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                   return;
                                                 }
 
-                                                if (_model.formKey
-                                                            .currentState ==
-                                                        null ||
-                                                    !_model
-                                                        .formKey.currentState!
-                                                        .validate()) {
-                                                  return;
-                                                }
-
                                                 await currentUserReference!
                                                     .update(
                                                         createUsers1RecordData(

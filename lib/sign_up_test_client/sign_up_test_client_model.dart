@@ -13,11 +13,11 @@ class SignUpTestClientModel extends FlutterFlowModel<SignUpTestClientWidget> {
   String? _displayNameTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return '  ';
     }
 
-    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
-      return 'صيغة البريد الإلكتروني خاطئة، الرجاء إعادة المحاولة';
+    if (!RegExp('^[A-Za-z ,.\'-]+\$').hasMatch(val)) {
+      return 'الاسم  غير صالح، الرجاء إعادة المحاولة';
     }
     return null;
   }
@@ -26,10 +26,18 @@ class SignUpTestClientModel extends FlutterFlowModel<SignUpTestClientWidget> {
   FocusNode? emailAddressFocusNode;
   TextEditingController? emailAddressTextController;
   String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
-  // State field(s) for phoneNumber widget.
-  FocusNode? phoneNumberFocusNode;
-  TextEditingController? phoneNumberTextController;
-  String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
+  String? _emailAddressTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return '  ';
+    }
+
+    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+      return 'البريد الاكتروني غير صالح, الرجاء إعادة المحاولة';
+    }
+    return null;
+  }
+
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
@@ -37,9 +45,12 @@ class SignUpTestClientModel extends FlutterFlowModel<SignUpTestClientWidget> {
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
   String? _passwordTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return '  ';
     }
 
+    if (!RegExp('^.{8,}\$').hasMatch(val)) {
+      return 'يجب أن تكون كلمة المرور على الأقل 8 خانات.';
+    }
     return null;
   }
 
@@ -49,13 +60,49 @@ class SignUpTestClientModel extends FlutterFlowModel<SignUpTestClientWidget> {
   late bool confirmPasswordVisibility;
   String? Function(BuildContext, String?)?
       confirmPasswordTextControllerValidator;
+  String? _confirmPasswordTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return '  ';
+    }
+
+    if (!RegExp('^.{8,}\$').hasMatch(val)) {
+      return 'تأكيد كلمة المرور غير صحيح';
+    }
+    return null;
+  }
+
+  // State field(s) for phoneNumber widget.
+  FocusNode? phoneNumberFocusNode;
+  TextEditingController? phoneNumberTextController;
+  String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
+  String? _phoneNumberTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return '  ';
+    }
+
+    if (!RegExp('^05\\d{8}\$').hasMatch(val)) {
+      return 'الهاتف';
+    }
+    return null;
+  }
+
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
 
   @override
   void initState(BuildContext context) {
     displayNameTextControllerValidator = _displayNameTextControllerValidator;
+    emailAddressTextControllerValidator = _emailAddressTextControllerValidator;
     passwordVisibility = false;
     passwordTextControllerValidator = _passwordTextControllerValidator;
     confirmPasswordVisibility = false;
+    confirmPasswordTextControllerValidator =
+        _confirmPasswordTextControllerValidator;
+    phoneNumberTextControllerValidator = _phoneNumberTextControllerValidator;
   }
 
   @override
@@ -66,13 +113,13 @@ class SignUpTestClientModel extends FlutterFlowModel<SignUpTestClientWidget> {
     emailAddressFocusNode?.dispose();
     emailAddressTextController?.dispose();
 
-    phoneNumberFocusNode?.dispose();
-    phoneNumberTextController?.dispose();
-
     passwordFocusNode?.dispose();
     passwordTextController?.dispose();
 
     confirmPasswordFocusNode?.dispose();
     confirmPasswordTextController?.dispose();
+
+    phoneNumberFocusNode?.dispose();
+    phoneNumberTextController?.dispose();
   }
 }
