@@ -28,3 +28,5 @@ export '/view_profile_s_p/view_profile_s_p_widget.dart'
 export '/electricitys/electricitys_widget.dart' show ElectricitysWidget;
 export '/view_s_p_to_client/view_s_p_to_client_widget.dart'
     show ViewSPToClientWidget;
+export '/show_services/show_services_widget.dart' show ShowServicesWidget;
+export '/my_requests_s_p/my_requests_s_p_widget.dart' show MyRequestsSPWidget;

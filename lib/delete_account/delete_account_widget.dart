@@ -179,7 +179,8 @@ class _DeleteAccountWidgetState extends State<DeleteAccountWidget> {
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       await authManager.deleteUser(context);
-                                      context.safePop();
+
+                                      context.pushNamed('loginTest');
                                     },
                                     text: 'حذف الحساب',
                                     options: FFButtonOptions(

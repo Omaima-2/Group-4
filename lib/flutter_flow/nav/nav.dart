@@ -203,6 +203,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.Document,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'show_services',
+          path: '/showServices',
+          asyncParams: {
+            'sp': getDoc(['SP'], SpRecord.fromSnapshot),
+          },
+          builder: (context, params) => ShowServicesWidget(
+            sp: params.getParam(
+              'sp',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'My_Requests_SP',
+          path: '/myRequestsSP',
+          builder: (context, params) => const MyRequestsSPWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

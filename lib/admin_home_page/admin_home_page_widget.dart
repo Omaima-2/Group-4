@@ -260,7 +260,7 @@ class _AdminHomePageWidgetState extends State<AdminHomePageWidget> {
                           alignment: const AlignmentDirectional(0.0, 1.0),
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 160.0, 0.0, 0.0),
+                                0.0, 10.0, 0.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
                                 GoRouter.of(context).prepareAuthEvent();

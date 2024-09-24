@@ -1,8 +1,9 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/a_service_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'view_s_p_to_client_model.dart';
 export 'view_s_p_to_client_model.dart';
@@ -83,7 +84,7 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
             children: [
               Container(
                 width: 393.0,
-                height: 295.0,
+                height: 239.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                   image: DecorationImage(
@@ -98,6 +99,7 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                 padding: const EdgeInsets.all(12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       valueOrDefault<String>(
@@ -113,74 +115,82 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                             letterSpacing: 0.0,
                           ),
                     ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
-                child: Text(
-                  'الخدمات',
-                  textAlign: TextAlign.start,
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Readex Pro',
-                        color: FlutterFlowTheme.of(context).primaryBackground,
-                        fontSize: 20.0,
-                        letterSpacing: 0.0,
-                      ),
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(14.0),
-                  child: StreamBuilder<List<ServicesRecord>>(
-                    stream: queryServicesRecord(
-                      queryBuilder: (servicesRecord) => servicesRecord.where(
-                        'user',
-                        isEqualTo: widget.sp?.user,
-                      ),
-                    ),
-                    builder: (context, snapshot) {
-                      // Customize what your widget looks like when it's loading.
-                      if (!snapshot.hasData) {
-                        return Center(
-                          child: SizedBox(
-                            width: 50.0,
-                            height: 50.0,
-                            child: CircularProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                FlutterFlowTheme.of(context).primary,
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        FFButtonWidget(
+                          onPressed: () async {
+                            await OnlineRequestRecord.collection.doc().set({
+                              ...createOnlineRequestRecordData(
+                                client: currentUserReference,
+                                state: false,
+                                serviceProvider: widget.sp?.reference,
+                                clientName: currentUserDisplayName,
                               ),
-                            ),
+                              ...mapToFirestore(
+                                {
+                                  'time_created': FieldValue.serverTimestamp(),
+                                },
+                              ),
+                            });
+                          },
+                          text: 'طلب استشارة اونلاين',
+                          options: FFButtonOptions(
+                            height: 40.0,
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 0.0),
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  color: Colors.white,
+                                  letterSpacing: 0.0,
+                                ),
+                            elevation: 0.0,
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
-                        );
-                      }
-                      List<ServicesRecord> gridViewServicesRecordList =
-                          snapshot.data!;
-
-                      return GridView.builder(
-                        padding: EdgeInsets.zero,
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          crossAxisSpacing: 15.0,
-                          mainAxisSpacing: 15.0,
-                          childAspectRatio: 1.0,
                         ),
-                        scrollDirection: Axis.vertical,
-                        itemCount: gridViewServicesRecordList.length,
-                        itemBuilder: (context, gridViewIndex) {
-                          final gridViewServicesRecord =
-                              gridViewServicesRecordList[gridViewIndex];
-                          return AServiceWidget(
-                            key: Key(
-                                'Keywrp_${gridViewIndex}_of_${gridViewServicesRecordList.length}'),
-                            nameService: gridViewServicesRecord.name,
-                            servicePrice: gridViewServicesRecord.price,
-                            photoService: gridViewServicesRecord.photo,
-                          );
-                        },
-                      );
-                    },
-                  ),
+                        FFButtonWidget(
+                          onPressed: () async {
+                            context.pushNamed(
+                              'show_services',
+                              queryParameters: {
+                                'sp': serializeParam(
+                                  widget.sp,
+                                  ParamType.Document,
+                                ),
+                              }.withoutNulls,
+                              extra: <String, dynamic>{
+                                'sp': widget.sp,
+                              },
+                            );
+                          },
+                          text: 'طلب خدمة ',
+                          options: FFButtonOptions(
+                            height: 40.0,
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 0.0),
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  color: Colors.white,
+                                  letterSpacing: 0.0,
+                                ),
+                            elevation: 0.0,
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ].divide(const SizedBox(height: 50.0)),
                 ),
               ),
             ],

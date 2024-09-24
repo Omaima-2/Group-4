@@ -105,7 +105,7 @@ class _PasswordResstWidgetState extends State<PasswordResstWidget> {
                       alignment: const AlignmentDirectional(0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          context.pushNamed('login');
+                          context.pushNamed('loginTest');
                         },
                         text: 'تسجيل الدخول',
                         options: FFButtonOptions(
