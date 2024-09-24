@@ -737,6 +737,100 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
                                       ),
                                     ),
                                   ),
+                                  StreamBuilder<List<SpRecord>>(
+                                    stream: querySpRecord(
+                                      queryBuilder: (spRecord) =>
+                                          spRecord.where(
+                                        'user',
+                                        isEqualTo: currentUserReference,
+                                      ),
+                                      singleRecord: true,
+                                    ),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      List<SpRecord> specificallySpRecordList =
+                                          snapshot.data!;
+                                      // Return an empty Container when the item does not exist.
+                                      if (snapshot.data!.isEmpty) {
+                                        return Container();
+                                      }
+                                      final specificallySpRecord =
+                                          specificallySpRecordList.isNotEmpty
+                                              ? specificallySpRecordList.first
+                                              : null;
+
+                                      return Container(
+                                        width: double.infinity,
+                                        height: 73.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          boxShadow: const [
+                                            BoxShadow(
+                                              blurRadius: 10.0,
+                                              color: Color(0x33000000),
+                                              offset: Offset(
+                                                0.0,
+                                                2.0,
+                                              ),
+                                            )
+                                          ],
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  20.0, 5.0, 20.0, 5.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              const Icon(
+                                                Icons.handyman,
+                                                color: Color(0xFFED7D41),
+                                                size: 24.0,
+                                              ),
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  specificallySpRecord
+                                                      ?.speciality,
+                                                  'التخصص',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ].divide(const SizedBox(width: 18.0)),
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 30.0, 0.0, 0.0),

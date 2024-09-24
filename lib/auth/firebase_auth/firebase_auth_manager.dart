@@ -113,9 +113,7 @@ class FirebaseAuthManager extends AuthManager
     } on FirebaseAuthException {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-            content: Text(
-                'البريد الألكتروني/ كلمة المرور خاطئة، الرجاء اعادة المحاولة')),
+        const SnackBar(content: Text('الرجاء اعادة المحاولة فيه مشكله بالتسجيل ')),
       );
       return null;
     }
@@ -186,8 +184,7 @@ class FirebaseAuthManager extends AuthManager
       } else if (phoneAuthManager.phoneAuthError != null) {
         final e = phoneAuthManager.phoneAuthError!;
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text(
-              'البريد الألكتروني/ كلمة المرور خاطئة، الرجاء اعادة المحاولة'),
+          content: Text('الرجاء اعادة المحاولة فيه مشكله بالتسجيل '),
         ));
         phoneAuthManager.update(() => phoneAuthManager.phoneAuthError = null);
       }
@@ -296,7 +293,7 @@ class FirebaseAuthManager extends AuthManager
         'email-already-in-use' => 'البريد الألكتروني مسجل سابقًا في مطرقة',
         'INVALID_LOGIN_CREDENTIALS' =>
           'البريد الألكتروني/ كلمة المرور خاطئة، الرجاء اعادة المحاولة',
-        _ => 'البريد الألكتروني/ كلمة المرور خاطئة، الرجاء اعادة المحاولة',
+        _ => 'الرجاء اعادة المحاولة فيه مشكله بالتسجيل ',
       };
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(

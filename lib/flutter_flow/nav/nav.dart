@@ -185,6 +185,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'viewProfile_SP',
           path: '/viewProfileSP',
           builder: (context, params) => const ViewProfileSPWidget(),
+        ),
+        FFRoute(
+          name: 'Electricitys',
+          path: '/electricitys',
+          builder: (context, params) => const ElectricitysWidget(),
+        ),
+        FFRoute(
+          name: 'view_SP_toClient',
+          path: '/viewSPToClient',
+          asyncParams: {
+            'sp': getDoc(['SP'], SpRecord.fromSnapshot),
+          },
+          builder: (context, params) => ViewSPToClientWidget(
+            sp: params.getParam(
+              'sp',
+              ParamType.Document,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -369,14 +387,14 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Container(
-                  color: FlutterFlowTheme.of(context).primaryText,
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/__2024-09-07_153317.png',
-                      width: 600.0,
-                      height: 5000.0,
-                      fit: BoxFit.cover,
+              ? Center(
+                  child: SizedBox(
+                    width: 50.0,
+                    height: 50.0,
+                    child: CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        FlutterFlowTheme.of(context).primary,
+                      ),
                     ),
                   ),
                 )

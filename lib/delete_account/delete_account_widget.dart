@@ -89,7 +89,7 @@ class _DeleteAccountWidgetState extends State<DeleteAccountWidget> {
                       Text(
                         'حزينين لرؤيتك تغادر ',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Readex Pro',
+                              fontFamily: 'Outfit',
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                               fontSize: 20.0,
@@ -100,10 +100,11 @@ class _DeleteAccountWidgetState extends State<DeleteAccountWidget> {
                       Text(
                         'حذف حسابك سيؤدي إلى حذف جميع معلوماتك وبياناتك المسجلة في مطرقة، هل انت واثق من رغبتك في حذف حسابك ومغادرة مطرقة؟ ',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Readex Pro',
+                              fontFamily: 'Outfit',
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                               letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
                             ),
                       ),
                       Padding(

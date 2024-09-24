@@ -10,6 +10,7 @@ import 'schema/client_record.dart';
 import 'schema/users1_record.dart';
 import 'schema/services_record.dart';
 import 'schema/admin_record.dart';
+import 'schema/request_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -23,6 +24,7 @@ export 'schema/client_record.dart';
 export 'schema/users1_record.dart';
 export 'schema/services_record.dart';
 export 'schema/admin_record.dart';
+export 'schema/request_record.dart';
 
 /// Functions to query SpRecords (as a Stream and as a Future).
 Future<int> querySpRecordCount({
@@ -204,6 +206,43 @@ Future<List<AdminRecord>> queryAdminRecordOnce({
     queryCollectionOnce(
       AdminRecord.collection,
       AdminRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query RequestRecords (as a Stream and as a Future).
+Future<int> queryRequestRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      RequestRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<RequestRecord>> queryRequestRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      RequestRecord.collection,
+      RequestRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<RequestRecord>> queryRequestRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      RequestRecord.collection,
+      RequestRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

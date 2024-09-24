@@ -54,9 +54,9 @@
 	<true/>
 
 	<key>NSCameraUsageDescription</key>
-    <string>In order to take a picture or video, this app requires permission to access the camera.</string>
+    <string>تسمح لنا نستعمل كاميرتك جهازك يالغالي؟ </string>
 	<key>NSPhotoLibraryUsageDescription</key>
-    <string>In order to upload data, this app requires permission to access the photo library.</string>
+    <string>نبي نضيف الصوره لك ، اسمح لنا نفتح البوم صورك </string>
 
 
 
