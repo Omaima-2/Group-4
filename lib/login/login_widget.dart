@@ -9,7 +9,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:provider/provider.dart';
 import 'login_model.dart';
 export 'login_model.dart';
 
@@ -101,8 +100,6 @@ class _LoginWidgetState extends State<LoginWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -748,32 +745,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                                         textAlign:
                                                             TextAlign.end,
                                                       ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                      const AlignmentDirectional(
-                                                          0.0, -1.0),
-                                                  child: Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 5.0),
-                                                    child: Text(
-                                                      FFAppState().loginAttempt,
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Plus Jakarta Sans',
-                                                            color: const Color(
-                                                                0xFFFF0000),
-                                                            letterSpacing: 0.0,
-                                                          ),
                                                     ),
                                                   ),
                                                 ),

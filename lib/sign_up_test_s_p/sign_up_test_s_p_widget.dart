@@ -1156,7 +1156,7 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                                       fontWeight:
                                                           FontWeight.w500,
                                                     ),
-                                            hintText: '          اختر تخصصك',
+                                            hintText: '         اختر تخصصك',
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
                                               color:
@@ -1376,7 +1376,17 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                               '') ||
                                       (_model.dropDownValue == null ||
                                           _model.dropDownValue == '') ||
-                                      (_model.uploadedFileUrl == ''))
+                                      (_model.uploadedFileUrl == '') ||
+                                      (_model.nameTextController.text !=
+                                          functions.newCustomFunction4(_model
+                                              .nameTextController.text)) ||
+                                      (_model.emailAddressTextController.text !=
+                                          functions.validateEmail(
+                                              _model.emailAddressTextController.text)) ||
+                                      (_model.passwordTextController.text != functions.validatePassword(_model.passwordTextController.text)) ||
+                                      (_model.confirmPasswordTextController.text != _model.passwordTextController.text) ||
+                                      (_model.phoneNumberTextController.text != functions.validatePhoneNumber(_model.phoneNumberTextController.text)) ||
+                                      (_model.locationTextController.text != functions.validateLocation(_model.locationTextController.text)))
                                   ? null
                                   : () async {
                                       if (_model.formKey.currentState != null) {
@@ -1417,9 +1427,6 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                               ''),
                                           displayName:
                                               _model.nameTextController.text,
-                                          email: currentUserEmail,
-                                          password: _model
-                                              .passwordTextController.text,
                                           photoUrl: _model.uploadedFileUrl,
                                         ),
                                         ...mapToFirestore(
@@ -1429,6 +1436,15 @@ class _SignUpTestSPWidgetState extends State<SignUpTestSPWidget>
                                           },
                                         ),
                                       });
+
+                                      await SpRecord.collection
+                                          .doc()
+                                          .set(createSpRecordData(
+                                            createdTime: getCurrentTimestamp,
+                                            availability: false,
+                                            user: currentUserReference,
+                                            speciality: _model.dropDownValue,
+                                          ));
 
                                       context.pushNamedAuth(
                                           'ServiceProviderHomePage',

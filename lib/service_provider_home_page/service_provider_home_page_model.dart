@@ -8,8 +8,6 @@ class ServiceProviderHomePageModel
     extends FlutterFlowModel<ServiceProviderHomePageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for SwitchListTile widget.
-  bool? switchListTileValue;
   // Model for navBarSP component.
   late NavBarSPModel navBarSPModel;
 

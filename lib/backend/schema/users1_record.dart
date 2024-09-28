@@ -46,16 +46,6 @@ class Users1Record extends FirestoreRecord {
   String get uid => _uid ?? '';
   bool hasUid() => _uid != null;
 
-  // "clientId" field.
-  DocumentReference? _clientId;
-  DocumentReference? get clientId => _clientId;
-  bool hasClientId() => _clientId != null;
-
-  // "SPid" field.
-  DocumentReference? _sPid;
-  DocumentReference? get sPid => _sPid;
-  bool hasSPid() => _sPid != null;
-
   // "role" field.
   Rolee? _role;
   Rolee? get role => _role;
@@ -78,8 +68,6 @@ class Users1Record extends FirestoreRecord {
     _createdTime = snapshotData['created_time'] as DateTime?;
     _phoneNumber = snapshotData['phone_number'] as String?;
     _uid = snapshotData['uid'] as String?;
-    _clientId = snapshotData['clientId'] as DocumentReference?;
-    _sPid = snapshotData['SPid'] as DocumentReference?;
     _role = deserializeEnum<Rolee>(snapshotData['role']);
     _displayName = snapshotData['display_name'] as String?;
     _location = snapshotData['location'] as String?;
@@ -125,8 +113,6 @@ Map<String, dynamic> createUsers1RecordData({
   DateTime? createdTime,
   String? phoneNumber,
   String? uid,
-  DocumentReference? clientId,
-  DocumentReference? sPid,
   Rolee? role,
   String? displayName,
   String? location,
@@ -139,8 +125,6 @@ Map<String, dynamic> createUsers1RecordData({
       'created_time': createdTime,
       'phone_number': phoneNumber,
       'uid': uid,
-      'clientId': clientId,
-      'SPid': sPid,
       'role': role,
       'display_name': displayName,
       'location': location,
@@ -161,8 +145,6 @@ class Users1RecordDocumentEquality implements Equality<Users1Record> {
         e1?.createdTime == e2?.createdTime &&
         e1?.phoneNumber == e2?.phoneNumber &&
         e1?.uid == e2?.uid &&
-        e1?.clientId == e2?.clientId &&
-        e1?.sPid == e2?.sPid &&
         e1?.role == e2?.role &&
         e1?.displayName == e2?.displayName &&
         e1?.location == e2?.location;
@@ -176,8 +158,6 @@ class Users1RecordDocumentEquality implements Equality<Users1Record> {
         e?.createdTime,
         e?.phoneNumber,
         e?.uid,
-        e?.clientId,
-        e?.sPid,
         e?.role,
         e?.displayName,
         e?.location

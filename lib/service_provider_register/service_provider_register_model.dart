@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'service_provider_register_widget.dart'
     show ServiceProviderRegisterWidget;
 import 'package:flutter/material.dart';
@@ -56,9 +55,6 @@ class ServiceProviderRegisterModel
   TextEditingController? confirmPassSPTextController;
   late bool confirmPassSPVisibility;
   String? Function(BuildContext, String?)? confirmPassSPTextControllerValidator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));

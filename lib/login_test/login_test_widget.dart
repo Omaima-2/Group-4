@@ -94,7 +94,7 @@ class _LoginTestWidgetState extends State<LoginTestWidget>
             children: [
               Container(
                 width: double.infinity,
-                height: 228.0,
+                height: 258.0,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
@@ -118,62 +118,66 @@ class _LoginTestWidgetState extends State<LoginTestWidget>
                       end: AlignmentDirectional(0, 1.0),
                     ),
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: 131.0,
-                        height: 90.0,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          borderRadius: BorderRadius.circular(16.0),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: Image.asset(
-                            'assets/images/Screenshot_2024-09-17_122542.png',
-                            width: double.infinity,
-                            height: double.infinity,
-                            fit: BoxFit.cover,
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 121.0,
+                          height: 105.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            borderRadius: BorderRadius.circular(16.0),
                           ),
-                        ),
-                      ).animateOnPageLoad(
-                          animationsMap['containerOnPageLoadAnimation']!),
-                      Flexible(
-                        child: Text(
-                          'تسجيل الدخول',
-                          style: FlutterFlowTheme.of(context)
-                              .headlineSmall
-                              .override(
-                                fontFamily: 'Baloo',
-                                color: const Color(0xFF101213),
-                                fontSize: 25.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.bold,
-                                useGoogleFonts: false,
-                              ),
-                        ),
-                      ),
-                      Flexible(
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 4.0, 0.0, 0.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.asset(
+                              'assets/images/Screenshot_2024-09-17_122542.png',
+                              width: double.infinity,
+                              height: double.infinity,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ).animateOnPageLoad(
+                            animationsMap['containerOnPageLoadAnimation']!),
+                        Flexible(
                           child: Text(
-                            'حياك الله، مطرقتنا بخدمتك',
+                            'تسجيل الدخول',
                             style: FlutterFlowTheme.of(context)
-                                .labelMedium
+                                .headlineSmall
                                 .override(
-                                  fontFamily: 'Plus Jakarta Sans',
-                                  color: const Color(0xFF57636C),
-                                  fontSize: 16.0,
+                                  fontFamily: 'Baloo',
+                                  color: const Color(0xFF101213),
+                                  fontSize: 25.0,
                                   letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.bold,
+                                  useGoogleFonts: false,
                                 ),
                           ),
                         ),
-                      ),
-                    ],
+                        Flexible(
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 4.0, 0.0, 0.0),
+                            child: Text(
+                              'حياك الله، مطرقتنا بخدمتك',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    color: const Color(0xFF57636C),
+                                    fontSize: 16.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -411,36 +415,50 @@ class _LoginTestWidgetState extends State<LoginTestWidget>
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: FFButtonWidget(
-                            onPressed: () async {
-                              if (_model.formKey.currentState == null ||
-                                  !_model.formKey.currentState!.validate()) {
-                                return;
-                              }
-                              GoRouter.of(context).prepareAuthEvent();
+                            onPressed: ((_model
+                                            .emailAddressTextController.text ==
+                                        '') ||
+                                    (_model.passwordTextController.text == ''))
+                                ? null
+                                : () async {
+                                    if (_model.formKey.currentState == null ||
+                                        !_model.formKey.currentState!
+                                            .validate()) {
+                                      return;
+                                    }
+                                    GoRouter.of(context).prepareAuthEvent();
 
-                              final user = await authManager.signInWithEmail(
-                                context,
-                                _model.emailAddressTextController.text,
-                                _model.passwordTextController.text,
-                              );
-                              if (user == null) {
-                                return;
-                              }
+                                    final user =
+                                        await authManager.signInWithEmail(
+                                      context,
+                                      _model.emailAddressTextController.text,
+                                      _model.passwordTextController.text,
+                                    );
+                                    if (user == null) {
+                                      return;
+                                    }
 
-                              if (currentUserDocument?.role == Rolee.cl) {
-                                context.pushNamedAuth(
-                                    'HomePageClient', context.mounted);
-                              } else {
-                                if (currentUserDocument?.role == Rolee.sp) {
-                                  context.pushNamedAuth(
-                                      'ServiceProviderHomePage',
-                                      context.mounted);
-                                } else {
-                                  context.pushNamedAuth(
-                                      'AdminHomePage', context.mounted);
-                                }
-                              }
-                            },
+                                    if (currentUserDocument?.role == Rolee.cl) {
+                                      context.pushNamedAuth(
+                                          'HomePageClient', context.mounted);
+                                    } else {
+                                      if (currentUserDocument?.role ==
+                                          Rolee.sp) {
+                                        context.pushNamedAuth(
+                                            'ServiceProviderHomePage',
+                                            context.mounted);
+                                      } else {
+                                        if (currentUserEmail ==
+                                            'admin@gmail.com') {
+                                          context.pushNamedAuth(
+                                              'AdminHomePage', context.mounted);
+                                        } else {
+                                          context.pushNamedAuth(
+                                              'loginTest', context.mounted);
+                                        }
+                                      }
+                                    }
+                                  },
                             text: 'تسجيل الدخول',
                             options: FFButtonOptions(
                               width: 230.0,
@@ -465,6 +483,9 @@ class _LoginTestWidgetState extends State<LoginTestWidget>
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(12.0),
+                              disabledColor: const Color(0xFFF0BDA1),
+                              disabledTextColor: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
                             ),
                           ),
                         ),
