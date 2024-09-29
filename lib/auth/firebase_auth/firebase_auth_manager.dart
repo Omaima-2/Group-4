@@ -1,18 +1,18 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
-import '../auth_manager.dart';
 
 import '/backend/backend.dart';
+import '../auth_manager.dart';
 import 'anonymous_auth.dart';
 import 'apple_auth.dart';
 import 'email_auth.dart';
 import 'firebase_user_provider.dart';
+import 'github_auth.dart';
 import 'google_auth.dart';
 import 'jwt_token_auth.dart';
-import 'github_auth.dart';
 
 export '../base_auth_user_provider.dart';
 
@@ -113,7 +113,8 @@ class FirebaseAuthManager extends AuthManager
     } on FirebaseAuthException {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('الرجاء اعادة المحاولة فيه مشكله بالتسجيل ')),
+        const SnackBar(
+            content: Text('الرجاء اعادة المحاولة فيه مشكله بالتسجيل ')),
       );
       return null;
     }
@@ -212,8 +213,8 @@ class FirebaseAuthManager extends AuthManager
     // * Finally modify verificationCompleted below as instructed.
     await FirebaseAuth.instance.verifyPhoneNumber(
       phoneNumber: phoneNumber,
-      timeout:
-          const Duration(seconds: 0), // Skips Android's default auto-verification
+      timeout: const Duration(
+          seconds: 0), // Skips Android's default auto-verification
       verificationCompleted: (phoneAuthCredential) async {
         await FirebaseAuth.instance.signInWithCredential(phoneAuthCredential);
         phoneAuthManager.update(() {
@@ -289,15 +290,34 @@ class FirebaseAuthManager extends AuthManager
           ? null
           : MitraqaFirebaseUser.fromUserCredential(userCredential);
     } on FirebaseAuthException catch (e) {
+      print('Error code: ${e.code}'); // Debugging: Print the actual error code
+
+      // Define error message based on the error code
       final errorMsg = switch (e.code) {
-        'email-already-in-use' => 'البريد الألكتروني مسجل سابقًا في مطرقة',
-        'INVALID_LOGIN_CREDENTIALS' =>
-          'البريد الألكتروني/ كلمة المرور خاطئة، الرجاء اعادة المحاولة',
-        _ => 'الرجاء اعادة المحاولة فيه مشكله بالتسجيل ',
+        'email-already-in-use' => 'البريد الإلكتروني مسجل سابقًا في مطرقة',
+        'wrong-password'||'invalid-email' =>
+          'الإيميل أو كلمة المرور غير صحيح، الرجاء إعادة المحاولة',
+        'user-not-found' => 'الإيميل غير مسجّل في مطرقة',
+        _ => 'هناك مشكلة في التسجيل ، الرجاء التأكد من اتصالك بالإنترنت',
       };
+
+      // Hide any existing SnackBar
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
+
+      // Show the new SnackBar with the error message
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(errorMsg)),
+        SnackBar(
+          content: Text(
+            errorMsg,
+            textAlign: TextAlign.right, // Right-align text for Arabic content
+            style: TextStyle(
+              color: Colors.white, // White text color for contrast
+              fontSize: 14, // Font size set to 14
+            ),
+          ),
+          backgroundColor: Colors.red, // Red background color for the SnackBar
+          duration: Duration(seconds: 3), // SnackBar duration set to 3 seconds
+        ),
       );
       return null;
     }
