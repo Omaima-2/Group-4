@@ -39,8 +39,14 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
     _model.phoneNumberFiledFocusNode ??= FocusNode();
 
     _model.locationFeldTextController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.location, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.location, ''),
+      'العنوان الوطني',
+    ));
     _model.locationFeldFocusNode ??= FocusNode();
+
+    _model.textController5 ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -58,9 +64,9 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryText,
+        backgroundColor: FlutterFlowTheme.of(context).info,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryText,
+          backgroundColor: FlutterFlowTheme.of(context).info,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -69,7 +75,7 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
             buttonSize: 60.0,
             icon: Icon(
               Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).secondaryBackground,
+              color: FlutterFlowTheme.of(context).primaryText,
               size: 30.0,
             ),
             onPressed: () async {
@@ -78,12 +84,11 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
           ),
           title: Text(
             'معلومات الحساب',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
+            style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Outfit',
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  fontSize: 30.0,
+                  fontSize: 26.0,
                   letterSpacing: 0.0,
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w500,
                 ),
           ),
           actions: const [],
@@ -101,6 +106,57 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Align(
+                    alignment: const AlignmentDirectional(1.0, 0.0),
+                    child: InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        _model.editMode = !_model.editMode;
+                        safeSetState(() {});
+                      },
+                      child: Icon(
+                        Icons.edit,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        size: 30.0,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: const AlignmentDirectional(0.0, -1.0),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                      child: AuthUserStreamWidget(
+                        builder: (context) => Container(
+                          width: 104.0,
+                          height: 104.0,
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: Image.network(
+                                currentUserPhoto,
+                              ).image,
+                            ),
+                            boxShadow: const [
+                              BoxShadow(
+                                blurRadius: 4.0,
+                                color: Color(0x33000000),
+                                offset: Offset(
+                                  0.0,
+                                  2.0,
+                                ),
+                              )
+                            ],
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Align(
                     alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
@@ -109,56 +165,6 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Align(
-                              alignment: const AlignmentDirectional(1.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  _model.editMode = !_model.editMode;
-                                  safeSetState(() {});
-                                },
-                                child: Icon(
-                                  Icons.edit,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  size: 30.0,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 20.0),
-                              child: AuthUserStreamWidget(
-                                builder: (context) => Container(
-                                  width: 104.0,
-                                  height: 104.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: Image.network(
-                                        currentUserPhoto,
-                                      ).image,
-                                    ),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 4.0,
-                                        color: Color(0x33000000),
-                                        offset: Offset(
-                                          0.0,
-                                          2.0,
-                                        ),
-                                      )
-                                    ],
-                                    shape: BoxShape.circle,
-                                  ),
-                                ),
-                              ),
-                            ),
                             Form(
                               key: _model.formKey,
                               autovalidateMode: AutovalidateMode.disabled,
@@ -169,8 +175,7 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
                                     width: double.infinity,
                                     height: 73.0,
                                     decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: FlutterFlowTheme.of(context).info,
                                       boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 10.0,
@@ -226,6 +231,7 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
                                                         .override(
                                                           fontFamily:
                                                               'Readex Pro',
+                                                          color: Colors.black,
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -277,20 +283,23 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
                                                               8.0),
                                                     ),
                                                     filled: true,
-                                                    fillColor: _model.editMode
-                                                        ? const Color(0xFFD6D6D6)
-                                                        : const Color(0x00000000),
+                                                    fillColor:
+                                                        valueOrDefault<Color>(
+                                                      _model.editMode
+                                                          ? const Color(0xFFD6D6D6)
+                                                          : Colors.white,
+                                                      Colors.white,
+                                                    ),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
+                                                        fontFamily: 'Outfit',
+                                                        color: Colors.black,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
                                                       ),
                                                   cursorColor:
                                                       FlutterFlowTheme.of(
@@ -311,8 +320,7 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
                                     width: double.infinity,
                                     height: 73.0,
                                     decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: Colors.white,
                                       boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 10.0,
@@ -418,20 +426,23 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
                                                             8.0),
                                                   ),
                                                   filled: true,
-                                                  fillColor: _model.editMode
-                                                      ? const Color(0xFFD6D6D6)
-                                                      : const Color(0x00000000),
+                                                  fillColor:
+                                                      valueOrDefault<Color>(
+                                                    _model.editMode
+                                                        ? const Color(0xFFD6D6D6)
+                                                        : Colors.white,
+                                                    Colors.white,
+                                                  ),
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
+                                                          fontFamily: 'Outfit',
+                                                          color: Colors.black,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
                                                         ),
                                                 keyboardType:
                                                     TextInputType.emailAddress,
@@ -452,8 +463,7 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
                                     width: double.infinity,
                                     height: 73.0,
                                     decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: FlutterFlowTheme.of(context).info,
                                       boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 10.0,
@@ -500,15 +510,17 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
                                                         .override(
                                                           fontFamily:
                                                               'Readex Pro',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintText: 'TextField',
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
-                                                        .labelMedium
+                                                        .headlineMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
+                                                          fontFamily: 'Outfit',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -559,21 +571,19 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
                                                           BorderRadius.circular(
                                                               8.0),
                                                     ),
-                                                    filled: true,
-                                                    fillColor: _model.editMode
-                                                        ? const Color(0xFFD6D6D6)
-                                                        : const Color(0x00000000),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
+                                                        fontFamily: 'Outfit',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
                                                       ),
                                                   keyboardType:
                                                       TextInputType.phone,
@@ -596,8 +606,7 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
                                     width: double.infinity,
                                     height: 73.0,
                                     decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: FlutterFlowTheme.of(context).info,
                                       boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 10.0,
@@ -704,20 +713,23 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
                                                               8.0),
                                                     ),
                                                     filled: true,
-                                                    fillColor: _model.editMode
-                                                        ? const Color(0xFFD6D6D6)
-                                                        : const Color(0x00000000),
+                                                    fillColor:
+                                                        valueOrDefault<Color>(
+                                                      _model.editMode
+                                                          ? Colors.black
+                                                          : Colors.white,
+                                                      Colors.white,
+                                                    ),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
+                                                        fontFamily: 'Outfit',
+                                                        color: Colors.black,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
                                                       ),
                                                   cursorColor:
                                                       FlutterFlowTheme.of(
@@ -778,8 +790,7 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
                                         width: double.infinity,
                                         height: 73.0,
                                         decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
+                                          color: Colors.white,
                                           boxShadow: const [
                                             BoxShadow(
                                               blurRadius: 10.0,
@@ -817,12 +828,11 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
+                                                          fontFamily: 'Outfit',
+                                                          color: Colors.black,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
                                                         ),
                                               ),
                                             ].divide(const SizedBox(width: 18.0)),
@@ -831,168 +841,358 @@ class _ViewProfileSPWidgetState extends State<ViewProfileSPWidget> {
                                       );
                                     },
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 30.0, 0.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Align(
-                                          alignment:
-                                              const AlignmentDirectional(1.0, 0.0),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              boxShadow: const [
-                                                BoxShadow(
-                                                  blurRadius: 4.0,
-                                                  color: Color(0x33000000),
-                                                  offset: Offset(
-                                                    0.0,
-                                                    2.0,
-                                                  ),
-                                                )
-                                              ],
-                                              borderRadius:
-                                                  BorderRadius.circular(10.0),
+                                  StreamBuilder<List<SpRecord>>(
+                                    stream: querySpRecord(
+                                      queryBuilder: (spRecord) =>
+                                          spRecord.where(
+                                        'user',
+                                        isEqualTo: currentUserReference,
+                                      ),
+                                      singleRecord: true,
+                                    ),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                              ),
                                             ),
-                                            child: FFButtonWidget(
-                                              onPressed: () async {
-                                                if (_model.editMode == true) {
-                                                  if (_model.formKey
-                                                              .currentState ==
-                                                          null ||
-                                                      !_model
-                                                          .formKey.currentState!
-                                                          .validate()) {
-                                                    return;
-                                                  }
+                                          ),
+                                        );
+                                      }
+                                      List<SpRecord> specificallySpRecordList =
+                                          snapshot.data!;
+                                      // Return an empty Container when the item does not exist.
+                                      if (snapshot.data!.isEmpty) {
+                                        return Container();
+                                      }
+                                      final specificallySpRecord =
+                                          specificallySpRecordList.isNotEmpty
+                                              ? specificallySpRecordList.first
+                                              : null;
 
-                                                  await currentUserReference!
-                                                      .update(
-                                                          createUsers1RecordData(
-                                                    email: _model
-                                                        .emailFiledTextController
-                                                        .text,
-                                                    phoneNumber: _model
-                                                        .phoneNumberFiledTextController
-                                                        .text,
-                                                    location: _model
-                                                        .locationFeldTextController
-                                                        .text,
-                                                    displayName: _model
-                                                        .nameFiledTextController
-                                                        .text,
-                                                  ));
-                                                  _model.editMode = false;
-                                                  safeSetState(() {});
-                                                }
-                                              },
-                                              text: 'حفظ',
-                                              options: FFButtonOptions(
-                                                width: 130.0,
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 0.0, 16.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFF59C78C),
-                                                textStyle: FlutterFlowTheme.of(
+                                      return Container(
+                                        width: double.infinity,
+                                        height: 60.0,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          boxShadow: const [
+                                            BoxShadow(
+                                              blurRadius: 10.0,
+                                              color: Color(0x33000000),
+                                              offset: Offset(
+                                                0.0,
+                                                2.0,
+                                              ),
+                                            )
+                                          ],
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  20.0, 5.0, 20.0, 5.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'SAR',
+                                                style: FlutterFlowTheme.of(
                                                         context)
-                                                    .titleSmall
+                                                    .bodyMedium
                                                     .override(
                                                       fontFamily: 'Readex Pro',
-                                                      color:
+                                                      color: const Color(0xFFED7D41),
+                                                      fontSize: 16.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                              ),
+                                              Text(
+                                                'سعر خدمة الأونلاين',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          color: Colors.black,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
+                                              Expanded(
+                                                child: Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          1.0, 0.0),
+                                                  child: SizedBox(
+                                                    width: 200.0,
+                                                    child: TextFormField(
+                                                      controller: _model
+                                                          .textController5,
+                                                      focusNode: _model
+                                                          .textFieldFocusNode,
+                                                      autofocus: false,
+                                                      obscureText: false,
+                                                      decoration:
+                                                          InputDecoration(
+                                                        isDense: true,
+                                                        labelStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        hintText: 'TextField',
+                                                        hintStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        enabledBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              const BorderSide(
+                                                            color: Color(
+                                                                0xFF858B90),
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                        focusedBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                        errorBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .error,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                        focusedErrorBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .error,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                        filled: true,
+                                                        fillColor: Colors.white,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                      cursorColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .primaryText,
-                                                      letterSpacing: 0.0,
+                                                              .primaryBackground,
+                                                      validator: _model
+                                                          .textController5Validator
+                                                          .asValidator(context),
                                                     ),
-                                                elevation: 0.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Align(
-                                          alignment:
-                                              const AlignmentDirectional(1.0, 0.0),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              boxShadow: const [
-                                                BoxShadow(
-                                                  blurRadius: 4.0,
-                                                  color: Color(0x33000000),
-                                                  offset: Offset(
-                                                    0.0,
-                                                    2.0,
                                                   ),
-                                                )
-                                              ],
-                                              borderRadius:
-                                                  BorderRadius.circular(10.0),
-                                            ),
-                                            child: FFButtonWidget(
-                                              onPressed: () async {
-                                                context.pushNamed(
-                                                  'viewProfile_SP',
-                                                  extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
-                                                        const TransitionInfo(
-                                                      hasTransition: true,
-                                                      transitionType:
-                                                          PageTransitionType
-                                                              .leftToRight,
-                                                    ),
-                                                  },
-                                                );
-                                              },
-                                              text: 'إلغاء',
-                                              options: FFButtonOptions(
-                                                width: 130.0,
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 0.0, 16.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                elevation: 0.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                ),
                                               ),
-                                            ),
+                                            ].divide(const SizedBox(width: 18.0)),
                                           ),
                                         ),
-                                      ],
-                                    ),
+                                      );
+                                    },
                                   ),
                                 ].divide(const SizedBox(height: 10.0)),
                               ),
                             ),
                           ].divide(const SizedBox(height: 15.0)),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Flexible(
+                    child: Align(
+                      alignment: const AlignmentDirectional(0.0, 1.0),
+                      child: Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Align(
+                              alignment: const AlignmentDirectional(1.0, 0.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      blurRadius: 4.0,
+                                      color: Color(0x33000000),
+                                      offset: Offset(
+                                        0.0,
+                                        2.0,
+                                      ),
+                                    )
+                                  ],
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    if (_model.editMode == true) {
+                                      if (_model.formKey.currentState == null ||
+                                          !_model.formKey.currentState!
+                                              .validate()) {
+                                        return;
+                                      }
+
+                                      await currentUserReference!
+                                          .update(createUsers1RecordData(
+                                        email: _model
+                                            .emailFiledTextController.text,
+                                        phoneNumber: _model
+                                            .phoneNumberFiledTextController
+                                            .text,
+                                        location: _model
+                                            .locationFeldTextController.text,
+                                        displayName:
+                                            _model.nameFiledTextController.text,
+                                      ));
+                                      _model.editMode = false;
+                                      safeSetState(() {});
+                                    }
+                                  },
+                                  text: 'حفظ',
+                                  options: FFButtonOptions(
+                                    width: 130.0,
+                                    height: 40.0,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: const Color(0xFF59C78C),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 0.0,
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: const AlignmentDirectional(1.0, 0.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      blurRadius: 4.0,
+                                      color: Color(0x33000000),
+                                      offset: Offset(
+                                        0.0,
+                                        2.0,
+                                      ),
+                                    )
+                                  ],
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    context.pushNamed(
+                                      'viewProfile_SP',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: const TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.leftToRight,
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  text: 'إلغاء',
+                                  options: FFButtonOptions(
+                                    width: 130.0,
+                                    height: 40.0,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: Colors.white,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          color: Colors.black,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 0.0,
+                                    borderSide: const BorderSide(
+                                      color: Color(0x33000000),
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),

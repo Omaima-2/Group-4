@@ -44,15 +44,19 @@ class _NoServicesWidgetState extends State<NoServicesWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
-            child: Text(
-              'لم تقم بإضافة اي خدمة إلى حسابك حتى الأن',
-              textAlign: TextAlign.center,
-              style: FlutterFlowTheme.of(context).labelLarge.override(
-                    fontFamily: 'Readex Pro',
-                    letterSpacing: 0.0,
-                  ),
+          Flexible(
+            child: Align(
+              alignment: const AlignmentDirectional(0.0, 0.0),
+              child: Text(
+                'لم تقم بإضافة اي خدمة إلى حسابك حتى الأن',
+                textAlign: TextAlign.center,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Outfit',
+                      fontSize: 20.0,
+                      letterSpacing: 0.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+              ),
             ),
           ),
         ],

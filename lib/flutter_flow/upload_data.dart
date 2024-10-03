@@ -105,12 +105,12 @@ Future<List<SelectedFile>?> selectMediaWithSourceBottomSheet({
             ],
             if (allowPhoto && allowVideo) ...[
               createUploadMediaListTile(
-                'Gallery (Photo)',
+                ' الصور',
                 MediaSource.photoGallery,
               ),
               const Divider(),
               createUploadMediaListTile(
-                'Gallery (Video)',
+                'الفيديو',
                 MediaSource.videoGallery,
               ),
             ] else if (allowPhoto)
@@ -125,7 +125,7 @@ Future<List<SelectedFile>?> selectMediaWithSourceBottomSheet({
               ),
             if (!kIsWeb) ...[
               const Divider(),
-              createUploadMediaListTile('Camera', MediaSource.camera),
+              createUploadMediaListTile('الكاميرا', MediaSource.camera),
               const Divider(),
             ],
             const SizedBox(height: 10),

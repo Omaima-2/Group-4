@@ -54,10 +54,13 @@
 	<true/>
 
 	<key>NSCameraUsageDescription</key>
-    <string>تسمح لنا نستعمل كاميرتك جهازك يالغالي؟ </string>
+    <string>تسمح لنا نستعمل كاميرة جهازك يالغالي؟ </string>
 	<key>NSPhotoLibraryUsageDescription</key>
-    <string>نبي نضيف الصوره لك ، اسمح لنا نفتح البوم صورك </string>
-
+    <string>تسمح لنا نفتح البوم صورك عشان تختار الصوره منه يالغالي؟ </string>
+	<key>NSMicrophoneUsageDescription</key>
+    <string>تسمح لنا نسمع مشكلتك بصوتك الجميل؟</string>
+	<key>PermissionGroupNotification</key>
+    <string>نبي نضيف اشعارات عشان تذكرك </string>
 
 
 	<key>UILaunchStoryboardName</key>

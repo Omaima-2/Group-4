@@ -113,12 +113,14 @@ class FirebaseAuthManager extends AuthManager
     } on FirebaseAuthException {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('الرجاء اعادة المحاولة فيه مشكله بالتسجيل ')),
+        const SnackBar(content: Text('الرجاء اعادة المحاولة, حصلت مشكله بالتسجيل.')),
       );
       return null;
     }
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Password reset email sent')),
+      const SnackBar(
+          content:
+              Text('تم ارسال البريد الالكتروني لإعادة تعيين كلمة المرور.')),
     );
   }
 
@@ -184,7 +186,7 @@ class FirebaseAuthManager extends AuthManager
       } else if (phoneAuthManager.phoneAuthError != null) {
         final e = phoneAuthManager.phoneAuthError!;
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text('الرجاء اعادة المحاولة فيه مشكله بالتسجيل '),
+          content: Text('الرجاء اعادة المحاولة, حصلت مشكله بالتسجيل.'),
         ));
         phoneAuthManager.update(() => phoneAuthManager.phoneAuthError = null);
       }
@@ -290,10 +292,10 @@ class FirebaseAuthManager extends AuthManager
           : MitraqaFirebaseUser.fromUserCredential(userCredential);
     } on FirebaseAuthException catch (e) {
       final errorMsg = switch (e.code) {
-        'email-already-in-use' => 'البريد الألكتروني مسجل سابقًا في مطرقة',
+        'email-already-in-use' => 'البريد الألكتروني مسجل سابقًا في مطرقة.',
         'INVALID_LOGIN_CREDENTIALS' =>
-          'البريد الألكتروني/ كلمة المرور خاطئة، الرجاء اعادة المحاولة',
-        _ => 'الرجاء اعادة المحاولة فيه مشكله بالتسجيل ',
+          'البريد الألكتروني/ كلمة المرور خاطئة، الرجاء اعادة المحاولة.',
+        _ => 'الرجاء اعادة المحاولة, حصلت مشكله بالتسجيل.',
       };
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(

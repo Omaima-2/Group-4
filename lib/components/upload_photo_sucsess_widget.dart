@@ -51,7 +51,7 @@ class _UploadPhotoSucsessWidgetState extends State<UploadPhotoSucsessWidget> {
           width: 500.0,
           height: 272.0,
           decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).primaryText,
+            color: Colors.white,
             boxShadow: [
               BoxShadow(
                 blurRadius: 4.0,
@@ -92,8 +92,7 @@ class _UploadPhotoSucsessWidgetState extends State<UploadPhotoSucsessWidget> {
                     'تم الرفع',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Outfit',
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: Colors.black,
                           fontSize: 34.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w500,
@@ -104,7 +103,7 @@ class _UploadPhotoSucsessWidgetState extends State<UploadPhotoSucsessWidget> {
                   'تم رفع الصورة بنجاح ',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Outfit',
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        color: Colors.black,
                         fontSize: 18.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,

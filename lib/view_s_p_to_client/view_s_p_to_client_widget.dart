@@ -46,9 +46,9 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryText,
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryText,
+          backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -57,7 +57,7 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
             buttonSize: 60.0,
             icon: Icon(
               Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).secondaryBackground,
+              color: FlutterFlowTheme.of(context).primaryText,
               size: 30.0,
             ),
             onPressed: () async {
@@ -65,11 +65,12 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
             },
           ),
           title: Text(
-            'صفحة مقدم الخدمة ',
-            style: FlutterFlowTheme.of(context).headlineLarge.override(
+            ' مقدم الخدمة ',
+            style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Outfit',
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  fontSize: 26.0,
                   letterSpacing: 0.0,
+                  fontWeight: FontWeight.w500,
                 ),
           ),
           actions: const [],
@@ -82,16 +83,23 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: 393.0,
-                height: 239.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: Image.network(
-                      widget.sp!.photo,
-                    ).image,
+              Align(
+                alignment: const AlignmentDirectional(0.0, 1.0),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                  child: Container(
+                    width: 150.0,
+                    height: 150.0,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: Image.network(
+                          widget.sp!.photo,
+                        ).image,
+                      ),
+                      shape: BoxShape.circle,
+                    ),
                   ),
                 ),
               ),
@@ -101,19 +109,82 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      valueOrDefault<String>(
-                        widget.sp?.name,
-                        'اسم مقدم الخدمة',
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 28.0, 0.0),
+                      child: Text(
+                        valueOrDefault<String>(
+                          widget.sp?.name,
+                          'اسم مقدم الخدمة',
+                        ),
+                        textAlign: TextAlign.start,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Outfit',
+                              fontSize: 20.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                            ),
                       ),
-                      textAlign: TextAlign.start,
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Readex Pro',
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            fontSize: 30.0,
-                            letterSpacing: 0.0,
-                          ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 28.0, 0.0),
+                      child: Text(
+                        valueOrDefault<String>(
+                          widget.sp?.phoneNumber?.id,
+                          'رقم الهاتف',
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Outfit',
+                              color: Colors.black,
+                              fontSize: 20.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                            ),
+                      ),
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 73.0,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            20.0, 5.0, 20.0, 5.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const Icon(
+                              Icons.star_rate,
+                              color: Color(0xFFED7D41),
+                              size: 24.0,
+                            ),
+                            const Icon(
+                              Icons.star_rate,
+                              color: Color(0xFFED7D41),
+                              size: 24.0,
+                            ),
+                            const Icon(
+                              Icons.star_rate,
+                              color: Color(0xFFED7D41),
+                              size: 24.0,
+                            ),
+                            const Icon(
+                              Icons.star_rate,
+                              color: Color(0xFFCBD0D3),
+                              size: 24.0,
+                            ),
+                            const Icon(
+                              Icons.star_rate,
+                              color: Color(0xFFCBD0D3),
+                              size: 24.0,
+                            ),
+                          ].divide(const SizedBox(width: 18.0)),
+                        ),
+                      ),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
@@ -121,19 +192,29 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                       children: [
                         FFButtonWidget(
                           onPressed: () async {
-                            await OnlineRequestRecord.collection.doc().set({
-                              ...createOnlineRequestRecordData(
-                                client: currentUserReference,
-                                state: false,
-                                serviceProvider: widget.sp?.reference,
-                                clientName: currentUserDisplayName,
-                              ),
-                              ...mapToFirestore(
-                                {
-                                  'time_created': FieldValue.serverTimestamp(),
-                                },
-                              ),
-                            });
+                            await OrequestRecord.collection
+                                .doc()
+                                .set(createOrequestRecordData(
+                                  client: currentUserReference,
+                                  sp: widget.sp?.reference,
+                                  time: getCurrentTimestamp,
+                                  clientName: currentUserDisplayName,
+                                  clientPhoto: currentUserPhoto,
+                                  state: 'Pending ',
+                                ));
+
+                            context.pushNamed(
+                              'Online_session',
+                              queryParameters: {
+                                'spRequestOnline': serializeParam(
+                                  widget.sp,
+                                  ParamType.Document,
+                                ),
+                              }.withoutNulls,
+                              extra: <String, dynamic>{
+                                'spRequestOnline': widget.sp,
+                              },
+                            );
                           },
                           text: 'طلب استشارة اونلاين',
                           options: FFButtonOptions(
@@ -142,7 +223,7 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                                 16.0, 0.0, 16.0, 0.0),
                             iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
+                            color: const Color(0xFFED7D41),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -176,7 +257,7 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                                 16.0, 0.0, 16.0, 0.0),
                             iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
+                            color: const Color(0xFF7B7E7F),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(

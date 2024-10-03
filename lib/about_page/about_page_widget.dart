@@ -38,18 +38,18 @@ class _AboutPageWidgetState extends State<AboutPageWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryText,
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryText,
+          backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).secondaryBackground,
+              color: Colors.black,
               size: 30.0,
             ),
             onPressed: () async {
@@ -58,12 +58,11 @@ class _AboutPageWidgetState extends State<AboutPageWidget> {
           ),
           title: Text(
             'عن مطرقة',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
+            style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Outfit',
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  fontSize: 30.0,
+                  fontSize: 26.0,
                   letterSpacing: 0.0,
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w500,
                 ),
           ),
           actions: const [],
@@ -114,8 +113,7 @@ class _AboutPageWidgetState extends State<AboutPageWidget> {
                         'احصل على خدمات موثوقة ومضمونة لصيانة منزلك، من السباكة إلى الكهرباء وصيانة التكييف، بكل سهولة من خلال تطبيق مطرقة.',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
+                              color: Colors.black,
                               letterSpacing: 0.0,
                             ),
                       ),
@@ -140,8 +138,7 @@ class _AboutPageWidgetState extends State<AboutPageWidget> {
                         'واجهة سهلة الاستخدام، وخيارات مرنة للتواصل مع مقدمي الخدمات. اطمئن، فكل ما تحتاجه لصيانة منزلك أصبح على بُعد ضغطة زر.',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
+                              color: Colors.black,
                               letterSpacing: 0.0,
                             ),
                       ),
@@ -166,8 +163,7 @@ class _AboutPageWidgetState extends State<AboutPageWidget> {
                         ' مطرقة هو مشروع مبتكر تم تطويره بواسطة طالبات هندسة البرمجيات في جامعة الملك سعود، ليوفر حلولاً فعّالة وسهلة لصيانة وإصلاح المنازل.',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
+                              color: Colors.black,
                               letterSpacing: 0.0,
                             ),
                       ),

@@ -160,7 +160,7 @@ class _NavBarSPCopyWidgetState extends State<NavBarSPCopyWidget> {
                             size: 20.0,
                           ),
                           onPressed: () async {
-                            context.pushNamed('HomePageClient');
+                            context.pushNamed('home_client');
                           },
                         ),
                       ),

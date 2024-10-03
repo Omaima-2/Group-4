@@ -49,8 +49,8 @@ class _AServiceWidgetState extends State<AServiceWidget> {
     return Align(
       alignment: const AlignmentDirectional(0.0, 0.0),
       child: Container(
-        width: 204.0,
-        height: 205.0,
+        width: double.infinity,
+        height: double.infinity,
         decoration: BoxDecoration(
           boxShadow: const [
             BoxShadow(
@@ -68,106 +68,72 @@ class _AServiceWidgetState extends State<AServiceWidget> {
             begin: AlignmentDirectional(-1.0, -1.0),
             end: AlignmentDirectional(1.0, 1.0),
           ),
-          borderRadius: BorderRadius.circular(18.0),
+          borderRadius: BorderRadius.circular(10.0),
           shape: BoxShape.rectangle,
         ),
         child: Align(
-          alignment: const AlignmentDirectional(0.0, 0.0),
+          alignment: const AlignmentDirectional(-1.0, -1.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(2.0, 6.0, 2.0, 0.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20.0),
-                  child: Image.network(
-                    valueOrDefault<String>(
-                      widget.photoService,
-                      'https://live.staticflickr.com/5477/11771444463_b379b039bc_w.jpg',
-                    ),
-                    width: 254.0,
-                    height: 99.0,
+              Container(
+                width: 215.0,
+                height: 124.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  image: DecorationImage(
                     fit: BoxFit.cover,
+                    image: Image.network(
+                      valueOrDefault<String>(
+                        widget.photoService,
+                        'https://live.staticflickr.com/5477/11771444463_b379b039bc_w.jpg',
+                      ),
+                    ).image,
                   ),
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(0.0),
+                    bottomRight: Radius.circular(0.0),
+                    topLeft: Radius.circular(10.0),
+                    topRight: Radius.circular(10.0),
+                  ),
+                  shape: BoxShape.rectangle,
                 ),
               ),
-              Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
-                child: Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
-                        child: Text(
-                          valueOrDefault<String>(
-                            widget.nameService,
-                            'عنوان الخدمة',
-                          ),
-                          textAlign: TextAlign.start,
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Outfit',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    fontSize: 18.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                        ),
-                      ),
-                      Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
-                        child: RichText(
-                          textScaler: MediaQuery.of(context).textScaler,
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: valueOrDefault<String>(
-                                  widget.servicePrice?.toString(),
-                                  '0',
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              TextSpan(
-                                text: ' رس',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      letterSpacing: 0.0,
-                                    ),
-                              )
-                            ],
+              Flexible(
+                child: Align(
+                  alignment: const AlignmentDirectional(-1.0, -1.0),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Align(
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
+                          child: Text(
+                            valueOrDefault<String>(
+                              widget.nameService,
+                              'عنوان الخدمة',
+                            ),
+                            textAlign: TextAlign.start,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Outfit',
-                                  color: FlutterFlowTheme.of(context).alternate,
+                                  color: Colors.white,
+                                  fontSize: 20.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
-                          textAlign: TextAlign.end,
                         ),
-                      ),
-                    ]
-                        .divide(const SizedBox(height: 5.0))
-                        .addToStart(const SizedBox(height: 5.0)),
+                      ]
+                          .divide(const SizedBox(height: 20.0))
+                          .addToStart(const SizedBox(height: 5.0)),
+                    ),
                   ),
                 ),
               ),

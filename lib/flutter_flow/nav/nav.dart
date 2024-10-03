@@ -74,23 +74,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const LoginTestWidget() : const LoginTestWidget(),
+          appStateNotifier.loggedIn ? const LoginWidget() : const WelcomeWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const LoginTestWidget() : const LoginTestWidget(),
-        ),
-        FFRoute(
-          name: 'ServiceProviderRegister',
-          path: '/ServiceProvider',
-          builder: (context, params) => const ServiceProviderRegisterWidget(),
-        ),
-        FFRoute(
-          name: 'ClientRegriste',
-          path: '/clientRegriste',
-          builder: (context, params) => const ClientRegristeWidget(),
+              appStateNotifier.loggedIn ? const LoginWidget() : const WelcomeWidget(),
         ),
         FFRoute(
           name: 'forgetPassword',
@@ -98,25 +88,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ForgetPasswordWidget(),
         ),
         FFRoute(
-          name: 'HomePageClient',
+          name: 'home_client',
           path: '/homePageClient',
           requireAuth: true,
-          builder: (context, params) => const HomePageClientWidget(),
+          builder: (context, params) => const HomeClientWidget(),
         ),
         FFRoute(
-          name: 'login',
-          path: '/login',
-          builder: (context, params) => const LoginWidget(),
+          name: 'home_SP',
+          path: '/homeSP',
+          requireAuth: true,
+          builder: (context, params) => const HomeSPWidget(),
         ),
         FFRoute(
-          name: 'ServiceProviderHomePage',
-          path: '/serviceProviderHomePage',
-          builder: (context, params) => const ServiceProviderHomePageWidget(),
-        ),
-        FFRoute(
-          name: 'AdminHomePage',
-          path: '/adminHomePage',
-          builder: (context, params) => const AdminHomePageWidget(),
+          name: 'home_Admin',
+          path: '/homeAdmin',
+          builder: (context, params) => const HomeAdminWidget(),
         ),
         FFRoute(
           name: 'services',
@@ -137,19 +123,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'loginTest',
-          path: '/loginTest',
-          builder: (context, params) => const LoginTestWidget(),
+          name: 'login',
+          path: '/login',
+          builder: (context, params) => const LoginWidget(),
         ),
         FFRoute(
-          name: 'SignUpTestClient',
+          name: 'signup_client',
           path: '/SignUpTestClient',
-          builder: (context, params) => const SignUpTestClientWidget(),
+          builder: (context, params) => const SignupClientWidget(),
         ),
         FFRoute(
-          name: 'SignUpTestSP',
+          name: 'SignUp_sp',
           path: '/SignUpTestSP',
-          builder: (context, params) => const SignUpTestSPWidget(),
+          builder: (context, params) => const SignUpSpWidget(),
         ),
         FFRoute(
           name: 'add_Service',
@@ -162,9 +148,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const SettingClientWidget(),
         ),
         FFRoute(
-          name: 'Setting_ServiceProvider',
-          path: '/settingServiceProvider',
-          builder: (context, params) => const SettingServiceProviderWidget(),
+          name: 'setting_SP',
+          path: '/settingSP',
+          builder: (context, params) => const SettingSPWidget(),
         ),
         FFRoute(
           name: 'viewProfile_client',
@@ -187,9 +173,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ViewProfileSPWidget(),
         ),
         FFRoute(
-          name: 'Electricitys',
-          path: '/electricitys',
-          builder: (context, params) => const ElectricitysWidget(),
+          name: 'the_profestions',
+          path: '/theProfestions',
+          asyncParams: {
+            'profestion':
+                getDoc(['Professions'], ProfessionsRecord.fromSnapshot),
+          },
+          builder: (context, params) => TheProfestionsWidget(
+            profestion: params.getParam(
+              'profestion',
+              ParamType.Document,
+            ),
+          ),
         ),
         FFRoute(
           name: 'view_SP_toClient',
@@ -221,6 +216,58 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'My_Requests_SP',
           path: '/myRequestsSP',
           builder: (context, params) => const MyRequestsSPWidget(),
+        ),
+        FFRoute(
+          name: 'setting_admin',
+          path: '/settingAdmin',
+          builder: (context, params) => const SettingAdminWidget(),
+        ),
+        FFRoute(
+          name: 'Add_profestion',
+          path: '/addProfestion',
+          builder: (context, params) => const AddProfestionWidget(),
+        ),
+        FFRoute(
+          name: 'Online_session',
+          path: '/onlineSession',
+          requireAuth: true,
+          asyncParams: {
+            'spRequestOnline': getDoc(['SP'], SpRecord.fromSnapshot),
+          },
+          builder: (context, params) => OnlineSessionWidget(
+            spRequestOnline: params.getParam(
+              'spRequestOnline',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'onlineSession_Sp',
+          path: '/onlineSessionSp',
+          asyncParams: {
+            'onlineRequest': getDoc(['Orequest'], OrequestRecord.fromSnapshot),
+          },
+          builder: (context, params) => OnlineSessionSpWidget(
+            onlineRequest: params.getParam(
+              'onlineRequest',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'welcome',
+          path: '/welcome',
+          builder: (context, params) => const WelcomeWidget(),
+        ),
+        FFRoute(
+          name: 'Details01ProjectTracker',
+          path: '/details01ProjectTracker',
+          builder: (context, params) => const Details01ProjectTrackerWidget(),
+        ),
+        FFRoute(
+          name: 'List13PropertyListview',
+          path: '/list13PropertyListview',
+          builder: (context, params) => const List13PropertyListviewWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -391,7 +438,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/loginTest';
+            return '/welcome';
           }
           return null;
         },

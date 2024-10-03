@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -14,11 +15,6 @@ class SpRecord extends FirestoreRecord {
   ) {
     _initializeFields();
   }
-
-  // "created_time" field.
-  DateTime? _createdTime;
-  DateTime? get createdTime => _createdTime;
-  bool hasCreatedTime() => _createdTime != null;
 
   // "availability" field.
   bool? _availability;
@@ -45,13 +41,24 @@ class SpRecord extends FirestoreRecord {
   String get speciality => _speciality ?? '';
   bool hasSpeciality() => _speciality != null;
 
+  // "rate" field.
+  List<double>? _rate;
+  List<double> get rate => _rate ?? const [];
+  bool hasRate() => _rate != null;
+
+  // "phone_number" field.
+  DocumentReference? _phoneNumber;
+  DocumentReference? get phoneNumber => _phoneNumber;
+  bool hasPhoneNumber() => _phoneNumber != null;
+
   void _initializeFields() {
-    _createdTime = snapshotData['created_time'] as DateTime?;
     _availability = snapshotData['availability'] as bool?;
     _user = snapshotData['user'] as DocumentReference?;
     _name = snapshotData['name'] as String?;
     _photo = snapshotData['photo'] as String?;
     _speciality = snapshotData['Speciality'] as String?;
+    _rate = getDataList(snapshotData['rate']);
+    _phoneNumber = snapshotData['phone_number'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -88,21 +95,21 @@ class SpRecord extends FirestoreRecord {
 }
 
 Map<String, dynamic> createSpRecordData({
-  DateTime? createdTime,
   bool? availability,
   DocumentReference? user,
   String? name,
   String? photo,
   String? speciality,
+  DocumentReference? phoneNumber,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
-      'created_time': createdTime,
       'availability': availability,
       'user': user,
       'name': name,
       'photo': photo,
       'Speciality': speciality,
+      'phone_number': phoneNumber,
     }.withoutNulls,
   );
 
@@ -114,22 +121,25 @@ class SpRecordDocumentEquality implements Equality<SpRecord> {
 
   @override
   bool equals(SpRecord? e1, SpRecord? e2) {
-    return e1?.createdTime == e2?.createdTime &&
-        e1?.availability == e2?.availability &&
+    const listEquality = ListEquality();
+    return e1?.availability == e2?.availability &&
         e1?.user == e2?.user &&
         e1?.name == e2?.name &&
         e1?.photo == e2?.photo &&
-        e1?.speciality == e2?.speciality;
+        e1?.speciality == e2?.speciality &&
+        listEquality.equals(e1?.rate, e2?.rate) &&
+        e1?.phoneNumber == e2?.phoneNumber;
   }
 
   @override
   int hash(SpRecord? e) => const ListEquality().hash([
-        e?.createdTime,
         e?.availability,
         e?.user,
         e?.name,
         e?.photo,
-        e?.speciality
+        e?.speciality,
+        e?.rate,
+        e?.phoneNumber
       ]);
 
   @override

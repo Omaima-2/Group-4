@@ -1,10 +1,11 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/new_requst_widget.dart';
+import '/components/nav_bar_s_p_widget.dart';
+import '/components/request_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterflow_colorpicker/flutterflow_colorpicker.dart';
 import 'my_requests_s_p_model.dart';
 export 'my_requests_s_p_model.dart';
 
@@ -49,7 +50,7 @@ class _MyRequestsSPWidgetState extends State<MyRequestsSPWidget> {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: FlutterFlowTheme.of(context).primaryText,
+            backgroundColor: Colors.white,
             body: Center(
               child: SizedBox(
                 width: 50.0,
@@ -76,111 +77,118 @@ class _MyRequestsSPWidgetState extends State<MyRequestsSPWidget> {
           onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryText,
-            appBar: AppBar(
-              backgroundColor: FlutterFlowTheme.of(context).primaryText,
-              automaticallyImplyLeading: false,
-              title: Text(
-                'الطلبات',
-                style: FlutterFlowTheme.of(context).headlineLarge.override(
-                      fontFamily: 'Outfit',
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      letterSpacing: 0.0,
-                    ),
-              ),
-              actions: const [],
-              centerTitle: false,
-              elevation: 0.0,
-            ),
-            body: SafeArea(
-              top: true,
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  StreamBuilder<List<OnlineRequestRecord>>(
-                    stream: queryOnlineRequestRecord(
-                      queryBuilder: (onlineRequestRecord) =>
-                          onlineRequestRecord.where(
-                        'service_provider',
-                        isEqualTo: myRequestsSPSpRecord?.reference,
+            backgroundColor: Colors.white,
+            appBar: PreferredSize(
+              preferredSize: const Size.fromHeight(70.0),
+              child: AppBar(
+                backgroundColor: Colors.white,
+                automaticallyImplyLeading: false,
+                leading: FlutterFlowIconButton(
+                  borderColor: Colors.transparent,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 60.0,
+                  icon: const Icon(
+                    Icons.arrow_back_rounded,
+                    color: Color(0xFF14181B),
+                    size: 30.0,
+                  ),
+                  onPressed: () async {
+                    context.pop();
+                  },
+                ),
+                actions: const [],
+                flexibleSpace: FlexibleSpaceBar(
+                  title: Align(
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 60.0, 0.0),
+                      child: Text(
+                        'الطلبات',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Outfit',
+                              color: Colors.black,
+                              fontSize: 26.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                            ),
                       ),
                     ),
-                    builder: (context, snapshot) {
-                      // Customize what your widget looks like when it's loading.
-                      if (!snapshot.hasData) {
-                        return Center(
-                          child: SizedBox(
-                            width: 50.0,
-                            height: 50.0,
-                            child: CircularProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                FlutterFlowTheme.of(context).primary,
-                              ),
+                  ),
+                  centerTitle: true,
+                  expandedTitleScale: 1.0,
+                ),
+                elevation: 0.0,
+              ),
+            ),
+            body: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    StreamBuilder<List<OrequestRecord>>(
+                      stream: queryOrequestRecord(
+                        queryBuilder: (orequestRecord) => orequestRecord
+                            .where(
+                              'sp',
+                              isEqualTo: myRequestsSPSpRecord?.reference,
+                            )
+                            .where(
+                              'state',
+                              isEqualTo: 'Pending ',
                             ),
-                          ),
-                        );
-                      }
-                      List<OnlineRequestRecord>
-                          listViewOnlineRequestRecordList = snapshot.data!;
-
-                      return ListView.builder(
-                        padding: EdgeInsets.zero,
-                        shrinkWrap: true,
-                        scrollDirection: Axis.vertical,
-                        itemCount: listViewOnlineRequestRecordList.length,
-                        itemBuilder: (context, listViewIndex) {
-                          final listViewOnlineRequestRecord =
-                              listViewOnlineRequestRecordList[listViewIndex];
-                          return SizedBox(
-                            height: 200.0,
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                final colorPickedColor =
-                                    await showFFColorPicker(
-                                  context,
-                                  currentColor: _model.colorPicked ??=
-                                      FlutterFlowTheme.of(context).primary,
-                                  showRecentColors: true,
-                                  allowOpacity: true,
-                                  textColor:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  secondaryTextColor:
-                                      FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                  backgroundColor: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  primaryButtonBackgroundColor:
-                                      FlutterFlowTheme.of(context).primary,
-                                  primaryButtonTextColor: Colors.white,
-                                  primaryButtonBorderColor: Colors.transparent,
-                                  displayAsBottomSheet: isMobileWidth(context),
-                                );
-
-                                if (colorPickedColor != null) {
-                                  safeSetState(() =>
-                                      _model.colorPicked = colorPickedColor);
-                                }
-                              },
-                              child: NewRequstWidget(
-                                key: Key(
-                                    'Keyqle_${listViewIndex}_of_${listViewOnlineRequestRecordList.length}'),
-                                clientname:
-                                    listViewOnlineRequestRecord.clientName,
-                                clientphoto: myRequestsSPSpRecord!.photo,
-                                clientstate: true,
+                      ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
+                                ),
                               ),
                             ),
                           );
-                        },
-                      );
-                    },
+                        }
+                        List<OrequestRecord> listViewOrequestRecordList =
+                            snapshot.data!;
+
+                        return ListView.builder(
+                          padding: EdgeInsets.zero,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          itemCount: listViewOrequestRecordList.length,
+                          itemBuilder: (context, listViewIndex) {
+                            final listViewOrequestRecord =
+                                listViewOrequestRecordList[listViewIndex];
+                            return RequestWidget(
+                              key: Key(
+                                  'Key2mk_${listViewIndex}_of_${listViewOrequestRecordList.length}'),
+                              state: 'true',
+                              request: listViewOrequestRecord,
+                              nameC: listViewOrequestRecord.clientName,
+                              photoC: listViewOrequestRecord.clientPhoto,
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                wrapWithModel(
+                  model: _model.navBarSPModel,
+                  updateCallback: () => safeSetState(() {}),
+                  child: const NavBarSPWidget(
+                    page: 'My_requests_sp',
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         );

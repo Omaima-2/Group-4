@@ -46,6 +46,16 @@ class RequestRecord extends FirestoreRecord {
   int get price => _price ?? 0;
   bool hasPrice() => _price != null;
 
+  // "clientName" field.
+  String? _clientName;
+  String get clientName => _clientName ?? '';
+  bool hasClientName() => _clientName != null;
+
+  // "clientPhoto" field.
+  String? _clientPhoto;
+  String get clientPhoto => _clientPhoto ?? '';
+  bool hasClientPhoto() => _clientPhoto != null;
+
   void _initializeFields() {
     _client = snapshotData['client'] as DocumentReference?;
     _timeCreated = snapshotData['time_created'] as DateTime?;
@@ -53,6 +63,8 @@ class RequestRecord extends FirestoreRecord {
     _serviceProvider = snapshotData['service_provider'] as DocumentReference?;
     _services = getDataList(snapshotData['services']);
     _price = castToType<int>(snapshotData['price']);
+    _clientName = snapshotData['clientName'] as String?;
+    _clientPhoto = snapshotData['clientPhoto'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -95,6 +107,8 @@ Map<String, dynamic> createRequestRecordData({
   bool? state,
   DocumentReference? serviceProvider,
   int? price,
+  String? clientName,
+  String? clientPhoto,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -103,6 +117,8 @@ Map<String, dynamic> createRequestRecordData({
       'State': state,
       'service_provider': serviceProvider,
       'price': price,
+      'clientName': clientName,
+      'clientPhoto': clientPhoto,
     }.withoutNulls,
   );
 
@@ -120,7 +136,9 @@ class RequestRecordDocumentEquality implements Equality<RequestRecord> {
         e1?.state == e2?.state &&
         e1?.serviceProvider == e2?.serviceProvider &&
         listEquality.equals(e1?.services, e2?.services) &&
-        e1?.price == e2?.price;
+        e1?.price == e2?.price &&
+        e1?.clientName == e2?.clientName &&
+        e1?.clientPhoto == e2?.clientPhoto;
   }
 
   @override
@@ -130,7 +148,9 @@ class RequestRecordDocumentEquality implements Equality<RequestRecord> {
         e?.state,
         e?.serviceProvider,
         e?.services,
-        e?.price
+        e?.price,
+        e?.clientName,
+        e?.clientPhoto
       ]);
 
   @override

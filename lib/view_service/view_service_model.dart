@@ -22,7 +22,11 @@ class ViewServiceModel extends FlutterFlowModel<ViewServiceWidget> {
   String? Function(BuildContext, String?)? servNameTextControllerValidator;
   String? _servNameTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return 'اسم الخدمة لا يمكن ان يكون خاليًا ';
+    }
+
+    if (val.length > 25) {
+      return 'Maximum 25 characters allowed, currently ${val.length}.';
     }
 
     return null;
@@ -34,7 +38,11 @@ class ViewServiceModel extends FlutterFlowModel<ViewServiceWidget> {
   String? Function(BuildContext, String?)? servDescTextControllerValidator;
   String? _servDescTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return 'وصف الخدمة لا يمكن ان يكون خاليًا ';
+    }
+
+    if (val.length > 500) {
+      return 'Maximum 500 characters allowed, currently ${val.length}.';
     }
 
     return null;
@@ -46,7 +54,7 @@ class ViewServiceModel extends FlutterFlowModel<ViewServiceWidget> {
   String? Function(BuildContext, String?)? servPriceTextControllerValidator;
   String? _servPriceTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return 'تكلفة الخدمة لا يمكن ان تكون خالية';
     }
 
     if (val.isEmpty) {

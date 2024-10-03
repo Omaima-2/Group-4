@@ -1,7 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/components/upload_photo_sucsess_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -60,56 +60,64 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryText,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryText,
-          automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30.0,
-            borderWidth: 1.0,
-            buttonSize: 60.0,
-            icon: Icon(
-              Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).secondaryBackground,
-              size: 30.0,
-            ),
-            onPressed: () async {
-              context.pushNamed(
-                'Setting_client',
-                extra: <String, dynamic>{
-                  kTransitionInfoKey: const TransitionInfo(
-                    hasTransition: true,
-                    transitionType: PageTransitionType.rightToLeft,
-                  ),
-                },
-              );
-            },
-          ),
-          title: Text(
-            'معلومات الحساب',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Outfit',
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  fontSize: 30.0,
-                  letterSpacing: 0.0,
-                  fontWeight: FontWeight.w800,
-                ),
-          ),
-          actions: const [],
-          centerTitle: false,
-          elevation: 0.0,
-        ),
+        backgroundColor: Colors.white,
         body: SafeArea(
           top: true,
           child: Align(
             alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Flexible(
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 30.0, 10.0, 0.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('home_SP');
+                            },
+                            child: const Icon(
+                              Icons.arrow_back,
+                              color: Color(0xFF14181B),
+                              size: 30.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        flex: 5,
+                        child: Align(
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 20.0, 20.0, 0.0),
+                            child: Text(
+                              'الحساب و المعلومات',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Outfit',
+                                    color: const Color(0xFF14181B),
+                                    fontSize: 26.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                   Align(
                     alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
@@ -148,60 +156,81 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    final selectedMedia =
-                                        await selectMediaWithSourceBottomSheet(
-                                      context: context,
-                                      allowPhoto: true,
-                                    );
-                                    if (selectedMedia != null &&
-                                        selectedMedia.every((m) =>
-                                            validateFileFormat(
-                                                m.storagePath, context))) {
-                                      safeSetState(
-                                          () => _model.isDataUploading = true);
-                                      var selectedUploadedFiles =
-                                          <FFUploadedFile>[];
+                                    if (_model.editMode == true) {
+                                      final selectedMedia =
+                                          await selectMediaWithSourceBottomSheet(
+                                        context: context,
+                                        allowPhoto: true,
+                                      );
+                                      if (selectedMedia != null &&
+                                          selectedMedia.every((m) =>
+                                              validateFileFormat(
+                                                  m.storagePath, context))) {
+                                        safeSetState(() =>
+                                            _model.isDataUploading = true);
+                                        var selectedUploadedFiles =
+                                            <FFUploadedFile>[];
 
-                                      var downloadUrls = <String>[];
-                                      try {
-                                        selectedUploadedFiles = selectedMedia
-                                            .map((m) => FFUploadedFile(
-                                                  name: m.storagePath
-                                                      .split('/')
-                                                      .last,
-                                                  bytes: m.bytes,
-                                                  height: m.dimensions?.height,
-                                                  width: m.dimensions?.width,
-                                                  blurHash: m.blurHash,
-                                                ))
-                                            .toList();
+                                        var downloadUrls = <String>[];
+                                        try {
+                                          selectedUploadedFiles = selectedMedia
+                                              .map((m) => FFUploadedFile(
+                                                    name: m.storagePath
+                                                        .split('/')
+                                                        .last,
+                                                    bytes: m.bytes,
+                                                    height:
+                                                        m.dimensions?.height,
+                                                    width: m.dimensions?.width,
+                                                    blurHash: m.blurHash,
+                                                  ))
+                                              .toList();
 
-                                        downloadUrls = (await Future.wait(
-                                          selectedMedia.map(
-                                            (m) async => await uploadData(
-                                                m.storagePath, m.bytes),
-                                          ),
-                                        ))
-                                            .where((u) => u != null)
-                                            .map((u) => u!)
-                                            .toList();
-                                      } finally {
-                                        _model.isDataUploading = false;
+                                          downloadUrls = (await Future.wait(
+                                            selectedMedia.map(
+                                              (m) async => await uploadData(
+                                                  m.storagePath, m.bytes),
+                                            ),
+                                          ))
+                                              .where((u) => u != null)
+                                              .map((u) => u!)
+                                              .toList();
+                                        } finally {
+                                          _model.isDataUploading = false;
+                                        }
+                                        if (selectedUploadedFiles.length ==
+                                                selectedMedia.length &&
+                                            downloadUrls.length ==
+                                                selectedMedia.length) {
+                                          safeSetState(() {
+                                            _model.uploadedLocalFile =
+                                                selectedUploadedFiles.first;
+                                            _model.uploadedFileUrl =
+                                                downloadUrls.first;
+                                          });
+                                        } else {
+                                          safeSetState(() {});
+                                          return;
+                                        }
                                       }
-                                      if (selectedUploadedFiles.length ==
-                                              selectedMedia.length &&
-                                          downloadUrls.length ==
-                                              selectedMedia.length) {
-                                        safeSetState(() {
-                                          _model.uploadedLocalFile =
-                                              selectedUploadedFiles.first;
-                                          _model.uploadedFileUrl =
-                                              downloadUrls.first;
-                                        });
-                                      } else {
-                                        safeSetState(() {});
-                                        return;
-                                      }
+
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor: Colors.transparent,
+                                        enableDrag: false,
+                                        context: context,
+                                        builder: (context) {
+                                          return GestureDetector(
+                                            onTap: () => FocusScope.of(context)
+                                                .unfocus(),
+                                            child: Padding(
+                                              padding: MediaQuery.viewInsetsOf(
+                                                  context),
+                                              child: const UploadPhotoSucsessWidget(),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => safeSetState(() {}));
                                     }
                                   },
                                   child: Container(
@@ -213,7 +242,10 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                       image: DecorationImage(
                                         fit: BoxFit.cover,
                                         image: Image.network(
-                                          currentUserPhoto,
+                                          valueOrDefault<String>(
+                                            currentUserPhoto,
+                                            ' CAMSVENnZ3lNMm96Y1hJM05SSXlxZ0lJWTJvek9UQndObmVLQkNRS0VBb0dDQUVRQUJnQUdBTWlBRUFBV2dBUUFTSU9WWEJzYjJGa1JHRjBZVjkxTmpBPQ==',
+                                          ),
                                         ).image,
                                       ),
                                       boxShadow: const [
@@ -242,8 +274,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                     width: double.infinity,
                                     height: 73.0,
                                     decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: Colors.white,
                                       boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 10.0,
@@ -290,6 +321,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                         .override(
                                                           fontFamily:
                                                               'Readex Pro',
+                                                          color: Colors.black,
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintText: 'TextField',
@@ -350,9 +382,13 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                               8.0),
                                                     ),
                                                     filled: true,
-                                                    fillColor: _model.editMode
-                                                        ? const Color(0xFFD6D6D6)
-                                                        : const Color(0x00000000),
+                                                    fillColor:
+                                                        valueOrDefault<Color>(
+                                                      _model.editMode
+                                                          ? Colors.white
+                                                          : Colors.white,
+                                                      Colors.white,
+                                                    ),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -360,9 +396,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                       .override(
                                                         fontFamily:
                                                             'Readex Pro',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
+                                                        color: Colors.black,
                                                         letterSpacing: 0.0,
                                                       ),
                                                   cursorColor:
@@ -384,8 +418,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                     width: double.infinity,
                                     height: 73.0,
                                     decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: Colors.white,
                                       boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 10.0,
@@ -491,9 +524,13 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                             8.0),
                                                   ),
                                                   filled: true,
-                                                  fillColor: _model.editMode
-                                                      ? const Color(0xFFD6D6D6)
-                                                      : const Color(0x00000000),
+                                                  fillColor:
+                                                      valueOrDefault<Color>(
+                                                    _model.editMode
+                                                        ? Colors.white
+                                                        : Colors.white,
+                                                    Colors.white,
+                                                  ),
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -501,9 +538,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                         .override(
                                                           fontFamily:
                                                               'Readex Pro',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
+                                                          color: Colors.black,
                                                           letterSpacing: 0.0,
                                                         ),
                                                 keyboardType:
@@ -525,8 +560,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                     width: double.infinity,
                                     height: 73.0,
                                     decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: Colors.white,
                                       boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 10.0,
@@ -633,9 +667,13 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                               8.0),
                                                     ),
                                                     filled: true,
-                                                    fillColor: _model.editMode
-                                                        ? const Color(0xFFD6D6D6)
-                                                        : const Color(0x00000000),
+                                                    fillColor:
+                                                        valueOrDefault<Color>(
+                                                      _model.editMode
+                                                          ? Colors.white
+                                                          : Colors.white,
+                                                      Colors.white,
+                                                    ),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -643,9 +681,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                       .override(
                                                         fontFamily:
                                                             'Readex Pro',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
+                                                        color: Colors.black,
                                                         letterSpacing: 0.0,
                                                       ),
                                                   keyboardType:
@@ -669,8 +705,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                     width: double.infinity,
                                     height: 73.0,
                                     decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: Colors.white,
                                       boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 10.0,
@@ -777,9 +812,13 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                               8.0),
                                                     ),
                                                     filled: true,
-                                                    fillColor: _model.editMode
-                                                        ? const Color(0xFFD6D6D6)
-                                                        : const Color(0x00000000),
+                                                    fillColor:
+                                                        valueOrDefault<Color>(
+                                                      _model.editMode
+                                                          ? Colors.white
+                                                          : Colors.white,
+                                                      Colors.white,
+                                                    ),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -787,9 +826,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                       .override(
                                                         fontFamily:
                                                             'Readex Pro',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
+                                                        color: Colors.black,
                                                         letterSpacing: 0.0,
                                                       ),
                                                   cursorColor:
@@ -946,18 +983,14 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                     const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
+                                                color: Colors.white,
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
                                                           fontFamily:
                                                               'Readex Pro',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
+                                                          color: Colors.black,
                                                           letterSpacing: 0.0,
                                                         ),
                                                 elevation: 0.0,

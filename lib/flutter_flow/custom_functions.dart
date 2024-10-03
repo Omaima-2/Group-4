@@ -105,26 +105,39 @@ String validatePhoneNumber(String phoneNumber) {
 }
 
 String validatePassword(String password) {
-  // Regular expression to validate:
+  // Regular expression to detect Arabic characters
+  final RegExp arabicRegex = RegExp(r'[\u0600-\u06FF]');
 
-  // Check if the password is tohort
-  if (password.length < 8) {
-    return 'كلمة المرور غير صحيحة';
+  // Check if the password contains Arabic characters
+  if (arabicRegex.hasMatch(password)) {
+    return 'كلمة المرور يجب ألا تحتوي على حروف عربية'; // Password should not contain Arabic letters
+  }
+
+  // Check if the password is too short
+  if (password.length < 6) {
+    return 'كلمة المرور قصيرة جدًا'; // Password is too short
   }
 
   // If all conditions are met, return valid message
-  return password;
+  return password; // Password is valid
 }
 
-String? validateLocation(String? locatiom) {
-  // a function the receive a string and shecks that it stars with only 4 char and then 4 numbers like this RRRI4333 and return a msg if no match
-  // Regular expression to match a string that starts with 3 uppercase letters followed by 4 digits
+String? validateLocation(String? location) {
+  // Regular expression to match a string that starts with 4 uppercase letters followed by 4 digits
   final RegExp locationRegex = RegExp(r'^[A-Za-z]{4}\d{4}$');
 
+  // Regular expression to detect Arabic characters
+  final RegExp arabicRegex = RegExp(r'[\u0600-\u06FF]');
+
+  // Check if the location is null or contains Arabic characters
+  if (location == null || arabicRegex.hasMatch(location)) {
+    return 'Location'; // Return error message for Arabic letters or null input
+  }
+
   // Check if the location matches the regex pattern
-  if (locationRegex.hasMatch(locatiom!)) {
-    return locatiom; // Return null for valid location
+  if (locationRegex.hasMatch(location)) {
+    return location; // Return null for valid location
   } else {
-    return 'Location must start with 3 uppercase letters followed by 4 digits'; // Return error message for invalid format
+    return 'Location must start with 4 uppercase letters followed by 4 digits'; // Return error message for invalid format
   }
 }

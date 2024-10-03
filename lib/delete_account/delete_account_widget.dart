@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -40,37 +39,34 @@ class _DeleteAccountWidgetState extends State<DeleteAccountWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryText,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryText,
-          automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30.0,
-            borderWidth: 1.0,
-            buttonSize: 60.0,
-            icon: Icon(
-              Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).secondaryBackground,
-              size: 30.0,
-            ),
-            onPressed: () async {
-              context.pop();
-            },
-          ),
-          title: Text(
-            'حذف الحساب',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Outfit',
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  fontSize: 30.0,
-                  letterSpacing: 0.0,
-                  fontWeight: FontWeight.w800,
+        backgroundColor: Colors.white,
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(60.0),
+          child: AppBar(
+            backgroundColor: Colors.white,
+            automaticallyImplyLeading: false,
+            actions: const [],
+            flexibleSpace: FlexibleSpaceBar(
+              title: Align(
+                alignment: const AlignmentDirectional(-1.0, 1.0),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 40.0, 0.0),
+                  child: Text(
+                    'حذف الحساب',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Outfit',
+                          fontSize: 26.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w500,
+                        ),
+                  ),
                 ),
+              ),
+              centerTitle: false,
+              expandedTitleScale: 1.0,
+            ),
+            elevation: 0.0,
           ),
-          actions: const [],
-          centerTitle: false,
-          elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
@@ -82,135 +78,143 @@ class _DeleteAccountWidgetState extends State<DeleteAccountWidget> {
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'حزينين لرؤيتك تغادر ',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Outfit',
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              fontSize: 20.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                            ),
-                      ),
-                      Text(
-                        'حذف حسابك سيؤدي إلى حذف جميع معلوماتك وبياناتك المسجلة في مطرقة، هل انت واثق من رغبتك في حذف حسابك ومغادرة مطرقة؟ ',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Outfit',
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                            ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Align(
-                              alignment: const AlignmentDirectional(1.0, 0.0),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  boxShadow: const [
-                                    BoxShadow(
-                                      blurRadius: 4.0,
-                                      color: Color(0x33000000),
-                                      offset: Offset(
-                                        0.0,
-                                        2.0,
-                                      ),
-                                    )
-                                  ],
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    context.safePop();
-                                  },
-                                  text: 'إلغاء',
-                                  options: FFButtonOptions(
-                                    width: 130.0,
-                                    height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          letterSpacing: 0.0,
-                                        ),
-                                    elevation: 0.0,
-                                    borderRadius: BorderRadius.circular(8.0),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'حزينين لرؤيتك تغادر ',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Outfit',
+                                    color: Colors.black,
+                                    fontSize: 20.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
                                   ),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: const AlignmentDirectional(1.0, 0.0),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  boxShadow: const [
-                                    BoxShadow(
-                                      blurRadius: 4.0,
-                                      color: Color(0x33000000),
-                                      offset: Offset(
-                                        0.0,
-                                        2.0,
-                                      ),
-                                    )
-                                  ],
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                child: Align(
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                        ),
+                        Text(
+                          'حذف حسابك سيؤدي إلى حذف جميع معلوماتك وبياناتك المسجلة في مطرقة، هل انت واثق من رغبتك في حذف حسابك ومغادرة مطرقة؟ ',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Outfit',
+                                    color: Colors.black,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 20.0, 0.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Align(
+                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    boxShadow: const [
+                                      BoxShadow(
+                                        blurRadius: 4.0,
+                                        color: Color(0x33FFFFFF),
+                                        offset: Offset(
+                                          0.0,
+                                          2.0,
+                                        ),
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await authManager.deleteUser(context);
-
-                                      context.pushNamed('loginTest');
+                                      context.safePop();
                                     },
-                                    text: 'حذف الحساب',
+                                    text: 'إلغاء',
                                     options: FFButtonOptions(
-                                      width: 140.0,
+                                      width: 130.0,
                                       height: 40.0,
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       iconPadding:
                                           const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFFEE6062),
+                                      color: Colors.white,
                                       textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
+                                          .bodyMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                            fontFamily: 'Outfit',
+                                            fontSize: 18.0,
                                             letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
                                           ),
                                       elevation: 0.0,
+                                      borderSide: const BorderSide(
+                                        color: Color(0x33000000),
+                                      ),
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                              Align(
+                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    boxShadow: const [
+                                      BoxShadow(
+                                        blurRadius: 4.0,
+                                        color: Color(0x33000000),
+                                        offset: Offset(
+                                          0.0,
+                                          2.0,
+                                        ),
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  child: Align(
+                                    alignment: const AlignmentDirectional(1.0, 0.0),
+                                    child: FFButtonWidget(
+                                      onPressed: () async {
+                                        await authManager.deleteUser(context);
+
+                                        context.pushNamed('login');
+                                      },
+                                      text: 'حذف الحساب',
+                                      options: FFButtonOptions(
+                                        width: 140.0,
+                                        height: 40.0,
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 0.0, 16.0, 0.0),
+                                        iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: const Color(0xFFEE6062),
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 18.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                        elevation: 0.0,
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ].divide(const SizedBox(height: 8.0)),
+                      ].divide(const SizedBox(height: 8.0)),
+                    ),
                   ),
                 ].divide(const SizedBox(height: 20.0)),
               ),

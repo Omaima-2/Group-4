@@ -6,12 +6,12 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'schema/util/firestore_util.dart';
 
 import 'schema/sp_record.dart';
-import 'schema/client_record.dart';
 import 'schema/users1_record.dart';
 import 'schema/services_record.dart';
 import 'schema/admin_record.dart';
 import 'schema/request_record.dart';
-import 'schema/online_request_record.dart';
+import 'schema/professions_record.dart';
+import 'schema/orequest_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -21,12 +21,12 @@ export 'schema/util/firestore_util.dart';
 export 'schema/util/schema_util.dart';
 
 export 'schema/sp_record.dart';
-export 'schema/client_record.dart';
 export 'schema/users1_record.dart';
 export 'schema/services_record.dart';
 export 'schema/admin_record.dart';
 export 'schema/request_record.dart';
-export 'schema/online_request_record.dart';
+export 'schema/professions_record.dart';
+export 'schema/orequest_record.dart';
 
 /// Functions to query SpRecords (as a Stream and as a Future).
 Future<int> querySpRecordCount({
@@ -60,43 +60,6 @@ Future<List<SpRecord>> querySpRecordOnce({
     queryCollectionOnce(
       SpRecord.collection,
       SpRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-/// Functions to query ClientRecords (as a Stream and as a Future).
-Future<int> queryClientRecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      ClientRecord.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<ClientRecord>> queryClientRecord({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      ClientRecord.collection,
-      ClientRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<ClientRecord>> queryClientRecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      ClientRecord.collection,
-      ClientRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
@@ -250,38 +213,75 @@ Future<List<RequestRecord>> queryRequestRecordOnce({
       singleRecord: singleRecord,
     );
 
-/// Functions to query OnlineRequestRecords (as a Stream and as a Future).
-Future<int> queryOnlineRequestRecordCount({
+/// Functions to query ProfessionsRecords (as a Stream and as a Future).
+Future<int> queryProfessionsRecordCount({
   Query Function(Query)? queryBuilder,
   int limit = -1,
 }) =>
     queryCollectionCount(
-      OnlineRequestRecord.collection,
+      ProfessionsRecord.collection,
       queryBuilder: queryBuilder,
       limit: limit,
     );
 
-Stream<List<OnlineRequestRecord>> queryOnlineRequestRecord({
+Stream<List<ProfessionsRecord>> queryProfessionsRecord({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollection(
-      OnlineRequestRecord.collection,
-      OnlineRequestRecord.fromSnapshot,
+      ProfessionsRecord.collection,
+      ProfessionsRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
     );
 
-Future<List<OnlineRequestRecord>> queryOnlineRequestRecordOnce({
+Future<List<ProfessionsRecord>> queryProfessionsRecordOnce({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollectionOnce(
-      OnlineRequestRecord.collection,
-      OnlineRequestRecord.fromSnapshot,
+      ProfessionsRecord.collection,
+      ProfessionsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query OrequestRecords (as a Stream and as a Future).
+Future<int> queryOrequestRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      OrequestRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<OrequestRecord>> queryOrequestRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      OrequestRecord.collection,
+      OrequestRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<OrequestRecord>> queryOrequestRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      OrequestRecord.collection,
+      OrequestRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

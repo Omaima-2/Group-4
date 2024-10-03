@@ -78,6 +78,11 @@ class ViewProfileSPModel extends FlutterFlowModel<ViewProfileSPWidget> {
     return null;
   }
 
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
+  TextEditingController? textController5;
+  String? Function(BuildContext, String?)? textController5Validator;
+
   @override
   void initState(BuildContext context) {
     nameFiledTextControllerValidator = _nameFiledTextControllerValidator;
@@ -100,5 +105,8 @@ class ViewProfileSPModel extends FlutterFlowModel<ViewProfileSPWidget> {
 
     locationFeldFocusNode?.dispose();
     locationFeldTextController?.dispose();
+
+    textFieldFocusNode?.dispose();
+    textController5?.dispose();
   }
 }

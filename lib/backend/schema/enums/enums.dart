@@ -6,11 +6,6 @@ enum Rolee {
   admin,
 }
 
-enum Active {
-  active,
-  inactive,
-}
-
 extension FFEnumExtensions<T extends Enum> on T {
   String serialize() => name;
 }
@@ -24,8 +19,6 @@ T? deserializeEnum<T>(String? value) {
   switch (T) {
     case (Rolee):
       return Rolee.values.deserialize(value) as T?;
-    case (Active):
-      return Active.values.deserialize(value) as T?;
     default:
       return null;
   }

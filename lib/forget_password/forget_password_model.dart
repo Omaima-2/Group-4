@@ -16,8 +16,11 @@ class ForgetPasswordModel extends FlutterFlowModel<ForgetPasswordWidget> {
       return 'البريد الإلكتروني مطلوب';
     }
 
+    if (val.length > 30) {
+      return 'Maximum 30 characters allowed, currently ${val.length}.';
+    }
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
-      return 'الرجاء التأكد من البريد الألكتروني ';
+      return 'الرجاء التأكد من صحة البريد الألكتروني ';
     }
     return null;
   }
