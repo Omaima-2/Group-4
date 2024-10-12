@@ -4,12 +4,9 @@ import '/component/nav_bar_s_p/nav_bar_s_p_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/sp/components/a_service/a_service_widget.dart';
 import '/sp/components/no_services/no_services_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'services_model.dart';
 export 'services_model.dart';
 
@@ -58,7 +55,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                 Flexible(
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -67,7 +64,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                       onTap: () async {
                         context.pushNamed('home_SP');
                       },
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_back,
                         color: Color(0xFF14181B),
                         size: 30.0,
@@ -78,10 +75,10 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                 Flexible(
                   flex: 5,
                   child: Align(
-                    alignment: AlignmentDirectional(-1.0, -1.0),
+                    alignment: const AlignmentDirectional(-1.0, -1.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 20.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 20.0, 0.0),
                       child: Text(
                         'خدماتي',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -99,14 +96,14 @@ class _ServicesWidgetState extends State<ServicesWidget> {
             ),
             Flexible(
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 20.0, 24.0, 50.0),
                         child: StreamBuilder<List<ServicesRecord>>(
                           stream: queryServicesRecord(
@@ -134,20 +131,20 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                             List<ServicesRecord> gridViewServicesRecordList =
                                 snapshot.data!;
                             if (gridViewServicesRecordList.isEmpty) {
-                              return Center(
+                              return const Center(
                                 child: NoServicesWidget(),
                               );
                             }
 
                             return GridView.builder(
-                              padding: EdgeInsets.fromLTRB(
+                              padding: const EdgeInsets.fromLTRB(
                                 0,
                                 20.0,
                                 0,
                                 10.0,
                               ),
                               gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
                                 crossAxisSpacing: 15.0,
                                 mainAxisSpacing: 15.0,
@@ -175,7 +172,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                                       }.withoutNulls,
                                       extra: <String, dynamic>{
                                         'serviceDoc': gridViewServicesRecord,
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.rightToLeft,
@@ -206,24 +203,24 @@ class _ServicesWidgetState extends State<ServicesWidget> {
             ),
             Expanded(
               child: Align(
-                alignment: AlignmentDirectional(1.0, 1.0),
+                alignment: const AlignmentDirectional(1.0, 1.0),
                 child: Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
+                      const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(1.0, 1.0),
+                        alignment: const AlignmentDirectional(1.0, 1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 0.0, 10.0),
                           child: FlutterFlowIconButton(
                             borderRadius: 150.0,
                             buttonSize: 55.0,
-                            fillColor: Color(0xFFED7D41),
+                            fillColor: const Color(0xFFED7D41),
                             icon: Icon(
                               Icons.add,
                               color: FlutterFlowTheme.of(context).info,
@@ -235,7 +232,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                           ),
                         ),
                       ),
-                    ].divide(SizedBox(height: 10.0)),
+                    ].divide(const SizedBox(height: 10.0)),
                   ),
                 ),
               ),
@@ -243,7 +240,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
             wrapWithModel(
               model: _model.navBarSPModel,
               updateCallback: () => safeSetState(() {}),
-              child: NavBarSPWidget(
+              child: const NavBarSPWidget(
                 page: 'services',
               ),
             ),

@@ -6,17 +6,11 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:provider/provider.dart';
 import 'signup_client_model.dart';
 export 'signup_client_model.dart';
 
@@ -71,8 +65,8 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 30.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -91,8 +85,8 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
             curve: Curves.easeInOut,
             delay: 150.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 30.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -110,15 +104,15 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 60.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: Offset(-0.349, 0),
-            end: Offset(0, 0),
+            begin: const Offset(-0.349, 0),
+            end: const Offset(0, 0),
           ),
         ],
       ),
@@ -149,7 +143,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
               Container(
                 width: double.infinity,
                 height: 150.0,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
                       Color(0xFFF68833),
@@ -164,7 +158,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                 child: Container(
                   width: 100.0,
                   height: 100.0,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       colors: [Color(0x00FFFFFF), Colors.white],
                       stops: [0.0, 1.0],
@@ -179,13 +173,13 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                     children: [
                       Flexible(
                         child: Align(
-                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
                           child: FlutterFlowIconButton(
                             borderColor: Colors.transparent,
                             borderRadius: 30.0,
                             borderWidth: 1.0,
                             buttonSize: 60.0,
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.arrow_back_rounded,
                               color: Colors.black,
                               size: 30.0,
@@ -199,7 +193,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                       Flexible(
                         flex: 2,
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
                             'التسجيل كعميل',
@@ -207,7 +201,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                 .headlineSmall
                                 .override(
                                   fontFamily: 'Outfit',
-                                  color: Color(0xFF101213),
+                                  color: const Color(0xFF101213),
                                   fontSize: 24.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
@@ -219,7 +213,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                       Flexible(
                         flex: 2,
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Text(
                             'نورتنا،مطرقتنا بخدمتك',
@@ -227,7 +221,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Plus Jakarta Sans',
-                                  color: Color(0xFF57636C),
+                                  color: const Color(0xFF57636C),
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -242,31 +236,31 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
               ),
               Flexible(
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 0.0),
                           child: Form(
                             key: _model.formKey,
                             autovalidateMode: AutovalidateMode.disabled,
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 0.0),
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 5.0),
-                                      child: Container(
+                                      child: SizedBox(
                                         width: double.infinity,
                                         child: TextFormField(
                                           controller:
@@ -276,7 +270,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                           onChanged: (_) =>
                                               EasyDebounce.debounce(
                                             '_model.displayNameTextController',
-                                            Duration(milliseconds: 500),
+                                            const Duration(milliseconds: 500),
                                             () async {
                                               if ((_model.displayNameTextController
                                                           .text ==
@@ -305,17 +299,17 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    duration: Duration(
+                                                    duration: const Duration(
                                                         milliseconds: 7500),
                                                     backgroundColor:
-                                                        Color(0xFFFF4336),
+                                                        const Color(0xFFFF4336),
                                                   ),
                                                 );
                                               }
                                             },
                                           ),
                                           autofocus: true,
-                                          autofillHints: [AutofillHints.name],
+                                          autofillHints: const [AutofillHints.name],
                                           textInputAction: TextInputAction.next,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -326,14 +320,14 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                     .override(
                                                       fontFamily:
                                                           'Plus Jakarta Sans',
-                                                      color: Color(0xFF57636C),
+                                                      color: const Color(0xFF57636C),
                                                       fontSize: 14.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFE0E3E7),
                                                 width: 2.0,
                                               ),
@@ -341,7 +335,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                   BorderRadius.circular(12.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFF4B39EF),
                                                 width: 2.0,
                                               ),
@@ -349,7 +343,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                   BorderRadius.circular(12.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFFF5963),
                                                 width: 2.0,
                                               ),
@@ -358,7 +352,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFFF5963),
                                                 width: 2.0,
                                               ),
@@ -368,13 +362,13 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
-                                                EdgeInsets.all(24.0),
+                                                const EdgeInsets.all(24.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Plus Jakarta Sans',
-                                                color: Color(0xFF101213),
+                                                color: const Color(0xFF101213),
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
@@ -386,9 +380,9 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 5.0),
-                                      child: Container(
+                                      child: SizedBox(
                                         width: double.infinity,
                                         child: TextFormField(
                                           controller:
@@ -398,7 +392,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                           onChanged: (_) =>
                                               EasyDebounce.debounce(
                                             '_model.emailAddressTextController',
-                                            Duration(milliseconds: 1700),
+                                            const Duration(milliseconds: 1700),
                                             () async {
                                               if ((_model.emailAddressTextController
                                                           .text ==
@@ -426,17 +420,17 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    duration: Duration(
+                                                    duration: const Duration(
                                                         milliseconds: 7500),
                                                     backgroundColor:
-                                                        Color(0xFFFF4336),
+                                                        const Color(0xFFFF4336),
                                                   ),
                                                 );
                                               }
                                             },
                                           ),
                                           autofocus: true,
-                                          autofillHints: [AutofillHints.email],
+                                          autofillHints: const [AutofillHints.email],
                                           textInputAction: TextInputAction.next,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -447,14 +441,14 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                     .override(
                                                       fontFamily:
                                                           'Plus Jakarta Sans',
-                                                      color: Color(0xFF57636C),
+                                                      color: const Color(0xFF57636C),
                                                       fontSize: 14.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFE0E3E7),
                                                 width: 2.0,
                                               ),
@@ -462,7 +456,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                   BorderRadius.circular(12.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFF4B39EF),
                                                 width: 2.0,
                                               ),
@@ -470,7 +464,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                   BorderRadius.circular(12.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFFF5963),
                                                 width: 2.0,
                                               ),
@@ -479,7 +473,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFFF5963),
                                                 width: 2.0,
                                               ),
@@ -489,13 +483,13 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
-                                                EdgeInsets.all(24.0),
+                                                const EdgeInsets.all(24.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Plus Jakarta Sans',
-                                                color: Color(0xFF101213),
+                                                color: const Color(0xFF101213),
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
@@ -509,9 +503,9 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 5.0),
-                                      child: Container(
+                                      child: SizedBox(
                                         width: double.infinity,
                                         child: TextFormField(
                                           controller:
@@ -520,7 +514,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                           onChanged: (_) =>
                                               EasyDebounce.debounce(
                                             '_model.passwordTextController',
-                                            Duration(milliseconds: 1500),
+                                            const Duration(milliseconds: 1500),
                                             () async {
                                               if ((_model.passwordTextController
                                                           .text ==
@@ -556,10 +550,10 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                                   0.0,
                                                             ),
                                                       ),
-                                                      duration: Duration(
+                                                      duration: const Duration(
                                                           milliseconds: 4000),
                                                       backgroundColor:
-                                                          Color(0xFFFF4336),
+                                                          const Color(0xFFFF4336),
                                                     ),
                                                   );
                                                 } else {
@@ -580,10 +574,10 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                                   0.0,
                                                             ),
                                                       ),
-                                                      duration: Duration(
+                                                      duration: const Duration(
                                                           milliseconds: 7500),
                                                       backgroundColor:
-                                                          Color(0xFFFF4336),
+                                                          const Color(0xFFFF4336),
                                                     ),
                                                   );
                                                 }
@@ -591,7 +585,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                             },
                                           ),
                                           autofocus: false,
-                                          autofillHints: [
+                                          autofillHints: const [
                                             AutofillHints.password
                                           ],
                                           textInputAction: TextInputAction.done,
@@ -605,14 +599,14 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                     .override(
                                                       fontFamily:
                                                           'Plus Jakarta Sans',
-                                                      color: Color(0xFF57636C),
+                                                      color: const Color(0xFF57636C),
                                                       fontSize: 14.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFE0E3E7),
                                                 width: 2.0,
                                               ),
@@ -620,7 +614,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                   BorderRadius.circular(12.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFF4B39EF),
                                                 width: 2.0,
                                               ),
@@ -628,7 +622,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                   BorderRadius.circular(12.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFFF5963),
                                                 width: 2.0,
                                               ),
@@ -637,7 +631,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFFF5963),
                                                 width: 2.0,
                                               ),
@@ -647,7 +641,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
-                                                EdgeInsets.all(24.0),
+                                                const EdgeInsets.all(24.0),
                                             suffixIcon: InkWell(
                                               onTap: () => safeSetState(
                                                 () => _model
@@ -661,7 +655,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                     ? Icons.visibility_outlined
                                                     : Icons
                                                         .visibility_off_outlined,
-                                                color: Color(0xFF57636C),
+                                                color: const Color(0xFF57636C),
                                                 size: 24.0,
                                               ),
                                             ),
@@ -670,7 +664,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Plus Jakarta Sans',
-                                                color: Color(0xFF101213),
+                                                color: const Color(0xFF101213),
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
@@ -682,9 +676,9 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 5.0),
-                                      child: Container(
+                                      child: SizedBox(
                                         width: double.infinity,
                                         child: TextFormField(
                                           controller: _model
@@ -694,7 +688,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                           onChanged: (_) =>
                                               EasyDebounce.debounce(
                                             '_model.confirmPasswordTextController',
-                                            Duration(milliseconds: 1500),
+                                            const Duration(milliseconds: 1500),
                                             () async {
                                               if ((_model.confirmPasswordTextController
                                                           .text ==
@@ -722,17 +716,17 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    duration: Duration(
+                                                    duration: const Duration(
                                                         milliseconds: 7500),
                                                     backgroundColor:
-                                                        Color(0xFFFF4336),
+                                                        const Color(0xFFFF4336),
                                                   ),
                                                 );
                                               }
                                             },
                                           ),
                                           autofocus: false,
-                                          autofillHints: [
+                                          autofillHints: const [
                                             AutofillHints.password
                                           ],
                                           textInputAction: TextInputAction.done,
@@ -746,14 +740,14 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                     .override(
                                                       fontFamily:
                                                           'Plus Jakarta Sans',
-                                                      color: Color(0xFF57636C),
+                                                      color: const Color(0xFF57636C),
                                                       fontSize: 14.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFE0E3E7),
                                                 width: 2.0,
                                               ),
@@ -761,7 +755,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                   BorderRadius.circular(12.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFF4B39EF),
                                                 width: 2.0,
                                               ),
@@ -769,7 +763,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                   BorderRadius.circular(12.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFFF5963),
                                                 width: 2.0,
                                               ),
@@ -778,7 +772,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFFF5963),
                                                 width: 2.0,
                                               ),
@@ -788,7 +782,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
-                                                EdgeInsets.all(24.0),
+                                                const EdgeInsets.all(24.0),
                                             suffixIcon: InkWell(
                                               onTap: () => safeSetState(
                                                 () => _model
@@ -803,7 +797,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                     ? Icons.visibility_outlined
                                                     : Icons
                                                         .visibility_off_outlined,
-                                                color: Color(0xFF57636C),
+                                                color: const Color(0xFF57636C),
                                                 size: 24.0,
                                               ),
                                             ),
@@ -812,7 +806,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Plus Jakarta Sans',
-                                                color: Color(0xFF101213),
+                                                color: const Color(0xFF101213),
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
@@ -824,9 +818,9 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
-                                      child: Container(
+                                      child: SizedBox(
                                         width: double.infinity,
                                         child: TextFormField(
                                           controller:
@@ -836,7 +830,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                           onChanged: (_) =>
                                               EasyDebounce.debounce(
                                             '_model.phoneNumberTextController',
-                                            Duration(milliseconds: 1500),
+                                            const Duration(milliseconds: 1500),
                                             () async {
                                               if ((_model.phoneNumberTextController
                                                           .text ==
@@ -865,17 +859,17 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    duration: Duration(
+                                                    duration: const Duration(
                                                         milliseconds: 7500),
                                                     backgroundColor:
-                                                        Color(0xFFFF4336),
+                                                        const Color(0xFFFF4336),
                                                   ),
                                                 );
                                               }
                                             },
                                           ),
                                           autofocus: true,
-                                          autofillHints: [
+                                          autofillHints: const [
                                             AutofillHints.telephoneNumber
                                           ],
                                           textInputAction: TextInputAction.next,
@@ -888,7 +882,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                     .override(
                                                       fontFamily:
                                                           'Plus Jakarta Sans',
-                                                      color: Color(0xFF57636C),
+                                                      color: const Color(0xFF57636C),
                                                       fontSize: 14.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
@@ -896,7 +890,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                     ),
                                             hintText: '05########',
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFE0E3E7),
                                                 width: 2.0,
                                               ),
@@ -904,7 +898,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                   BorderRadius.circular(12.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFF4B39EF),
                                                 width: 2.0,
                                               ),
@@ -912,7 +906,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                                   BorderRadius.circular(12.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFFF5963),
                                                 width: 2.0,
                                               ),
@@ -921,7 +915,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFFF5963),
                                                 width: 2.0,
                                               ),
@@ -931,13 +925,13 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
-                                                EdgeInsets.all(24.0),
+                                                const EdgeInsets.all(24.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Plus Jakarta Sans',
-                                                color: Color(0xFF101213),
+                                                color: const Color(0xFF101213),
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
@@ -967,23 +961,19 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 15.0, 0.0, 16.0),
                             child: FFButtonWidget(
-                              onPressed: ((_model.displayNameTextController.text == null || _model.displayNameTextController.text == '') ||
-                                      (_model.emailAddressTextController.text == null ||
-                                          _model.emailAddressTextController.text ==
+                              onPressed: ((_model.displayNameTextController.text == '') ||
+                                      (_model.emailAddressTextController.text ==
                                               '') ||
-                                      (_model.passwordTextController.text == null ||
-                                          _model.passwordTextController.text ==
+                                      (_model.passwordTextController.text ==
                                               '') ||
-                                      (_model.confirmPasswordTextController.text == null ||
-                                          _model.confirmPasswordTextController.text ==
+                                      (_model.confirmPasswordTextController.text ==
                                               '') ||
-                                      (_model.phoneNumberTextController.text == null ||
-                                          _model.phoneNumberTextController.text ==
+                                      (_model.phoneNumberTextController.text ==
                                               '') ||
                                       (_model.displayNameTextController.text !=
                                           functions.newCustomFunction4(_model
@@ -1009,7 +999,7 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                               .text) {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
-                                          SnackBar(
+                                          const SnackBar(
                                             content: Text(
                                               'كلمتي المرور لا تتطابق.',
                                             ),
@@ -1054,18 +1044,14 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                       context.goNamedAuth(
                                           'home_client', context.mounted);
                                     },
-                              text: (_model.displayNameTextController.text != null && _model.displayNameTextController.text != '') &&
-                                      (_model.emailAddressTextController.text != null &&
-                                          _model.emailAddressTextController.text !=
+                              text: (_model.displayNameTextController.text != '') &&
+                                      (_model.emailAddressTextController.text !=
                                               '') &&
-                                      (_model.passwordTextController.text != null &&
-                                          _model.passwordTextController.text !=
+                                      (_model.passwordTextController.text !=
                                               '') &&
-                                      (_model.confirmPasswordTextController.text != null &&
-                                          _model.confirmPasswordTextController.text !=
+                                      (_model.confirmPasswordTextController.text !=
                                               '') &&
-                                      (_model.phoneNumberTextController.text != null &&
-                                          _model.phoneNumberTextController.text !=
+                                      (_model.phoneNumberTextController.text !=
                                               '') &&
                                       ((_model.displayNameTextController.text ==
                                               functions.newCustomFunction4(
@@ -1083,11 +1069,11 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                               options: FFButtonOptions(
                                 width: 230.0,
                                 height: 52.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFFF68833),
+                                color: const Color(0xFFF68833),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -1098,12 +1084,12 @@ class _SignupClientWidgetState extends State<SignupClientWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 3.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
                                 borderRadius: BorderRadius.circular(12.0),
-                                disabledColor: Color(0xFF585F69),
+                                disabledColor: const Color(0xFF585F69),
                               ),
                             ),
                           ),

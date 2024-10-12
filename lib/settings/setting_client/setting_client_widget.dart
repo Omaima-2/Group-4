@@ -1,12 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/component/nav_bar_client/nav_bar_client_widget.dart';
+import '/component/nav_bar_client_n_e_w/nav_bar_client_n_e_w_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'setting_client_model.dart';
 export 'setting_client_model.dart';
 
@@ -50,9 +47,9 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
           children: [
             Flexible(
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -63,7 +60,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                         children: [
                           Flexible(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 30.0, 10.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -73,7 +70,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                 onTap: () async {
                                   context.pushNamed('home_SP');
                                 },
-                                child: Icon(
+                                child: const Icon(
                                   Icons.arrow_back,
                                   color: Color(0xFF14181B),
                                   size: 30.0,
@@ -84,9 +81,9 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                           Flexible(
                             flex: 5,
                             child: Align(
-                              alignment: AlignmentDirectional(-1.0, -1.0),
+                              alignment: const AlignmentDirectional(-1.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 10.0, 0.0),
                                 child: Text(
                                   'الحساب و المعلومات',
@@ -94,7 +91,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Outfit',
-                                        color: Color(0xFF14181B),
+                                        color: const Color(0xFF14181B),
                                         fontSize: 26.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
@@ -106,9 +103,9 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                         ],
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsets.all(18.0),
+                          padding: const EdgeInsets.all(18.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -119,7 +116,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                   width: 70.0,
                                   height: 70.0,
                                   decoration: BoxDecoration(
-                                    color: Color(0xFF14181B),
+                                    color: const Color(0xFF14181B),
                                     image: DecorationImage(
                                       fit: BoxFit.cover,
                                       image: Image.network(
@@ -140,13 +137,13 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        color: Color(0xFF14181B),
+                                        color: const Color(0xFF14181B),
                                         fontSize: 20.0,
                                         letterSpacing: 0.0,
                                       ),
                                 ),
                               ),
-                            ].divide(SizedBox(width: 14.0)),
+                            ].divide(const SizedBox(width: 14.0)),
                           ),
                         ),
                       ),
@@ -155,7 +152,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsets.all(16.0),
+                              padding: const EdgeInsets.all(16.0),
                               child: ListView(
                                 padding: EdgeInsets.zero,
                                 primary: false,
@@ -175,7 +172,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                       height: 60.0,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                             blurRadius: 4.0,
                                             color: Color(0x33000000),
@@ -189,7 +186,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -199,7 +196,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                Icon(
+                                                const Icon(
                                                   Icons.account_circle,
                                                   color: Color(0xFFED7D41),
                                                   size: 25.0,
@@ -213,12 +210,12 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                                         fontFamily:
                                                             'Readex Pro',
                                                         color:
-                                                            Color(0xFF14181B),
+                                                            const Color(0xFF14181B),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(SizedBox(width: 10.0)),
+                                              ].divide(const SizedBox(width: 10.0)),
                                             ),
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -252,7 +249,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                       height: 60.0,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                             blurRadius: 4.0,
                                             color: Color(0x33000000),
@@ -266,7 +263,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -276,7 +273,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                FaIcon(
+                                                const FaIcon(
                                                   FontAwesomeIcons.hammer,
                                                   color: Color(0xFFED7D41),
                                                   size: 20.0,
@@ -290,12 +287,12 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                                         fontFamily:
                                                             'Readex Pro',
                                                         color:
-                                                            Color(0xFF14181B),
+                                                            const Color(0xFF14181B),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(SizedBox(width: 10.0)),
+                                              ].divide(const SizedBox(width: 10.0)),
                                             ),
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -329,7 +326,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                       height: 60.0,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                             blurRadius: 4.0,
                                             color: Color(0x33000000),
@@ -343,7 +340,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -353,7 +350,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                Icon(
+                                                const Icon(
                                                   Icons.delete_rounded,
                                                   color: Color(0xFFED7D41),
                                                   size: 22.0,
@@ -367,12 +364,12 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                                         fontFamily:
                                                             'Readex Pro',
                                                         color:
-                                                            Color(0xFF14181B),
+                                                            const Color(0xFF14181B),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(SizedBox(width: 10.0)),
+                                              ].divide(const SizedBox(width: 10.0)),
                                             ),
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -412,7 +409,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                       height: 60.0,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                             blurRadius: 4.0,
                                             color: Color(0x33000000),
@@ -426,7 +423,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -436,7 +433,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                FaIcon(
+                                                const FaIcon(
                                                   FontAwesomeIcons.signOutAlt,
                                                   color: Color(0xFFED7D41),
                                                   size: 20.0,
@@ -450,19 +447,42 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                                                         fontFamily:
                                                             'Readex Pro',
                                                         color:
-                                                            Color(0xFF14181B),
+                                                            const Color(0xFF14181B),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(SizedBox(width: 10.0)),
+                                              ].divide(const SizedBox(width: 10.0)),
                                             ),
                                           ],
                                         ),
                                       ),
                                     ),
                                   ),
-                                ].divide(SizedBox(height: 10.0)),
+                                ].divide(const SizedBox(height: 10.0)),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Align(
+                        alignment: const AlignmentDirectional(0.0, 1.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Align(
+                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              child: Text(
+                                'نسخة التطبيق : 1.0.0 ',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      color: const Color(0xA995A1AC),
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
                             ),
                           ],
@@ -473,42 +493,12 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                 ),
               ),
             ),
-            Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Align(
-                  alignment: AlignmentDirectional(0.0, 1.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Align(
-                        alignment: AlignmentDirectional(0.0, 1.0),
-                        child: Text(
-                          'نسخة التطبيق : 1.0.0 ',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Readex Pro',
-                                    color: Color(0xA995A1AC),
-                                    letterSpacing: 0.0,
-                                  ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Align(
-                  alignment: AlignmentDirectional(0.0, 1.0),
-                  child: wrapWithModel(
-                    model: _model.navBarClientModel,
-                    updateCallback: () => safeSetState(() {}),
-                    child: NavBarClientWidget(
-                      page: 'Setting_client',
-                    ),
-                  ),
-                ),
-              ].divide(SizedBox(height: 16.0)),
+            wrapWithModel(
+              model: _model.navBarClientNEWModel,
+              updateCallback: () => safeSetState(() {}),
+              child: const NavBarClientNEWWidget(
+                page: 'Setting_client',
+              ),
             ),
           ],
         ),

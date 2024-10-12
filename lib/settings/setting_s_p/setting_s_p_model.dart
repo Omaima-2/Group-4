@@ -1,16 +1,7 @@
-import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
-import '/component/nav_bar_s_p/nav_bar_s_p_widget.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
+import '/component/nav_bar_s_p_n_e_w/nav_bar_s_p_n_e_w_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'setting_s_p_widget.dart' show SettingSPWidget;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class SettingSPModel extends FlutterFlowModel<SettingSPWidget> {
   ///  State fields for stateful widgets in this page.
@@ -25,7 +16,7 @@ class SettingSPModel extends FlutterFlowModel<SettingSPWidget> {
       return 'السعر غير صحيح';
     }
 
-    if (val.length < 1) {
+    if (val.isEmpty) {
       return 'يجب ادخال السعر';
     }
     if (val.length > 3) {
@@ -35,13 +26,13 @@ class SettingSPModel extends FlutterFlowModel<SettingSPWidget> {
     return null;
   }
 
-  // Model for navBarSP component.
-  late NavBarSPModel navBarSPModel;
+  // Model for navBarSPNEW component.
+  late NavBarSPNEWModel navBarSPNEWModel;
 
   @override
   void initState(BuildContext context) {
     priceTextControllerValidator = _priceTextControllerValidator;
-    navBarSPModel = createModel(context, () => NavBarSPModel());
+    navBarSPNEWModel = createModel(context, () => NavBarSPNEWModel());
   }
 
   @override
@@ -49,6 +40,6 @@ class SettingSPModel extends FlutterFlowModel<SettingSPWidget> {
     priceFocusNode?.dispose();
     priceTextController?.dispose();
 
-    navBarSPModel.dispose();
+    navBarSPNEWModel.dispose();
   }
 }

@@ -1,20 +1,8 @@
-import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
-import '/backend/firebase_storage/storage.dart';
 import '/component/nav_bar_s_p/nav_bar_s_p_widget.dart';
-import '/component/upload_photo_sucsess/upload_photo_sucsess_widget.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/upload_data.dart';
 import 'view_service_widget.dart' show ViewServiceWidget;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:provider/provider.dart';
 
 class ViewServiceModel extends FlutterFlowModel<ViewServiceWidget> {
   ///  Local state fields for this page.
@@ -38,7 +26,7 @@ class ViewServiceModel extends FlutterFlowModel<ViewServiceWidget> {
       return 'وصف  الخدمة لا يمكن ان يكون خاليًا ';
     }
 
-    if (val.length < 1) {
+    if (val.isEmpty) {
       return 'وصف  الخدمة لا يمكن ان يكون خاليًا ';
     }
     if (val.length > 25) {
@@ -59,7 +47,7 @@ class ViewServiceModel extends FlutterFlowModel<ViewServiceWidget> {
       return 'وصف الخدمة لا يمكن ان يكون خاليًا ';
     }
 
-    if (val.length < 1) {
+    if (val.isEmpty) {
       return 'عنوان الخدمة  طويل جدًا';
     }
     if (val.length > 500) {
@@ -81,7 +69,7 @@ class ViewServiceModel extends FlutterFlowModel<ViewServiceWidget> {
       return 'تكلفة الخدمة لا يمكن ان تكون خالية';
     }
 
-    if (val.length < 1) {
+    if (val.isEmpty) {
       return '  تكلفة الخدمة لايجب  ان يكون خاليا';
     }
     if (val.length > 3) {

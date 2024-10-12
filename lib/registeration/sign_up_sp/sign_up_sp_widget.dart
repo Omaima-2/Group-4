@@ -10,17 +10,12 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
-import 'dart:math';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:provider/provider.dart';
 import 'sign_up_sp_model.dart';
 export 'sign_up_sp_model.dart';
 
@@ -83,8 +78,8 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 30.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -103,8 +98,8 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
             curve: Curves.easeInOut,
             delay: 150.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 30.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -122,15 +117,15 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 60.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: Offset(-0.349, 0),
-            end: Offset(0, 0),
+            begin: const Offset(-0.349, 0),
+            end: const Offset(0, 0),
           ),
         ],
       ),
@@ -149,8 +144,8 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
             curve: Curves.bounceOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: Offset(0.6, 1.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.6, 1.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -182,7 +177,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                 child: Container(
                   width: double.infinity,
                   height: 150.0,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
                         Color(0xFFF68833),
@@ -197,7 +192,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                   child: Container(
                     width: 100.0,
                     height: 100.0,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       gradient: LinearGradient(
                         colors: [Color(0x00FFFFFF), Colors.white],
                         stops: [0.0, 1.0],
@@ -212,15 +207,15 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                       children: [
                         Flexible(
                           child: Align(
-                            alignment: AlignmentDirectional(-1.0, -1.0),
+                            alignment: const AlignmentDirectional(-1.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 5.0, 0.0),
                               child: FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
                                 borderRadius: 30.0,
                                 borderWidth: 1.0,
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.arrow_back_rounded,
                                   color: Colors.black,
                                   size: 25.0,
@@ -235,9 +230,9 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                         Flexible(
                           flex: 9,
                           child: Align(
-                            alignment: AlignmentDirectional(0.0, 1.0),
+                            alignment: const AlignmentDirectional(0.0, 1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 1.0, 0.0, 0.0),
                               child: Text(
                                 'التسجيل كمقدّم خدمة',
@@ -245,7 +240,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                     .headlineSmall
                                     .override(
                                       fontFamily: 'Outfit',
-                                      color: Color(0xFF101213),
+                                      color: const Color(0xFF101213),
                                       fontSize: 24.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
@@ -258,14 +253,14 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                         Flexible(
                           flex: 3,
                           child: Align(
-                            alignment: AlignmentDirectional(0.0, 1.0),
+                            alignment: const AlignmentDirectional(0.0, 1.0),
                             child: Text(
                               'نورتنا،ابدأ عملك في مطرقة',
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: Color(0xFF57636C),
+                                    color: const Color(0xFF57636C),
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -282,10 +277,10 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
               Flexible(
                 flex: 5,
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 20.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 20.0, 16.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -293,9 +288,9 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 10.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -312,7 +307,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                     allowPhoto: true,
                                     includeDimensions: true,
                                     backgroundColor: Colors.black,
-                                    textColor: Color(0xFF95A1AC),
+                                    textColor: const Color(0xFF95A1AC),
                                     pickerFontFamily: 'Outfit',
                                   );
                                   if (selectedMedia != null &&
@@ -375,7 +370,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                       width: 100.0,
                                       height: 100.0,
                                       decoration: BoxDecoration(
-                                        color: Color(0x8395A1AC),
+                                        color: const Color(0x8395A1AC),
                                         image: DecorationImage(
                                           fit: BoxFit.cover,
                                           image: Image.network(
@@ -395,7 +390,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Text(
                               'أضف صورة',
                               style: FlutterFlowTheme.of(context)
@@ -408,12 +403,12 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: const AlignmentDirectional(0.0, -1.0),
                             child: Form(
                               key: _model.formKey,
                               autovalidateMode: AutovalidateMode.disabled,
                               child: Align(
-                                alignment: AlignmentDirectional(0.0, -1.0),
+                                alignment: const AlignmentDirectional(0.0, -1.0),
                                 child: SingleChildScrollView(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -421,9 +416,9 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 5.0),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: TextFormField(
                                             controller:
@@ -432,7 +427,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.nameTextController',
-                                              Duration(milliseconds: 500),
+                                              const Duration(milliseconds: 500),
                                               () async {
                                                 if ((_model.nameTextController
                                                             .text ==
@@ -464,17 +459,17 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                                   0.0,
                                                             ),
                                                       ),
-                                                      duration: Duration(
+                                                      duration: const Duration(
                                                           milliseconds: 7500),
                                                       backgroundColor:
-                                                          Color(0xFFFF4336),
+                                                          const Color(0xFFFF4336),
                                                     ),
                                                   );
                                                 }
                                               },
                                             ),
                                             autofocus: true,
-                                            autofillHints: [AutofillHints.name],
+                                            autofillHints: const [AutofillHints.name],
                                             textInputAction:
                                                 TextInputAction.next,
                                             obscureText: false,
@@ -486,13 +481,13 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: Color(0xFF57636C),
+                                                    color: const Color(0xFF57636C),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                               enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFE0E3E7),
                                                   width: 2.0,
                                                 ),
@@ -500,7 +495,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                     BorderRadius.circular(12.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFF4B39EF),
                                                   width: 2.0,
                                                 ),
@@ -508,7 +503,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                     BorderRadius.circular(12.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFFF5963),
                                                   width: 2.0,
                                                 ),
@@ -517,7 +512,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFFF5963),
                                                   width: 2.0,
                                                 ),
@@ -527,14 +522,14 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                               filled: true,
                                               fillColor: Colors.white,
                                               contentPadding:
-                                                  EdgeInsets.all(24.0),
+                                                  const EdgeInsets.all(24.0),
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily:
                                                       'Plus Jakarta Sans',
-                                                  color: Color(0xFF101213),
+                                                  color: const Color(0xFF101213),
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
@@ -555,9 +550,9 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 5.0),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: TextFormField(
                                             controller: _model
@@ -567,7 +562,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.emailAddressTextController',
-                                              Duration(milliseconds: 2000),
+                                              const Duration(milliseconds: 2000),
                                               () async {
                                                 if ((_model.emailAddressTextController
                                                             .text ==
@@ -598,17 +593,17 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                                   0.0,
                                                             ),
                                                       ),
-                                                      duration: Duration(
+                                                      duration: const Duration(
                                                           milliseconds: 7500),
                                                       backgroundColor:
-                                                          Color(0xFFFF4336),
+                                                          const Color(0xFFFF4336),
                                                     ),
                                                   );
                                                 }
                                               },
                                             ),
                                             autofocus: true,
-                                            autofillHints: [
+                                            autofillHints: const [
                                               AutofillHints.email
                                             ],
                                             textInputAction:
@@ -622,13 +617,13 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: Color(0xFF57636C),
+                                                    color: const Color(0xFF57636C),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                               enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFE0E3E7),
                                                   width: 2.0,
                                                 ),
@@ -636,7 +631,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                     BorderRadius.circular(12.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFF4B39EF),
                                                   width: 2.0,
                                                 ),
@@ -644,7 +639,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                     BorderRadius.circular(12.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFFF5963),
                                                   width: 2.0,
                                                 ),
@@ -653,7 +648,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFFF5963),
                                                   width: 2.0,
                                                 ),
@@ -663,14 +658,14 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                               filled: true,
                                               fillColor: Colors.white,
                                               contentPadding:
-                                                  EdgeInsets.all(24.0),
+                                                  const EdgeInsets.all(24.0),
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily:
                                                       'Plus Jakarta Sans',
-                                                  color: Color(0xFF101213),
+                                                  color: const Color(0xFF101213),
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
@@ -690,9 +685,9 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 5.0),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: TextFormField(
                                             controller:
@@ -701,7 +696,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.passwordTextController',
-                                              Duration(milliseconds: 1500),
+                                              const Duration(milliseconds: 1500),
                                               () async {
                                                 if ((_model.passwordTextController
                                                             .text ==
@@ -738,10 +733,10 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                                     0.0,
                                                               ),
                                                         ),
-                                                        duration: Duration(
+                                                        duration: const Duration(
                                                             milliseconds: 4000),
                                                         backgroundColor:
-                                                            Color(0xFFFF4336),
+                                                            const Color(0xFFFF4336),
                                                       ),
                                                     );
                                                   } else {
@@ -763,10 +758,10 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                                     0.0,
                                                               ),
                                                         ),
-                                                        duration: Duration(
+                                                        duration: const Duration(
                                                             milliseconds: 7500),
                                                         backgroundColor:
-                                                            Color(0xFFFF4336),
+                                                            const Color(0xFFFF4336),
                                                       ),
                                                     );
                                                   }
@@ -774,7 +769,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                               },
                                             ),
                                             autofocus: false,
-                                            autofillHints: [
+                                            autofillHints: const [
                                               AutofillHints.password
                                             ],
                                             textInputAction:
@@ -789,13 +784,13 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: Color(0xFF57636C),
+                                                    color: const Color(0xFF57636C),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                               enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFE0E3E7),
                                                   width: 2.0,
                                                 ),
@@ -803,7 +798,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                     BorderRadius.circular(12.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFF4B39EF),
                                                   width: 2.0,
                                                 ),
@@ -811,7 +806,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                     BorderRadius.circular(12.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFFF5963),
                                                   width: 2.0,
                                                 ),
@@ -820,7 +815,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFFF5963),
                                                   width: 2.0,
                                                 ),
@@ -830,7 +825,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                               filled: true,
                                               fillColor: Colors.white,
                                               contentPadding:
-                                                  EdgeInsets.all(24.0),
+                                                  const EdgeInsets.all(24.0),
                                               suffixIcon: InkWell(
                                                 onTap: () => safeSetState(
                                                   () => _model
@@ -846,7 +841,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                           .visibility_outlined
                                                       : Icons
                                                           .visibility_off_outlined,
-                                                  color: Color(0xFF57636C),
+                                                  color: const Color(0xFF57636C),
                                                   size: 24.0,
                                                 ),
                                               ),
@@ -856,7 +851,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                 .override(
                                                   fontFamily:
                                                       'Plus Jakarta Sans',
-                                                  color: Color(0xFF101213),
+                                                  color: const Color(0xFF101213),
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
@@ -874,9 +869,9 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 5.0),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: TextFormField(
                                             controller: _model
@@ -886,7 +881,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.confirmPasswordTextController',
-                                              Duration(milliseconds: 1500),
+                                              const Duration(milliseconds: 1500),
                                               () async {
                                                 if ((_model.confirmPasswordTextController
                                                             .text ==
@@ -916,17 +911,17 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                                   0.0,
                                                             ),
                                                       ),
-                                                      duration: Duration(
+                                                      duration: const Duration(
                                                           milliseconds: 7500),
                                                       backgroundColor:
-                                                          Color(0xFFFF4336),
+                                                          const Color(0xFFFF4336),
                                                     ),
                                                   );
                                                 }
                                               },
                                             ),
                                             autofocus: false,
-                                            autofillHints: [
+                                            autofillHints: const [
                                               AutofillHints.password
                                             ],
                                             textInputAction:
@@ -941,13 +936,13 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: Color(0xFF57636C),
+                                                    color: const Color(0xFF57636C),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                               enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFE0E3E7),
                                                   width: 2.0,
                                                 ),
@@ -955,7 +950,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                     BorderRadius.circular(12.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFF4B39EF),
                                                   width: 2.0,
                                                 ),
@@ -963,7 +958,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                     BorderRadius.circular(12.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFFF5963),
                                                   width: 2.0,
                                                 ),
@@ -972,7 +967,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFFF5963),
                                                   width: 2.0,
                                                 ),
@@ -982,7 +977,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                               filled: true,
                                               fillColor: Colors.white,
                                               contentPadding:
-                                                  EdgeInsets.all(24.0),
+                                                  const EdgeInsets.all(24.0),
                                               suffixIcon: InkWell(
                                                 onTap: () => safeSetState(
                                                   () => _model
@@ -998,7 +993,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                           .visibility_outlined
                                                       : Icons
                                                           .visibility_off_outlined,
-                                                  color: Color(0xFF57636C),
+                                                  color: const Color(0xFF57636C),
                                                   size: 24.0,
                                                 ),
                                               ),
@@ -1008,7 +1003,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                 .override(
                                                   fontFamily:
                                                       'Plus Jakarta Sans',
-                                                  color: Color(0xFF101213),
+                                                  color: const Color(0xFF101213),
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
@@ -1026,9 +1021,9 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 5.0),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: TextFormField(
                                             controller: _model
@@ -1038,7 +1033,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.phoneNumberTextController',
-                                              Duration(milliseconds: 1500),
+                                              const Duration(milliseconds: 1500),
                                               () async {
                                                 if ((_model.phoneNumberTextController
                                                             .text ==
@@ -1070,17 +1065,17 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                                   0.0,
                                                             ),
                                                       ),
-                                                      duration: Duration(
+                                                      duration: const Duration(
                                                           milliseconds: 7500),
                                                       backgroundColor:
-                                                          Color(0xFFFF4336),
+                                                          const Color(0xFFFF4336),
                                                     ),
                                                   );
                                                 }
                                               },
                                             ),
                                             autofocus: true,
-                                            autofillHints: [
+                                            autofillHints: const [
                                               AutofillHints.telephoneNumber
                                             ],
                                             textInputAction:
@@ -1094,14 +1089,14 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: Color(0xFF57636C),
+                                                    color: const Color(0xFF57636C),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                               hintText: '05########',
                                               enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFE0E3E7),
                                                   width: 2.0,
                                                 ),
@@ -1109,7 +1104,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                     BorderRadius.circular(12.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFF4B39EF),
                                                   width: 2.0,
                                                 ),
@@ -1117,7 +1112,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                     BorderRadius.circular(12.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFFF5963),
                                                   width: 2.0,
                                                 ),
@@ -1126,7 +1121,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFFF5963),
                                                   width: 2.0,
                                                 ),
@@ -1136,14 +1131,14 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                               filled: true,
                                               fillColor: Colors.white,
                                               contentPadding:
-                                                  EdgeInsets.all(24.0),
+                                                  const EdgeInsets.all(24.0),
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily:
                                                       'Plus Jakarta Sans',
-                                                  color: Color(0xFF101213),
+                                                  color: const Color(0xFF101213),
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
@@ -1174,12 +1169,12 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                           Flexible(
                                             child: Container(
                                               width: double.infinity,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 5.0),
-                                                child: Container(
+                                                child: SizedBox(
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller: _model
@@ -1189,7 +1184,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                     onChanged: (_) =>
                                                         EasyDebounce.debounce(
                                                       '_model.locationTextController',
-                                                      Duration(
+                                                      const Duration(
                                                           milliseconds: 700),
                                                       () async {
                                                         if ((_model.locationTextController
@@ -1222,11 +1217,11 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                                           0.0,
                                                                     ),
                                                               ),
-                                                              duration: Duration(
+                                                              duration: const Duration(
                                                                   milliseconds:
                                                                       7500),
                                                               backgroundColor:
-                                                                  Color(
+                                                                  const Color(
                                                                       0xFFFF4336),
                                                             ),
                                                           );
@@ -1234,7 +1229,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                       },
                                                     ),
                                                     autofocus: true,
-                                                    autofillHints: [
+                                                    autofillHints: const [
                                                       AutofillHints.postalCode
                                                     ],
                                                     obscureText: false,
@@ -1248,7 +1243,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Plus Jakarta Sans',
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF57636C),
                                                                 fontSize: 14.0,
                                                                 letterSpacing:
@@ -1260,7 +1255,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                       hintText: 'AAAA####',
                                                       enabledBorder:
                                                           OutlineInputBorder(
-                                                        borderSide: BorderSide(
+                                                        borderSide: const BorderSide(
                                                           color:
                                                               Color(0xFFE0E3E7),
                                                           width: 2.0,
@@ -1271,7 +1266,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                       ),
                                                       focusedBorder:
                                                           OutlineInputBorder(
-                                                        borderSide: BorderSide(
+                                                        borderSide: const BorderSide(
                                                           color:
                                                               Color(0xFF4B39EF),
                                                           width: 2.0,
@@ -1282,7 +1277,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                       ),
                                                       errorBorder:
                                                           OutlineInputBorder(
-                                                        borderSide: BorderSide(
+                                                        borderSide: const BorderSide(
                                                           color:
                                                               Color(0xFFFF5963),
                                                           width: 2.0,
@@ -1293,7 +1288,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                       ),
                                                       focusedErrorBorder:
                                                           OutlineInputBorder(
-                                                        borderSide: BorderSide(
+                                                        borderSide: const BorderSide(
                                                           color:
                                                               Color(0xFFFF5963),
                                                           width: 2.0,
@@ -1305,7 +1300,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                       filled: true,
                                                       fillColor: Colors.white,
                                                       contentPadding:
-                                                          EdgeInsets.all(24.0),
+                                                          const EdgeInsets.all(24.0),
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -1314,7 +1309,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              Color(0xFF101213),
+                                                              const Color(0xFF101213),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1337,15 +1332,15 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                         ],
                                       ),
                                       Container(
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           shape: BoxShape.circle,
                                         ),
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
+                                              const AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     1.0, 0.0, 1.0, 5.0),
                                             child: StreamBuilder<
                                                 List<ProfessionsRecord>>(
@@ -1400,7 +1395,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
                                                         color:
-                                                            Color(0xFF57636C),
+                                                            const Color(0xFF57636C),
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
@@ -1417,10 +1412,10 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                   ),
                                                   elevation: 2.0,
                                                   borderColor:
-                                                      Color(0xFFE0E3E7),
+                                                      const Color(0xFFE0E3E7),
                                                   borderWidth: 2.0,
                                                   borderRadius: 8.0,
-                                                  margin: EdgeInsetsDirectional
+                                                  margin: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 5.0, 0.0),
                                                   hidesUnderline: true,
@@ -1453,28 +1448,22 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 16.0),
                               child: FFButtonWidget(
-                                onPressed: ((_model.nameTextController.text == null ||
-                                            _model.nameTextController.text ==
+                                onPressed: ((_model.nameTextController.text ==
                                                 '') ||
-                                        (_model.emailAddressTextController.text == null ||
-                                            _model.emailAddressTextController.text ==
+                                        (_model.emailAddressTextController.text ==
                                                 '') ||
-                                        (_model.passwordTextController.text == null ||
-                                            _model.passwordTextController.text ==
+                                        (_model.passwordTextController.text ==
                                                 '') ||
-                                        (_model.confirmPasswordTextController.text == null ||
-                                            _model.confirmPasswordTextController.text ==
+                                        (_model.confirmPasswordTextController.text ==
                                                 '') ||
-                                        (_model.phoneNumberTextController.text == null ||
-                                            _model.phoneNumberTextController.text ==
+                                        (_model.phoneNumberTextController.text ==
                                                 '') ||
-                                        (_model.locationTextController.text == null ||
-                                            _model.locationTextController.text ==
+                                        (_model.locationTextController.text ==
                                                 '') ||
                                         (_model.dropDownValue == null ||
                                             _model.dropDownValue == '') ||
@@ -1502,7 +1491,7 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                                 .text) {
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
-                                            SnackBar(
+                                            const SnackBar(
                                               content: Text(
                                                 'كلمتي المرور لا تتطابق.',
                                               ),
@@ -1556,23 +1545,17 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                         context.pushNamedAuth(
                                             'home_SP', context.mounted);
                                       },
-                                text: (_model.nameTextController.text != null &&
-                                            _model.nameTextController.text !=
+                                text: (_model.nameTextController.text !=
                                                 '') &&
-                                        (_model.emailAddressTextController.text != null &&
-                                            _model.emailAddressTextController.text !=
+                                        (_model.emailAddressTextController.text !=
                                                 '') &&
-                                        (_model.passwordTextController.text != null &&
-                                            _model.passwordTextController.text !=
+                                        (_model.passwordTextController.text !=
                                                 '') &&
-                                        (_model.confirmPasswordTextController.text != null &&
-                                            _model.confirmPasswordTextController.text !=
+                                        (_model.confirmPasswordTextController.text !=
                                                 '') &&
-                                        (_model.phoneNumberTextController.text != null &&
-                                            _model.phoneNumberTextController.text !=
+                                        (_model.phoneNumberTextController.text !=
                                                 '') &&
-                                        (_model.locationTextController.text != null &&
-                                            _model.locationTextController.text !=
+                                        (_model.locationTextController.text !=
                                                 '') &&
                                         (_model.dropDownValue != null &&
                                             _model.dropDownValue != '') &&
@@ -1589,11 +1572,11 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                 options: FFButtonOptions(
                                   width: 230.0,
                                   height: 52.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0xFFF68833),
+                                  color: const Color(0xFFF68833),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -1604,12 +1587,12 @@ class _SignUpSpWidgetState extends State<SignUpSpWidget>
                                         fontWeight: FontWeight.w500,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(12.0),
-                                  disabledColor: Color(0xFF585F69),
+                                  disabledColor: const Color(0xFF585F69),
                                 ),
                               ),
                             ),

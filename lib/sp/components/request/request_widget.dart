@@ -1,11 +1,7 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'request_model.dart';
 export 'request_model.dart';
 
@@ -51,7 +47,7 @@ class _RequestWidgetState extends State<RequestWidget> {
       width: double.infinity,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).info,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 4.0,
             color: Color(0x4157636C),
@@ -63,7 +59,7 @@ class _RequestWidgetState extends State<RequestWidget> {
         ],
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -79,12 +75,12 @@ class _RequestWidgetState extends State<RequestWidget> {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.all(2.0),
+                padding: const EdgeInsets.all(2.0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.network(
                     valueOrDefault<String>(
-                      widget!.request?.clientPhoto,
+                      widget.request?.clientPhoto,
                       'user',
                     ),
                     width: 120.0,
@@ -97,7 +93,7 @@ class _RequestWidgetState extends State<RequestWidget> {
             Expanded(
               flex: 4,
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -105,7 +101,7 @@ class _RequestWidgetState extends State<RequestWidget> {
                   children: [
                     Text(
                       valueOrDefault<String>(
-                        widget!.request?.clientName,
+                        widget.request?.clientName,
                         'اسم العميل',
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -113,20 +109,23 @@ class _RequestWidgetState extends State<RequestWidget> {
                             letterSpacing: 0.0,
                           ),
                     ),
-                    Align(
-                      alignment: AlignmentDirectional(-1.0, 0.0),
-                      child: Text(
-                        'طلب استشارة اونلاين',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Outfit',
-                              color: Colors.black,
-                              fontSize: 12.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                            ),
+                    Flexible(
+                      child: Align(
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        child: Text(
+                          'طلب استشارة اونلاين',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Outfit',
+                                    color: Colors.black,
+                                    fontSize: 12.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                        ),
                       ),
                     ),
-                  ].divide(SizedBox(height: 4.0)),
+                  ].divide(const SizedBox(height: 4.0)),
                 ),
               ),
             ),
@@ -137,7 +136,7 @@ class _RequestWidgetState extends State<RequestWidget> {
               Expanded(
                 flex: 2,
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                   child: Text(
                     '5 mins ago',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -155,7 +154,7 @@ class _RequestWidgetState extends State<RequestWidget> {
               Expanded(
                 flex: 3,
                 child: Align(
-                  alignment: AlignmentDirectional(-1.0, 0.0),
+                  alignment: const AlignmentDirectional(-1.0, 0.0),
                   child: Text(
                     'Head of Design',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -177,7 +176,7 @@ class _RequestWidgetState extends State<RequestWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      await widget!.request!.reference
+                      await widget.request!.reference
                           .update(createOrequestRecordData(
                         state: 'accepted',
                       ));
@@ -186,27 +185,27 @@ class _RequestWidgetState extends State<RequestWidget> {
                         'onlineSession_Sp',
                         queryParameters: {
                           'onlineRequest': serializeParam(
-                            widget!.request,
+                            widget.request,
                             ParamType.Document,
                           ),
                         }.withoutNulls,
                         extra: <String, dynamic>{
-                          'onlineRequest': widget!.request,
+                          'onlineRequest': widget.request,
                         },
                       );
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Color(0x6416E29A),
+                        color: const Color(0x6416E29A),
                         borderRadius: BorderRadius.circular(8.0),
                         border: Border.all(
-                          color: Color(0xC3249689),
+                          color: const Color(0xC3249689),
                         ),
                       ),
                       child: Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 4.0, 8.0, 4.0),
                           child: Text(
                             'قبول',
@@ -228,26 +227,26 @@ class _RequestWidgetState extends State<RequestWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      await widget!.request!.reference
+                      await widget.request!.reference
                           .update(createOrequestRecordData(
                         state: 'Rejected ',
                       ));
-                      await widget!.request!.reference.delete();
+                      await widget.request!.reference.delete();
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                        color: widget!.request?.state == 'Rejected'
+                        color: widget.request?.state == 'Rejected'
                             ? FlutterFlowTheme.of(context).error
-                            : Color(0x5BFF5963),
+                            : const Color(0x5BFF5963),
                         borderRadius: BorderRadius.circular(8.0),
                         border: Border.all(
                           color: FlutterFlowTheme.of(context).error,
                         ),
                       ),
                       child: Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 4.0, 8.0, 4.0),
                           child: Text(
                             'رفض',

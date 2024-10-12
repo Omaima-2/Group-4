@@ -1,15 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/component/nav_bar_s_p/nav_bar_s_p_widget.dart';
+import '/component/nav_bar_s_p_n_e_w/nav_bar_s_p_n_e_w_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'setting_s_p_model.dart';
 export 'setting_s_p_model.dart';
 
@@ -58,22 +55,22 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
             Flexible(
               flex: 5,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(4.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Flexible(
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 30.0, 10.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -83,7 +80,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                   onTap: () async {
                                     context.pushNamed('home_SP');
                                   },
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.arrow_back,
                                     color: Color(0xFF14181B),
                                     size: 30.0,
@@ -94,9 +91,9 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                             Flexible(
                               flex: 5,
                               child: Align(
-                                alignment: AlignmentDirectional(-1.0, -1.0),
+                                alignment: const AlignmentDirectional(-1.0, -1.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 20.0, 10.0, 0.0),
                                   child: Text(
                                     'الحساب و المعلومات',
@@ -104,7 +101,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Outfit',
-                                          color: Color(0xFF14181B),
+                                          color: const Color(0xFF14181B),
                                           fontSize: 26.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -118,9 +115,9 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                       ),
                       Flexible(
                         child: Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 10.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
@@ -143,7 +140,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                               ),
                                             ).image,
                                           ),
-                                          boxShadow: [
+                                          boxShadow: const [
                                             BoxShadow(
                                               blurRadius: 4.0,
                                               color: Color(0x33000000),
@@ -159,7 +156,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                           width: 70.0,
                                           height: 70.0,
                                           decoration: BoxDecoration(
-                                            color: Color(0xFF14181B),
+                                            color: const Color(0xFF14181B),
                                             image: DecorationImage(
                                               fit: BoxFit.cover,
                                               image: Image.network(
@@ -183,24 +180,24 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Readex Pro',
-                                          color: Color(0xFF14181B),
+                                          color: const Color(0xFF14181B),
                                           fontSize: 20.0,
                                           letterSpacing: 0.0,
                                         ),
                                   ),
                                 ),
-                              ].divide(SizedBox(width: 14.0)),
+                              ].divide(const SizedBox(width: 14.0)),
                             ),
                           ),
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, -1.0),
+                        alignment: const AlignmentDirectional(0.0, -1.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Padding(
-                              padding: EdgeInsets.all(16.0),
+                              padding: const EdgeInsets.all(16.0),
                               child: ListView(
                                 padding: EdgeInsets.zero,
                                 shrinkWrap: true,
@@ -215,7 +212,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                       context.pushNamed(
                                         'viewProfile_SP',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          kTransitionInfoKey: const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.leftToRight,
@@ -228,7 +225,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                       height: 60.0,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                             blurRadius: 4.0,
                                             color: Color(0x33000000),
@@ -242,7 +239,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.min,
@@ -252,7 +249,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                             Row(
                                               mainAxisSize: MainAxisSize.min,
                                               children: [
-                                                Icon(
+                                                const Icon(
                                                   Icons.account_circle,
                                                   color: Color(0xFFED7D41),
                                                   size: 25.0,
@@ -266,12 +263,12 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                                         fontFamily:
                                                             'Readex Pro',
                                                         color:
-                                                            Color(0xFF14181B),
+                                                            const Color(0xFF14181B),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(SizedBox(width: 10.0)),
+                                              ].divide(const SizedBox(width: 10.0)),
                                             ),
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -297,7 +294,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                     height: 60.0,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 4.0,
                                           color: Color(0x33000000),
@@ -310,7 +307,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 10.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -320,7 +317,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              Icon(
+                                              const Icon(
                                                 Icons.reviews_rounded,
                                                 color: Color(0xFFED7D41),
                                                 size: 22.0,
@@ -332,12 +329,12 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                                     .bodyMedium
                                                     .override(
                                                       fontFamily: 'Readex Pro',
-                                                      color: Color(0xFF14181B),
+                                                      color: const Color(0xFF14181B),
                                                       fontSize: 16.0,
                                                       letterSpacing: 0.0,
                                                     ),
                                               ),
-                                            ].divide(SizedBox(width: 10.0)),
+                                            ].divide(const SizedBox(width: 10.0)),
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -370,7 +367,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                       height: 60.0,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                             blurRadius: 4.0,
                                             color: Color(0x33000000),
@@ -384,7 +381,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -394,7 +391,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                FaIcon(
+                                                const FaIcon(
                                                   FontAwesomeIcons.hammer,
                                                   color: Color(0xFFED7D41),
                                                   size: 20.0,
@@ -408,12 +405,12 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                                         fontFamily:
                                                             'Readex Pro',
                                                         color:
-                                                            Color(0xFF14181B),
+                                                            const Color(0xFF14181B),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(SizedBox(width: 10.0)),
+                                              ].divide(const SizedBox(width: 10.0)),
                                             ),
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -447,7 +444,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                       height: 60.0,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                             blurRadius: 4.0,
                                             color: Color(0x33000000),
@@ -461,7 +458,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -471,7 +468,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                Icon(
+                                                const Icon(
                                                   Icons.delete_rounded,
                                                   color: Color(0xFFED7D41),
                                                   size: 22.0,
@@ -489,7 +486,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(SizedBox(width: 10.0)),
+                                              ].divide(const SizedBox(width: 10.0)),
                                             ),
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -529,7 +526,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                       height: 60.0,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                             blurRadius: 4.0,
                                             color: Color(0x33000000),
@@ -543,7 +540,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -553,7 +550,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                FaIcon(
+                                                const FaIcon(
                                                   FontAwesomeIcons.signOutAlt,
                                                   color: Color(0xFFED7D41),
                                                   size: 20.0,
@@ -571,14 +568,14 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(SizedBox(width: 10.0)),
+                                              ].divide(const SizedBox(width: 10.0)),
                                             ),
                                           ],
                                         ),
                                       ),
                                     ),
                                   ),
-                                ].divide(SizedBox(height: 10.0)),
+                                ].divide(const SizedBox(height: 10.0)),
                               ),
                             ),
                           ],
@@ -591,9 +588,9 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 8.0),
                                 child: StreamBuilder<List<SpRecord>>(
                                   stream: querySpRecord(
@@ -636,7 +633,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                       height: 100.0,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                             blurRadius: 10.0,
                                             color: Color(0x33000000),
@@ -654,7 +651,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 5.0, 20.0, 5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -663,7 +660,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, 0.0),
                                                   child: Text(
                                                     'SAR',
@@ -674,7 +671,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                                           fontFamily:
                                                               'Readex Pro',
                                                           color:
-                                                              Color(0xFFED7D41),
+                                                              const Color(0xFFED7D41),
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -684,7 +681,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, 0.0),
                                                   child: Text(
                                                     'سعر خدمة الأونلاين',
@@ -703,9 +700,9 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                                 Expanded(
                                                   child: Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, 0.0),
-                                                    child: Container(
+                                                    child: SizedBox(
                                                       width: 180.0,
                                                       child: TextFormField(
                                                         controller: _model
@@ -742,7 +739,7 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                                           enabledBorder:
                                                               OutlineInputBorder(
                                                             borderSide:
-                                                                BorderSide(
+                                                                const BorderSide(
                                                               color: Color(
                                                                   0xFF858B90),
                                                               width: 1.0,
@@ -837,34 +834,40 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                              ].divide(SizedBox(width: 16.0)),
+                                              ].divide(const SizedBox(width: 16.0)),
                                             ),
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: FFButtonWidget(
-                                              onPressed: () async {
-                                                await specificallySpRecord!
-                                                    .reference
-                                                    .update(createSpRecordData(
-                                                  price: double.tryParse(_model
-                                                      .priceTextController
-                                                      .text),
-                                                ));
-                                              },
+                                              onPressed: (_model.priceTextController
+                                                              .text !=
+                                                          '')
+                                                  ? null
+                                                  : () async {
+                                                      await SpRecord.collection
+                                                          .doc()
+                                                          .set(
+                                                              createSpRecordData(
+                                                            price: double
+                                                                .tryParse(_model
+                                                                    .priceTextController
+                                                                    .text),
+                                                          ));
+                                                    },
                                               text: 'حفظ',
                                               options: FFButtonOptions(
                                                 height: 31.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: Color(0xFF59C78C),
+                                                color: const Color(0xFF59C78C),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
@@ -877,6 +880,8 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                                                 elevation: 0.0,
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
+                                                disabledColor:
+                                                    const Color(0xFFA9B6C0),
                                               ),
                                             ),
                                           ),
@@ -896,19 +901,19 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
+              alignment: const AlignmentDirectional(0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(0.0, 1.0),
+                    alignment: const AlignmentDirectional(0.0, 1.0),
                     child: Text(
                       'نسخة التطبيق : 1.0.0 ',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Readex Pro',
-                            color: Color(0xA995A1AC),
+                            color: const Color(0xA995A1AC),
                             letterSpacing: 0.0,
                           ),
                     ),
@@ -916,14 +921,11 @@ class _SettingSPWidgetState extends State<SettingSPWidget> {
                 ],
               ),
             ),
-            Align(
-              alignment: AlignmentDirectional(0.0, 1.0),
-              child: wrapWithModel(
-                model: _model.navBarSPModel,
-                updateCallback: () => safeSetState(() {}),
-                child: NavBarSPWidget(
-                  page: 'Setting_ServiceProvider',
-                ),
+            wrapWithModel(
+              model: _model.navBarSPNEWModel,
+              updateCallback: () => safeSetState(() {}),
+              child: const NavBarSPNEWWidget(
+                page: 'setting_SP',
               ),
             ),
           ],

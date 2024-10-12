@@ -3,8 +3,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'welcome_model.dart';
 export 'welcome_model.dart';
 
@@ -45,7 +43,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
         body: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            Container(
+            SizedBox(
               width: double.infinity,
               height: 299.0,
               child: CarouselSlider(
@@ -97,9 +95,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
             Flexible(
               flex: 7,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(22.0),
+                  padding: const EdgeInsets.all(22.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -109,7 +107,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Text(
                                 'أهلاً بك في مطرقة ',
                                 textAlign: TextAlign.start,
@@ -125,7 +123,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Text(
                                 'تطبيق الصيانة المنزلية الأول على الاطلاق ',
                                 style: FlutterFlowTheme.of(context)
@@ -138,7 +136,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                     ),
                               ),
                             ),
-                          ].divide(SizedBox(height: 8.0)),
+                          ].divide(const SizedBox(height: 8.0)),
                         ),
                       ),
                       Flexible(
@@ -155,9 +153,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).tertiary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -181,9 +179,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: Colors.white,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -213,9 +211,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: Colors.white,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -236,10 +234,10 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                 ),
                               ),
                             ),
-                          ].divide(SizedBox(height: 10.0)),
+                          ].divide(const SizedBox(height: 10.0)),
                         ),
                       ),
-                    ].divide(SizedBox(height: 70.0)),
+                    ].divide(const SizedBox(height: 70.0)),
                   ),
                 ),
               ),

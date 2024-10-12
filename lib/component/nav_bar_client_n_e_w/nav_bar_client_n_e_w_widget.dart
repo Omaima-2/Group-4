@@ -2,8 +2,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'nav_bar_client_n_e_w_model.dart';
 export 'nav_bar_client_n_e_w_model.dart';
 
@@ -46,12 +44,22 @@ class _NavBarClientNEWWidgetState extends State<NavBarClientNEWWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 1.0),
+      alignment: const AlignmentDirectional(0.0, 1.0),
       child: Container(
         width: 580.0,
         height: 70.0,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 4.0,
+              color: Color(0xFE57636C),
+              offset: Offset(
+                0.0,
+                2.0,
+              ),
+            )
+          ],
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
@@ -60,42 +68,42 @@ class _NavBarClientNEWWidgetState extends State<NavBarClientNEWWidget> {
           ),
         ),
         child: Align(
-          alignment: AlignmentDirectional(0.0, 1.0),
+          alignment: const AlignmentDirectional(0.0, 1.0),
           child: Stack(
-            alignment: AlignmentDirectional(-0.0, 1.0),
+            alignment: const AlignmentDirectional(-0.0, 1.0),
             children: [
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 0.0),
                         child: Stack(
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 5.0, 0.0),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 0.0,
                                   buttonSize: 40.0,
-                                  hoverColor: Color(0xFFF68833),
-                                  hoverIconColor: Color(0xFFF68833),
+                                  hoverColor: const Color(0xFFF68833),
+                                  hoverIconColor: const Color(0xFFF68833),
                                   icon: Icon(
                                     Icons.home,
                                     color: valueOrDefault<Color>(
-                                      widget!.page == 'HomePageClient'
-                                          ? Color(0xFFFFB67D)
+                                      widget.page == 'HomePageClient'
+                                          ? const Color(0xFFFFB67D)
                                           : Colors.black,
-                                      Color(0xFF14181B),
+                                      const Color(0xFF14181B),
                                     ),
                                     size: 25.0,
                                   ),
@@ -106,9 +114,9 @@ class _NavBarClientNEWWidgetState extends State<NavBarClientNEWWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 1.0),
+                              alignment: const AlignmentDirectional(0.0, 1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 10.0),
                                 child: Text(
                                   ' الرئيسية',
@@ -117,10 +125,10 @@ class _NavBarClientNEWWidgetState extends State<NavBarClientNEWWidget> {
                                       .override(
                                         fontFamily: 'Readex Pro',
                                         color: valueOrDefault<Color>(
-                                          widget!.page == 'HomePageClient'
-                                              ? Color(0xFFFFB67D)
+                                          widget.page == 'HomePageClient'
+                                              ? const Color(0xFFFFB67D)
                                               : Colors.black,
-                                          Color(0xFF14181B),
+                                          const Color(0xFF14181B),
                                         ),
                                         fontSize: 10.0,
                                         letterSpacing: 0.0,
@@ -132,29 +140,29 @@ class _NavBarClientNEWWidgetState extends State<NavBarClientNEWWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 0.0),
                         child: Stack(
-                          alignment: AlignmentDirectional(1.0, 0.0),
+                          alignment: const AlignmentDirectional(1.0, 0.0),
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 3.0),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 8.0,
                                   buttonSize: 40.0,
-                                  hoverColor: Color(0xFFF68833),
-                                  hoverIconColor: Color(0xFFF68833),
+                                  hoverColor: const Color(0xFFF68833),
+                                  hoverIconColor: const Color(0xFFF68833),
                                   icon: Icon(
                                     Icons.pageview,
                                     color: valueOrDefault<Color>(
-                                      widget!.page == 'the_profestions'
-                                          ? Color(0xFFFFB67D)
+                                      widget.page == 'the_profestions'
+                                          ? const Color(0xFFFFB67D)
                                           : Colors.black,
-                                      Color(0xFF14181B),
+                                      const Color(0xFF14181B),
                                     ),
                                     size: 25.0,
                                   ),
@@ -165,9 +173,9 @@ class _NavBarClientNEWWidgetState extends State<NavBarClientNEWWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 1.0),
+                              alignment: const AlignmentDirectional(0.0, 1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 10.0),
                                 child: Text(
                                   'أيدٍ عاملة',
@@ -177,10 +185,10 @@ class _NavBarClientNEWWidgetState extends State<NavBarClientNEWWidget> {
                                       .override(
                                         fontFamily: 'Readex Pro',
                                         color: valueOrDefault<Color>(
-                                          widget!.page == 'Setting_client'
-                                              ? Color(0xFFFFB67D)
+                                          widget.page == 'Setting_client'
+                                              ? const Color(0xFFFFB67D)
                                               : Colors.black,
-                                          Color(0xFF14181B),
+                                          const Color(0xFF14181B),
                                         ),
                                         fontSize: 10.0,
                                         letterSpacing: 0.0,
@@ -192,22 +200,22 @@ class _NavBarClientNEWWidgetState extends State<NavBarClientNEWWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 0.0),
                         child: Stack(
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 5.0),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 8.0,
                                   buttonSize: 40.0,
-                                  hoverColor: Color(0xFFF68833),
-                                  hoverIconColor: Color(0xFFF68833),
-                                  icon: Icon(
+                                  hoverColor: const Color(0xFFF68833),
+                                  hoverIconColor: const Color(0xFFF68833),
+                                  icon: const Icon(
                                     Icons.ballot_sharp,
                                     color: Colors.black,
                                     size: 25.0,
@@ -219,9 +227,9 @@ class _NavBarClientNEWWidgetState extends State<NavBarClientNEWWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 1.0),
+                              alignment: const AlignmentDirectional(0.0, 1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 3.0, 10.0),
                                 child: Text(
                                   'الطلبات',
@@ -240,7 +248,7 @@ class _NavBarClientNEWWidgetState extends State<NavBarClientNEWWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -253,23 +261,23 @@ class _NavBarClientNEWWidgetState extends State<NavBarClientNEWWidget> {
                           child: Stack(
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 7.0, 5.0),
                                   child: FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
                                     borderRadius: 8.0,
                                     buttonSize: 40.0,
-                                    hoverColor: Color(0xFFF68833),
-                                    hoverIconColor: Color(0xFFF68833),
+                                    hoverColor: const Color(0xFFF68833),
+                                    hoverIconColor: const Color(0xFFF68833),
                                     icon: Icon(
                                       Icons.settings_sharp,
                                       color: valueOrDefault<Color>(
-                                        widget!.page == 'Setting_client'
-                                            ? Color(0xFFFFB67D)
+                                        widget.page == 'Setting_client'
+                                            ? const Color(0xFFFFB67D)
                                             : Colors.black,
-                                        Color(0xFF14181B),
+                                        const Color(0xFF14181B),
                                       ),
                                       size: 25.0,
                                     ),
@@ -280,9 +288,9 @@ class _NavBarClientNEWWidgetState extends State<NavBarClientNEWWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 1.0),
+                                alignment: const AlignmentDirectional(0.0, 1.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 5.0, 10.0),
                                   child: Text(
                                     'الإعدادات',
@@ -291,10 +299,10 @@ class _NavBarClientNEWWidgetState extends State<NavBarClientNEWWidget> {
                                         .override(
                                           fontFamily: 'Readex Pro',
                                           color: valueOrDefault<Color>(
-                                            widget!.page == 'Setting_client'
-                                                ? Color(0xFFFFB67D)
+                                            widget.page == 'Setting_client'
+                                                ? const Color(0xFFFFB67D)
                                                 : Colors.black,
-                                            Color(0xFF14181B),
+                                            const Color(0xFF14181B),
                                           ),
                                           fontSize: 10.0,
                                           letterSpacing: 0.0,

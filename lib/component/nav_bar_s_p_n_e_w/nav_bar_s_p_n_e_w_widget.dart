@@ -2,8 +2,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'nav_bar_s_p_n_e_w_model.dart';
 export 'nav_bar_s_p_n_e_w_model.dart';
 
@@ -46,11 +44,21 @@ class _NavBarSPNEWWidgetState extends State<NavBarSPNEWWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 1.0),
+      alignment: const AlignmentDirectional(0.0, 1.0),
       child: Container(
         width: double.infinity,
         height: 70.0,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 4.0,
+              color: Color(0xFE57636C),
+              offset: Offset(
+                0.0,
+                2.0,
+              ),
+            )
+          ],
           gradient: LinearGradient(
             colors: [Color(0xFFF1F4F8), Color(0xFFF1F4F8)],
             stops: [0.0, 1.0],
@@ -64,38 +72,38 @@ class _NavBarSPNEWWidgetState extends State<NavBarSPNEWWidget> {
             topRight: Radius.circular(0.0),
           ),
         ),
-        child: Container(
+        child: SizedBox(
           height: 60.0,
           child: Stack(
-            alignment: AlignmentDirectional(-0.0, 1.0),
+            alignment: const AlignmentDirectional(-0.0, 1.0),
             children: [
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 0.0),
                         child: Stack(
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
                                 borderRadius: 0.0,
                                 buttonSize: 40.0,
-                                hoverColor: Color(0xFFF68833),
-                                hoverIconColor: Color(0xFFF68833),
+                                hoverColor: const Color(0xFFF68833),
+                                hoverIconColor: const Color(0xFFF68833),
                                 icon: Icon(
                                   Icons.home_sharp,
                                   color: valueOrDefault<Color>(
-                                    widget!.page == 'ServiceProviderHomePage'
-                                        ? Color(0xFFFFB67D)
+                                    widget.page == 'ServiceProviderHomePage'
+                                        ? const Color(0xFFFFB67D)
                                         : Colors.black,
                                     Colors.black,
                                   ),
@@ -107,9 +115,9 @@ class _NavBarSPNEWWidgetState extends State<NavBarSPNEWWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 1.0),
+                              alignment: const AlignmentDirectional(0.0, 1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 10.0),
                                 child: Text(
                                   'الرئيسية',
@@ -118,9 +126,9 @@ class _NavBarSPNEWWidgetState extends State<NavBarSPNEWWidget> {
                                       .override(
                                         fontFamily: 'Readex Pro',
                                         color: valueOrDefault<Color>(
-                                          widget!.page ==
+                                          widget.page ==
                                                   'ServiceProviderHomePage'
-                                              ? Color(0xFFFFB67D)
+                                              ? const Color(0xFFFFB67D)
                                               : Colors.black,
                                           Colors.black,
                                         ),
@@ -134,26 +142,26 @@ class _NavBarSPNEWWidgetState extends State<NavBarSPNEWWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 0.0),
                         child: Stack(
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     7.0, 0.0, 0.0, 0.0),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 8.0,
                                   buttonSize: 40.0,
-                                  hoverColor: Color(0xFFF68833),
-                                  hoverIconColor: Color(0xFFF68833),
+                                  hoverColor: const Color(0xFFF68833),
+                                  hoverIconColor: const Color(0xFFF68833),
                                   icon: Icon(
                                     Icons.view_timeline,
                                     color: valueOrDefault<Color>(
-                                      widget!.page == 'My_requests_sp'
-                                          ? Color(0xFFFFB67D)
+                                      widget.page == 'My_requests_sp'
+                                          ? const Color(0xFFFFB67D)
                                           : Colors.black,
                                       Colors.black,
                                     ),
@@ -166,9 +174,9 @@ class _NavBarSPNEWWidgetState extends State<NavBarSPNEWWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 1.0),
+                              alignment: const AlignmentDirectional(0.0, 1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 2.0, 10.0),
                                 child: Text(
                                   'الطلبات',
@@ -187,23 +195,23 @@ class _NavBarSPNEWWidgetState extends State<NavBarSPNEWWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 0.0),
                         child: Stack(
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
                                 borderRadius: 8.0,
                                 buttonSize: 40.0,
-                                hoverColor: Color(0xFFF68833),
-                                hoverIconColor: Color(0xFFF68833),
+                                hoverColor: const Color(0xFFF68833),
+                                hoverIconColor: const Color(0xFFF68833),
                                 icon: Icon(
                                   Icons.design_services,
                                   color: valueOrDefault<Color>(
-                                    widget!.page == 'services'
-                                        ? Color(0xFFFFB67D)
+                                    widget.page == 'services'
+                                        ? const Color(0xFFFFB67D)
                                         : Colors.black,
                                     Colors.black,
                                   ),
@@ -215,9 +223,9 @@ class _NavBarSPNEWWidgetState extends State<NavBarSPNEWWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 1.0),
+                              alignment: const AlignmentDirectional(0.0, 1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 10.0),
                                 child: Text(
                                   'الخدمات',
@@ -226,8 +234,8 @@ class _NavBarSPNEWWidgetState extends State<NavBarSPNEWWidget> {
                                       .override(
                                         fontFamily: 'Readex Pro',
                                         color: valueOrDefault<Color>(
-                                          widget!.page == 'services'
-                                              ? Color(0xFFFFB67D)
+                                          widget.page == 'services'
+                                              ? const Color(0xFFFFB67D)
                                               : Colors.black,
                                           Colors.black,
                                         ),
@@ -241,7 +249,7 @@ class _NavBarSPNEWWidgetState extends State<NavBarSPNEWWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -254,18 +262,18 @@ class _NavBarSPNEWWidgetState extends State<NavBarSPNEWWidget> {
                           child: Stack(
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 8.0,
                                   buttonSize: 40.0,
-                                  hoverColor: Color(0xFFF68833),
-                                  hoverIconColor: Color(0xFFF68833),
+                                  hoverColor: const Color(0xFFF68833),
+                                  hoverIconColor: const Color(0xFFF68833),
                                   icon: Icon(
                                     Icons.settings_sharp,
                                     color: valueOrDefault<Color>(
-                                      widget!.page == 'Setting_ServiceProvider'
-                                          ? Color(0xFFFFB67D)
+                                      widget.page == 'Setting_ServiceProvider'
+                                          ? const Color(0xFFFFB67D)
                                           : Colors.black,
                                       Colors.black,
                                     ),
@@ -277,9 +285,9 @@ class _NavBarSPNEWWidgetState extends State<NavBarSPNEWWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 1.0),
+                                alignment: const AlignmentDirectional(0.0, 1.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: Text(
                                     'الإعدادات',
@@ -288,9 +296,9 @@ class _NavBarSPNEWWidgetState extends State<NavBarSPNEWWidget> {
                                         .override(
                                           fontFamily: 'Readex Pro',
                                           color: valueOrDefault<Color>(
-                                            widget!.page ==
+                                            widget.page ==
                                                     'Setting_ServiceProvider'
-                                                ? Color(0xFFFFB67D)
+                                                ? const Color(0xFFFFB67D)
                                                 : Colors.black,
                                             Colors.black,
                                           ),

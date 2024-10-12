@@ -1,8 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'sp_nav_model.dart';
 export 'sp_nav_model.dart';
 
@@ -64,8 +62,8 @@ class _SpNavWidgetState extends State<SpNavWidget> {
             },
             child: Icon(
               Icons.house,
-              color: widget!.page == 'sp_home'
-                  ? Color(0xFFED7D41)
+              color: widget.page == 'sp_home'
+                  ? const Color(0xFFED7D41)
                   : FlutterFlowTheme.of(context).secondaryBackground,
               size: 24.0,
             ),
@@ -90,8 +88,8 @@ class _SpNavWidgetState extends State<SpNavWidget> {
             },
             child: Icon(
               Icons.person,
-              color: widget!.page == 'sp_setting'
-                  ? Color(0xFFED7D41)
+              color: widget.page == 'sp_setting'
+                  ? const Color(0xFFED7D41)
                   : FlutterFlowTheme.of(context).secondaryBackground,
               size: 24.0,
             ),

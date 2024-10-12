@@ -6,11 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:provider/provider.dart';
 import 'view_profile_client_model.dart';
 export 'view_profile_client_model.dart';
 
@@ -68,9 +64,9 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,7 +76,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                     children: [
                       Flexible(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 10.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -90,7 +86,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                             onTap: () async {
                               context.pushNamed('home_SP');
                             },
-                            child: Icon(
+                            child: const Icon(
                               Icons.arrow_back,
                               color: Color(0xFF14181B),
                               size: 30.0,
@@ -101,9 +97,9 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                       Flexible(
                         flex: 5,
                         child: Align(
-                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 20.0, 0.0),
                             child: Text(
                               'الحساب و المعلومات',
@@ -111,7 +107,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Outfit',
-                                    color: Color(0xFF14181B),
+                                    color: const Color(0xFF14181B),
                                     fontSize: 26.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -123,16 +119,16 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                     ],
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(1.0, 0.0),
+                              alignment: const AlignmentDirectional(1.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -151,7 +147,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 20.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => InkWell(
@@ -230,7 +226,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                             child: Padding(
                                               padding: MediaQuery.viewInsetsOf(
                                                   context),
-                                              child: UploadPhotoSucsessWidget(),
+                                              child: const UploadPhotoSucsessWidget(),
                                             ),
                                           );
                                         },
@@ -252,7 +248,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                           ),
                                         ).image,
                                       ),
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 4.0,
                                           color: Color(0x33000000),
@@ -279,7 +275,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                     height: 73.0,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 10.0,
                                           color: Color(0x33000000),
@@ -292,21 +288,21 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 5.0, 20.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
                                         children: [
-                                          Icon(
+                                          const Icon(
                                             Icons.perm_contact_cal,
                                             color: Color(0xFFED7D41),
                                             size: 24.0,
                                           ),
                                           Expanded(
                                             child: AuthUserStreamWidget(
-                                              builder: (context) => Container(
+                                              builder: (context) => SizedBox(
                                                 width: 200.0,
                                                 child: TextFormField(
                                                   controller: _model
@@ -339,7 +335,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0x00000000),
                                                         width: 1.0,
@@ -350,7 +346,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0x00000000),
                                                         width: 1.0,
@@ -414,7 +410,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                               ),
                                             ),
                                           ),
-                                        ].divide(SizedBox(width: 18.0)),
+                                        ].divide(const SizedBox(width: 18.0)),
                                       ),
                                     ),
                                   ),
@@ -423,7 +419,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                     height: 73.0,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 10.0,
                                           color: Color(0x33000000),
@@ -436,20 +432,20 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 5.0, 20.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
                                         children: [
-                                          Icon(
+                                          const Icon(
                                             Icons.alternate_email_outlined,
                                             color: Color(0xFFED7D41),
                                             size: 24.0,
                                           ),
                                           Expanded(
-                                            child: Container(
+                                            child: SizedBox(
                                               width: 200.0,
                                               child: TextFormField(
                                                 controller: _model
@@ -483,7 +479,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                           ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Color(0x00000000),
                                                       width: 1.0,
                                                     ),
@@ -493,7 +489,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                   ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Color(0x00000000),
                                                       width: 1.0,
                                                     ),
@@ -556,7 +552,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                               ),
                                             ),
                                           ),
-                                        ].divide(SizedBox(width: 18.0)),
+                                        ].divide(const SizedBox(width: 18.0)),
                                       ),
                                     ),
                                   ),
@@ -565,7 +561,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                     height: 73.0,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 10.0,
                                           color: Color(0x33000000),
@@ -578,21 +574,21 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 5.0, 20.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
                                         children: [
-                                          Icon(
+                                          const Icon(
                                             Icons.phone,
                                             color: Color(0xFFED7D41),
                                             size: 24.0,
                                           ),
                                           Expanded(
                                             child: AuthUserStreamWidget(
-                                              builder: (context) => Container(
+                                              builder: (context) => SizedBox(
                                                 width: 200.0,
                                                 child: TextFormField(
                                                   controller: _model
@@ -624,7 +620,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0x00000000),
                                                         width: 1.0,
@@ -635,7 +631,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0x00000000),
                                                         width: 1.0,
@@ -701,7 +697,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                               ),
                                             ),
                                           ),
-                                        ].divide(SizedBox(width: 18.0)),
+                                        ].divide(const SizedBox(width: 18.0)),
                                       ),
                                     ),
                                   ),
@@ -710,7 +706,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                     height: 73.0,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 10.0,
                                           color: Color(0x33000000),
@@ -723,21 +719,21 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 5.0, 20.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
                                         children: [
-                                          Icon(
+                                          const Icon(
                                             Icons.location_on,
                                             color: Color(0xFFED7D41),
                                             size: 24.0,
                                           ),
                                           Expanded(
                                             child: AuthUserStreamWidget(
-                                              builder: (context) => Container(
+                                              builder: (context) => SizedBox(
                                                 width: 200.0,
                                                 child: TextFormField(
                                                   controller: _model
@@ -769,7 +765,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0x00000000),
                                                         width: 1.0,
@@ -780,7 +776,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0x00000000),
                                                         width: 1.0,
@@ -847,12 +843,12 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                               ),
                                             ),
                                           ),
-                                        ].divide(SizedBox(width: 18.0)),
+                                        ].divide(const SizedBox(width: 18.0)),
                                       ),
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 30.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -863,10 +859,10 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(1.0, 0.0),
+                                              const AlignmentDirectional(1.0, 0.0),
                                           child: Container(
                                             decoration: BoxDecoration(
-                                              boxShadow: [
+                                              boxShadow: const [
                                                 BoxShadow(
                                                   blurRadius: 4.0,
                                                   color: Color(0x33000000),
@@ -917,14 +913,14 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                               options: FFButtonOptions(
                                                 width: 130.0,
                                                 height: 40.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: Color(0xFF59C78C),
+                                                color: const Color(0xFF59C78C),
                                                 textStyle: FlutterFlowTheme.of(
                                                         context)
                                                     .titleSmall
@@ -945,10 +941,10 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(1.0, 0.0),
+                                              const AlignmentDirectional(1.0, 0.0),
                                           child: Container(
                                             decoration: BoxDecoration(
-                                              boxShadow: [
+                                              boxShadow: const [
                                                 BoxShadow(
                                                   blurRadius: 4.0,
                                                   color: Color(0x33000000),
@@ -967,7 +963,7 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                                   'viewProfile_client',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        TransitionInfo(
+                                                        const TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -980,11 +976,11 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                               options: FFButtonOptions(
                                                 width: 130.0,
                                                 height: 40.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color: Colors.white,
@@ -1007,10 +1003,10 @@ class _ViewProfileClientWidgetState extends State<ViewProfileClientWidget> {
                                       ],
                                     ),
                                   ),
-                                ].divide(SizedBox(height: 10.0)),
+                                ].divide(const SizedBox(height: 10.0)),
                               ),
                             ),
-                          ].divide(SizedBox(height: 15.0)),
+                          ].divide(const SizedBox(height: 15.0)),
                         ),
                       ),
                     ),

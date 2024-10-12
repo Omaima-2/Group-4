@@ -3,12 +3,9 @@ import '/component/nav_bar_client_n_e_w/nav_bar_client_n_e_w_widget.dart';
 import '/component/profestion/profestion_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'home_client_model.dart';
 export 'home_client_model.dart';
 
@@ -57,14 +54,14 @@ class _HomeClientWidgetState extends State<HomeClientWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                      child: Container(
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                      child: SizedBox(
                         width: double.infinity,
                         height: 207.0,
                         child: Stack(
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 40.0),
                               child: PageView(
                                 controller: _model.pageViewController ??=
@@ -83,7 +80,7 @@ class _HomeClientWidgetState extends State<HomeClientWidget> {
                                             width: 436.0,
                                             height: 222.0,
                                             fit: BoxFit.cover,
-                                            alignment: Alignment(0.0, 0.0),
+                                            alignment: const Alignment(0.0, 0.0),
                                           ),
                                         ),
                                       ),
@@ -101,7 +98,7 @@ class _HomeClientWidgetState extends State<HomeClientWidget> {
                                             width: 251.0,
                                             height: 250.0,
                                             fit: BoxFit.cover,
-                                            alignment: Alignment(0.0, 0.0),
+                                            alignment: const Alignment(0.0, 0.0),
                                           ),
                                         ),
                                       ),
@@ -128,9 +125,9 @@ class _HomeClientWidgetState extends State<HomeClientWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 1.0),
+                              alignment: const AlignmentDirectional(0.0, 1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 16.0),
                                 child:
                                     smooth_page_indicator.SmoothPageIndicator(
@@ -142,12 +139,12 @@ class _HomeClientWidgetState extends State<HomeClientWidget> {
                                     await _model.pageViewController!
                                         .animateToPage(
                                       i,
-                                      duration: Duration(milliseconds: 500),
+                                      duration: const Duration(milliseconds: 500),
                                       curve: Curves.ease,
                                     );
                                     safeSetState(() {});
                                   },
-                                  effect: smooth_page_indicator.SlideEffect(
+                                  effect: const smooth_page_indicator.SlideEffect(
                                     spacing: 8.0,
                                     radius: 8.0,
                                     dotWidth: 8.0,
@@ -169,9 +166,9 @@ class _HomeClientWidgetState extends State<HomeClientWidget> {
             ),
             Flexible(
               child: Align(
-                alignment: AlignmentDirectional(-1.0, -1.0),
+                alignment: const AlignmentDirectional(-1.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 14.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 14.0, 0.0),
                   child: Text(
                     'ما نوع المشكله التي تعاني منها؟',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -188,7 +185,7 @@ class _HomeClientWidgetState extends State<HomeClientWidget> {
             Expanded(
               flex: 10,
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 1.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 1.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -261,7 +258,7 @@ class _HomeClientWidgetState extends State<HomeClientWidget> {
             wrapWithModel(
               model: _model.navBarClientNEWModel,
               updateCallback: () => safeSetState(() {}),
-              child: NavBarClientNEWWidget(
+              child: const NavBarClientNEWWidget(
                 page: 'NavBarClientCopy',
               ),
             ),

@@ -4,11 +4,10 @@ import '/component/nav_bar_s_p/nav_bar_s_p_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/sp/components/request/request_widget.dart';
+import '/sp/no_requests/no_requests_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'my_requests_s_p_model.dart';
 export 'my_requests_s_p_model.dart';
 
@@ -82,7 +81,7 @@ class _MyRequestsSPWidgetState extends State<MyRequestsSPWidget> {
             key: scaffoldKey,
             backgroundColor: Colors.white,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(70.0),
+              preferredSize: const Size.fromHeight(70.0),
               child: AppBar(
                 backgroundColor: Colors.white,
                 automaticallyImplyLeading: false,
@@ -91,7 +90,7 @@ class _MyRequestsSPWidgetState extends State<MyRequestsSPWidget> {
                   borderRadius: 30.0,
                   borderWidth: 1.0,
                   buttonSize: 60.0,
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.arrow_back_rounded,
                     color: Color(0xFF14181B),
                     size: 30.0,
@@ -100,13 +99,13 @@ class _MyRequestsSPWidgetState extends State<MyRequestsSPWidget> {
                     context.pop();
                   },
                 ),
-                actions: [],
+                actions: const [],
                 flexibleSpace: FlexibleSpaceBar(
                   title: Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 60.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 60.0, 0.0),
                       child: Text(
                         'الطلبات',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -129,62 +128,78 @@ class _MyRequestsSPWidgetState extends State<MyRequestsSPWidget> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    StreamBuilder<List<OrequestRecord>>(
-                      stream: queryOrequestRecord(
-                        queryBuilder: (orequestRecord) => orequestRecord
-                            .where(
-                              'sp',
-                              isEqualTo: myRequestsSPSpRecord?.reference,
-                            )
-                            .where(
-                              'state',
-                              isEqualTo: 'Pending ',
-                            ),
-                      ),
-                      builder: (context, snapshot) {
-                        // Customize what your widget looks like when it's loading.
-                        if (!snapshot.hasData) {
-                          return Center(
-                            child: SizedBox(
-                              width: 50.0,
-                              height: 50.0,
-                              child: CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  FlutterFlowTheme.of(context).primary,
+                Flexible(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Flexible(
+                        child: StreamBuilder<List<OrequestRecord>>(
+                          stream: queryOrequestRecord(
+                            queryBuilder: (orequestRecord) => orequestRecord
+                                .where(
+                                  'state',
+                                  isEqualTo: 'Panding',
+                                )
+                                .where(
+                                  'sp',
+                                  isEqualTo: myRequestsSPSpRecord?.reference,
                                 ),
-                              ),
-                            ),
-                          );
-                        }
-                        List<OrequestRecord> listViewOrequestRecordList =
-                            snapshot.data!;
+                          ),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 40.0,
+                                  height: 40.0,
+                                  child: SpinKitRing(
+                                    color: FlutterFlowTheme.of(context)
+                                        .mitraqaOrange,
+                                    size: 40.0,
+                                  ),
+                                ),
+                              );
+                            }
+                            List<OrequestRecord> listViewOrequestRecordList =
+                                snapshot.data!;
+                            if (listViewOrequestRecordList.isEmpty) {
+                              return const NoRequestsWidget();
+                            }
 
-                        return ListView.builder(
-                          padding: EdgeInsets.zero,
-                          shrinkWrap: true,
-                          scrollDirection: Axis.vertical,
-                          itemCount: listViewOrequestRecordList.length,
-                          itemBuilder: (context, listViewIndex) {
-                            final listViewOrequestRecord =
-                                listViewOrequestRecordList[listViewIndex];
-                            return RequestWidget(
-                              key: Key(
-                                  'Key2mk_${listViewIndex}_of_${listViewOrequestRecordList.length}'),
-                              request: listViewOrequestRecord,
+                            return ListView.builder(
+                              padding: EdgeInsets.zero,
+                              shrinkWrap: true,
+                              scrollDirection: Axis.vertical,
+                              itemCount: listViewOrequestRecordList.length,
+                              itemBuilder: (context, listViewIndex) {
+                                final listViewOrequestRecord =
+                                    listViewOrequestRecordList[listViewIndex];
+                                return wrapWithModel(
+                                  model: _model.requestModels.getModel(
+                                    myRequestsSPSpRecord!.availability
+                                        .toString(),
+                                    listViewIndex,
+                                  ),
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: RequestWidget(
+                                    key: Key(
+                                      'Key2mk_${myRequestsSPSpRecord.availability.toString()}',
+                                    ),
+                                    request: listViewOrequestRecord,
+                                  ),
+                                );
+                              },
                             );
                           },
-                        );
-                      },
-                    ),
-                  ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 wrapWithModel(
                   model: _model.navBarSPModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: NavBarSPWidget(
+                  child: const NavBarSPWidget(
                     page: 'My_requests_sp',
                   ),
                 ),

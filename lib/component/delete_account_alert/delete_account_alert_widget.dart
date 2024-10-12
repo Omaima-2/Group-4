@@ -2,8 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'delete_account_alert_model.dart';
 export 'delete_account_alert_model.dart';
 
@@ -42,7 +40,7 @@ class _DeleteAccountAlertWidgetState extends State<DeleteAccountAlertWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
       child: Material(
         color: Colors.transparent,
         elevation: 4.0,
@@ -54,7 +52,7 @@ class _DeleteAccountAlertWidgetState extends State<DeleteAccountAlertWidget> {
           height: 272.0,
           decoration: BoxDecoration(
             color: Colors.white,
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 blurRadius: 4.0,
                 color: Color(0x4157636C),
@@ -68,7 +66,7 @@ class _DeleteAccountAlertWidgetState extends State<DeleteAccountAlertWidget> {
             shape: BoxShape.rectangle,
           ),
           child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -76,10 +74,10 @@ class _DeleteAccountAlertWidgetState extends State<DeleteAccountAlertWidget> {
                 Flexible(
                   flex: 10,
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Text(
                         'متأكد من حذف حسابك؟',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -94,10 +92,10 @@ class _DeleteAccountAlertWidgetState extends State<DeleteAccountAlertWidget> {
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 50.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 50.0),
                     child: Text(
                       'إذا قمت بحذف حسابك ستفقد بياناتك المسجلة في مطرقة !',
                       textAlign: TextAlign.center,
@@ -114,16 +112,16 @@ class _DeleteAccountAlertWidgetState extends State<DeleteAccountAlertWidget> {
                 Flexible(
                   flex: 7,
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, -1.0),
+                    alignment: const AlignmentDirectional(0.0, -1.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Flexible(
                           flex: 10,
                           child: Align(
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: const AlignmentDirectional(0.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 5.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
@@ -133,9 +131,9 @@ class _DeleteAccountAlertWidgetState extends State<DeleteAccountAlertWidget> {
                                 options: FFButtonOptions(
                                   width: 100.0,
                                   height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).error,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -157,7 +155,7 @@ class _DeleteAccountAlertWidgetState extends State<DeleteAccountAlertWidget> {
                         Flexible(
                           flex: 10,
                           child: Align(
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: const AlignmentDirectional(0.0, -1.0),
                             child: FFButtonWidget(
                               onPressed: () async {
                                 Navigator.pop(context);
@@ -166,11 +164,11 @@ class _DeleteAccountAlertWidgetState extends State<DeleteAccountAlertWidget> {
                               options: FFButtonOptions(
                                 width: 100.0,
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFF66D9A6),
+                                color: const Color(0xFF66D9A6),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -190,7 +188,7 @@ class _DeleteAccountAlertWidgetState extends State<DeleteAccountAlertWidget> {
                     ),
                   ),
                 ),
-              ].divide(SizedBox(height: 12.0)),
+              ].divide(const SizedBox(height: 12.0)),
             ),
           ),
         ),

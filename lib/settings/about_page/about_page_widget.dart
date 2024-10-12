@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'about_page_model.dart';
 export 'about_page_model.dart';
 
@@ -50,7 +47,7 @@ class _AboutPageWidgetState extends State<AboutPageWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Colors.black,
               size: 30.0,
@@ -68,22 +65,22 @@ class _AboutPageWidgetState extends State<AboutPageWidget> {
                   fontWeight: FontWeight.w500,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(40.0, 30.0, 40.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(40.0, 30.0, 40.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Container(
                       width: 213.0,
                       height: 184.0,
@@ -119,7 +116,7 @@ class _AboutPageWidgetState extends State<AboutPageWidget> {
                               letterSpacing: 0.0,
                             ),
                       ),
-                    ].divide(SizedBox(height: 8.0)),
+                    ].divide(const SizedBox(height: 8.0)),
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
@@ -143,7 +140,7 @@ class _AboutPageWidgetState extends State<AboutPageWidget> {
                               letterSpacing: 0.0,
                             ),
                       ),
-                    ].divide(SizedBox(height: 8.0)),
+                    ].divide(const SizedBox(height: 8.0)),
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
@@ -167,9 +164,9 @@ class _AboutPageWidgetState extends State<AboutPageWidget> {
                               letterSpacing: 0.0,
                             ),
                       ),
-                    ].divide(SizedBox(height: 8.0)),
+                    ].divide(const SizedBox(height: 8.0)),
                   ),
-                ].divide(SizedBox(height: 20.0)),
+                ].divide(const SizedBox(height: 20.0)),
               ),
             ),
           ),

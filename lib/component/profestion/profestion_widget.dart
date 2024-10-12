@@ -1,8 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'profestion_model.dart';
 export 'profestion_model.dart';
 
@@ -11,7 +9,7 @@ class ProfestionWidget extends StatefulWidget {
     super.key,
     String? name,
     required this.photp,
-  }) : this.name = name ?? 'التخصص';
+  }) : name = name ?? 'التخصص';
 
   final String name;
   final String? photp;
@@ -47,12 +45,12 @@ class _ProfestionWidgetState extends State<ProfestionWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
       child: Container(
         width: double.infinity,
         height: 170.0,
         decoration: BoxDecoration(
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               blurRadius: 3.0,
               color: Color(0x411D2429),
@@ -62,7 +60,7 @@ class _ProfestionWidgetState extends State<ProfestionWidget> {
               ),
             )
           ],
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             colors: [Color(0xFFFFB67D), Color(0xFFB7C7FB), Color(0xFFD1DCF9)],
             stops: [0.0, 0.6, 1.0],
             begin: AlignmentDirectional(-1.0, -1.0),
@@ -71,19 +69,19 @@ class _ProfestionWidgetState extends State<ProfestionWidget> {
           borderRadius: BorderRadius.circular(8.0),
         ),
         child: Padding(
-          padding: EdgeInsets.all(4.0),
+          padding: const EdgeInsets.all(4.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Flexible(
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 1.0, 1.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 1.0, 1.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(6.0),
                     child: Image.network(
                       valueOrDefault<String>(
-                        widget!.photp,
+                        widget.photp,
                         'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/aaaa-l7rtpe/assets/wvazp1yxhfje/%D9%84%D9%82%D8%B7%D8%A9_%D8%A7%D9%84%D8%B4%D8%A7%D8%B4%D8%A9_2024-09-24_232031.png',
                       ),
                       width: double.infinity,
@@ -97,7 +95,7 @@ class _ProfestionWidgetState extends State<ProfestionWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Text(
-                    widget!.name,
+                    widget.name,
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Outfit',
                           color: Colors.white,
@@ -106,7 +104,7 @@ class _ProfestionWidgetState extends State<ProfestionWidget> {
                           fontWeight: FontWeight.w500,
                         ),
                   ),
-                  Flexible(
+                  const Flexible(
                     child: Align(
                       alignment: AlignmentDirectional(1.0, 0.0),
                       child: Icon(

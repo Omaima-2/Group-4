@@ -2,8 +2,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'nav_bar_admin_model.dart';
 export 'nav_bar_admin_model.dart';
 
@@ -46,34 +44,41 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 1.0),
+      alignment: const AlignmentDirectional(0.0, 1.0),
       child: Container(
         width: double.infinity,
         height: 70.0,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 4.0,
+              color: Color(0xFE57636C),
+              offset: Offset(
+                0.0,
+                2.0,
+              ),
+            )
+          ],
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(0.0),
             topRight: Radius.circular(0.0),
           ),
-          border: Border.all(
-            color: Colors.black,
-          ),
         ),
         child: Align(
-          alignment: AlignmentDirectional(0.0, 1.0),
-          child: Container(
+          alignment: const AlignmentDirectional(0.0, 1.0),
+          child: SizedBox(
             height: 60.0,
             child: Stack(
-              alignment: AlignmentDirectional(-0.0, -1.0),
+              alignment: const AlignmentDirectional(-0.0, -1.0),
               children: [
                 Align(
-                  alignment: AlignmentDirectional(1.0, 0.0),
+                  alignment: const AlignmentDirectional(1.0, 0.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -81,27 +86,27 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
                       children: [
                         Flexible(
                           child: Align(
-                            alignment: AlignmentDirectional(1.0, 0.0),
+                            alignment: const AlignmentDirectional(1.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 20.0, 0.0),
                               child: Stack(
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(1.0, 0.0),
+                                    alignment: const AlignmentDirectional(1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 30.0, 20.0),
                                       child: FlutterFlowIconButton(
                                         borderRadius: 8.0,
                                         buttonSize: 40.0,
-                                        hoverColor: Color(0xFFF68833),
-                                        hoverIconColor: Color(0xFFF68833),
+                                        hoverColor: const Color(0xFFF68833),
+                                        hoverIconColor: const Color(0xFFF68833),
                                         icon: Icon(
                                           Icons.home,
                                           color: valueOrDefault<Color>(
-                                            widget!.page == 'AdminHomePage'
-                                                ? Color(0xFFFFB67D)
+                                            widget.page == 'AdminHomePage'
+                                                ? const Color(0xFFFFB67D)
                                                 : Colors.black,
                                             Colors.black,
                                           ),
@@ -114,9 +119,9 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 1.0),
+                                    alignment: const AlignmentDirectional(-1.0, 1.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 8.0, 15.0),
                                       child: Text(
                                         'الرئيسية',
@@ -125,8 +130,8 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
                                             .override(
                                               fontFamily: 'Readex Pro',
                                               color: valueOrDefault<Color>(
-                                                widget!.page == 'AdminHomePage'
-                                                    ? Color(0xFFFFB67D)
+                                                widget.page == 'AdminHomePage'
+                                                    ? const Color(0xFFFFB67D)
                                                     : Colors.black,
                                                 Colors.black,
                                               ),
@@ -144,23 +149,23 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
                         Flexible(
                           flex: 9,
                           child: Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Container(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: SizedBox(
                               width: 100.0,
                               child: Stack(
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(1.0, 0.0),
+                                    alignment: const AlignmentDirectional(1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           40.0, 0.0, 0.0, 20.0),
                                       child: FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
                                         borderRadius: 8.0,
                                         buttonSize: 40.0,
-                                        hoverColor: Color(0xFFF68833),
-                                        hoverIconColor: Color(0xFFF68833),
-                                        icon: Icon(
+                                        hoverColor: const Color(0xFFF68833),
+                                        hoverIconColor: const Color(0xFFF68833),
+                                        icon: const Icon(
                                           Icons.view_timeline,
                                           color: Colors.black,
                                           size: 25.0,
@@ -172,9 +177,9 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(1.0, 1.0),
+                                    alignment: const AlignmentDirectional(1.0, 1.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           45.0, 0.0, 0.0, 15.0),
                                       child: Text(
                                         'الشكاوئ',
@@ -196,9 +201,9 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
                         ),
                         Flexible(
                           child: Align(
-                            alignment: AlignmentDirectional(-1.0, 1.0),
+                            alignment: const AlignmentDirectional(-1.0, 1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   15.0, 0.0, 0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -211,23 +216,23 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
                                 child: Stack(
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(1.0, 0.0),
+                                      alignment: const AlignmentDirectional(1.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 20.0),
                                         child: FlutterFlowIconButton(
                                           borderColor: Colors.transparent,
                                           borderRadius: 8.0,
                                           buttonSize: 40.0,
-                                          hoverColor: Color(0xFFF68833),
-                                          hoverIconColor: Color(0xFFF68833),
+                                          hoverColor: const Color(0xFFF68833),
+                                          hoverIconColor: const Color(0xFFF68833),
                                           icon: Icon(
                                             Icons.settings_sharp,
                                             color: valueOrDefault<Color>(
-                                              widget!.page == 'setting_admin'
-                                                  ? Color(0xFFFFB67D)
+                                              widget.page == 'setting_admin'
+                                                  ? const Color(0xFFFFB67D)
                                                   : Colors.black,
-                                              Color(0xFF14181B),
+                                              const Color(0xFF14181B),
                                             ),
                                             size: 25.0,
                                           ),
@@ -238,9 +243,9 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
                                       ),
                                     ),
                                     Align(
-                                      alignment: AlignmentDirectional(1.0, 1.0),
+                                      alignment: const AlignmentDirectional(1.0, 1.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 0.0, 15.0),
                                         child: Text(
                                           'الإعدادات',
@@ -249,11 +254,11 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
                                               .override(
                                                 fontFamily: 'Readex Pro',
                                                 color: valueOrDefault<Color>(
-                                                  widget!.page ==
+                                                  widget.page ==
                                                           'setting_admin'
-                                                      ? Color(0xFFFFB67D)
+                                                      ? const Color(0xFFFFB67D)
                                                       : Colors.black,
-                                                  Color(0xFF14181B),
+                                                  const Color(0xFF14181B),
                                                 ),
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,

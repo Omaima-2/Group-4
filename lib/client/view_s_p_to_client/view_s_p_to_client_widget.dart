@@ -4,10 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'view_s_p_to_client_model.dart';
 export 'view_s_p_to_client_model.dart';
 
@@ -51,7 +48,7 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(40.0),
+          preferredSize: const Size.fromHeight(40.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
@@ -78,7 +75,7 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                     fontWeight: FontWeight.w500,
                   ),
             ),
-            actions: [],
+            actions: const [],
             centerTitle: false,
             elevation: 0.0,
           ),
@@ -86,16 +83,16 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                     child: Container(
                       width: 100.0,
                       height: 100.0,
@@ -104,7 +101,7 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: Image.network(
-                            widget!.sp!.photo,
+                            widget.sp!.photo,
                           ).image,
                         ),
                         shape: BoxShape.circle,
@@ -113,25 +110,25 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(12.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 28.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(-1.0, -1.0),
+                                  alignment: const AlignmentDirectional(-1.0, -1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
                                     child: Text(
                                       'اسم مقدم الخدمة:',
@@ -146,10 +143,10 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(-1.0, -1.0),
+                                  alignment: const AlignmentDirectional(-1.0, -1.0),
                                   child: Text(
                                     valueOrDefault<String>(
-                                      widget!.sp?.name,
+                                      widget.sp?.name,
                                       'اسم مقدم الخدمة',
                                     ),
                                     textAlign: TextAlign.start,
@@ -168,14 +165,14 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 28.0, 0.0),
                                   child: Text(
                                     'رقم الهاتف:',
@@ -190,13 +187,13 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 28.0, 0.0),
                                   child: Text(
                                     valueOrDefault<String>(
-                                      widget!.sp?.phoneNumber?.id,
+                                      widget.sp?.phoneNumber?.id,
                                       'رقم الهاتف',
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -218,9 +215,9 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 28.0, 0.0),
                                 child: Text(
                                   'سعر خدمة الأونلاين:',
@@ -235,13 +232,13 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 28.0, 0.0),
                                 child: Text(
                                   valueOrDefault<String>(
-                                    widget!.sp?.price?.toString(),
+                                    widget.sp?.price.toString(),
                                     'سعر خدمة الاون لاين',
                                   ),
                                   style: FlutterFlowTheme.of(context)
@@ -262,9 +259,9 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 28.0, 0.0),
                                 child: Text(
                                   'وقت خدمة الأونلاين:',
@@ -279,13 +276,13 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 28.0, 0.0),
                                 child: Text(
                                   valueOrDefault<String>(
-                                    widget!.sp?.price?.toString(),
+                                    widget.sp?.price.toString(),
                                     'سعر خدمة الاون لاين',
                                   ),
                                   style: FlutterFlowTheme.of(context)
@@ -303,7 +300,7 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                           ],
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Container(
                             width: double.infinity,
                             height: 73.0,
@@ -312,50 +309,50 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             child: Align(
-                              alignment: AlignmentDirectional(-1.0, -1.0),
+                              alignment: const AlignmentDirectional(-1.0, -1.0),
                               child: Stack(
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 20.0, 20.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
                                         children: [
-                                          Icon(
+                                          const Icon(
                                             Icons.star_rate,
                                             color: Color(0xFFED7D41),
                                             size: 24.0,
                                           ),
-                                          Icon(
+                                          const Icon(
                                             Icons.star_rate,
                                             color: Color(0xFFED7D41),
                                             size: 24.0,
                                           ),
-                                          Icon(
+                                          const Icon(
                                             Icons.star_rate,
                                             color: Color(0xFFED7D41),
                                             size: 24.0,
                                           ),
-                                          Icon(
+                                          const Icon(
                                             Icons.star_rate,
                                             color: Color(0xFFCBD0D3),
                                             size: 24.0,
                                           ),
-                                          Icon(
+                                          const Icon(
                                             Icons.star_rate,
                                             color: Color(0xFFCBD0D3),
                                             size: 24.0,
                                           ),
-                                        ].divide(SizedBox(width: 18.0)),
+                                        ].divide(const SizedBox(width: 18.0)),
                                       ),
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 24.0, 20.0),
                                     child: Text(
                                       'التقيمات',
@@ -374,7 +371,7 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -386,7 +383,7 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                                   await orequestRecordReference
                                       .set(createOrequestRecordData(
                                     client: currentUserReference,
-                                    sp: widget!.sp?.reference,
+                                    sp: widget.sp?.reference,
                                     time: getCurrentTimestamp,
                                     clientName: currentUserDisplayName,
                                     clientPhoto: currentUserPhoto,
@@ -396,7 +393,7 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                                       OrequestRecord.getDocumentFromData(
                                           createOrequestRecordData(
                                             client: currentUserReference,
-                                            sp: widget!.sp?.reference,
+                                            sp: widget.sp?.reference,
                                             time: getCurrentTimestamp,
                                             clientName: currentUserDisplayName,
                                             clientPhoto: currentUserPhoto,
@@ -408,7 +405,7 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                                     'Online_session',
                                     queryParameters: {
                                       'spRequestOnline': serializeParam(
-                                        widget!.sp,
+                                        widget.sp,
                                         ParamType.Document,
                                       ),
                                       'theRequest': serializeParam(
@@ -417,7 +414,7 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                                       ),
                                     }.withoutNulls,
                                     extra: <String, dynamic>{
-                                      'spRequestOnline': widget!.sp,
+                                      'spRequestOnline': widget.sp,
                                       'theRequest': _model.newRequest,
                                     },
                                   );
@@ -427,11 +424,11 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                                 text: 'طلب استشارة اونلاين',
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0xFFED7D41),
+                                  color: const Color(0xFFED7D41),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -449,23 +446,23 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                                     'show_services',
                                     queryParameters: {
                                       'sp': serializeParam(
-                                        widget!.sp,
+                                        widget.sp,
                                         ParamType.Document,
                                       ),
                                     }.withoutNulls,
                                     extra: <String, dynamic>{
-                                      'sp': widget!.sp,
+                                      'sp': widget.sp,
                                     },
                                   );
                                 },
                                 text: 'طلب خدمة ',
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0xFF7B7E7F),
+                                  color: const Color(0xFF7B7E7F),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -480,7 +477,7 @@ class _ViewSPToClientWidgetState extends State<ViewSPToClientWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(height: 40.0)),
+                      ].divide(const SizedBox(height: 40.0)),
                     ),
                   ),
                 ),

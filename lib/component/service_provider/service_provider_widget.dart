@@ -1,8 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'service_provider_model.dart';
 export 'service_provider_model.dart';
 
@@ -12,7 +10,7 @@ class ServiceProviderWidget extends StatefulWidget {
     String? spName,
     required this.spPhoto,
     required this.spRate,
-  }) : this.spName = spName ?? 'اسم مقدم الخدمة';
+  }) : spName = spName ?? 'اسم مقدم الخدمة';
 
   final String spName;
   final String? spPhoto;
@@ -53,7 +51,7 @@ class _ServiceProviderWidgetState extends State<ServiceProviderWidget> {
       height: 100.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).info,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 4.0,
             color: Color(0x33000000),
@@ -70,7 +68,7 @@ class _ServiceProviderWidgetState extends State<ServiceProviderWidget> {
         children: [
           Flexible(
             child: Align(
-              alignment: AlignmentDirectional(-1.0, 0.0),
+              alignment: const AlignmentDirectional(-1.0, 0.0),
               child: Container(
                 width: 100.0,
                 height: 100.0,
@@ -79,12 +77,12 @@ class _ServiceProviderWidgetState extends State<ServiceProviderWidget> {
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     image: Image.network(
-                      widget!.spPhoto!,
+                      widget.spPhoto!,
                     ).image,
                   ),
                 ),
                 child: Align(
-                  alignment: AlignmentDirectional(-1.0, 0.0),
+                  alignment: const AlignmentDirectional(-1.0, 0.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.network(
@@ -100,10 +98,10 @@ class _ServiceProviderWidgetState extends State<ServiceProviderWidget> {
           ),
           Flexible(
             child: Align(
-              alignment: AlignmentDirectional(-1.0, 0.0),
+              alignment: const AlignmentDirectional(-1.0, 0.0),
               child: Text(
                 valueOrDefault<String>(
-                  widget!.spName,
+                  widget.spName,
                   'اسم مقدم الخدمة',
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -116,10 +114,10 @@ class _ServiceProviderWidgetState extends State<ServiceProviderWidget> {
           ),
           Flexible(
             child: Align(
-              alignment: AlignmentDirectional(-3.0, 1.0),
+              alignment: const AlignmentDirectional(-3.0, 1.0),
               child: Text(
                 valueOrDefault<String>(
-                  widget!.spRate?.toString(),
+                  widget.spRate?.toString(),
                   '0.0',
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -131,7 +129,7 @@ class _ServiceProviderWidgetState extends State<ServiceProviderWidget> {
             ),
           ),
           Align(
-            alignment: AlignmentDirectional(0.0, 1.0),
+            alignment: const AlignmentDirectional(0.0, 1.0),
             child: Icon(
               Icons.star,
               color: FlutterFlowTheme.of(context).warning,
@@ -149,9 +147,9 @@ class _ServiceProviderWidgetState extends State<ServiceProviderWidget> {
                 ),
               ),
               child: Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 4.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 4.0),
                   child: Text(
                     'متاح',
                     style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -165,7 +163,7 @@ class _ServiceProviderWidgetState extends State<ServiceProviderWidget> {
           ),
           Flexible(
             child: Align(
-              alignment: AlignmentDirectional(1.0, 0.0),
+              alignment: const AlignmentDirectional(1.0, 0.0),
               child: Icon(
                 Icons.arrow_forward_ios,
                 color: FlutterFlowTheme.of(context).alternate,
@@ -173,7 +171,7 @@ class _ServiceProviderWidgetState extends State<ServiceProviderWidget> {
               ),
             ),
           ),
-        ].divide(SizedBox(width: 10.0)),
+        ].divide(const SizedBox(width: 10.0)),
       ),
     );
   }

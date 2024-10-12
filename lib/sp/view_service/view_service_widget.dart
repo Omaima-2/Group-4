@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/component/nav_bar_s_p/nav_bar_s_p_widget.dart';
@@ -8,12 +7,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:provider/provider.dart';
 import 'view_service_model.dart';
 export 'view_service_model.dart';
 
@@ -41,21 +36,21 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
 
     _model.servNameTextController ??= TextEditingController(
         text: valueOrDefault<String>(
-      widget!.serviceDoc?.name,
+      widget.serviceDoc?.name,
       'عنوان الخدمة',
     ));
     _model.servNameFocusNode ??= FocusNode();
 
     _model.servDescTextController ??= TextEditingController(
         text: valueOrDefault<String>(
-      widget!.serviceDoc?.description,
+      widget.serviceDoc?.description,
       'وصف الخدمة ',
     ));
     _model.servDescFocusNode ??= FocusNode();
 
     _model.servPriceTextController ??= TextEditingController(
         text: valueOrDefault<String>(
-      widget!.serviceDoc?.price.toString(),
+      widget.serviceDoc?.price.toString(),
       '100',
     ));
     _model.servPriceFocusNode ??= FocusNode();
@@ -78,7 +73,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(100.0),
+          preferredSize: const Size.fromHeight(100.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
@@ -87,7 +82,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
               borderRadius: 30.0,
               borderWidth: 1.0,
               buttonSize: 60.0,
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back_rounded,
                 color: Colors.black,
                 size: 30.0,
@@ -97,9 +92,9 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
               },
             ),
             title: Align(
-              alignment: AlignmentDirectional(-1.0, 0.0),
+              alignment: const AlignmentDirectional(-1.0, 0.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                 child: Text(
                   'التفاصيل',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -112,21 +107,21 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                 ),
               ),
             ),
-            actions: [],
+            actions: const [],
             centerTitle: false,
             elevation: 0.0,
           ),
         ),
         body: Align(
-          alignment: AlignmentDirectional(0.0, -1.0),
+          alignment: const AlignmentDirectional(0.0, -1.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(18.0, 10.0, 18.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(18.0, 10.0, 18.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -135,7 +130,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                         width: 351.0,
                         height: 627.0,
                         decoration: BoxDecoration(
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 3.0,
                               color: Color(0x84262D34),
@@ -145,7 +140,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                               ),
                             )
                           ],
-                          gradient: LinearGradient(
+                          gradient: const LinearGradient(
                             colors: [
                               Color(0xFFB7C7FB),
                               Color(0xFFB7C7FB),
@@ -158,17 +153,17 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                           borderRadius: BorderRadius.circular(24.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(18.0),
+                          padding: const EdgeInsets.all(18.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(1.0, 0.0),
+                                alignment: const AlignmentDirectional(1.0, 0.0),
                                 child: FlutterFlowIconButton(
                                   borderRadius: 8.0,
                                   buttonSize: 40.0,
-                                  icon: Icon(
+                                  icon: const Icon(
                                     Icons.edit,
                                     color: Colors.black,
                                     size: 25.0,
@@ -244,7 +239,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                         }
                                       }
 
-                                      await widget!.serviceDoc!.reference
+                                      await widget.serviceDoc!.reference
                                           .update(createServicesRecordData(
                                         photo: _model.uploadedFileUrl,
                                       ));
@@ -260,7 +255,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                             child: Padding(
                                               padding: MediaQuery.viewInsetsOf(
                                                   context),
-                                              child: UploadPhotoSucsessWidget(),
+                                              child: const UploadPhotoSucsessWidget(),
                                             ),
                                           );
                                         },
@@ -277,12 +272,12 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                         fit: BoxFit.cover,
                                         image: Image.network(
                                           valueOrDefault<String>(
-                                            widget!.serviceDoc?.photo,
+                                            widget.serviceDoc?.photo,
                                             'https://live.staticflickr.com/5477/11771444463_b379b039bc_w.jpg',
                                           ),
                                         ).image,
                                       ),
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 4.0,
                                           color: Color(0x33000000),
@@ -304,9 +299,9 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 18.0, 0.0, 0.0),
-                                      child: Container(
+                                      child: SizedBox(
                                         width: double.infinity,
                                         child: TextFormField(
                                           controller:
@@ -335,7 +330,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
@@ -343,7 +338,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                                   BorderRadius.circular(8.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
@@ -405,7 +400,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                         ),
                                       ),
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: double.infinity,
                                       child: TextFormField(
                                         controller:
@@ -422,7 +417,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                                   .labelMedium
                                                   .override(
                                                     fontFamily: 'Readex Pro',
-                                                    color: Color(0xFF95A1AC),
+                                                    color: const Color(0xFF95A1AC),
                                                     letterSpacing: 0.0,
                                                   ),
                                           hintText: 'وصف الخدمة ',
@@ -434,7 +429,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                                     letterSpacing: 0.0,
                                                   ),
                                           enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -442,7 +437,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                                 BorderRadius.circular(10.0),
                                           ),
                                           focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -504,8 +499,8 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                         Expanded(
                                           child: Align(
                                             alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Container(
+                                                const AlignmentDirectional(-1.0, 0.0),
+                                            child: SizedBox(
                                               width: 250.0,
                                               child: TextFormField(
                                                 controller: _model
@@ -538,12 +533,12 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                                         fontFamily:
                                                             'Readex Pro',
                                                         color:
-                                                            Color(0xFF95A1AC),
+                                                            const Color(0xFF95A1AC),
                                                         letterSpacing: 0.0,
                                                       ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Color(0x00000000),
                                                       width: 1.0,
                                                     ),
@@ -553,7 +548,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                                   ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Color(0xFFF48153),
                                                       width: 1.0,
                                                     ),
@@ -563,7 +558,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                                   ),
                                                   errorBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Color(0xFFFF5963),
                                                       width: 1.0,
                                                     ),
@@ -573,7 +568,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                                   ),
                                                   focusedErrorBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Color(0xFFFF5963),
                                                       width: 1.0,
                                                     ),
@@ -589,7 +584,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                                     .bodyMedium
                                                     .override(
                                                       fontFamily: 'Readex Pro',
-                                                      color: Color(0xFF14181B),
+                                                      color: const Color(0xFF14181B),
                                                       letterSpacing: 0.0,
                                                     ),
                                                 maxLength: 4,
@@ -618,7 +613,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
+                                              const AlignmentDirectional(-1.0, 0.0),
                                           child: Text(
                                             'ر.س',
                                             style: FlutterFlowTheme.of(context)
@@ -634,11 +629,11 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                         ),
                                       ],
                                     ),
-                                  ].divide(SizedBox(height: 10.0)),
+                                  ].divide(const SizedBox(height: 10.0)),
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 15.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -648,7 +643,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                     Flexible(
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
                                             if (_model.editMode) {
@@ -659,7 +654,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                                 return;
                                               }
 
-                                              await widget!
+                                              await widget
                                                   .serviceDoc!.reference
                                                   .update(
                                                       createServicesRecordData(
@@ -680,7 +675,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                                   .showSnackBar(
                                                 SnackBar(
                                                   content: Text(
-                                                    'تم تعديل الخدمة ${widget!.serviceDoc?.name} بنجاح',
+                                                    'تم تعديل الخدمة ${widget.serviceDoc?.name} بنجاح',
                                                     style: TextStyle(
                                                       color:
                                                           FlutterFlowTheme.of(
@@ -688,7 +683,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                                               .primaryText,
                                                     ),
                                                   ),
-                                                  duration: Duration(
+                                                  duration: const Duration(
                                                       milliseconds: 4000),
                                                   backgroundColor:
                                                       FlutterFlowTheme.of(
@@ -705,12 +700,12 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                             width: 130.0,
                                             height: 40.0,
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
-                                            color: Color(0xFF59C78C),
+                                            color: const Color(0xFF59C78C),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
@@ -728,23 +723,23 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                     Flexible(
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(1.0, 0.0),
+                                            const AlignmentDirectional(1.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
-                                            await widget!.serviceDoc!.reference
+                                            await widget.serviceDoc!.reference
                                                 .delete();
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
                                               SnackBar(
                                                 content: Text(
-                                                  'تم بنجاح حذف الخدمة ${widget!.serviceDoc?.name}',
+                                                  'تم بنجاح حذف الخدمة ${widget.serviceDoc?.name}',
                                                   style: TextStyle(
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
                                                   ),
                                                 ),
-                                                duration: Duration(
+                                                duration: const Duration(
                                                     milliseconds: 4000),
                                                 backgroundColor:
                                                     FlutterFlowTheme.of(context)
@@ -759,12 +754,12 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                             width: 130.0,
                                             height: 40.0,
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
-                                            color: Color(0xFFEE6062),
+                                            color: const Color(0xFFEE6062),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
@@ -781,10 +776,10 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                       ),
                                     ),
                                     Align(
-                                      alignment: AlignmentDirectional(1.0, 0.0),
+                                      alignment: const AlignmentDirectional(1.0, 0.0),
                                       child: Container(
                                         decoration: BoxDecoration(
-                                          boxShadow: [
+                                          boxShadow: const [
                                             BoxShadow(
                                               blurRadius: 4.0,
                                               color: Color(0x33000000),
@@ -800,10 +795,10 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                       ),
                                     ),
                                     Align(
-                                      alignment: AlignmentDirectional(1.0, 0.0),
+                                      alignment: const AlignmentDirectional(1.0, 0.0),
                                       child: Container(
                                         decoration: BoxDecoration(
-                                          boxShadow: [
+                                          boxShadow: const [
                                             BoxShadow(
                                               blurRadius: 4.0,
                                               color: Color(0x33000000),
@@ -821,7 +816,7 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
                                   ],
                                 ),
                               ),
-                            ].divide(SizedBox(height: 16.0)),
+                            ].divide(const SizedBox(height: 16.0)),
                           ),
                         ),
                       ),
@@ -831,11 +826,11 @@ class _ViewServiceWidgetState extends State<ViewServiceWidget> {
               ),
               Expanded(
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 1.0),
+                  alignment: const AlignmentDirectional(0.0, 1.0),
                   child: wrapWithModel(
                     model: _model.navBarSPModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: NavBarSPWidget(
+                    child: const NavBarSPWidget(
                       page: 'view_Service',
                     ),
                   ),

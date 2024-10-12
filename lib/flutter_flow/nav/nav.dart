@@ -1,22 +1,15 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 
-import '/backend/schema/enums/enums.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -81,40 +74,40 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? LoginWidget() : WelcomeWidget(),
+          appStateNotifier.loggedIn ? const LoginWidget() : const WelcomeWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? LoginWidget() : WelcomeWidget(),
+              appStateNotifier.loggedIn ? const LoginWidget() : const WelcomeWidget(),
         ),
         FFRoute(
           name: 'forgetPassword',
           path: '/ForgetPass',
-          builder: (context, params) => ForgetPasswordWidget(),
+          builder: (context, params) => const ForgetPasswordWidget(),
         ),
         FFRoute(
           name: 'home_client',
           path: '/homePageClient',
           requireAuth: true,
-          builder: (context, params) => HomeClientWidget(),
+          builder: (context, params) => const HomeClientWidget(),
         ),
         FFRoute(
           name: 'home_SP',
           path: '/homeSP',
           requireAuth: true,
-          builder: (context, params) => HomeSPWidget(),
+          builder: (context, params) => const HomeSPWidget(),
         ),
         FFRoute(
           name: 'home_Admin',
           path: '/homeAdmin',
-          builder: (context, params) => HomeAdminWidget(),
+          builder: (context, params) => const HomeAdminWidget(),
         ),
         FFRoute(
           name: 'services',
           path: '/services',
-          builder: (context, params) => ServicesWidget(),
+          builder: (context, params) => const ServicesWidget(),
         ),
         FFRoute(
           name: 'view_Service',
@@ -132,52 +125,52 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'login',
           path: '/login',
-          builder: (context, params) => LoginWidget(),
+          builder: (context, params) => const LoginWidget(),
         ),
         FFRoute(
           name: 'signup_client',
           path: '/SignUpTestClient',
-          builder: (context, params) => SignupClientWidget(),
+          builder: (context, params) => const SignupClientWidget(),
         ),
         FFRoute(
           name: 'SignUp_sp',
           path: '/SignUpTestSP',
-          builder: (context, params) => SignUpSpWidget(),
+          builder: (context, params) => const SignUpSpWidget(),
         ),
         FFRoute(
           name: 'add_Service',
           path: '/addService',
-          builder: (context, params) => AddServiceWidget(),
+          builder: (context, params) => const AddServiceWidget(),
         ),
         FFRoute(
           name: 'Setting_client',
           path: '/settingClient',
-          builder: (context, params) => SettingClientWidget(),
+          builder: (context, params) => const SettingClientWidget(),
         ),
         FFRoute(
           name: 'setting_SP',
           path: '/settingSP',
-          builder: (context, params) => SettingSPWidget(),
+          builder: (context, params) => const SettingSPWidget(),
         ),
         FFRoute(
           name: 'viewProfile_client',
           path: '/viewProfileClient',
-          builder: (context, params) => ViewProfileClientWidget(),
+          builder: (context, params) => const ViewProfileClientWidget(),
         ),
         FFRoute(
           name: 'About_page',
           path: '/aboutPage',
-          builder: (context, params) => AboutPageWidget(),
+          builder: (context, params) => const AboutPageWidget(),
         ),
         FFRoute(
           name: 'delete_Account',
           path: '/deleteAccount',
-          builder: (context, params) => DeleteAccountWidget(),
+          builder: (context, params) => const DeleteAccountWidget(),
         ),
         FFRoute(
           name: 'viewProfile_SP',
           path: '/viewProfileSP',
-          builder: (context, params) => ViewProfileSPWidget(),
+          builder: (context, params) => const ViewProfileSPWidget(),
         ),
         FFRoute(
           name: 'the_profestions',
@@ -222,17 +215,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'My_Requests_SP',
           path: '/myRequestsSP',
-          builder: (context, params) => MyRequestsSPWidget(),
+          builder: (context, params) => const MyRequestsSPWidget(),
         ),
         FFRoute(
           name: 'setting_admin',
           path: '/settingAdmin',
-          builder: (context, params) => SettingAdminWidget(),
+          builder: (context, params) => const SettingAdminWidget(),
         ),
         FFRoute(
           name: 'Add_profestion',
           path: '/addProfestion',
-          builder: (context, params) => AddProfestionWidget(),
+          builder: (context, params) => const AddProfestionWidget(),
         ),
         FFRoute(
           name: 'Online_session',
@@ -269,7 +262,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'welcome',
           path: '/welcome',
-          builder: (context, params) => WelcomeWidget(),
+          builder: (context, params) => const WelcomeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -507,7 +500,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

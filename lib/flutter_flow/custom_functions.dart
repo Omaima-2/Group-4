@@ -143,3 +143,9 @@ String? validateLocation(String? location) {
     return 'Location must start with 4 uppercase letters followed by 4 digits'; // Return error message for invalid format
   }
 }
+
+DateTime? newCustomFunction51() {
+  DateTime currentTime = DateTime.now();
+  DateTime requestTimeMinus5Min = currentTime.add(Duration(minutes: 5));
+  return requestTimeMinus5Min;
+}

@@ -8,12 +8,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:provider/provider.dart';
 import 'add_service_model.dart';
 export 'add_service_model.dart';
 
@@ -95,7 +91,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: Colors.white,
-            body: Container(
+            body: SizedBox(
               width: double.infinity,
               height: double.infinity,
               child: Stack(
@@ -107,16 +103,16 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                       children: [
                         Flexible(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 35.0, 0.0, 0.0),
                             child: Container(
-                              decoration: BoxDecoration(),
+                              decoration: const BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Flexible(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 7.0, 5.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -126,7 +122,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                         onTap: () async {
                                           context.pushNamed('services');
                                         },
-                                        child: Icon(
+                                        child: const Icon(
                                           Icons.arrow_back,
                                           color: Color(0xFF14181B),
                                           size: 30.0,
@@ -137,7 +133,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                   Flexible(
                                     flex: 5,
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 22.0, 0.0),
                                       child: Text(
                                         'إضافة خدمة جديدة',
@@ -160,21 +156,21 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                         ),
                         Flexible(
                           child: Align(
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: const AlignmentDirectional(0.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsets.all(19.0),
+                              padding: const EdgeInsets.all(19.0),
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Container(
                                         width: 351.0,
                                         height: 604.0,
                                         decoration: BoxDecoration(
-                                          boxShadow: [
+                                          boxShadow: const [
                                             BoxShadow(
                                               blurRadius: 3.0,
                                               color: Color(0x84262D34),
@@ -184,7 +180,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                               ),
                                             )
                                           ],
-                                          gradient: LinearGradient(
+                                          gradient: const LinearGradient(
                                             colors: [
                                               Color(0xFFB7C7FB),
                                               Color(0xFFB1BDE5),
@@ -199,7 +195,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                               BorderRadius.circular(24.0),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(18.0),
+                                          padding: const EdgeInsets.all(18.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
@@ -207,7 +203,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                             children: [
                                               Flexible(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 20.0, 0.0, 0.0),
                                                   child: InkWell(
@@ -305,8 +301,6 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                       }
 
                                                       if (_model.uploadedFileUrl !=
-                                                              null &&
-                                                          _model.uploadedFileUrl !=
                                                               '') {
                                                         await showModalBottomSheet(
                                                           isScrollControlled:
@@ -327,7 +321,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                     .viewInsetsOf(
                                                                         context),
                                                                 child:
-                                                                    UploadPhotoSucsessWidget(),
+                                                                    const UploadPhotoSucsessWidget(),
                                                               ),
                                                             );
                                                           },
@@ -354,7 +348,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                     .viewInsetsOf(
                                                                         context),
                                                                 child:
-                                                                    UploadPhotoFailWidget(),
+                                                                    const UploadPhotoFailWidget(),
                                                               ),
                                                             );
                                                           },
@@ -379,7 +373,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                             ),
                                                           ).image,
                                                         ),
-                                                        boxShadow: [
+                                                        boxShadow: const [
                                                           BoxShadow(
                                                             blurRadius: 1.0,
                                                             color: Color(
@@ -409,13 +403,13 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
                                                                     0.0,
                                                                     0.0),
-                                                        child: Container(
+                                                        child: SizedBox(
                                                           width:
                                                               double.infinity,
                                                           child: TextFormField(
@@ -438,7 +432,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFF9AA7B2),
                                                                         letterSpacing:
                                                                             0.0,
@@ -452,7 +446,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFF95A1AC),
                                                                         letterSpacing:
                                                                             0.0,
@@ -460,7 +454,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                               enabledBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    BorderSide(
+                                                                    const BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
                                                                   width: 1.0,
@@ -473,7 +467,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                               focusedBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    BorderSide(
+                                                                    const BorderSide(
                                                                   color: Color(
                                                                       0xFFF48153),
                                                                   width: 1.0,
@@ -486,7 +480,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                               errorBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    BorderSide(
+                                                                    const BorderSide(
                                                                   color: Color(
                                                                       0xFFFF5963),
                                                                   width: 1.0,
@@ -499,7 +493,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                               focusedErrorBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    BorderSide(
+                                                                    const BorderSide(
                                                                   color: Color(
                                                                       0xFFFF5963),
                                                                   width: 1.0,
@@ -510,7 +504,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                             8.0),
                                                               ),
                                                               filled: true,
-                                                              fillColor: Color(
+                                                              fillColor: const Color(
                                                                   0xFEFFFFFF),
                                                             ),
                                                             style: FlutterFlowTheme
@@ -542,7 +536,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                           ),
                                                         ),
                                                       ),
-                                                      Container(
+                                                      SizedBox(
                                                         width: double.infinity,
                                                         child: TextFormField(
                                                           controller: _model
@@ -564,7 +558,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'Readex Pro',
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFF95A1AC),
                                                                       letterSpacing:
                                                                           0.0,
@@ -578,7 +572,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'Readex Pro',
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFF95A1AC),
                                                                       letterSpacing:
                                                                           0.0,
@@ -586,7 +580,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                             enabledBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 1.0,
@@ -599,7 +593,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0xFFF48153),
                                                                 width: 1.0,
@@ -612,7 +606,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                             errorBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0xFFFF5963),
                                                                 width: 1.0,
@@ -625,7 +619,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                             focusedErrorBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0xFFFF5963),
                                                                 width: 1.0,
@@ -636,7 +630,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                           10.0),
                                                             ),
                                                             filled: true,
-                                                            fillColor: Color(
+                                                            fillColor: const Color(
                                                                 0xFEFFFFFF),
                                                           ),
                                                           style: FlutterFlowTheme
@@ -645,7 +639,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                               .override(
                                                                 fontFamily:
                                                                     'Readex Pro',
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF14181B),
                                                                 letterSpacing:
                                                                     0.0,
@@ -672,10 +666,10 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                           Expanded(
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.0,
                                                                       0.0),
-                                                              child: Container(
+                                                              child: SizedBox(
                                                                 width: 250.0,
                                                                 child:
                                                                     TextFormField(
@@ -701,7 +695,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                           fontFamily:
                                                                               'Readex Pro',
                                                                           color:
-                                                                              Color(0xFF95A1AC),
+                                                                              const Color(0xFF95A1AC),
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -714,14 +708,14 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                           fontFamily:
                                                                               'Readex Pro',
                                                                           color:
-                                                                              Color(0xFF95A1AC),
+                                                                              const Color(0xFF95A1AC),
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
                                                                     enabledBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
-                                                                          BorderSide(
+                                                                          const BorderSide(
                                                                         color: Color(
                                                                             0x00000000),
                                                                         width:
@@ -734,7 +728,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                     focusedBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
-                                                                          BorderSide(
+                                                                          const BorderSide(
                                                                         color: Color(
                                                                             0xFFF48153),
                                                                         width:
@@ -747,7 +741,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                     errorBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
-                                                                          BorderSide(
+                                                                          const BorderSide(
                                                                         color: Color(
                                                                             0xFFFF5963),
                                                                         width:
@@ -760,7 +754,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                     focusedErrorBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
-                                                                          BorderSide(
+                                                                          const BorderSide(
                                                                         color: Color(
                                                                             0xFFFF5963),
                                                                         width:
@@ -782,7 +776,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFF14181B),
                                                                         letterSpacing:
                                                                             0.0,
@@ -817,7 +811,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, 0.0),
                                                             child: Text(
                                                               'ر.س',
@@ -838,12 +832,12 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                         ],
                                                       ),
                                                     ].divide(
-                                                        SizedBox(height: 10.0)),
+                                                        const SizedBox(height: 10.0)),
                                                   ),
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 30.0, 0.0, 0.0),
                                                 child: Row(
@@ -857,12 +851,12 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                   children: [
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               1.0, 0.0),
                                                       child: Container(
                                                         decoration:
                                                             BoxDecoration(
-                                                          boxShadow: [
+                                                          boxShadow: const [
                                                             BoxShadow(
                                                               blurRadius: 4.0,
                                                               color: Color(
@@ -879,27 +873,15 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                       10.0),
                                                         ),
                                                         child: FFButtonWidget(
-                                                          onPressed: ((_model
-                                                                              .uploadedFileUrl ==
-                                                                          null ||
-                                                                      _model.uploadedFileUrl ==
+                                                          onPressed: ((_model.uploadedFileUrl ==
                                                                           '') ||
                                                                   (_model.servNameTextController
-                                                                              .text ==
-                                                                          null ||
-                                                                      _model.servNameTextController
                                                                               .text ==
                                                                           '') ||
                                                                   (_model.servDescTextController
                                                                               .text ==
-                                                                          null ||
-                                                                      _model.servDescTextController
-                                                                              .text ==
                                                                           '') ||
                                                                   (_model.servPriceTextController
-                                                                              .text ==
-                                                                          null ||
-                                                                      _model.servPriceTextController
                                                                               .text ==
                                                                           ''))
                                                               ? null
@@ -940,7 +922,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                         ),
                                                                       ),
-                                                                      duration: Duration(
+                                                                      duration: const Duration(
                                                                           milliseconds:
                                                                               4000),
                                                                       backgroundColor:
@@ -958,20 +940,20 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                             width: 130.0,
                                                             height: 40.0,
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
                                                                         16.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         0.0),
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFF59C78C),
                                                             textStyle:
                                                                 FlutterFlowTheme.of(
@@ -993,7 +975,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                     .circular(
                                                                         8.0),
                                                             disabledColor:
-                                                                Color(
+                                                                const Color(
                                                                     0xFF91C0A8),
                                                           ),
                                                         ),
@@ -1001,12 +983,12 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               1.0, 0.0),
                                                       child: Container(
                                                         decoration:
                                                             BoxDecoration(
-                                                          boxShadow: [
+                                                          boxShadow: const [
                                                             BoxShadow(
                                                               blurRadius: 4.0,
                                                               color: Color(
@@ -1029,7 +1011,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    TransitionInfo(
+                                                                    const TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -1045,14 +1027,14 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                             width: 130.0,
                                                             height: 40.0,
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
                                                                         16.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1066,7 +1048,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'Readex Pro',
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFF14181B),
                                                                       letterSpacing:
                                                                           0.0,
@@ -1083,7 +1065,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                                                   ],
                                                 ),
                                               ),
-                                            ].divide(SizedBox(height: 16.0)),
+                                            ].divide(const SizedBox(height: 16.0)),
                                           ),
                                         ),
                                       ),
@@ -1100,7 +1082,7 @@ class _AddServiceWidgetState extends State<AddServiceWidget> {
                   wrapWithModel(
                     model: _model.navBarSPModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: NavBarSPWidget(
+                    child: const NavBarSPWidget(
                       page: 'add_Service',
                     ),
                   ),

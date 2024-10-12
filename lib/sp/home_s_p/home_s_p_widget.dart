@@ -4,10 +4,7 @@ import '/component/nav_bar_s_p_n_e_w/nav_bar_s_p_n_e_w_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'home_s_p_model.dart';
 export 'home_s_p_model.dart';
 
@@ -46,14 +43,14 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(150.0),
+          preferredSize: const Size.fromHeight(150.0),
           child: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).accent4,
             automaticallyImplyLeading: false,
-            actions: [],
+            actions: const [],
             flexibleSpace: FlexibleSpaceBar(
               title: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -64,7 +61,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                         scrollDirection: Axis.vertical,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(-1.0, 1.0),
+                            alignment: const AlignmentDirectional(-1.0, 1.0),
                             child: Text(
                               'حيّاك اللَّه',
                               style: FlutterFlowTheme.of(context)
@@ -77,7 +74,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(-1.0, 1.0),
+                            alignment: const AlignmentDirectional(-1.0, 1.0),
                             child: Text(
                               'جهّز مطرقتك وأبدأ عملك',
                               style: FlutterFlowTheme.of(context)
@@ -102,14 +99,14 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                   child: Image.asset(
                     'assets/images/Screenshot_2024-09-18_171419.png',
                     fit: BoxFit.cover,
-                    alignment: Alignment(0.0, 0.0),
+                    alignment: const Alignment(0.0, 0.0),
                   ),
                 ),
               ),
               centerTitle: false,
               expandedTitleScale: 1.0,
               titlePadding:
-                  EdgeInsetsDirectional.fromSTEB(11.0, 0.0, 10.0, 10.0),
+                  const EdgeInsetsDirectional.fromSTEB(11.0, 0.0, 10.0, 10.0),
             ),
             elevation: 0.0,
           ),
@@ -117,7 +114,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, 1.0),
+            alignment: const AlignmentDirectional(0.0, 1.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -125,10 +122,10 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
               children: [
                 Expanded(
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 1.0),
+                    alignment: const AlignmentDirectional(0.0, 1.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -136,7 +133,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, -1.0),
+                              alignment: const AlignmentDirectional(0.0, -1.0),
                               child: StreamBuilder<List<SpRecord>>(
                                 stream: querySpRecord(
                                   queryBuilder: (spRecord) => spRecord.where(
@@ -177,7 +174,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                     width: 330.0,
                                     height: 183.0,
                                     decoration: BoxDecoration(
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 3.0,
                                           color: Color(0x84262D34),
@@ -187,7 +184,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                           ),
                                         )
                                       ],
-                                      gradient: LinearGradient(
+                                      gradient: const LinearGradient(
                                         colors: [
                                           Color(0xFFFFB67D),
                                           Color(0xFFB7C7FB),
@@ -201,9 +198,9 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                     ),
                                     child: Align(
                                       alignment:
-                                          AlignmentDirectional(0.0, -1.0),
+                                          const AlignmentDirectional(0.0, -1.0),
                                       child: Padding(
-                                        padding: EdgeInsets.all(20.0),
+                                        padding: const EdgeInsets.all(20.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -212,7 +209,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                               CrossAxisAlignment.end,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, -1.0),
                                               child: Text(
                                                 'للبدء باستقبال الطلبات فعل الزر!',
@@ -236,7 +233,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                               children: [
                                                 FFButtonWidget(
                                                   onPressed: () async {
-                                                    await avilabilitySpRecord!
+                                                    await avilabilitySpRecord
                                                         .reference
                                                         .update(
                                                             createSpRecordData(
@@ -248,22 +245,22 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                                     width: 130.0,
                                                     height: 40.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color:
                                                         valueOrDefault<Color>(
                                                       avilabilitySpRecord!
                                                               .availability
-                                                          ? Color(0xFFED7D41)
+                                                          ? const Color(0xFFED7D41)
                                                           : FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
-                                                      Color(0xFFED7D41),
+                                                      const Color(0xFFED7D41),
                                                     ),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
@@ -284,7 +281,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                                 ),
                                                 FFButtonWidget(
                                                   onPressed: () async {
-                                                    await avilabilitySpRecord!
+                                                    await avilabilitySpRecord
                                                         .reference
                                                         .update(
                                                             createSpRecordData(
@@ -296,19 +293,19 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                                     width: 130.0,
                                                     height: 40.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: avilabilitySpRecord!
+                                                    color: avilabilitySpRecord
                                                             .availability
                                                         ? FlutterFlowTheme.of(
                                                                 context)
                                                             .secondaryText
-                                                        : Color(0xFFED7D41),
+                                                        : const Color(0xFFED7D41),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodyMedium
@@ -326,7 +323,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                                 ),
                                               ],
                                             ),
-                                          ].divide(SizedBox(height: 15.0)),
+                                          ].divide(const SizedBox(height: 15.0)),
                                         ),
                                       ),
                                     ),
@@ -342,7 +339,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                   width: 150.0,
                                   height: 179.0,
                                   decoration: BoxDecoration(
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 3.0,
                                         color: Color(0x84262D34),
@@ -352,7 +349,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                         ),
                                       )
                                     ],
-                                    gradient: LinearGradient(
+                                    gradient: const LinearGradient(
                                       colors: [
                                         Color(0xFFFFB67D),
                                         Color(0xFFB7C7FB),
@@ -365,7 +362,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(20.0),
+                                    padding: const EdgeInsets.all(20.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -375,7 +372,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, -1.0),
+                                              const AlignmentDirectional(-1.0, -1.0),
                                           child: Text(
                                             'إجمالي المدخول',
                                             style: FlutterFlowTheme.of(context)
@@ -396,7 +393,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Outfit',
-                                                color: Color(0xB5342993),
+                                                color: const Color(0xB5342993),
                                                 fontSize: 30.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
@@ -407,12 +404,12 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, -1.0),
+                                  alignment: const AlignmentDirectional(0.0, -1.0),
                                   child: Container(
                                     width: 150.0,
                                     height: 183.0,
                                     decoration: BoxDecoration(
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 3.0,
                                           color: Color(0x84262D34),
@@ -422,7 +419,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                           ),
                                         )
                                       ],
-                                      gradient: LinearGradient(
+                                      gradient: const LinearGradient(
                                         colors: [
                                           Color(0xFFFFB67D),
                                           Color(0xFFB7C7FB),
@@ -435,7 +432,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                       borderRadius: BorderRadius.circular(10.0),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.all(20.0),
+                                      padding: const EdgeInsets.all(20.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -462,7 +459,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Outfit',
-                                                  color: Color(0xB5342993),
+                                                  color: const Color(0xB5342993),
                                                   fontSize: 30.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
@@ -476,7 +473,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                               ],
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, -1.0),
+                              alignment: const AlignmentDirectional(0.0, -1.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -489,7 +486,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                   width: 330.0,
                                   height: 170.0,
                                   decoration: BoxDecoration(
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 3.0,
                                         color: Color(0x08426234),
@@ -499,7 +496,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                         ),
                                       )
                                     ],
-                                    gradient: LinearGradient(
+                                    gradient: const LinearGradient(
                                       colors: [
                                         Color(0xFFFFB67D),
                                         Color(0xFFB7C7FB),
@@ -512,7 +509,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(24.0),
+                                    padding: const EdgeInsets.all(24.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       mainAxisAlignment:
@@ -522,7 +519,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, -1.0),
+                                              const AlignmentDirectional(-1.0, -1.0),
                                           child: Text(
                                             'خدماتي',
                                             style: FlutterFlowTheme.of(context)
@@ -581,7 +578,7 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                                       .override(
                                                         fontFamily: 'Outfit',
                                                         color:
-                                                            Color(0xB5342993),
+                                                            const Color(0xB5342993),
                                                         fontSize: 30.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -594,18 +591,18 @@ class _HomeSPWidgetState extends State<HomeSPWidget> {
                                 ),
                               ),
                             ),
-                          ].divide(SizedBox(height: 20.0)),
+                          ].divide(const SizedBox(height: 20.0)),
                         ),
                       ),
                     ),
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(0.0, 1.0),
+                  alignment: const AlignmentDirectional(0.0, 1.0),
                   child: wrapWithModel(
                     model: _model.navBarSPNEWModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: NavBarSPNEWWidget(
+                    child: const NavBarSPNEWWidget(
                       page: 'home_SP',
                     ),
                   ),

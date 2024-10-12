@@ -5,10 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/sp/components/a_service/a_service_widget.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'show_services_model.dart';
 export 'show_services_model.dart';
 
@@ -59,7 +56,7 @@ class _ShowServicesWidgetState extends State<ShowServicesWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Colors.black,
               size: 30.0,
@@ -70,7 +67,7 @@ class _ShowServicesWidgetState extends State<ShowServicesWidget> {
           ),
           title: Text(
             'طلب خدمة من${valueOrDefault<String>(
-              widget!.sp?.name,
+              widget.sp?.name,
               'اسم مقدم الخدمة',
             )}',
             style: FlutterFlowTheme.of(context).headlineLarge.override(
@@ -79,26 +76,26 @@ class _ShowServicesWidgetState extends State<ShowServicesWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(12.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.all(14.0),
+                    padding: const EdgeInsets.all(14.0),
                     child: StreamBuilder<List<ServicesRecord>>(
                       stream: queryServicesRecord(
                         queryBuilder: (servicesRecord) => servicesRecord.where(
                           'user',
-                          isEqualTo: widget!.sp?.user,
+                          isEqualTo: widget.sp?.user,
                         ),
                       ),
                       builder: (context, snapshot) {
@@ -122,7 +119,7 @@ class _ShowServicesWidgetState extends State<ShowServicesWidget> {
                         return GridView.builder(
                           padding: EdgeInsets.zero,
                           gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             crossAxisSpacing: 15.0,
                             mainAxisSpacing: 15.0,
@@ -159,12 +156,12 @@ class _ShowServicesWidgetState extends State<ShowServicesWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(1.0, 0.0),
+                        alignment: const AlignmentDirectional(1.0, 0.0),
                         child: Text(
                           'السعر:${valueOrDefault<String>(
                             _model.price?.toString(),
@@ -187,7 +184,7 @@ class _ShowServicesWidgetState extends State<ShowServicesWidget> {
                             ...createRequestRecordData(
                               client: currentUserReference,
                               state: false,
-                              serviceProvider: widget!.sp?.reference,
+                              serviceProvider: widget.sp?.reference,
                               price: _model.price,
                             ),
                             ...mapToFirestore(
@@ -203,11 +200,11 @@ class _ShowServicesWidgetState extends State<ShowServicesWidget> {
                         text: 'طلب الخدمات ',
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0xFFED7D41),
+                          color: const Color(0xFFED7D41),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
@@ -218,7 +215,7 @@ class _ShowServicesWidgetState extends State<ShowServicesWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
-                    ].divide(SizedBox(height: 20.0)),
+                    ].divide(const SizedBox(height: 20.0)),
                   ),
                 ),
               ],

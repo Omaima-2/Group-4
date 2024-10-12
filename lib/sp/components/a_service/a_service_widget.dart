@@ -1,8 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'a_service_model.dart';
 export 'a_service_model.dart';
 
@@ -49,12 +47,12 @@ class _AServiceWidgetState extends State<AServiceWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Container(
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               blurRadius: 3.0,
               color: Color(0x84262D34),
@@ -64,7 +62,7 @@ class _AServiceWidgetState extends State<AServiceWidget> {
               ),
             )
           ],
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             colors: [Color(0xFFFFB67D), Color(0xFFB7C7FB), Color(0xFFD1DCF9)],
             stops: [0.0, 0.6, 1.0],
             begin: AlignmentDirectional(-1.0, -1.0),
@@ -74,7 +72,7 @@ class _AServiceWidgetState extends State<AServiceWidget> {
           shape: BoxShape.rectangle,
         ),
         child: Align(
-          alignment: AlignmentDirectional(-1.0, -1.0),
+          alignment: const AlignmentDirectional(-1.0, -1.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -89,12 +87,12 @@ class _AServiceWidgetState extends State<AServiceWidget> {
                     fit: BoxFit.cover,
                     image: Image.network(
                       valueOrDefault<String>(
-                        widget!.photoService,
+                        widget.photoService,
                         'https://live.staticflickr.com/5477/11771444463_b379b039bc_w.jpg',
                       ),
                     ).image,
                   ),
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(0.0),
                     bottomRight: Radius.circular(0.0),
                     topLeft: Radius.circular(10.0),
@@ -105,19 +103,19 @@ class _AServiceWidgetState extends State<AServiceWidget> {
               ),
               Flexible(
                 child: Align(
-                  alignment: AlignmentDirectional(-1.0, -1.0),
+                  alignment: const AlignmentDirectional(-1.0, -1.0),
                   child: Padding(
-                    padding: EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.all(10.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
                           child: Text(
                             valueOrDefault<String>(
-                              widget!.nameService,
+                              widget.nameService,
                               'عنوان الخدمة',
                             ),
                             textAlign: TextAlign.start,
@@ -133,8 +131,8 @@ class _AServiceWidgetState extends State<AServiceWidget> {
                           ),
                         ),
                       ]
-                          .divide(SizedBox(height: 20.0))
-                          .addToStart(SizedBox(height: 5.0)),
+                          .divide(const SizedBox(height: 20.0))
+                          .addToStart(const SizedBox(height: 5.0)),
                     ),
                   ),
                 ),

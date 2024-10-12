@@ -4,14 +4,10 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'forget_password_model.dart';
 export 'forget_password_model.dart';
 
@@ -54,8 +50,8 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
             curve: Curves.easeInOut,
             delay: 300.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -81,7 +77,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
           key: scaffoldKey,
           backgroundColor: Colors.white,
           body: Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -92,7 +88,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 25.0, 0.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -102,7 +98,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                             onTap: () async {
                               context.pushNamed('login');
                             },
-                            child: Icon(
+                            child: const Icon(
                               Icons.arrow_back,
                               color: Color(0xFF14181B),
                               size: 24.0,
@@ -110,7 +106,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 25.0, 18.0, 0.0),
                           child: Text(
                             'إعادة تعيين كلمة المرور',
@@ -132,9 +128,9 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 30.0, 20.0, 30.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
@@ -149,14 +145,14 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                                   Container(
                                     width: 230.0,
                                     height: 40.0,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       color: Colors.white,
                                     ),
                                   ),
                                 Align(
-                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  alignment: const AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 50.0, 0.0, 24.0),
                                     child: Text(
                                       'من فضلك ادخل بريدك الألكتروني المسجل في مطرقة لإعادة  تعيين كلمة المرور الخاصة بك ',
@@ -176,9 +172,9 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                                   key: _model.formKey,
                                   autovalidateMode: AutovalidateMode.disabled,
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 16.0),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       child: TextFormField(
                                         controller:
@@ -186,12 +182,9 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                                         focusNode: _model.emailAddressFocusNode,
                                         onChanged: (_) => EasyDebounce.debounce(
                                           '_model.emailAddressTextController',
-                                          Duration(milliseconds: 2000),
+                                          const Duration(milliseconds: 2000),
                                           () async {
                                             if ((_model.emailAddressTextController
-                                                            .text !=
-                                                        null &&
-                                                    _model.emailAddressTextController
                                                             .text !=
                                                         '') &&
                                                 (_model.emailAddressTextController
@@ -216,17 +209,17 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
-                                                  duration: Duration(
+                                                  duration: const Duration(
                                                       milliseconds: 7500),
                                                   backgroundColor:
-                                                      Color(0xFFFF4336),
+                                                      const Color(0xFFFF4336),
                                                 ),
                                               );
                                             }
                                           },
                                         ),
                                         autofocus: false,
-                                        autofillHints: [AutofillHints.email],
+                                        autofillHints: const [AutofillHints.email],
                                         textInputAction: TextInputAction.next,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -237,13 +230,13 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: Color(0xFF57636C),
+                                                    color: const Color(0xFF57636C),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                           enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Color(0xFFE0E3E7),
                                               width: 2.0,
                                             ),
@@ -261,7 +254,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                                                 BorderRadius.circular(12.0),
                                           ),
                                           errorBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Color(0xFFFF5963),
                                               width: 2.0,
                                             ),
@@ -270,7 +263,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                                           ),
                                           focusedErrorBorder:
                                               OutlineInputBorder(
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Color(0xFFFF5963),
                                               width: 2.0,
                                             ),
@@ -279,7 +272,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                                           ),
                                           filled: true,
                                           fillColor: Colors.white,
-                                          contentPadding: EdgeInsets.all(24.0),
+                                          contentPadding: const EdgeInsets.all(24.0),
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -307,9 +300,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                                 ),
                                 Opacity(
                                   opacity: valueOrDefault<double>(
-                                    (_model.emailAddressTextController.text ==
-                                                    null ||
-                                                _model.emailAddressTextController
+                                    (_model.emailAddressTextController
                                                         .text ==
                                                     '') ||
                                             (_model.emailAddressTextController
@@ -322,9 +313,9 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                                     1.0,
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 16.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
@@ -332,7 +323,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                                               .text.isEmpty) {
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
-                                              SnackBar(
+                                              const SnackBar(
                                                 content: Text(
                                                   'الايميل مطلوب لأعادة تعيين كلمة المرور',
                                                 ),
@@ -349,7 +340,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                                           await showModalBottomSheet(
                                             isScrollControlled: true,
                                             backgroundColor: Colors.transparent,
-                                            barrierColor: Color(0x16000000),
+                                            barrierColor: const Color(0x16000000),
                                             enableDrag: false,
                                             context: context,
                                             builder: (context) {
@@ -361,7 +352,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                                                   padding:
                                                       MediaQuery.viewInsetsOf(
                                                           context),
-                                                  child: PasswordResstWidget(),
+                                                  child: const PasswordResstWidget(),
                                                 ),
                                               );
                                             },
@@ -373,12 +364,12 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                                           width: 230.0,
                                           height: 52.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
-                                          color: Color(0xFFF68833),
+                                          color: const Color(0xFFF68833),
                                           textStyle:
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall
@@ -391,7 +382,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                           elevation: 3.0,
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -402,7 +393,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget>
                                     ),
                                   ),
                                 ),
-                              ].divide(SizedBox(height: 5.0)),
+                              ].divide(const SizedBox(height: 5.0)),
                             ).animateOnPageLoad(
                                 animationsMap['columnOnPageLoadAnimation']!),
                           ),

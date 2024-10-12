@@ -1,16 +1,13 @@
 import '/backend/backend.dart';
 import '/client/reques_diclined/reques_diclined_widget.dart';
-import '/component/nav_bar_s_p/nav_bar_s_p_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'online_session_model.dart';
 export 'online_session_model.dart';
 
@@ -41,29 +38,65 @@ class _OnlineSessionWidgetState extends State<OnlineSessionWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.timerController.onStartTimer();
-      if (widget!.theRequest!.time!.secondsSinceEpoch <
-          getCurrentTimestamp.secondsSinceEpoch) {
+      if (widget.theRequest?.state == '\"Accepted\"') {
+        context.pushNamed(
+          'onlineSession_Sp',
+          queryParameters: {
+            'onlineRequest': serializeParam(
+              widget.theRequest,
+              ParamType.Document,
+            ),
+          }.withoutNulls,
+          extra: <String, dynamic>{
+            'onlineRequest': widget.theRequest,
+          },
+        );
+      } else {
+        if (widget.theRequest?.state == '\"Rejected\"') {
+          await showModalBottomSheet(
+            isScrollControlled: true,
+            backgroundColor: Colors.transparent,
+            enableDrag: false,
+            context: context,
+            builder: (context) {
+              return GestureDetector(
+                onTap: () => FocusScope.of(context).unfocus(),
+                child: Padding(
+                  padding: MediaQuery.viewInsetsOf(context),
+                  child: RequesDiclinedWidget(
+                    sp: widget.spRequestOnline!,
+                  ),
+                ),
+              );
+            },
+          ).then((value) => safeSetState(() {}));
+        } else {
+          if (widget.theRequest?.state == '\"Pending \"') {
+            if (functions.newCustomFunction51() == getCurrentTimestamp) {
+              context.pushNamed(
+                'view_SP_toClient',
+                queryParameters: {
+                  'sp': serializeParam(
+                    widget.spRequestOnline,
+                    ParamType.Document,
+                  ),
+                }.withoutNulls,
+                extra: <String, dynamic>{
+                  'sp': widget.spRequestOnline,
+                },
+              );
+            } else {
+              return;
+            }
+
+            return;
+          } else {
+            return;
+          }
+        }
+
         return;
       }
-
-      await widget!.theRequest!.reference.delete();
-      await showModalBottomSheet(
-        isScrollControlled: true,
-        backgroundColor: Colors.transparent,
-        enableDrag: false,
-        context: context,
-        builder: (context) {
-          return GestureDetector(
-            onTap: () => FocusScope.of(context).unfocus(),
-            child: Padding(
-              padding: MediaQuery.viewInsetsOf(context),
-              child: RequesDiclinedWidget(
-                sp: widget!.spRequestOnline!,
-              ),
-            ),
-          );
-        },
-      ).then((value) => safeSetState(() {}));
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -92,18 +125,18 @@ class _OnlineSessionWidgetState extends State<OnlineSessionWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(0.0, -1.0),
+                    alignment: const AlignmentDirectional(0.0, -1.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: FlutterFlowIconButton(
                             borderColor: Colors.transparent,
                             borderRadius: 30.0,
                             borderWidth: 1.0,
                             buttonSize: 60.0,
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.arrow_back_rounded,
                               color: Color(0xFF14181B),
                               size: 30.0,
@@ -114,7 +147,7 @@ class _OnlineSessionWidgetState extends State<OnlineSessionWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'إستشارة اونلاين',
                             style: FlutterFlowTheme.of(context)
@@ -132,21 +165,21 @@ class _OnlineSessionWidgetState extends State<OnlineSessionWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 1.0),
+                    alignment: const AlignmentDirectional(0.0, 1.0),
                     child: Container(
                       height: 395.0,
-                      decoration: BoxDecoration(),
+                      decoration: const BoxDecoration(),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 1.0),
+                              alignment: const AlignmentDirectional(0.0, 1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 20.0, 0.0),
                                 child: Text(
                                   'لحظات من فضلك حتى يتم القبول وبدء الاستشارة  ',
@@ -163,9 +196,9 @@ class _OnlineSessionWidgetState extends State<OnlineSessionWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 1.0),
+                              alignment: const AlignmentDirectional(0.0, 1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 160.0, 0.0, 0.0),
                                 child: FlutterFlowTimer(
                                   initialTime: _model.timerInitialTimeMs,
@@ -177,44 +210,31 @@ class _OnlineSessionWidgetState extends State<OnlineSessionWidget> {
                                   ),
                                   controller: _model.timerController,
                                   updateStateInterval:
-                                      Duration(milliseconds: 1000),
+                                      const Duration(milliseconds: 1000),
                                   onChanged:
                                       (value, displayTime, shouldUpdate) {
                                     _model.timerMilliseconds = value;
                                     _model.timerValue = displayTime;
                                     if (shouldUpdate) safeSetState(() {});
                                   },
-                                  textAlign: TextAlign.center,
+                                  textAlign: TextAlign.start,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Outfit',
-                                        color: Color(0xFFFF0010),
+                                        color: const Color(0xFFFF0010),
                                         fontSize: 50.0,
                                         letterSpacing: 0.0,
                                       ),
                                 ),
                               ),
                             ),
-                          ].divide(SizedBox(height: 10.0)),
+                          ].divide(const SizedBox(height: 10.0)),
                         ),
                       ),
                     ),
                   ),
                 ],
-              ),
-              Align(
-                alignment: AlignmentDirectional(0.0, 1.0),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 250.0, 0.0, 0.0),
-                  child: wrapWithModel(
-                    model: _model.navBarSPModel,
-                    updateCallback: () => safeSetState(() {}),
-                    child: NavBarSPWidget(
-                      page: 'home_SP',
-                    ),
-                  ),
-                ),
               ),
             ],
           ),

@@ -1,10 +1,7 @@
 import '/component/nav_bar_admin/nav_bar_admin_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'home_admin_model.dart';
 export 'home_admin_model.dart';
 
@@ -43,17 +40,17 @@ class _HomeAdminWidgetState extends State<HomeAdminWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(140.0),
+          preferredSize: const Size.fromHeight(140.0),
           child: AppBar(
-            backgroundColor: Color(0xFF57636C),
+            backgroundColor: const Color(0xFF57636C),
             automaticallyImplyLeading: false,
-            actions: [],
+            actions: const [],
             flexibleSpace: FlexibleSpaceBar(
-              title: Container(
+              title: SizedBox(
                 width: double.infinity,
                 height: double.infinity,
                 child: Stack(
-                  alignment: AlignmentDirectional(-0.0, 1.0),
+                  alignment: const AlignmentDirectional(-0.0, 1.0),
                   children: [
                     Opacity(
                       opacity: 0.8,
@@ -68,10 +65,10 @@ class _HomeAdminWidgetState extends State<HomeAdminWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, -0.5),
+                      alignment: const AlignmentDirectional(-1.0, -0.5),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                         child: Text(
                           'نورّتنا',
                           style:
@@ -85,10 +82,10 @@ class _HomeAdminWidgetState extends State<HomeAdminWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, 0.5),
+                      alignment: const AlignmentDirectional(-1.0, 0.5),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                         child: Text(
                           'احترف بإدارة مطرقة',
                           style:
@@ -115,7 +112,7 @@ class _HomeAdminWidgetState extends State<HomeAdminWidget> {
           children: [
             Expanded(
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -130,7 +127,7 @@ class _HomeAdminWidgetState extends State<HomeAdminWidget> {
                             width: 330.0,
                             height: 170.0,
                             decoration: BoxDecoration(
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 3.0,
                                   color: Color(0x84262D34),
@@ -140,7 +137,7 @@ class _HomeAdminWidgetState extends State<HomeAdminWidget> {
                                   ),
                                 )
                               ],
-                              gradient: LinearGradient(
+                              gradient: const LinearGradient(
                                 colors: [
                                   Color(0xFFFFB67D),
                                   Color(0xFFB7C7FB),
@@ -153,7 +150,7 @@ class _HomeAdminWidgetState extends State<HomeAdminWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(24.0),
+                              padding: const EdgeInsets.all(24.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment:
@@ -180,7 +177,7 @@ class _HomeAdminWidgetState extends State<HomeAdminWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Outfit',
-                                          color: Color(0xB5342993),
+                                          color: const Color(0xB5342993),
                                           fontSize: 34.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -196,7 +193,7 @@ class _HomeAdminWidgetState extends State<HomeAdminWidget> {
                         width: 330.0,
                         height: 170.0,
                         decoration: BoxDecoration(
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 3.0,
                               color: Color(0x84262D34),
@@ -206,7 +203,7 @@ class _HomeAdminWidgetState extends State<HomeAdminWidget> {
                               ),
                             )
                           ],
-                          gradient: LinearGradient(
+                          gradient: const LinearGradient(
                             colors: [
                               Color(0xFFFFB67D),
                               Color(0xFFB7C7FB),
@@ -219,7 +216,7 @@ class _HomeAdminWidgetState extends State<HomeAdminWidget> {
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(24.0),
+                          padding: const EdgeInsets.all(24.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -244,7 +241,7 @@ class _HomeAdminWidgetState extends State<HomeAdminWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Outfit',
-                                      color: Color(0xB5342993),
+                                      color: const Color(0xB5342993),
                                       fontSize: 34.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
@@ -254,17 +251,17 @@ class _HomeAdminWidgetState extends State<HomeAdminWidget> {
                           ),
                         ),
                       ),
-                    ].divide(SizedBox(height: 20.0)),
+                    ].divide(const SizedBox(height: 20.0)),
                   ),
                 ),
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0.0, 1.0),
+              alignment: const AlignmentDirectional(0.0, 1.0),
               child: wrapWithModel(
                 model: _model.navBarAdminModel,
                 updateCallback: () => safeSetState(() {}),
-                child: NavBarAdminWidget(
+                child: const NavBarAdminWidget(
                   page: 'AdminHomePage',
                 ),
               ),

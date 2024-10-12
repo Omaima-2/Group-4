@@ -3,8 +3,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'rate_and_review_model.dart';
 export 'rate_and_review_model.dart';
 
@@ -49,7 +47,7 @@ class _RateAndReviewWidgetState extends State<RateAndReviewWidget> {
       height: 439.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 4.0,
             color: Color(0x33000000),
@@ -70,12 +68,12 @@ class _RateAndReviewWidgetState extends State<RateAndReviewWidget> {
             color: FlutterFlowTheme.of(context).alternate,
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
             child: Container(
               width: 100.0,
               height: 100.0,
               clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
               ),
               child: Image.network(
@@ -92,9 +90,9 @@ class _RateAndReviewWidgetState extends State<RateAndReviewWidget> {
                 ),
           ),
           Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
               child: RatingBar.builder(
                 onRatingUpdate: (newValue) =>
                     safeSetState(() => _model.ratingBarValue = newValue),
@@ -104,7 +102,7 @@ class _RateAndReviewWidgetState extends State<RateAndReviewWidget> {
                 ),
                 direction: Axis.horizontal,
                 initialRating: _model.ratingBarValue ??= 3.0,
-                unratedColor: Color(0x65F9CF58),
+                unratedColor: const Color(0x65F9CF58),
                 itemCount: 5,
                 itemSize: 35.0,
                 glowColor: FlutterFlowTheme.of(context).warning,
@@ -113,15 +111,15 @@ class _RateAndReviewWidgetState extends State<RateAndReviewWidget> {
           ),
           Flexible(
             child: Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
+              alignment: const AlignmentDirectional(0.0, 0.0),
               child: Container(
                 width: 262.0,
                 height: 150.0,
                 decoration: BoxDecoration(
-                  color: Color(0x2257636C),
+                  color: const Color(0x2257636C),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
-                child: Container(
+                child: SizedBox(
                   width: 200.0,
                   child: TextFormField(
                     controller: _model.textController,
@@ -142,14 +140,14 @@ class _RateAndReviewWidgetState extends State<RateAndReviewWidget> {
                                 letterSpacing: 0.0,
                               ),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0x00000000),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0x00000000),
                           width: 1.0,
                         ),
@@ -186,7 +184,7 @@ class _RateAndReviewWidgetState extends State<RateAndReviewWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
             child: FFButtonWidget(
               onPressed: () {
                 print('Button pressed ...');
@@ -195,9 +193,9 @@ class _RateAndReviewWidgetState extends State<RateAndReviewWidget> {
               options: FFButtonOptions(
                 width: 200.0,
                 height: 40.0,
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: Color(0xFF66D9A6),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                color: const Color(0xFF66D9A6),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'Readex Pro',
                       color: Colors.white,

@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/component/upload_photo_fail/upload_photo_fail_widget.dart';
@@ -8,11 +7,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'add_profestion_model.dart';
 export 'add_profestion_model.dart';
 
@@ -61,7 +57,7 @@ class _AddProfestionWidgetState extends State<AddProfestionWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Color(0xFF14181B),
               size: 30.0,
@@ -79,7 +75,7 @@ class _AddProfestionWidgetState extends State<AddProfestionWidget> {
                   fontWeight: FontWeight.w500,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -89,15 +85,15 @@ class _AddProfestionWidgetState extends State<AddProfestionWidget> {
               // الصفحة تحتاج فالديشن من ناحية انه فاضي + تعدى الحد المطلوب
               // بالإضافة الى اكمال التصميم
               Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 20.0, 20.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 20.0, 20.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'اسم التخصص',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -108,7 +104,7 @@ class _AddProfestionWidgetState extends State<AddProfestionWidget> {
                           ),
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: TextFormField(
                       controller: _model.textController,
@@ -131,14 +127,14 @@ class _AddProfestionWidgetState extends State<AddProfestionWidget> {
                                   letterSpacing: 0.0,
                                 ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Color(0xFFE0E3E7),
                             width: 1.0,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Color(0x00000000),
                             width: 1.0,
                           ),
@@ -183,7 +179,7 @@ class _AddProfestionWidgetState extends State<AddProfestionWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: Text(
                           'صورة التخصص ',
                           style:
@@ -195,7 +191,7 @@ class _AddProfestionWidgetState extends State<AddProfestionWidget> {
                                   ),
                         ),
                       ),
-                    ].divide(SizedBox(height: 10.0)),
+                    ].divide(const SizedBox(height: 10.0)),
                   ),
                   Flexible(
                     child: InkWell(
@@ -255,8 +251,7 @@ class _AddProfestionWidgetState extends State<AddProfestionWidget> {
                           }
                         }
 
-                        if (_model.uploadedFileUrl != null &&
-                            _model.uploadedFileUrl != '') {
+                        if (_model.uploadedFileUrl != '') {
                           await showModalBottomSheet(
                             isScrollControlled: true,
                             backgroundColor: Colors.transparent,
@@ -267,7 +262,7 @@ class _AddProfestionWidgetState extends State<AddProfestionWidget> {
                                 onTap: () => FocusScope.of(context).unfocus(),
                                 child: Padding(
                                   padding: MediaQuery.viewInsetsOf(context),
-                                  child: UploadPhotoSucsessWidget(),
+                                  child: const UploadPhotoSucsessWidget(),
                                 ),
                               );
                             },
@@ -283,7 +278,7 @@ class _AddProfestionWidgetState extends State<AddProfestionWidget> {
                                 onTap: () => FocusScope.of(context).unfocus(),
                                 child: Padding(
                                   padding: MediaQuery.viewInsetsOf(context),
-                                  child: UploadPhotoFailWidget(),
+                                  child: const UploadPhotoFailWidget(),
                                 ),
                               );
                             },
@@ -303,7 +298,7 @@ class _AddProfestionWidgetState extends State<AddProfestionWidget> {
                           ),
                           borderRadius: BorderRadius.circular(14.0),
                           border: Border.all(
-                            color: Color(0x6E57636C),
+                            color: const Color(0x6E57636C),
                           ),
                         ),
                       ),
@@ -323,10 +318,10 @@ class _AddProfestionWidgetState extends State<AddProfestionWidget> {
                     options: FFButtonOptions(
                       height: 40.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: Color(0xFFED7D41),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: const Color(0xFFED7D41),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Readex Pro',
@@ -337,7 +332,7 @@ class _AddProfestionWidgetState extends State<AddProfestionWidget> {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
-                ].divide(SizedBox(height: 20.0)),
+                ].divide(const SizedBox(height: 20.0)),
               ),
             ),
           ),
