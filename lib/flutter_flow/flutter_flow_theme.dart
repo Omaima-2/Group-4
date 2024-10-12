@@ -33,7 +33,7 @@ abstract class FlutterFlowTheme {
   late Color info;
 
   late Color mitraqaBlue;
-  late Color mitraqaOrange;
+  late Color mitraqaOrange1;
   late Color mitraqaWight;
   late Color customColor1;
   late Color customColor2;
@@ -43,6 +43,10 @@ abstract class FlutterFlowTheme {
   late Color mitrakaBackgroundWhite;
   late Color customColor6;
   late Color mitraqaWhiteBackground;
+  late Color darkGreen;
+  late Color powderBlue;
+  late Color customColor7;
+  late Color mitraqaOrange;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -132,17 +136,21 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFFF5963);
   late Color info = const Color(0xFFFFFFFF);
 
-  late Color mitraqaBlue = const Color(0xFFA8C2E0);
-  late Color mitraqaOrange = const Color(0xFFEA631B);
-  late Color mitraqaWight = const Color(0xFFEBEBDF);
-  late Color customColor1 = const Color(0xFFDF801F);
-  late Color customColor2 = const Color(0xFF814828);
-  late Color customColor3 = const Color(0xFF8B7E58);
-  late Color customColor4 = const Color(0xFF89EEC1);
-  late Color customColor5 = const Color(0xFFA14A73);
-  late Color mitrakaBackgroundWhite = const Color(0xFFCCFFFF);
-  late Color customColor6 = const Color(0xFF63BEB9);
-  late Color mitraqaWhiteBackground = const Color(0xFFEFEFEF);
+  late Color mitraqaBlue = Color(0xFFA8C2E0);
+  late Color mitraqaOrange1 = Color(0xFFEA631B);
+  late Color mitraqaWight = Color(0xFFEBEBDF);
+  late Color customColor1 = Color(0xFFDF801F);
+  late Color customColor2 = Color(0xFF814828);
+  late Color customColor3 = Color(0xFF8B7E58);
+  late Color customColor4 = Color(0xFF89EEC1);
+  late Color customColor5 = Color(0xFFA14A73);
+  late Color mitrakaBackgroundWhite = Color(0xFFCCFFFF);
+  late Color customColor6 = Color(0xFF63BEB9);
+  late Color mitraqaWhiteBackground = Color(0xFFEFEFEF);
+  late Color darkGreen = Color(0xFF093824);
+  late Color powderBlue = Color(0xFFA8C2E0);
+  late Color customColor7 = Color(0xFF5F359D);
+  late Color mitraqaOrange = Color(0xFFF68833);
 }
 
 abstract class Typography {

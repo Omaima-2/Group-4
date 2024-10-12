@@ -4,15 +4,16 @@ import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
 import '/backend/schema/util/schema_util.dart';
+import '/backend/schema/enums/enums.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 class RequestRecord extends FirestoreRecord {
   RequestRecord._(
-    super.reference,
-    super.data,
-  ) {
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
     _initializeFields();
   }
 
@@ -56,6 +57,11 @@ class RequestRecord extends FirestoreRecord {
   String get clientPhoto => _clientPhoto ?? '';
   bool hasClientPhoto() => _clientPhoto != null;
 
+  // "OnlineDurition" field.
+  int? _onlineDurition;
+  int get onlineDurition => _onlineDurition ?? 0;
+  bool hasOnlineDurition() => _onlineDurition != null;
+
   void _initializeFields() {
     _client = snapshotData['client'] as DocumentReference?;
     _timeCreated = snapshotData['time_created'] as DateTime?;
@@ -65,6 +71,7 @@ class RequestRecord extends FirestoreRecord {
     _price = castToType<int>(snapshotData['price']);
     _clientName = snapshotData['clientName'] as String?;
     _clientPhoto = snapshotData['clientPhoto'] as String?;
+    _onlineDurition = castToType<int>(snapshotData['OnlineDurition']);
   }
 
   static CollectionReference get collection =>
@@ -109,6 +116,7 @@ Map<String, dynamic> createRequestRecordData({
   int? price,
   String? clientName,
   String? clientPhoto,
+  int? onlineDurition,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -119,6 +127,7 @@ Map<String, dynamic> createRequestRecordData({
       'price': price,
       'clientName': clientName,
       'clientPhoto': clientPhoto,
+      'OnlineDurition': onlineDurition,
     }.withoutNulls,
   );
 
@@ -138,7 +147,8 @@ class RequestRecordDocumentEquality implements Equality<RequestRecord> {
         listEquality.equals(e1?.services, e2?.services) &&
         e1?.price == e2?.price &&
         e1?.clientName == e2?.clientName &&
-        e1?.clientPhoto == e2?.clientPhoto;
+        e1?.clientPhoto == e2?.clientPhoto &&
+        e1?.onlineDurition == e2?.onlineDurition;
   }
 
   @override
@@ -150,7 +160,8 @@ class RequestRecordDocumentEquality implements Equality<RequestRecord> {
         e?.services,
         e?.price,
         e?.clientName,
-        e?.clientPhoto
+        e?.clientPhoto,
+        e?.onlineDurition
       ]);
 
   @override

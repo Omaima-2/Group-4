@@ -4,15 +4,16 @@ import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
 import '/backend/schema/util/schema_util.dart';
+import '/backend/schema/enums/enums.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 class SpRecord extends FirestoreRecord {
   SpRecord._(
-    super.reference,
-    super.data,
-  ) {
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
     _initializeFields();
   }
 
@@ -41,15 +42,20 @@ class SpRecord extends FirestoreRecord {
   String get speciality => _speciality ?? '';
   bool hasSpeciality() => _speciality != null;
 
-  // "rate" field.
-  List<double>? _rate;
-  List<double> get rate => _rate ?? const [];
-  bool hasRate() => _rate != null;
-
   // "phone_number" field.
   DocumentReference? _phoneNumber;
   DocumentReference? get phoneNumber => _phoneNumber;
   bool hasPhoneNumber() => _phoneNumber != null;
+
+  // "price" field.
+  double? _price;
+  double get price => _price ?? 0.0;
+  bool hasPrice() => _price != null;
+
+  // "ratings" field.
+  List<int>? _ratings;
+  List<int> get ratings => _ratings ?? const [];
+  bool hasRatings() => _ratings != null;
 
   void _initializeFields() {
     _availability = snapshotData['availability'] as bool?;
@@ -57,8 +63,9 @@ class SpRecord extends FirestoreRecord {
     _name = snapshotData['name'] as String?;
     _photo = snapshotData['photo'] as String?;
     _speciality = snapshotData['Speciality'] as String?;
-    _rate = getDataList(snapshotData['rate']);
     _phoneNumber = snapshotData['phone_number'] as DocumentReference?;
+    _price = castToType<double>(snapshotData['price']);
+    _ratings = getDataList(snapshotData['ratings']);
   }
 
   static CollectionReference get collection =>
@@ -101,6 +108,7 @@ Map<String, dynamic> createSpRecordData({
   String? photo,
   String? speciality,
   DocumentReference? phoneNumber,
+  double? price,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -110,6 +118,7 @@ Map<String, dynamic> createSpRecordData({
       'photo': photo,
       'Speciality': speciality,
       'phone_number': phoneNumber,
+      'price': price,
     }.withoutNulls,
   );
 
@@ -127,8 +136,9 @@ class SpRecordDocumentEquality implements Equality<SpRecord> {
         e1?.name == e2?.name &&
         e1?.photo == e2?.photo &&
         e1?.speciality == e2?.speciality &&
-        listEquality.equals(e1?.rate, e2?.rate) &&
-        e1?.phoneNumber == e2?.phoneNumber;
+        e1?.phoneNumber == e2?.phoneNumber &&
+        e1?.price == e2?.price &&
+        listEquality.equals(e1?.ratings, e2?.ratings);
   }
 
   @override
@@ -138,8 +148,9 @@ class SpRecordDocumentEquality implements Equality<SpRecord> {
         e?.name,
         e?.photo,
         e?.speciality,
-        e?.rate,
-        e?.phoneNumber
+        e?.phoneNumber,
+        e?.price,
+        e?.ratings
       ]);
 
   @override

@@ -14,6 +14,7 @@ import '/backend/schema/enums/enums.dart';
 import '/auth/firebase_auth/auth_util.dart';
 
 bool? newCustomFunction(String phoneNum) {
+  phoneNum = phoneNum.replaceAll(' ', '');
   // a phone number validator, total 10 numbers start with 05
   if (phoneNum.length != 10) {
     return false;
@@ -29,6 +30,7 @@ String? newCustomFunction2(String? password) {
   if (password == null || password.isEmpty) {
     return 'Password cannot be empty';
   }
+  password = password.trim();
   if (password.length < 8) {
     return 'Password must be at least 8 characters long';
   }
@@ -51,7 +53,7 @@ String? newCustomFunction3(String? pass2) {
   if (pass2 == null || pass2.isEmpty) {
     return 'Password cannot be empty.';
   }
-
+  pass2 = pass2.trim();
   if (pass2.length < 8) {
     return 'Password must be at least 8 characters long.';
   }
@@ -70,7 +72,7 @@ String newCustomFunction4(String? name) {
   // Regular expression to match only alphabetic characters (English and Arabic) and spaces
   final RegExp nameRegex =
       RegExp(r'^[A-Za-z\u0621-\u064A\s]+$'); // Added $ to ensure full match
-
+  name = name!.trim();
   // Check if the name matches the regex
   if (nameRegex.hasMatch(name!)) {
     return name; // Return '.' for valid name
@@ -83,7 +85,7 @@ String validateEmail(String email) {
   // Updated regex pattern for better email validation
   final RegExp emailRegex =
       RegExp(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
-
+  email = email.trim();
   // Check if the email matches the regex pattern
   if (emailRegex.hasMatch(email)) {
     return email; // Return message for valid email
@@ -95,7 +97,7 @@ String validateEmail(String email) {
 String validatePhoneNumber(String phoneNumber) {
   // Regular expression to match a phone number starting with '05' and exactly 10 digits long
   final RegExp phoneRegex = RegExp(r'^05\d{8}$');
-
+  phoneNumber = phoneNumber.trim();
   // Check if the phone number matches the regex pattern
   if (phoneRegex.hasMatch(phoneNumber)) {
     return phoneNumber; // Return message for valid phone number
@@ -107,7 +109,7 @@ String validatePhoneNumber(String phoneNumber) {
 String validatePassword(String password) {
   // Regular expression to detect Arabic characters
   final RegExp arabicRegex = RegExp(r'[\u0600-\u06FF]');
-
+  password = password.trim();
   // Check if the password contains Arabic characters
   if (arabicRegex.hasMatch(password)) {
     return 'كلمة المرور يجب ألا تحتوي على حروف عربية'; // Password should not contain Arabic letters
@@ -133,7 +135,7 @@ String? validateLocation(String? location) {
   if (location == null || arabicRegex.hasMatch(location)) {
     return 'Location'; // Return error message for Arabic letters or null input
   }
-
+  location = location!.trim();
   // Check if the location matches the regex pattern
   if (locationRegex.hasMatch(location)) {
     return location; // Return null for valid location
