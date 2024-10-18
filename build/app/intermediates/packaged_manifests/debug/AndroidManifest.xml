@@ -8,6 +8,7 @@
         android:minSdkVersion="21"
         android:targetSdkVersion="34" />
     <!--
+<<<<<<< HEAD
 Flutter needs it to communicate with the running application
 to allow setting breakpoints, to provide hot reload, etc.
     -->
@@ -28,6 +29,21 @@ to allow setting breakpoints, to provide hot reload, etc.
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
     <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+=======
+         Flutter needs it to communicate with the running application
+         to allow setting breakpoints, to provide hot reload, etc.
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 
     <queries>
         <intent>
@@ -35,6 +51,7 @@ to allow setting breakpoints, to provide hot reload, etc.
 
             <data android:mimeType="*/*" />
         </intent>
+<<<<<<< HEAD
         <intent>
             <action android:name="com.huawei.hms.core.aidlservice" />
         </intent>
@@ -45,6 +62,11 @@ to allow setting breakpoints, to provide hot reload, etc.
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+=======
+    </queries>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
     <permission
@@ -52,13 +74,20 @@ to allow setting breakpoints, to provide hot reload, etc.
         android:protectionLevel="signature" />
 
     <uses-permission android:name="com.mycompany.mitraqa.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.GET_TASKS" />
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 
     <application
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
+<<<<<<< HEAD
         android:icon="@mipmap/launcher_icon"
+=======
+        android:icon="@mipmap/ic_launcher"
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
         android:label="MITRAQA"
         android:requestLegacyExternalStorage="true" >
         <activity
@@ -69,9 +98,29 @@ to allow setting breakpoints, to provide hot reload, etc.
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
             android:windowSoftInputMode="adjustResize" >
+<<<<<<< HEAD
             <meta-data
                 android:name="io.flutter.embedding.android.NormalTheme"
                 android:resource="@style/NormalTheme" />
+=======
+
+            <!--
+                 Specifies an Android theme to apply to this Activity as soon as
+                 the Android process has started. This theme is visible to the user
+                 while the Flutter UI initializes. After that, this theme continues
+                 to determine the Window background behind the Flutter UI.
+            -->
+            <meta-data
+                android:name="io.flutter.embedding.android.NormalTheme"
+                android:resource="@style/NormalTheme" />
+            <!--
+                 Displays an Android View that continues showing the launch screen
+                 Drawable until Flutter paints its first frame, then this splash
+                 screen fades out. A splash screen is useful to avoid any visual
+                 gap between the end of Android's launch screen and the painting of
+                 Flutter's first frame.
+            -->
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
             <meta-data
                 android:name="io.flutter.embedding.android.SplashScreenDrawable"
                 android:resource="@drawable/launch_background" />
@@ -81,7 +130,10 @@ to allow setting breakpoints, to provide hot reload, etc.
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
             <!-- Deep linking -->
             <meta-data
                 android:name="flutter_deeplinking_enabled"
@@ -99,6 +151,13 @@ to allow setting breakpoints, to provide hot reload, etc.
             </intent-filter>
         </activity>
 
+<<<<<<< HEAD
+=======
+        <!--
+             Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+        -->
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
@@ -111,9 +170,12 @@ to allow setting breakpoints, to provide hot reload, etc.
                 android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
+<<<<<<< HEAD
                 android:name="com.google.firebase.components:io.flutter.plugins.firebase.functions.FlutterFirebaseAppRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
                 android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
@@ -123,12 +185,15 @@ to allow setting breakpoints, to provide hot reload, etc.
                 android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
+<<<<<<< HEAD
                 android:name="com.google.firebase.components:com.google.firebase.functions.FirebaseFunctionsKtxRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.functions.FunctionsRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
                 android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
@@ -138,18 +203,22 @@ to allow setting breakpoints, to provide hot reload, etc.
                 android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
+<<<<<<< HEAD
                 android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
                 android:name="com.google.firebase.components:com.google.firebase.storage.FirebaseStorageKtxRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
+<<<<<<< HEAD
                 android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
@@ -159,6 +228,8 @@ to allow setting breakpoints, to provide hot reload, etc.
                 android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
                 android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckKtxRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
@@ -170,6 +241,7 @@ to allow setting breakpoints, to provide hot reload, etc.
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
+<<<<<<< HEAD
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
@@ -226,6 +298,10 @@ to allow setting breakpoints, to provide hot reload, etc.
             android:enabled="true"
             android:exported="true" />
 
+=======
+        </service>
+
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
         <provider
             android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
             android:authorities="com.mycompany.mitraqa.flutter.image_provider"
@@ -241,6 +317,7 @@ to allow setting breakpoints, to provide hot reload, etc.
             android:exported="false"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity
+<<<<<<< HEAD
             android:name="im.zego.internal.screencapture.ZegoScreenCaptureManager$ZegoScreenCaptureAssistantActivity"
             android:configChanges="screenSize|orientation"
             android:exported="false"
@@ -279,6 +356,8 @@ to allow setting breakpoints, to provide hot reload, etc.
         </receiver>
 
         <activity
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"
             android:excludeFromRecents="true"
             android:exported="true"
@@ -315,6 +394,7 @@ to allow setting breakpoints, to provide hot reload, etc.
             </intent-filter>
         </activity>
 
+<<<<<<< HEAD
         <receiver
             android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
             android:exported="true"
@@ -341,6 +421,8 @@ to allow setting breakpoints, to provide hot reload, etc.
         </service> <!-- Mqtt Service -->
         <service android:name="org.eclipse.paho.android.service.MqttService" />
 
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
         <uses-library
             android:name="androidx.window.extensions"
             android:required="false" />
@@ -348,6 +430,7 @@ to allow setting breakpoints, to provide hot reload, etc.
             android:name="androidx.window.sidecar"
             android:required="false" />
 
+<<<<<<< HEAD
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.mycompany.mitraqa.androidx-startup"
@@ -458,6 +541,8 @@ to allow setting breakpoints, to provide hot reload, etc.
             </intent-filter>
         </receiver>
 
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
         <activity
             android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
             android:excludeFromRecents="true"
@@ -473,22 +558,45 @@ to allow setting breakpoints, to provide hot reload, etc.
             android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
             android:visibleToInstantApps="true" />
 
+<<<<<<< HEAD
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
             android:authorities="com.mycompany.mitraqa.firebaseinitprovider"
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />
+<<<<<<< HEAD
+=======
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.mycompany.mitraqa.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+                android:value="androidx.startup" />
+        </provider>
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
+<<<<<<< HEAD
         <service
             android:name="androidx.room.MultiInstanceInvalidationService"
             android:directBootAware="true"
@@ -515,6 +623,8 @@ to allow setting breakpoints, to provide hot reload, etc.
             android:authorities="com.mycompany.mitraqa.com.squareup.picasso"
             android:exported="false" />
 
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
         <receiver
             android:name="androidx.profileinstaller.ProfileInstallReceiver"
             android:directBootAware="false"
@@ -534,6 +644,7 @@ to allow setting breakpoints, to provide hot reload, etc.
                 <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
             </intent-filter>
         </receiver>
+<<<<<<< HEAD
 
         <service
             android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
@@ -651,6 +762,8 @@ to allow setting breakpoints, to provide hot reload, etc.
             android:name="com.vivo.push.sdk.service.CommandClientService"
             android:exported="true"
             android:permission="com.push.permission.UPSTAGESERVICE" />
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     </application>
 
 </manifest>

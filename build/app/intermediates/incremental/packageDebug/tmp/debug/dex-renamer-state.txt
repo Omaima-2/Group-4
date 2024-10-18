@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 #Thu Oct 17 08:37:19 GMT+03:00 2024
+=======
+#Fri Sep 27 23:44:18 GMT+03:00 2024
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 path.4=1/classes.dex
 path.3=10/classes.dex
 path.2=0/classes.dex
 path.1=0/classes.dex
+<<<<<<< HEAD
 path.7=classes4.dex
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 path.6=classes3.dex
 path.5=classes2.dex
 path.0=classes.dex
@@ -16,9 +23,13 @@ renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
+<<<<<<< HEAD
 renamed.7=classes8.dex
 renamed.6=classes7.dex
 base.7=C\:\\Users\\oyyyy\\Desktop\\Group-4-1\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes4.dex
+=======
+renamed.6=classes7.dex
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 renamed.5=classes6.dex
 base.6=C\:\\Users\\oyyyy\\Desktop\\Group-4-1\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
 renamed.4=classes5.dex

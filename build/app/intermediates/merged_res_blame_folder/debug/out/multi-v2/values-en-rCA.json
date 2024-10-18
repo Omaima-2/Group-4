@@ -1,6 +1,7 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "com.mycompany.mitraqa.app-mergeDebugResources-54:/values-en-rCA/values-en-rCA.xml",
             "map": [
                 {
@@ -39,6 +40,12 @@
                 },
                 {
                     "source": "C:\\Users\\oyyyy\\.gradle\\caches\\transforms-3\\1b4f3e428c8d62872114506885d43cbc\\transformed\\core-1.13.1\\res\\values-en-rCA\\values-en-rCA.xml",
+=======
+            "outputFile": "com.mycompany.mitraqa.app-mergeDebugResources-32:/values-en-rCA/values-en-rCA.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\oyyyy\\.gradle\\caches\\transforms-3\\5af03f1e3bf82b901dd5e3b167881695\\transformed\\core-1.13.1\\res\\values-en-rCA\\values-en-rCA.xml",
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -47,11 +54,36 @@
                         "endOffsets": "146,248,347,446,550,652,768,869"
                     },
                     "to": {
+<<<<<<< HEAD
                         "startLines": "29,30,31,32,33,34,35,41",
                         "startColumns": "4,4,4,4,4,4,4,4",
                         "startOffsets": "2762,2858,2960,3059,3158,3262,3364,3966",
                         "endColumns": "95,101,98,98,103,101,115,100",
                         "endOffsets": "2853,2955,3054,3153,3257,3359,3475,4062"
+=======
+                        "startLines": "2,3,4,5,6,7,8,13",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,151,253,352,451,555,657,1176",
+                        "endColumns": "95,101,98,98,103,101,115,100",
+                        "endOffsets": "146,248,347,446,550,652,768,1272"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\oyyyy\\.gradle\\caches\\transforms-3\\009c1d443ad54ea34756666d5ffa668a\\transformed\\browser-1.5.0\\res\\values-en-rCA\\values-en-rCA.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,153,250,359",
+                        "endColumns": "97,96,108,98",
+                        "endOffsets": "148,245,354,453"
+                    },
+                    "to": {
+                        "startLines": "9,10,11,12",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "773,871,968,1077",
+                        "endColumns": "97,96,108,98",
+                        "endOffsets": "866,963,1072,1171"
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
                     }
                 }
             ]

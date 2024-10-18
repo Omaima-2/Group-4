@@ -1,7 +1,11 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "com.mycompany.mitraqa.app-mergeDebugResources-54:/values-night-v8/values-night-v8.xml",
+=======
+            "outputFile": "com.mycompany.mitraqa.app-mergeDebugResources-32:/values-night-v8/values-night-v8.xml",
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
             "map": [
                 {
                     "source": "C:\\Users\\oyyyy\\Desktop\\Group-4-1\\android\\app\\src\\main\\res\\values-night\\styles.xml",
@@ -21,6 +25,7 @@
                         "endColumns": "12,12",
                         "endOffsets": "231,400"
                     }
+<<<<<<< HEAD
                 },
                 {
                     "source": "C:\\Users\\oyyyy\\.gradle\\caches\\transforms-3\\d56fe4d1d9e623d7568699682e71f3eb\\transformed\\appcompat-1.6.1\\res\\values-night-v8\\values-night-v8.xml",
@@ -38,6 +43,8 @@
                         "endColumns": "69,83,83,95,101,101,93,88",
                         "endOffsets": "470,554,638,734,836,938,1032,1121"
                     }
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
                 }
             ]
         }

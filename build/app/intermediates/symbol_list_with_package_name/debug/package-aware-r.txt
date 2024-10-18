@@ -1,4 +1,5 @@
 com.mycompany.mitraqa
+<<<<<<< HEAD
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -25,12 +26,16 @@ anim btn_radio_to_on_mtrl_ring_outer_animation
 anim btn_radio_to_on_mtrl_ring_outer_path_animation
 anim fragment_fast_out_extra_slow_in
 anim shake_anim
+=======
+anim fragment_fast_out_extra_slow_in
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 animator fragment_close_enter
 animator fragment_close_exit
 animator fragment_fade_enter
 animator fragment_fade_exit
 animator fragment_open_enter
 animator fragment_open_exit
+<<<<<<< HEAD
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -178,6 +183,21 @@ attr finishSecondaryWithPrimary
 attr firstBaselineToTopHeight
 attr font
 attr fontFamily
+=======
+attr activityAction
+attr activityName
+attr alpha
+attr alwaysExpand
+attr animationBackgroundColor
+attr buttonSize
+attr circleCrop
+attr clearTop
+attr colorScheme
+attr finishPrimaryWithPlaceholder
+attr finishPrimaryWithSecondary
+attr finishSecondaryWithPrimary
+attr font
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 attr fontProviderAuthority
 attr fontProviderCerts
 attr fontProviderFetchStrategy
@@ -188,6 +208,7 @@ attr fontProviderSystemFontFamily
 attr fontStyle
 attr fontVariationSettings
 attr fontWeight
+<<<<<<< HEAD
 attr gapBetweenBars
 attr goIcon
 attr height
@@ -288,6 +309,19 @@ attr singleChoiceItemLayout
 attr spinBars
 attr spinnerDropDownItemStyle
 attr spinnerStyle
+=======
+attr imageAspectRatio
+attr imageAspectRatioAdjust
+attr lStar
+attr nestedScrollViewStyle
+attr placeholderActivityName
+attr primaryActivityName
+attr queryPatterns
+attr scopeUris
+attr secondaryActivityAction
+attr secondaryActivityName
+attr shortcutMatchRequired
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 attr splitLayoutDirection
 attr splitMaxAspectRatioInLandscape
 attr splitMaxAspectRatioInPortrait
@@ -295,6 +329,7 @@ attr splitMinHeightDp
 attr splitMinSmallestWidthDp
 attr splitMinWidthDp
 attr splitRatio
+<<<<<<< HEAD
 attr splitTrack
 attr srcCompat
 attr state_above_anchor
@@ -414,12 +449,22 @@ color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+=======
+attr stickyPlaceholder
+attr tag
+attr ttcIndex
+color androidx_core_ripple_material_light
+color androidx_core_secondary_text_default_material_light
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 color browser_actions_bg_grey
 color browser_actions_divider_color
 color browser_actions_text_color
 color browser_actions_title_color
+<<<<<<< HEAD
 color button_material_dark
 color button_material_light
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 color call_notification_answer_color
 color call_notification_decline_color
 color common_google_signin_btn_text_dark
@@ -433,6 +478,7 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+<<<<<<< HEAD
 color decline
 color decline_ripple
 color dim_foreground_disabled_material_dark
@@ -577,6 +623,10 @@ dimen base_margin_x4
 dimen base_margin_x4_8
 dimen base_margin_x5
 dimen base_margin_x6
+=======
+color notification_action_color_filter
+color notification_icon_bg_color
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 dimen browser_actions_context_menu_max_width
 dimen browser_actions_context_menu_min_padding
 dimen compat_button_inset_horizontal_material
@@ -586,6 +636,7 @@ dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
 dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
+<<<<<<< HEAD
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
 dimen highlight_alpha_material_colored
@@ -595,6 +646,8 @@ dimen hint_alpha_material_dark
 dimen hint_alpha_material_light
 dimen hint_pressed_alpha_material_dark
 dimen hint_pressed_alpha_material_light
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 dimen notification_action_icon_size
 dimen notification_action_text_size
 dimen notification_big_circle_margin
@@ -610,6 +663,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+<<<<<<< HEAD
 dimen size_avatar
 dimen size_button
 dimen size_button_x2
@@ -717,6 +771,8 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -738,13 +794,17 @@ drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+<<<<<<< HEAD
 drawable ic_accept
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 drawable ic_call_answer
 drawable ic_call_answer_low
 drawable ic_call_answer_video
 drawable ic_call_answer_video_low
 drawable ic_call_decline
 drawable ic_call_decline_low
+<<<<<<< HEAD
 drawable ic_call_missed
 drawable ic_decline
 drawable ic_default_avatar
@@ -752,6 +812,8 @@ drawable ic_launcher_foreground
 drawable ic_logo
 drawable ic_video
 drawable ic_video_missed
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 drawable launch_background
 drawable notification_action_background
 drawable notification_bg
@@ -766,6 +828,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+<<<<<<< HEAD
 drawable rounded_button_accept
 drawable rounded_button_decline
 drawable small_icon
@@ -779,6 +842,8 @@ id FUNCTION
 id META
 id SHIFT
 id SYM
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -812,6 +877,7 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
+<<<<<<< HEAD
 id action0
 id action_bar
 id action_bar_activity_content
@@ -838,21 +904,36 @@ id adjust_height
 id adjust_width
 id alertTitle
 id all
+=======
+id action_container
+id action_divider
+id action_image
+id action_text
+id actions
+id adjacent
+id adjust_height
+id adjust_width
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 id always
 id alwaysAllow
 id alwaysDisallow
 id androidx_window_activity_scope
 id async
 id auto
+<<<<<<< HEAD
 id beginning
 id blocking
 id bottom
+=======
+id blocking
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 id bottomToTop
 id browser_actions_header_text
 id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+<<<<<<< HEAD
 id buttonPanel
 id cancel_action
 id center
@@ -917,12 +998,32 @@ id media_actions
 id message
 id middle
 id multiply
+=======
+id chronometer
+id dark
+id dialog_button
+id edit_text_id
+id forever
+id fragment_container_view_tag
+id hide_ime_id
+id icon
+id icon_group
+id icon_only
+id info
+id italic
+id light
+id line1
+id line3
+id locale
+id ltr
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 id never
 id none
 id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+<<<<<<< HEAD
 id off
 id on
 id parentPanel
@@ -965,6 +1066,14 @@ id status_bar_latest_event_content
 id submenuarrow
 id submit_area
 id tabMode
+=======
+id report_drawn
+id right_icon
+id right_side
+id rtl
+id special_effects_controller_view_tag
+id standard
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -980,6 +1089,7 @@ id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
 id text
 id text2
+<<<<<<< HEAD
 id textSpacerNoButtons
 id textSpacerNoTitle
 id time
@@ -1000,12 +1110,18 @@ id unchecked
 id uniform
 id up
 id useLogo
+=======
+id time
+id title
+id topToBottom
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 id view_tree_lifecycle_owner
 id view_tree_on_back_pressed_dispatcher_owner
 id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible_removing_fragment_view_tag
 id wide
+<<<<<<< HEAD
 id withText
 id wrap_content
 integer abc_config_activityDefaultDur
@@ -1050,11 +1166,16 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_callkit_incoming
+=======
+integer google_play_services_version
+integer status_bar_notification_info_maxnum
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout custom_dialog
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+<<<<<<< HEAD
 layout layout_custom_miss_notification
 layout layout_custom_notification
 layout layout_custom_small_ex_notification
@@ -1112,6 +1233,16 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+=======
+layout notification_action
+layout notification_action_tombstone
+layout notification_template_custom_big
+layout notification_template_icon_group
+layout notification_template_part_chronometer
+layout notification_template_part_time
+mipmap ic_launcher
+raw firebase_common_keep
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 string androidx_startup
 string app_name
 string call_notification_answer_action
@@ -1152,13 +1283,17 @@ string exo_download_removing
 string fallback_menu_item_copy_link
 string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
+<<<<<<< HEAD
 string fcm_fallback_notification_channel_label
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string project_id
+<<<<<<< HEAD
 string search_menu_title
 string status_bar_notification_info_overflow
 string text_accept
@@ -1554,12 +1689,29 @@ styleable CompoundButton android_button buttonCompat buttonTint buttonTintMode
 styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
+=======
+string status_bar_notification_info_overflow
+style LaunchTheme
+style NormalTheme
+style TextAppearance_Compat_Notification
+style TextAppearance_Compat_Notification_Info
+style TextAppearance_Compat_Notification_Line2
+style TextAppearance_Compat_Notification_Time
+style TextAppearance_Compat_Notification_Title
+style Widget_Compat_NotificationActionContainer
+style Widget_Compat_NotificationActionText
+styleable ActivityFilter activityAction activityName
+styleable ActivityRule alwaysExpand tag
+styleable Capability queryPatterns shortcutMatchRequired
+styleable ColorStateListItem android_color android_alpha android_lStar alpha lStar
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery fontProviderSystemFontFamily
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable Fragment android_name android_id android_tag
 styleable FragmentContainerView android_name android_tag
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
+<<<<<<< HEAD
 styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
@@ -1585,5 +1737,12 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable ripple_relativeLayout ripple_amount ripple_color ripple_duration ripple_radius ripple_scale
+=======
+styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
+styleable SignInButton buttonSize colorScheme scopeUris
+styleable SplitPairFilter primaryActivityName secondaryActivityAction secondaryActivityName
+styleable SplitPairRule animationBackgroundColor clearTop finishPrimaryWithSecondary finishSecondaryWithPrimary splitLayoutDirection splitMaxAspectRatioInLandscape splitMaxAspectRatioInPortrait splitMinHeightDp splitMinSmallestWidthDp splitMinWidthDp splitRatio tag
+styleable SplitPlaceholderRule animationBackgroundColor finishPrimaryWithPlaceholder placeholderActivityName splitLayoutDirection splitMaxAspectRatioInLandscape splitMaxAspectRatioInPortrait splitMinHeightDp splitMinSmallestWidthDp splitMinWidthDp splitRatio stickyPlaceholder tag
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 xml flutter_image_picker_file_paths
 xml image_share_filepaths

@@ -1,6 +1,7 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "com.mycompany.mitraqa.app-mergeDebugResources-54:/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
@@ -22,6 +23,12 @@
                 },
                 {
                     "source": "C:\\Users\\oyyyy\\.gradle\\caches\\transforms-3\\2aafbb2728c1ced93597d35b41fd063e\\transformed\\browser-1.5.0\\res\\values-en-rXC\\values-en-rXC.xml",
+=======
+            "outputFile": "com.mycompany.mitraqa.app-mergeDebugResources-32:/values-en-rXC/values-en-rXC.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\oyyyy\\.gradle\\caches\\transforms-3\\009c1d443ad54ea34756666d5ffa668a\\transformed\\browser-1.5.0\\res\\values-en-rXC\\values-en-rXC.xml",
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -30,6 +37,7 @@
                         "endOffsets": "250,449,660,862"
                     },
                     "to": {
+<<<<<<< HEAD
                         "startLines": "36,37,38,39",
                         "startColumns": "4,4,4,4",
                         "startOffsets": "6955,7155,7354,7565",
@@ -39,6 +47,17 @@
                 },
                 {
                     "source": "C:\\Users\\oyyyy\\.gradle\\caches\\transforms-3\\1b4f3e428c8d62872114506885d43cbc\\transformed\\core-1.13.1\\res\\values-en-rXC\\values-en-rXC.xml",
+=======
+                        "startLines": "9,10,11,12",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "1482,1682,1881,2092",
+                        "endColumns": "199,198,210,201",
+                        "endOffsets": "1677,1876,2087,2289"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\oyyyy\\.gradle\\caches\\transforms-3\\5af03f1e3bf82b901dd5e3b167881695\\transformed\\core-1.13.1\\res\\values-en-rXC\\values-en-rXC.xml",
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -47,11 +66,19 @@
                         "endOffsets": "246,451,652,853,1060,1265,1477,1681"
                     },
                     "to": {
+<<<<<<< HEAD
                         "startLines": "29,30,31,32,33,34,35,41",
                         "startColumns": "4,4,4,4,4,4,4,4",
                         "startOffsets": "5528,5724,5929,6130,6331,6538,6743,7953",
                         "endColumns": "195,204,200,200,206,204,211,203",
                         "endOffsets": "5719,5924,6125,6326,6533,6738,6950,8152"
+=======
+                        "startLines": "2,3,4,5,6,7,8,13",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,251,456,657,858,1065,1270,2294",
+                        "endColumns": "195,204,200,200,206,204,211,203",
+                        "endOffsets": "246,451,652,853,1060,1265,1477,2493"
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
                     }
                 }
             ]

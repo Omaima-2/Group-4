@@ -1,6 +1,7 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "com.mycompany.mitraqa.app-mergeDebugResources-54:/values-v21/values-v21.xml",
             "map": [
                 {
@@ -43,6 +44,12 @@
                 },
                 {
                     "source": "C:\\Users\\oyyyy\\.gradle\\caches\\transforms-3\\1b4f3e428c8d62872114506885d43cbc\\transformed\\core-1.13.1\\res\\values-v21\\values-v21.xml",
+=======
+            "outputFile": "com.mycompany.mitraqa.app-mergeDebugResources-32:/values-v21/values-v21.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\oyyyy\\.gradle\\caches\\transforms-3\\5af03f1e3bf82b901dd5e3b167881695\\transformed\\core-1.13.1\\res\\values-v21\\values-v21.xml",
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -50,6 +57,7 @@
                         "endLines": "2,3,4,5,6,7,8,9,12,17",
                         "endColumns": "117,63,66,63,115,125,125,127,12,12",
                         "endOffsets": "168,232,299,363,479,605,731,859,1031,1383"
+<<<<<<< HEAD
                     },
                     "to": {
                         "startLines": "2,3,4,5,264,265,272,276,280,283",
@@ -58,6 +66,8 @@
                         "endLines": "2,3,4,5,264,265,272,276,282,287",
                         "endColumns": "117,63,66,63,115,125,125,127,12,12",
                         "endOffsets": "168,232,299,363,18766,18892,19349,19645,19984,20336"
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
                     }
                 }
             ]

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
     <attr format="color" name="animationBackgroundColor"/>
+<<<<<<< HEAD
     <attr format="reference" name="coordinatorLayoutStyle"/>
     <attr format="reference" name="drawerArrowStyle"/>
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <attr format="enum" name="finishPrimaryWithPlaceholder">
         
         <enum name="always" value="1"/>
@@ -25,8 +28,11 @@
         
         <enum name="adjacent" value="2"/>
     </attr>
+<<<<<<< HEAD
     <attr format="dimension" name="height"/>
     <attr format="boolean" name="isLightTheme"/>
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <attr format="reference" name="nestedScrollViewStyle"/>
     <attr format="enum" name="splitLayoutDirection">
         
@@ -57,6 +63,7 @@
     <attr format="integer" name="splitMinWidthDp"/>
     <attr format="float" name="splitRatio"/>
     <attr format="string" name="tag"/>
+<<<<<<< HEAD
     <attr format="string" name="title"/>
     <bool name="abc_action_bar_embed_tabs">true</bool>
     <bool name="abc_config_actionMenuItemAllCaps">true</bool>
@@ -87,12 +94,19 @@
     <color name="bright_foreground_inverse_material_light">@color/bright_foreground_material_dark</color>
     <color name="bright_foreground_material_dark">@android:color/white</color>
     <color name="bright_foreground_material_light">@android:color/black</color>
+=======
+    <color name="androidx_core_ripple_material_light">#1f000000</color>
+    <color name="androidx_core_secondary_text_default_material_light">#8a000000</color>
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <color name="browser_actions_bg_grey">#F5F5F5</color>
     <color name="browser_actions_divider_color">#1E000000</color>
     <color name="browser_actions_text_color">#DE000000</color>
     <color name="browser_actions_title_color">#646464</color>
+<<<<<<< HEAD
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <color name="call_notification_answer_color">#1d873b</color>
     <color name="call_notification_decline_color">#d93025</color>
     <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
@@ -103,6 +117,7 @@
     <color name="common_google_signin_btn_text_light_disabled">#1F000000</color>
     <color name="common_google_signin_btn_text_light_focused">#90000000</color>
     <color name="common_google_signin_btn_text_light_pressed">#DE000000</color>
+<<<<<<< HEAD
     <color name="decline">#F44336</color>
     <color name="decline_ripple">#FB8D85</color>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
@@ -245,6 +260,10 @@
     <dimen name="base_margin_x4_8">48dp</dimen>
     <dimen name="base_margin_x5">50dp</dimen>
     <dimen name="base_margin_x6">60dp</dimen>
+=======
+    <color name="notification_action_color_filter">#ffffffff</color>
+    <color name="notification_icon_bg_color">#ff9e9e9e</color>
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <dimen name="browser_actions_context_menu_max_width">500dp</dimen>
     <dimen name="browser_actions_context_menu_min_padding">20dp</dimen>
     <dimen name="compat_button_inset_horizontal_material">4dp</dimen>
@@ -254,6 +273,7 @@
     <dimen name="compat_control_corner_material">2dp</dimen>
     <dimen name="compat_notification_large_icon_max_height">320dp</dimen>
     <dimen name="compat_notification_large_icon_max_width">320dp</dimen>
+<<<<<<< HEAD
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
@@ -263,6 +283,8 @@
     <item format="float" name="hint_alpha_material_light" type="dimen">0.38</item>
     <item format="float" name="hint_pressed_alpha_material_dark" type="dimen">0.70</item>
     <item format="float" name="hint_pressed_alpha_material_light" type="dimen">0.54</item>
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <dimen name="notification_action_icon_size">32dp</dimen>
     <dimen name="notification_action_text_size">13sp</dimen>
     <dimen name="notification_big_circle_margin">12dp</dimen>
@@ -278,6 +300,7 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+<<<<<<< HEAD
     <dimen name="size_avatar">120dp</dimen>
     <dimen name="size_button">60dp</dimen>
     <dimen name="size_button_x2">120dp</dimen>
@@ -296,6 +319,8 @@
     <dimen name="tooltip_vertical_padding">6.5dp</dimen>
     <dimen name="tooltip_y_offset_non_touch">0dp</dimen>
     <dimen name="tooltip_y_offset_touch">16dp</dimen>
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
     <item name="accessibility_action_clickable_span" type="id"/>
@@ -331,6 +356,7 @@
     <item name="accessibility_custom_action_7" type="id"/>
     <item name="accessibility_custom_action_8" type="id"/>
     <item name="accessibility_custom_action_9" type="id"/>
+<<<<<<< HEAD
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
     <item name="action_menu_divider" type="id"/>
@@ -345,6 +371,14 @@
     <item name="report_drawn" type="id"/>
     <item name="special_effects_controller_view_tag" type="id"/>
     <item name="split_action_bar" type="id"/>
+=======
+    <item name="androidx_window_activity_scope" type="id"/>
+    <item name="fragment_container_view_tag" type="id"/>
+    <item name="line1" type="id"/>
+    <item name="line3" type="id"/>
+    <item name="report_drawn" type="id"/>
+    <item name="special_effects_controller_view_tag" type="id"/>
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <item name="tag_accessibility_actions" type="id"/>
     <item name="tag_accessibility_clickable_spans" type="id"/>
     <item name="tag_accessibility_heading" type="id"/>
@@ -361,12 +395,16 @@
     <item name="text" type="id"/>
     <item name="text2" type="id"/>
     <item name="title" type="id"/>
+<<<<<<< HEAD
     <item name="up" type="id"/>
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <id name="view_tree_lifecycle_owner"/>
     <id name="view_tree_on_back_pressed_dispatcher_owner"/>
     <id name="view_tree_saved_state_registry_owner"/>
     <id name="view_tree_view_model_store_owner"/>
     <item name="visible_removing_fragment_view_tag" type="id"/>
+<<<<<<< HEAD
     <integer name="abc_config_activityDefaultDur">220</integer>
     <integer name="abc_config_activityShortDur">150</integer>
     <integer name="cancel_button_image_alpha">127</integer>
@@ -400,6 +438,10 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+=======
+    <integer name="google_play_services_version">12451000</integer>
+    <integer name="status_bar_notification_info_maxnum">999</integer>
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <string name="androidx_startup" translatable="false">androidx.startup</string>
     <string name="app_name">MITRAQA</string>
     <string name="call_notification_answer_action">Answer</string>
@@ -440,13 +482,17 @@
     <string name="fallback_menu_item_copy_link">Copy link</string>
     <string name="fallback_menu_item_open_in_browser">Open in browser</string>
     <string name="fallback_menu_item_share_link">Share link</string>
+<<<<<<< HEAD
     <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <string name="gcm_defaultSenderId" translatable="false">419264219657</string>
     <string name="google_api_key" translatable="false">AIzaSyB9us37kyXsskCdQOVZPUGMDBLD6oZP85w</string>
     <string name="google_app_id" translatable="false">1:419264219657:android:40461f550edbbad0bb06d8</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB9us37kyXsskCdQOVZPUGMDBLD6oZP85w</string>
     <string name="google_storage_bucket" translatable="false">aaaa-l7rtpe.appspot.com</string>
     <string name="project_id" translatable="false">aaaa-l7rtpe</string>
+<<<<<<< HEAD
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="text_accept">Accept</string>
@@ -1551,6 +1597,9 @@
     <style name="DialogTheme" parent="@style/Theme.AppCompat.Light.Dialog.Alert">
 
     </style>
+=======
+    <string name="status_bar_notification_info_overflow">999+</string>
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
         
         <item name="android:windowBackground">@drawable/launch_background</item>
@@ -1558,6 +1607,7 @@
     <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
         <item name="android:windowBackground">?android:colorBackground</item>
     </style>
+<<<<<<< HEAD
     <style name="Platform.AppCompat" parent="android:Theme.Holo">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
@@ -1829,19 +1879,26 @@
     <style name="TextAppearance.AppCompat.Widget.PopupMenu.Small" parent="Base.TextAppearance.AppCompat.Widget.PopupMenu.Small"/>
     <style name="TextAppearance.AppCompat.Widget.Switch" parent="Base.TextAppearance.AppCompat.Widget.Switch"/>
     <style name="TextAppearance.AppCompat.Widget.TextView.SpinnerItem" parent="Base.TextAppearance.AppCompat.Widget.TextView.SpinnerItem"/>
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <style name="TextAppearance.Compat.Notification" parent="@android:style/TextAppearance.StatusBar.EventContent"/>
     <style name="TextAppearance.Compat.Notification.Info">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
+<<<<<<< HEAD
     <style name="TextAppearance.Compat.Notification.Info.Media"/>
     <style name="TextAppearance.Compat.Notification.Line2" parent="TextAppearance.Compat.Notification.Info"/>
     <style name="TextAppearance.Compat.Notification.Line2.Media" parent="TextAppearance.Compat.Notification.Info.Media"/>
     <style name="TextAppearance.Compat.Notification.Media"/>
+=======
+    <style name="TextAppearance.Compat.Notification.Line2" parent="TextAppearance.Compat.Notification.Info"/>
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <style name="TextAppearance.Compat.Notification.Time">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
+<<<<<<< HEAD
     <style name="TextAppearance.Compat.Notification.Time.Media"/>
     <style name="TextAppearance.Compat.Notification.Title" parent="@android:style/TextAppearance.StatusBar.EventContent.Title"/>
     <style name="TextAppearance.Compat.Notification.Title.Media"/>
@@ -2110,6 +2167,11 @@
         
         <attr format="reference" name="expandActivityOverflowButtonDrawable"/>
     </declare-styleable>
+=======
+    <style name="TextAppearance.Compat.Notification.Title" parent="@android:style/TextAppearance.StatusBar.EventContent.Title"/>
+    <style name="Widget.Compat.NotificationActionContainer" parent=""/>
+    <style name="Widget.Compat.NotificationActionText" parent=""/>
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <declare-styleable name="ActivityFilter">
         
         <attr format="string" name="activityName"/>
@@ -2121,6 +2183,7 @@
         <attr format="boolean" name="alwaysExpand"/>
         <attr name="tag"/>
     </declare-styleable>
+<<<<<<< HEAD
     <declare-styleable name="AlertDialog">
         <attr name="android:layout"/>
         <attr format="reference" name="buttonPanelSideLayout"/>
@@ -2662,12 +2725,15 @@
         
         <attr format="boolean" name="allowStacking"/>
     </declare-styleable>
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <declare-styleable name="Capability">
         
         <attr format="reference" name="queryPatterns"/>
         
         <attr format="boolean" name="shortcutMatchRequired"/>
     </declare-styleable>
+<<<<<<< HEAD
     <declare-styleable name="CheckedTextView">
         <attr name="android:checkMark"/>
         
@@ -2702,6 +2768,8 @@
         <attr format="boolean" name="civ_border_overlay"/>
         <attr format="color" name="civ_circle_background_color"/>
     </declare-styleable>
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <declare-styleable name="ColorStateListItem">
         
         <attr name="android:color"/>
@@ -2712,6 +2780,7 @@
         <attr format="float" name="lStar"/>
         <attr name="android:lStar"/>
     </declare-styleable>
+<<<<<<< HEAD
     <declare-styleable name="CompoundButton">
         <attr name="android:button"/>
         
@@ -2848,6 +2917,8 @@
         
         <attr format="dimension" name="thickness"/>
     </declare-styleable>
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <declare-styleable name="FontFamily">
         
         <attr format="string" name="fontProviderAuthority"/>
@@ -2950,6 +3021,7 @@
         
         <attr name="android:color"/>
     </declare-styleable>
+<<<<<<< HEAD
     <declare-styleable name="LinearLayoutCompat">
         
         <attr name="android:orientation"/>
@@ -2986,6 +3058,8 @@
         
         <attr name="android:dropDownHorizontalOffset"/>
     </declare-styleable>
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <declare-styleable name="LoadingImageView"><attr name="imageAspectRatioAdjust">
 <enum name="none" value="0"/>
 
@@ -2999,6 +3073,7 @@
 
 <attr format="boolean" name="circleCrop"/>
 </declare-styleable>
+<<<<<<< HEAD
     <declare-styleable name="MenuGroup">
 
         
@@ -3215,6 +3290,8 @@
         <attr format="reference" name="submitBackground"/>
         <attr name="android:focusable"/>
     </declare-styleable>
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <declare-styleable name="SignInButton"><attr format="reference" name="buttonSize">
 <enum name="standard" value="0"/>
 
@@ -3234,6 +3311,7 @@
 
 <attr format="reference|string" name="scopeUris"/>
 </declare-styleable>
+<<<<<<< HEAD
     <declare-styleable name="Spinner">
         
         <attr name="android:prompt"/>
@@ -3246,6 +3324,8 @@
         
         <attr name="android:entries"/>
     </declare-styleable>
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
     <declare-styleable name="SplitPairFilter">
         
         <attr format="string" name="primaryActivityName"/>
@@ -3285,6 +3365,7 @@
         <attr name="tag"/>
         <attr name="animationBackgroundColor"/>
     </declare-styleable>
+<<<<<<< HEAD
     <declare-styleable name="StateListDrawable">
         
         <attr name="android:visible"/>
@@ -3492,4 +3573,6 @@
         <attr name="android:id"/>
     </declare-styleable>
     <declare-styleable name="ripple_relativeLayout"><attr format="color" name="ripple_color"/><attr format="dimension" name="ripple_radius"/><attr format="integer" name="ripple_duration"/><attr format="integer" name="ripple_amount"/><attr format="float" name="ripple_scale"/></declare-styleable>
+=======
+>>>>>>> 7d3baa5590825fbce4abcb9ad6aa65b6d3a21afc
 </resources>
