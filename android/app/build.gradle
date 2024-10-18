@@ -61,20 +61,44 @@ android {
            storePassword keystoreProperties['storePassword']
        }
    }
-
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release // Use the release signing config
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+        checkReleaseBuilds false
+    }
+
 }
+
+
+
+
+
 
 flutter {
     source '../..'
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.10"
+    // Kotlin standard library
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.20"
+
+    // Firebase messaging
+    implementation "com.google.firebase:firebase-messaging:21.1.0"
+
+    // Zego UIKit Prebuilt Call SDK
+   // implementation 'com.github.ZEGOCLOUD:zego_uikit_prebuilt_call:3.3.7'
+
+    // Zego Signaling Plugin for the Call SDK
+  //  implementation 'com.github.ZEGOCLOUD:zego_uikit_signaling_plugin:2.1.8'
+
 }
