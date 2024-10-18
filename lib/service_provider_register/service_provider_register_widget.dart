@@ -5,11 +5,9 @@ import '/backend/schema/enums/enums.dart';
 import '/components/upload_photo_fail_widget.dart';
 import '/components/upload_photo_sucsess_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
@@ -1470,97 +1468,6 @@ class _ServiceProviderRegisterWidgetState
                                                                 ),
                                                           ),
                                                         ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Flexible(
-                                                    child: Align(
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                              -1.0, 0.0),
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    16.0,
-                                                                    0.0,
-                                                                    16.0,
-                                                                    12.0),
-                                                        child:
-                                                            FlutterFlowDropDown<
-                                                                String>(
-                                                          controller: _model
-                                                                  .dropDownValueController ??=
-                                                              FormFieldController<
-                                                                  String>(
-                                                            _model.dropDownValue ??=
-                                                                'سباك',
-                                                          ),
-                                                          options: List<
-                                                              String>.from([
-                                                            'سباك',
-                                                            'كهربائي',
-                                                            'فني تكييف'
-                                                          ]),
-                                                          optionLabels: const [
-                                                            'سباك',
-                                                            'كهربائي',
-                                                            'فني تكيف'
-                                                          ],
-                                                          onChanged: (val) =>
-                                                              safeSetState(() =>
-                                                                  _model.dropDownValue =
-                                                                      val),
-                                                          width:
-                                                              double.infinity,
-                                                          height: 56.0,
-                                                          textStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Outfit',
-                                                                    color: const Color(
-                                                                        0xFF57636C),
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                  ),
-                                                          hintText: '.....',
-                                                          icon: Icon(
-                                                            Icons
-                                                                .keyboard_arrow_down_rounded,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryText,
-                                                            size: 24.0,
-                                                          ),
-                                                          fillColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primaryText,
-                                                          elevation: 2.0,
-                                                          borderColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .alternate,
-                                                          borderWidth: 2.0,
-                                                          borderRadius: 8.0,
-                                                          margin:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      10.0,
-                                                                      0.0),
-                                                          hidesUnderline: true,
-                                                          isOverButton: true,
-                                                          isSearchable: false,
-                                                          isMultiSelect: false,
-                                                        ),
                                                       ),
                                                     ),
                                                   ),

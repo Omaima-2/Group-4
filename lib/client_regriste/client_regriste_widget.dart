@@ -1257,8 +1257,6 @@ class _ClientRegristeWidgetState extends State<ClientRegristeWidget>
                                                           ?.location,
                                                       ''),
                                                   role: Rolee.cl,
-                                                  clientId: currentUserDocument
-                                                      ?.clientId,
                                                   displayName: '',
                                                 ));
 

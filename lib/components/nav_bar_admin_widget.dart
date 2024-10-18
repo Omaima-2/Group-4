@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'nav_bar_admin_model.dart';
@@ -49,7 +48,7 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
         width: double.infinity,
         height: 50.0,
         decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).primaryText,
+          color: Colors.white,
           borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
@@ -78,10 +77,8 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 0.0, 30.0, 0.0),
                         child: FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
                           borderRadius: 8.0,
                           buttonSize: 40.0,
-                          fillColor: FlutterFlowTheme.of(context).primaryText,
                           hoverColor: const Color(0xFFF68833),
                           hoverIconColor: const Color(0xFFF68833),
                           icon: Icon(
@@ -90,7 +87,7 @@ class _NavBarAdminWidgetState extends State<NavBarAdminWidget> {
                               widget.page == 'AdminHomePage'
                                   ? const Color(0xFFFFB67D)
                                   : Colors.black,
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                              const Color(0xFF14181B),
                             ),
                             size: 25.0,
                           ),

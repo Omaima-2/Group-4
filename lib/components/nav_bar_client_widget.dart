@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'nav_bar_client_model.dart';
@@ -49,7 +48,7 @@ class _NavBarClientWidgetState extends State<NavBarClientWidget> {
         width: double.infinity,
         height: 50.0,
         decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).primaryText,
+          color: Colors.white,
           borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
@@ -88,7 +87,7 @@ class _NavBarClientWidgetState extends State<NavBarClientWidget> {
                               widget.page == 'HomePageClient'
                                   ? const Color(0xFFFFB67D)
                                   : Colors.black,
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                              const Color(0xFF14181B),
                             ),
                             size: 25.0,
                           ),
@@ -106,10 +105,9 @@ class _NavBarClientWidgetState extends State<NavBarClientWidget> {
                           buttonSize: 40.0,
                           hoverColor: const Color(0xFFF68833),
                           hoverIconColor: const Color(0xFFF68833),
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.pageview,
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color: Color(0xFF14181B),
                             size: 25.0,
                           ),
                           onPressed: () {
@@ -126,10 +124,9 @@ class _NavBarClientWidgetState extends State<NavBarClientWidget> {
                           buttonSize: 40.0,
                           hoverColor: const Color(0xFFF68833),
                           hoverIconColor: const Color(0xFFF68833),
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.ballot_sharp,
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color: Color(0xFF14181B),
                             size: 25.0,
                           ),
                           onPressed: () {
@@ -152,7 +149,7 @@ class _NavBarClientWidgetState extends State<NavBarClientWidget> {
                               widget.page == 'Setting_client'
                                   ? const Color(0xFFFFB67D)
                                   : Colors.black,
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                              const Color(0xFF14181B),
                             ),
                             size: 25.0,
                           ),

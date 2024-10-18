@@ -185,7 +185,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
             Align(
               alignment: const AlignmentDirectional(1.0, 0.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 30.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,

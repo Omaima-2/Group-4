@@ -25,3 +25,8 @@ export '/about_page/about_page_widget.dart' show AboutPageWidget;
 export '/delete_account/delete_account_widget.dart' show DeleteAccountWidget;
 export '/view_profile_s_p/view_profile_s_p_widget.dart'
     show ViewProfileSPWidget;
+export '/electricitys/electricitys_widget.dart' show ElectricitysWidget;
+export '/view_s_p_to_client/view_s_p_to_client_widget.dart'
+    show ViewSPToClientWidget;
+export '/show_services/show_services_widget.dart' show ShowServicesWidget;
+export '/my_requests_s_p/my_requests_s_p_widget.dart' show MyRequestsSPWidget;

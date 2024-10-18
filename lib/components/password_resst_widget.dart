@@ -1,8 +1,10 @@
+import 'package:flutter/material.dart';
+
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/material.dart';
 import 'password_resst_model.dart';
+
 export 'password_resst_model.dart';
 
 class PasswordResstWidget extends StatefulWidget {
@@ -60,8 +62,8 @@ class _PasswordResstWidgetState extends State<PasswordResstWidget> {
               ],
               gradient: LinearGradient(
                 colors: [
-                  FlutterFlowTheme.of(context).primaryText,
-                  FlutterFlowTheme.of(context).primaryText
+                  Color.fromARGB(255, 255, 255, 255),
+                  Color.fromARGB(255, 255, 255, 255)
                 ],
                 stops: const [0.0, 1.0],
                 begin: const AlignmentDirectional(0.0, -1.0),
@@ -72,7 +74,8 @@ class _PasswordResstWidgetState extends State<PasswordResstWidget> {
             child: Align(
               alignment: const AlignmentDirectional(-1.0, 0.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -105,7 +108,7 @@ class _PasswordResstWidgetState extends State<PasswordResstWidget> {
                       alignment: const AlignmentDirectional(0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          context.pushNamed('login');
+                          context.pushNamed('loginTest');
                         },
                         text: 'تسجيل الدخول',
                         options: FFButtonOptions(

@@ -20,38 +20,38 @@ class SpRecord extends FirestoreRecord {
   DateTime? get createdTime => _createdTime;
   bool hasCreatedTime() => _createdTime != null;
 
-  // "user_name" field.
-  String? _userName;
-  String get userName => _userName ?? '';
-  bool hasUserName() => _userName != null;
-
-  // "location" field.
-  String? _location;
-  String get location => _location ?? '';
-  bool hasLocation() => _location != null;
-
-  // "profession" field.
-  String? _profession;
-  String get profession => _profession ?? '';
-  bool hasProfession() => _profession != null;
-
   // "availability" field.
   bool? _availability;
   bool get availability => _availability ?? false;
   bool hasAvailability() => _availability != null;
 
-  // "rolee" field.
-  String? _rolee;
-  String get rolee => _rolee ?? '';
-  bool hasRolee() => _rolee != null;
+  // "user" field.
+  DocumentReference? _user;
+  DocumentReference? get user => _user;
+  bool hasUser() => _user != null;
+
+  // "name" field.
+  String? _name;
+  String get name => _name ?? '';
+  bool hasName() => _name != null;
+
+  // "photo" field.
+  String? _photo;
+  String get photo => _photo ?? '';
+  bool hasPhoto() => _photo != null;
+
+  // "Speciality" field.
+  String? _speciality;
+  String get speciality => _speciality ?? '';
+  bool hasSpeciality() => _speciality != null;
 
   void _initializeFields() {
     _createdTime = snapshotData['created_time'] as DateTime?;
-    _userName = snapshotData['user_name'] as String?;
-    _location = snapshotData['location'] as String?;
-    _profession = snapshotData['profession'] as String?;
     _availability = snapshotData['availability'] as bool?;
-    _rolee = snapshotData['rolee'] as String?;
+    _user = snapshotData['user'] as DocumentReference?;
+    _name = snapshotData['name'] as String?;
+    _photo = snapshotData['photo'] as String?;
+    _speciality = snapshotData['Speciality'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -89,20 +89,20 @@ class SpRecord extends FirestoreRecord {
 
 Map<String, dynamic> createSpRecordData({
   DateTime? createdTime,
-  String? userName,
-  String? location,
-  String? profession,
   bool? availability,
-  String? rolee,
+  DocumentReference? user,
+  String? name,
+  String? photo,
+  String? speciality,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'created_time': createdTime,
-      'user_name': userName,
-      'location': location,
-      'profession': profession,
       'availability': availability,
-      'rolee': rolee,
+      'user': user,
+      'name': name,
+      'photo': photo,
+      'Speciality': speciality,
     }.withoutNulls,
   );
 
@@ -115,21 +115,21 @@ class SpRecordDocumentEquality implements Equality<SpRecord> {
   @override
   bool equals(SpRecord? e1, SpRecord? e2) {
     return e1?.createdTime == e2?.createdTime &&
-        e1?.userName == e2?.userName &&
-        e1?.location == e2?.location &&
-        e1?.profession == e2?.profession &&
         e1?.availability == e2?.availability &&
-        e1?.rolee == e2?.rolee;
+        e1?.user == e2?.user &&
+        e1?.name == e2?.name &&
+        e1?.photo == e2?.photo &&
+        e1?.speciality == e2?.speciality;
   }
 
   @override
   int hash(SpRecord? e) => const ListEquality().hash([
         e?.createdTime,
-        e?.userName,
-        e?.location,
-        e?.profession,
         e?.availability,
-        e?.rolee
+        e?.user,
+        e?.name,
+        e?.photo,
+        e?.speciality
       ]);
 
   @override

@@ -447,7 +447,7 @@ class _SettingClientWidgetState extends State<SettingClientWidget> {
                 model: _model.navBarClientModel,
                 updateCallback: () => safeSetState(() {}),
                 child: const NavBarClientWidget(
-                  page: 'Setting_Client',
+                  page: 'Setting_client',
                 ),
               ),
             ),

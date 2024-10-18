@@ -45,6 +45,11 @@ class ServicesRecord extends FirestoreRecord {
   int get price => _price ?? 0;
   bool hasPrice() => _price != null;
 
+  // "sp" field.
+  DocumentReference? _sp;
+  DocumentReference? get sp => _sp;
+  bool hasSp() => _sp != null;
+
   void _initializeFields() {
     _user = snapshotData['user'] as DocumentReference?;
     _name = snapshotData['name'] as String?;
@@ -52,6 +57,7 @@ class ServicesRecord extends FirestoreRecord {
     _photo = snapshotData['photo'] as String?;
     _createdTime = snapshotData['created_time'] as DateTime?;
     _price = castToType<int>(snapshotData['price']);
+    _sp = snapshotData['sp'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -95,6 +101,7 @@ Map<String, dynamic> createServicesRecordData({
   String? photo,
   DateTime? createdTime,
   int? price,
+  DocumentReference? sp,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -104,6 +111,7 @@ Map<String, dynamic> createServicesRecordData({
       'photo': photo,
       'created_time': createdTime,
       'price': price,
+      'sp': sp,
     }.withoutNulls,
   );
 
@@ -120,12 +128,20 @@ class ServicesRecordDocumentEquality implements Equality<ServicesRecord> {
         e1?.description == e2?.description &&
         e1?.photo == e2?.photo &&
         e1?.createdTime == e2?.createdTime &&
-        e1?.price == e2?.price;
+        e1?.price == e2?.price &&
+        e1?.sp == e2?.sp;
   }
 
   @override
-  int hash(ServicesRecord? e) => const ListEquality().hash(
-      [e?.user, e?.name, e?.description, e?.photo, e?.createdTime, e?.price]);
+  int hash(ServicesRecord? e) => const ListEquality().hash([
+        e?.user,
+        e?.name,
+        e?.description,
+        e?.photo,
+        e?.createdTime,
+        e?.price,
+        e?.sp
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is ServicesRecord;

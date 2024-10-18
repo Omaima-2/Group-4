@@ -11,6 +11,11 @@ class ViewProfileClientModel extends FlutterFlowModel<ViewProfileClientWidget> {
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
+
   // State field(s) for nameFiled widget.
   FocusNode? nameFiledFocusNode;
   TextEditingController? nameFiledTextController;

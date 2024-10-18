@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/components/nav_bar_s_p_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'service_provider_home_page_model.dart';
 export 'service_provider_home_page_model.dart';
@@ -181,46 +182,143 @@ class _ServiceProviderHomePageWidgetState
                                   borderRadius: BorderRadius.circular(10.0),
                                   shape: BoxShape.rectangle,
                                 ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(14.0),
-                                  child: SwitchListTile.adaptive(
-                                    value: _model.switchListTileValue ??= true,
-                                    onChanged: (newValue) async {
-                                      safeSetState(() => _model
-                                          .switchListTileValue = newValue);
-                                    },
-                                    title: Text(
-                                      'متوفر ',
-                                      style: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .override(
-                                            fontFamily: 'Outfit',
-                                            color: const Color(0xFF232C2F),
-                                            fontSize: 34.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                          ),
+                                child: StreamBuilder<List<SpRecord>>(
+                                  stream: querySpRecord(
+                                    queryBuilder: (spRecord) => spRecord.where(
+                                      'user',
+                                      isEqualTo: currentUserReference,
                                     ),
-                                    subtitle: Text(
-                                      'لاستقبال الطلبات فعل الزر',
-                                      style: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .override(
-                                            fontFamily: 'Outfit',
-                                            color: const Color(0xFF717A81),
-                                            fontSize: 15.0,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                    tileColor: const Color(0xFFA8C2E0),
-                                    activeColor: const Color(0xFF37A50F),
-                                    activeTrackColor:
-                                        FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                    dense: false,
-                                    controlAffinity:
-                                        ListTileControlAffinity.trailing,
+                                    singleRecord: true,
                                   ),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                    List<SpRecord> columnSpRecordList =
+                                        snapshot.data!;
+                                    final columnSpRecord =
+                                        columnSpRecordList.isNotEmpty
+                                            ? columnSpRecordList.first
+                                            : null;
+
+                                    return Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'لبدء استقبال الطلبات فعل الزر ! ',
+                                          textAlign: TextAlign.start,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                fontSize: 22.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            FFButtonWidget(
+                                              onPressed: () async {
+                                                await columnSpRecord.reference
+                                                    .update(createSpRecordData(
+                                                  availability: true,
+                                                ));
+                                              },
+                                              text: 'متوفر ',
+                                              options: FFButtonOptions(
+                                                width: 130.0,
+                                                height: 40.0,
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 0.0),
+                                                iconPadding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                color:
+                                                    columnSpRecord!.availability
+                                                        ? const Color(0xFFED7D41)
+                                                        : FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondaryText,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          color: Colors.white,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                elevation: 0.0,
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                            ),
+                                            FFButtonWidget(
+                                              onPressed: () async {
+                                                await columnSpRecord.reference
+                                                    .update(createSpRecordData(
+                                                  availability: false,
+                                                ));
+                                              },
+                                              text: 'غير متوفر',
+                                              options: FFButtonOptions(
+                                                width: 130.0,
+                                                height: 40.0,
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 0.0),
+                                                iconPadding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                color:
+                                                    columnSpRecord.availability
+                                                        ? FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondaryText
+                                                        : const Color(0xFFED7D41),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          color: Colors.white,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                elevation: 0.0,
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ].divide(const SizedBox(height: 20.0)),
+                                    );
+                                  },
                                 ),
                               ),
                             ),
