@@ -938,10 +938,10 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-09-27T14:43:19.874949Z",
+  "generated": "2024-10-18T14:06:21.882188Z",
   "generator": "pub",
-  "generatorVersion": "3.5.1",
+  "generatorVersion": "3.5.3",
   "flutterRoot": "file:///C:/flutter",
-  "flutterVersion": "3.24.1",
+  "flutterVersion": "3.24.3",
   "pubCache": "file:///C:/Users/oyyyy/AppData/Local/Pub/Cache"
 }
